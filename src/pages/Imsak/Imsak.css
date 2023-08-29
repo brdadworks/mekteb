@@ -1,0 +1,20 @@
+table {
+    width: 100%;
+}
+
+thead {
+    background-color: #1e7259;
+    padding: 3px;
+    width: 100%;
+}
+th {
+    padding: 3px;
+    color: white;
+    text-align: center;
+}
+
+td {
+    text-align: center;
+    background-color: #50c2a1;
+    border: 1px solid white;
+}

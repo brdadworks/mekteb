@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.background-image {
+    --background: url('/background.jpg') no-repeat;
+}
+
+ion-header {
+    background: #4ac3a4;
+    --ion-background-color: #4ac3a4;
+}
+
+ion-toolbar {
+    --background: #4ac3a4;
+    --border-color: #4ac3a4;
+}
+
+ion-back-button {
+    color: white;
+}
+
+.bg-color-white {
+    --background: white;
+}
+
+ion-title {
+    color: white;
+}
+
+span {
+    color: white;
+}
+
+ion-icon {
+    color: white;
+}
+
+.green-background {
+    --background: #54d61c;
+}
+
+.alert-button-inner {
+    color: black;
+}
+
+.green-btn {
+    --background: #4ac3a4;
+}
+
+/* App.css */
+.compass-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.compass-image {
+    width: 300px;
+    height: 300px;
+    position: relative; /* Required for absolute positioning */
+    background-size: cover; /* Adjust as needed to fit the compass image */
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.qibla-image {
+    width: 30px; /* Adjust the size as needed */
+    height: 30px; /* Adjust the size as needed */
+    position: absolute;
+    top: 70%; /* Position in the center of the compass image */
+    left: 70%; /* Position in the center of the compass image */
+    transform: translate(-50%, -50%);
+}
+
+ion-list {
+    --ion-item-background: transparent;
+}
+ion-item {
+    --ion-item-background: transparent;
+}
