@@ -6,7 +6,7 @@ import {
 import "./Imsak.css"
 import Header from "../../components/Header";
 
-function Imsak() {
+function Imsakiye() {
 
     return (
         <>
@@ -14,13 +14,15 @@ function Imsak() {
             <IonContent class="ion-padding bg-white bg-color-white">
                 <table>
                     <thead>
-                    <td>Tarih</td>
-                    <td>İmsak</td>
-                    <td>Güneş</td>
-                    <td>Öğle</td>
-                    <td>İkindi</td>
-                    <td>Akşam</td>
-                    <td>Yatsı</td>
+                    <tr>
+                        <th>Tarih</th>
+                        <th>İmsak</th>
+                        <th>Güneş</th>
+                        <th>Öğle</th>
+                        <th>İkindi</th>
+                        <th>Akşam</th>
+                        <th>Yatsı</th>
+                    </tr>
                     </thead>
                     <tbody>
                     <tr>
@@ -48,4 +50,4 @@ function Imsak() {
     );
 }
 
-export default Imsak;
+export default Imsakiye;

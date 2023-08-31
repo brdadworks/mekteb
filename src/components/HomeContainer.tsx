@@ -5,11 +5,11 @@ import LiveClock from "./Home/LiveClock";
 import Hatirlaticilar from "../pages/Hatirlaticilar/Hatirlaticilar";
 import DiniGunler from "../pages/DiniGunler/DiniGunler";
 import Ayarlar from "../pages/Ayarlar/Ayarlar";
-import Imsak from "../pages/Imsak/Imsak";
+import Imsakiye from "../pages/Imsakiye/Imsakiye";
 import Kible from "../pages/Kible/Kible";
 import {useEffect, useRef, useState} from "react";
 import {Storage} from "@ionic/storage";
-import {getNearestPrayerTime,  prayerTimesHandler} from "../../utils/functions";
+import {getNearestPrayerTime, prayerTimesHandler} from "../../utils/functions";
 
 import {SettingsProps, PrayerTimesProps, ContainerProps} from "../../utils/types";
 
@@ -47,16 +47,18 @@ const HomeContainer: React.FC<ContainerProps> = () => {
                         <span><img src="/home/mosque.svg" alt="" className={"w-[72px] h-auto"}/></span>
                     </IonCol>
                     <IonCol>
-                        {nearestPrayerTime && (
+                        {nearestPrayerTime?.time ? (
                             <>
                                 <span className={"font-medium text-lg text-center"}>Sonraki Vakit:</span>
                                 <span>{nearestPrayerTime.name}</span>
                                 <span className={"text-4xl font-medium"}>{nearestPrayerTime.time}</span>
+                                <span className={"opacity-95"}><LiveClock/></span>
                             </>
-                        )}
-                        <span className={"opacity-95"}><LiveClock/></span>
+                        ) : <span className={"opacity-95 text-xl"}><LiveClock/></span>}
+
                     </IonCol>
-                    <IonCol><img src={"/moon/"+prayerTimes?.AyinSekliURL.split("images/")[1]} alt="ayinsekli" className={"w-[100px] h-[100px] z-10 "}/></IonCol>
+                    <IonCol><img src={"/moon/" + prayerTimes?.AyinSekliURL.split("images/")[1]} alt="ayinsekli"
+                                 className={"w-[100px] h-[100px] z-10 "}/></IonCol>
                 </IonRow>
                 <IonRow>
                     <IonCol>
@@ -131,7 +133,7 @@ const HomeContainer: React.FC<ContainerProps> = () => {
                 </IonRow>
                 <IonRow>
                     <IonCol className={"m-3 aspect-square bg-opacity-60 shadow-xl bg-[#438e6f] w-fit"}>
-                        <IonNavLink routerDirection="forward" component={() => <Imsak/>}>
+                        <IonNavLink routerDirection="forward" component={() => <Imsakiye/>}>
                             <IonIcon icon={moonOutline} size={"large"}></IonIcon>
                             <span className={"my-[1px] font-medium text-lg text-center"}>İmsakiye</span>
                         </IonNavLink>
@@ -143,7 +145,7 @@ const HomeContainer: React.FC<ContainerProps> = () => {
                         </IonNavLink>
                     </IonCol>
                     <IonCol className={"m-3 aspect-square bg-opacity-60 shadow-xl bg-[#438e6f] w-fit"}>
-                        <IonNavLink ref={settingsRef} routerDirection="forward" component={() => <Ayarlar />}>
+                        <IonNavLink ref={settingsRef} routerDirection="forward" component={() => <Ayarlar/>}>
                             <IonIcon icon={settingsOutline} size={"large"}></IonIcon>
                             <span className={"my-[1px] font-medium text-lg text-center"}>Ayarlar</span>
                         </IonNavLink>

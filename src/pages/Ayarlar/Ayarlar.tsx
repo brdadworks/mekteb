@@ -9,7 +9,7 @@ import {
     IonToast, IonToolbar, IonButtons, IonBackButton, IonTitle, IonHeader,
 } from '@ionic/react';
 
-import ulkeler from '../../../datas/ulkeler';
+import ulkeler from '../../../data/ulkeler';
 import Header from '../../components/Header';
 import {
     getCities,

@@ -1,6 +1,30 @@
 import axios from "axios";
 import {Storage} from "@ionic/storage";
+import {LocalNotificationRequest, LocalNotifications, LocalNotificationSchema} from "@capacitor/local-notifications";
+import {val} from "cheerio/lib/api/attributes";
+import {key} from "ionicons/icons";
+import {Simulate} from "react-dom/test-utils";
+import cancel = Simulate.cancel;
 
+export const addStorageData = async (key: string, value: any) => {
+    const store = new Storage();
+    await store.create();
+    await store.set(key, value)
+}
+export const getStorageData = async (key: string) => {
+    const store = new Storage();
+    await store.create();
+    return await store.get(key)
+}
+
+export const requestNotificationPermission = async () => {
+    const status = await LocalNotifications.requestPermissions();
+    return status.display;
+}
+export const getNotificationPermissionStatus = async () => {
+    const status = await LocalNotifications.checkPermissions();
+    return status.display
+}
 export const getCities = async (id: string) => {
     const cities = await axios.get('https://ezanvakti.herokuapp.com/sehirler/' + id);
     const res = await cities.data;
@@ -94,7 +118,7 @@ function getFormattedClock() {
     return `${day} ${month} ${year} ${dayOfWeek}`;
 }
 
-function getCurrentDate() {
+export function getCurrentDate() {
     const currentDate = new Date();
 
     const day = String(currentDate.getDate()).padStart(2, '0');
@@ -102,4 +126,139 @@ function getCurrentDate() {
     const year = currentDate.getFullYear();
 
     return `${day}.${month}.${year}`;
+}
+
+export const notificationHandler = async (noti: { title: string, checked: boolean }[]) => {
+    const pendingNotifications = await LocalNotifications.getPending()
+    await LocalNotifications.cancel({notifications: pendingNotifications.notifications})
+
+    function parseTimeToMilliseconds(time: string): number {
+        const [hours, minutes] = time.split(':').map(Number);
+        return hours * 60 * 60 * 1000 + minutes * 60 * 1000;
+    }
+
+    try {
+        const {prayerTimes: prayerTimesData} = await getStorageData("prayerTimes");
+        const currentDate = getCurrentDate();
+        const clock = getCurrentClock()
+
+        console.log("prayerTimesData", prayerTimesData);
+
+        for (const prayerTimes of prayerTimesData) {
+            const {Ogle, Yatsi, Imsak, Gunes, Ikindi, Aksam, MiladiTarihKisaIso8601, MiladiTarihUzunIso8601} = prayerTimes;
+            const date = new Date(MiladiTarihUzunIso8601);
+
+            const ogleTime = new Date(date.getTime() + parseTimeToMilliseconds(Ogle)).getTime();
+            const yatsiTime = new Date(date.getTime() + parseTimeToMilliseconds(Yatsi)).getTime();
+            const imsakTime = new Date(date.getTime() + parseTimeToMilliseconds(Imsak)).getTime();
+            const gunesTime = new Date(date.getTime() + parseTimeToMilliseconds(Gunes)).getTime();
+            const ikindiTime = new Date(date.getTime() + parseTimeToMilliseconds(Ikindi)).getTime();
+            const aksamTime = new Date(date.getTime() + parseTimeToMilliseconds(Aksam)).getTime();
+
+            const notificationTimeOgle = new Date(ogleTime - 10 * 60 * 1000); // 10 minutes before
+            const notificationTimeYatsi = new Date(yatsiTime - 10 * 60 * 1000); // 10 minutes before
+            const notificationTimeImsak = new Date(imsakTime - 10 * 60 * 1000); // 10 minutes before
+            const notificationTimeGunes = new Date(gunesTime - 10 * 60 * 1000); // 10 minutes before
+            const notificationTimeIkindi = new Date(ikindiTime - 10 * 60 * 1000); // 10 minutes before
+            const notificationTimeAksam = new Date(aksamTime - 10 * 60 * 1000); // 10 minutes before
+
+
+            console.log("notificationTimeOgle", notificationTimeOgle)
+
+            if (MiladiTarihKisaIso8601 <= currentDate) {
+                // Schedule notifications for specific prayer times
+                const notifications: LocalNotificationSchema[] = [];
+
+                noti.map(n => {
+                    if (n.checked) {
+                        console.log("Ogle > clock", Ogle > clock)
+                        console.log("Ogle , clock", Ogle, clock)
+                        switch (n.title) {
+                            case "İmsak":
+                                if (Imsak > clock) {
+                                    notifications.push({
+                                        title: 'Namaz Vakti Hatırlatma',
+                                        body: `${n.title} namazı vakti`,
+                                        id: Math.floor(Math.random() * 10000),
+                                        schedule: {at: new Date(notificationTimeImsak)},
+                                    });
+                                }
+                                break;
+                            case "Güneş":
+                                if (Gunes > clock) {
+                                    notifications.push({
+                                        title: 'Namaz Vakti Hatırlatma',
+                                        body: `${n.title} namazı vakti`,
+                                        id: Math.floor(Math.random() * 10000),
+                                        schedule: {at: new Date(notificationTimeGunes)},
+                                    });
+                                }
+                                break;
+                            case "Öğle":
+                                if (Ogle > clock) {
+                                    notifications.push({
+                                        title: 'Namaz Vakti Hatırlatma',
+                                        body: `${n.title} namazı vakti`,
+                                        id: Math.floor(Math.random() * 10000),
+                                        schedule: {at: new Date(notificationTimeOgle)},
+                                    });
+                                }
+                                break;
+                            case "İkindi":
+                                notifications.push({
+                                    title: 'Namaz Vakti Hatırlatma',
+                                    body: `${n.title} namazı vakti`,
+                                    id: Math.floor(Math.random() * 10000),
+                                    schedule: {at: new Date(notificationTimeIkindi)},
+                                });
+                                break;
+                            case "Akşam":
+                                notifications.push({
+                                    title: 'Namaz Vakti Hatırlatma',
+                                    body: `${n.title} namazı vakti`,
+                                    id: Math.floor(Math.random() * 10000),
+                                    schedule: {at: new Date(notificationTimeAksam)},
+                                });
+                                break;
+                            case "Yatsı":
+                                notifications.push({
+                                    title: 'Namaz Vakti Hatırlatma',
+                                    body: `${n.title} namazı vakti`,
+                                    id: Math.floor(Math.random() * 10000),
+                                    schedule: {at: new Date(notificationTimeYatsi)},
+                                });
+                                break;
+                        }
+                    }
+                });
+
+                console.log("schehueled notifications", notifications)
+
+                const schedule = await LocalNotifications.schedule({
+                    notifications: notifications,
+                });
+                console.log("schedule", schedule)
+            }
+        }
+
+        console.log('Notifications scheduled successfully.');
+    } catch (error) {
+        console.error('Error scheduling notifications:', error);
+    }
+};
+
+function convertTurkishToEnglish(input: string) {
+    return input
+        .replace(/ğ/g, 'g')
+        .replace(/Ğ/g, 'G')
+        .replace(/ü/g, 'u')
+        .replace(/Ü/g, 'U')
+        .replace(/ş/g, 's')
+        .replace(/Ş/g, 'S')
+        .replace(/ı/g, 'i')
+        .replace(/İ/g, 'I')
+        .replace(/ö/g, 'o')
+        .replace(/Ö/g, 'O')
+        .replace(/ç/g, 'c')
+        .replace(/Ç/g, 'C');
 }
