@@ -3,6 +3,7 @@ import {IonContent, IonGrid, IonCol, IonRow, IonIcon} from '@ionic/react';
 import Header from "../../components/Header";
 import {compassOutline, mapOutline} from "ionicons/icons";
 import Pusula from "../../components/Kible/Pusula";
+import Harita from "../../components/Kible/Harita";
 
 function Kible() {
     const [activeTab, setActiveTab] = useState("Pusula");
@@ -29,7 +30,7 @@ function Kible() {
                 </IonGrid>
                 <div>
                     {activeTab == "Pusula" &&  <Pusula />}
-                    {activeTab == "Harita" && "Harita"}
+                    {activeTab == "Harita" && <Harita />}
                 </div>
             </IonContent>
         </>

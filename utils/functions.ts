@@ -17,6 +17,21 @@ export const getStorageData = async (key: string) => {
     return await store.get(key)
 }
 
+export const removeStorageData = async (key: string) => {
+    const store = new Storage();
+    await store.create();
+    await store.remove(key)
+}
+
+export const requestLocationPermission = async () => {
+    const status = await LocalNotifications.requestPermissions();
+    return status.display;
+}
+export const getLocationPermissionStatus = async () => {
+    const status = await LocalNotifications.checkPermissions();
+    return status.display;
+}
+
 export const requestNotificationPermission = async () => {
     const status = await LocalNotifications.requestPermissions();
     return status.display;

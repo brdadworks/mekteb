@@ -112,19 +112,19 @@ const HomeContainer: React.FC<ContainerProps> = () => {
             {/*end*/}
             <IonGrid>
                 <IonRow>
-                    <IonCol className={"m-3 aspect-square bg-opacity-60 shadow-xl bg-[#438e6f] w-fit"}>
+                    <IonCol className={"m-3 aspect-square bg-opacity-60 shadow-xl bg-[#438e6f] w-fit sm:aspect-auto"}>
                         <IonNavLink routerDirection="forward" component={() => <Kible/>}>
                             <IonIcon icon={compassOutline} size={"large"}></IonIcon>
                             <span className={"my-[1px] font-medium text-lg text-center"}>Kıble</span>
                         </IonNavLink>
                     </IonCol>
-                    <IonCol className={"m-3 aspect-square bg-opacity-60 shadow-xl bg-[#438e6f] w-fit"}>
+                    <IonCol className={"m-3 aspect-square bg-opacity-60 shadow-xl bg-[#438e6f] w-fit sm:aspect-auto"}>
                         <IonNavLink routerDirection="forward" component={() => <DiniGunler/>}>
                             <IonIcon icon={calendarOutline} size={"large"}></IonIcon>
                             <span className={"my-[1px] font-medium text-lg text-center"}>Dini Günler</span>
                         </IonNavLink>
                     </IonCol>
-                    <IonCol className={"m-3 aspect-square bg-opacity-60 shadow-xl bg-[#438e6f] w-fit"}>
+                    <IonCol className={"m-3 aspect-square bg-opacity-60 shadow-xl bg-[#438e6f] w-fit sm:aspect-auto"}>
                         <IonNavLink routerDirection="forward" component={() => <Hatirlaticilar/>}>
                             <IonIcon icon={bookOutline} size={"large"}></IonIcon>
                             <span className={"my-[1px] font-medium text-lg text-center"}>Kitaplar</span>
@@ -132,19 +132,19 @@ const HomeContainer: React.FC<ContainerProps> = () => {
                     </IonCol>
                 </IonRow>
                 <IonRow>
-                    <IonCol className={"m-3 aspect-square bg-opacity-60 shadow-xl bg-[#438e6f] w-fit"}>
-                        <IonNavLink routerDirection="forward" component={() => <Imsakiye/>}>
+                    <IonCol className={"m-3 aspect-square bg-opacity-60 shadow-xl bg-[#438e6f] w-fit sm:aspect-auto"}>
+                        <IonNavLink routerDirection="forward" component={() => <Imsakiye />}>
                             <IonIcon icon={moonOutline} size={"large"}></IonIcon>
                             <span className={"my-[1px] font-medium text-lg text-center"}>İmsakiye</span>
                         </IonNavLink>
                     </IonCol>
-                    <IonCol className={"m-3 aspect-square bg-opacity-60 shadow-xl bg-[#438e6f] w-fit"}>
+                    <IonCol className={"m-3 aspect-square bg-opacity-60 shadow-xl bg-[#438e6f] w-fit sm:aspect-auto"}>
                         <IonNavLink routerDirection="forward" component={() => <Hatirlaticilar/>}>
                             <IonIcon icon={alarmOutline} size={"large"}></IonIcon>
                             <span className={"my-[1px] font-medium text-lg text-center"}>Hatırlatıcılar</span>
                         </IonNavLink>
                     </IonCol>
-                    <IonCol className={"m-3 aspect-square bg-opacity-60 shadow-xl bg-[#438e6f] w-fit"}>
+                    <IonCol className={"m-3 aspect-square bg-opacity-60 shadow-xl bg-[#438e6f] w-fit sm:aspect-auto"}>
                         <IonNavLink ref={settingsRef} routerDirection="forward" component={() => <Ayarlar/>}>
                             <IonIcon icon={settingsOutline} size={"large"}></IonIcon>
                             <span className={"my-[1px] font-medium text-lg text-center"}>Ayarlar</span>
@@ -155,7 +155,7 @@ const HomeContainer: React.FC<ContainerProps> = () => {
             {/*logo*/
             }
             <div className={"w-full"}>
-                <img src="/logo.png" alt="logo" className={"max-w-[50%] mx-auto mt-9"}/>
+                <img src="/logo.png" alt="logo" className={"max-w-[50%] mx-auto mt-9 sm:max-w-[20%]"}/>
             </div>
         </>
     )

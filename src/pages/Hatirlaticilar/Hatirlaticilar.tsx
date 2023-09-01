@@ -97,7 +97,7 @@ function Hatirlaticilar() {
                     :
                     //access granted
                     <IonList lines={'none'}>
-                        <p><IonButton onClick={sendNotification}>Send Noti</IonButton></p>
+                        {/*<p><IonButton onClick={sendNotification}>Send Noti</IonButton></p>*/}
                         <IonItem>
                             <IonLabel>
                             <span className={'font-medium text-lg text-black'}>

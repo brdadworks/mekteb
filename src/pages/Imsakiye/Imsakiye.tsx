@@ -1,50 +1,63 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {
-    IonContent,
+    IonContent, IonInfiniteScroll,
 } from '@ionic/react';
 
 import "./Imsak.css"
 import Header from "../../components/Header";
+import {PrayerTimesProps} from "../../../utils/types";
+import {Storage} from "@ionic/storage";
+import {key} from "ionicons/icons";
+import {getStorageData} from "../../../utils/functions";
 
 function Imsakiye() {
-
+    const [prayerTimes, setPrayerTimes] = useState<PrayerTimesProps[]>();
+    useEffect(() => {
+        const getPrayerTimes = async () => {
+            const data = await getStorageData("prayerTimes")
+            console.log("data imsakiye", data)
+            setPrayerTimes(data.prayerTimes);
+        }
+        getPrayerTimes();
+    }, []);
     return (
         <>
-            <Header pageTitle={"İmsakiye"} />
+            <Header pageTitle={"İmsakiye"}/>
             <IonContent class="ion-padding bg-white bg-color-white">
-                <table>
-                    <thead>
-                    <tr>
-                        <th>Tarih</th>
-                        <th>İmsak</th>
-                        <th>Güneş</th>
-                        <th>Öğle</th>
-                        <th>İkindi</th>
-                        <th>Akşam</th>
-                        <th>Yatsı</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>07 Ağu</td>
-                        <td>04:16</td>
-                        <td>04:16</td>
-                        <td>04:16</td>
-                        <td>04:16</td>
-                        <td>04:16</td>
-                        <td>04:16</td>
-                    </tr>
-                    <tr>
-                        <td>08 Ağu</td>
-                        <td>04:16</td>
-                        <td>04:16</td>
-                        <td>04:16</td>
-                        <td>04:16</td>
-                        <td>04:16</td>
-                        <td>04:16</td>
-                    </tr>
-                    </tbody>
-                </table>
+                {!prayerTimes ? <>Yükleniyor...</> :
+                    <table className={"overflow-x-scroll imsakiye-table"}>
+                        <thead>
+                        <tr>
+                            <th>Tarih</th>
+                            <th>İmsak</th>
+                            <th>Güneş</th>
+                            <th>Öğle</th>
+                            <th>İkindi</th>
+                            <th>Akşam</th>
+                            <th>Yatsı</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {prayerTimes?.map((prayerTime, index) => {
+                            return (
+                                <tr key={index}>
+                                    <td>
+                                        {prayerTime.MiladiTarihUzun.split(" ")[0]}
+                                    <br/>
+                                        {prayerTime.MiladiTarihUzun.split(" ")[1].substring(0, 3)}
+                                    </td>
+                                    <td>{prayerTime.Imsak}</td>
+                                    <td>{prayerTime.Gunes}</td>
+                                    <td>{prayerTime.Ogle}</td>
+                                    <td>{prayerTime.Ikindi}</td>
+                                    <td>{prayerTime.Aksam}</td>
+                                    <td>{prayerTime.Yatsi}</td>
+                                </tr>
+                            )
+                        })}
+                        </tbody>
+                    </table>
+                }
             </IonContent>
         </>
     );

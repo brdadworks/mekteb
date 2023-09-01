@@ -10,13 +10,12 @@ import {
 } from '@ionic/react';
 
 import ulkeler from '../../../data/ulkeler';
-import Header from '../../components/Header';
 import {
+    addStorageData,
     getCities,
-    getDistrict, getNearestPrayerTime,
-    getPrayerTimes, prayerTimesHandler,
+    getDistrict,
+    getPrayerTimes, getStorageData, removeStorageData,
 } from '../../../utils/functions';
-import {Storage} from '@ionic/storage';
 
 //types
 import {CountryProps, CityProps, DistrictProps, SettingsProps} from '../../../utils/types'
@@ -53,13 +52,8 @@ function Ayarlar() {
     const districtRef = useRef<HTMLIonSelectElement | null>(null);
 
     useEffect(() => {
-        const store = new Storage();
         const loadSettings = async () => {
-            await store.create();
-            // await store.clear();
-            console.log('District in store', await store.get('district'));
-            const getSettings = (await store.get('settings')) as SettingsProps;
-            console.log('getSettings', getSettings);
+            const getSettings = (await getStorageData("settings")) as SettingsProps;
             if (getSettings) {
                 setSelectBoxStatus({
                     city: false,
@@ -67,27 +61,21 @@ function Ayarlar() {
                 });
                 setSettings(getSettings);
                 try {
-                    await store.set(
-                        'prayerTimes',
-                        await getPrayerTimes(getSettings.district?.IlceID!)
-                    );
+
                     const city = await getCities(getSettings.country!.UlkeID);
                     console.log("city status", city.status)
                     if (city.status === 200) setCities(city.cities);
                     else {
-
                         console.log("Şehir bilgisi alınırken hata oluştu. İnternet bağlantınızı kontrol ediniz")
                         setToastHandle(true)
                         setToastMessage("Şehir bilgisi alınırken hata oluştu. İnternet bağlantınızı kontrol ediniz.")
                     }
-
                     const dist = await getDistrict(getSettings.city!.SehirID);
                     if (dist.status === 200) setDistrict(dist.district);
                     else {
                         setToastHandle(true)
                         setToastMessage("İlçe bilgisi alınırken hata oluştu. İnternet bağlantınızı kontrol ediniz.")
                     }
-
                     setLoading(false);
                 } catch (e) {
                     console.log("error")
@@ -159,13 +147,15 @@ function Ayarlar() {
     };
 
     const saveSetting = async () => {
-        const store = new Storage();
-        await store.create();
-        await store.set('settings', settings);
+        setToastHandle(true)
+        setToastMessage("Ayarlar kayıt ediliyor.")
+
+        await addStorageData('settings', settings)
+        await addStorageData('prayerTimes',
+            await getPrayerTimes(settings.district?.IlceID!))
+
         window.location.reload(); // reload page for new settings
     };
-
-    console.log('district', district);
     return (
         <>
             <IonToast
