@@ -5,7 +5,7 @@ module.exports = {
   },
   'extends': [
     'plugin:react/recommended',
-    'eslint:recommended'
+    'eslint:recommended',
   ],
   parserOptions: {
     ecmaVersion: 2020

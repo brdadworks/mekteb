@@ -37,7 +37,7 @@ const Pusula: React.FC = () => {
             locationPermission();
 
             return () => {
-                watch.remove();
+                // watch.remove();
                 // Motion.removeAllListeners();
             };
         }, []);

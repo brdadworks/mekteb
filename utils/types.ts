@@ -42,3 +42,17 @@ export interface SettingsProps {
     city: CityProps | null;
     district: DistrictProps | null;
 }
+
+export interface BooksProps {
+    id: number,
+    title: string,
+    slug: string,
+    read: boolean,
+}
+
+export interface BookProps {
+    title: string;
+    slug: string;
+    content: string;
+    page: number;
+}

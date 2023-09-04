@@ -30,7 +30,7 @@ function DiniGunler() {
                 <IonList lines={"none"}>
                     {activeTab == "2023" && (
                         ozelGunler_2023.map((gun, index) => (
-                            <IonItem key={`2023-${index}`} className={"mt-3 ion-item"}>
+                            <IonItem key={`2023-${index}`} className={"mt-3 dg-ion-item"}>
                                 <IonLabel><span className={"font-medium text-sm text-green-800 whitespace-pre-wrap"}>
                             {gun.title}
                         </span></IonLabel>
@@ -44,7 +44,7 @@ function DiniGunler() {
 
                     {activeTab == "2024" && (
                         ozelGunler_2024.map((gun, index) => (
-                            <IonItem key={`2023-${index}`} className={"mt-3 ion-item"}>
+                            <IonItem key={`2023-${index}`} className={"mt-3 dg-ion-item"}>
                                 <IonLabel><span className={"font-medium text-sm text-green-800 whitespace-pre-wrap"}>
                             {gun.title}
                         </span></IonLabel>

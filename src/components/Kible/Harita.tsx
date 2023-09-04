@@ -1,9 +1,12 @@
-import React, {useEffect, useState} from 'react';
-import {Geolocation} from '@capacitor/geolocation';
-import {getLocationPermissionStatus, requestLocationPermission} from "../../../utils/functions";
-import {IonButton} from "@ionic/react";
-import {AndroidSettings, NativeSettings} from "capacitor-native-settings";
-
+import React, { useEffect, useState } from 'react';
+import { GoogleMap, Marker, Polyline } from '@react-google-maps/api';
+import { Geolocation } from '@capacitor/geolocation';
+import {
+    getLocationPermissionStatus,
+    requestLocationPermission,
+} from '../../../utils/functions';
+import { IonButton } from '@ionic/react';
+import { AndroidSettings, NativeSettings } from 'capacitor-native-settings';
 
 interface CoordinatesType {
     latitude: number;
@@ -15,25 +18,50 @@ interface CoordinatesType {
     heading: number | null;
 }
 
+interface MapOptions {
+    center: {
+        lat: number;
+        lng: number;
+    };
+    zoom: number;
+}
+
+interface MarkerOptions {
+    position: {
+        lat: number;
+        lng: number;
+    };
+    icon?: {
+        url: string;
+        scaledSize: google.maps.Size;
+    };
+}
+
+interface MapState {
+    mapOptions: MapOptions | null;
+    kaabaMarker: MarkerOptions | null;
+    userMarker: MarkerOptions | null;
+}
+
 const Map = () => {
-    const [map, setMap] = useState(null);
+    const [map, setMap] = useState<MapState | null>(null);
     const [userLocation, setUserLocation] = useState<CoordinatesType>();
-    const [permission, setPermission] = useState<string>("prompt");
+    const [permission, setPermission] = useState<string>('prompt');
 
     useEffect(() => {
         loadMap();
 
         const locationPermission = async () => {
             const perm = await getLocationPermissionStatus();
-            console.log("perm", perm)
-            if (perm == "denied") {
-                setPermission("denied");
-            } else if (perm == "prompt") {
+            console.log('perm', perm);
+            if (perm == 'denied') {
+                setPermission('denied');
+            } else if (perm == 'prompt') {
                 await requestLocationPermission();
             } else {
-                setPermission("granted");
+                setPermission('granted');
             }
-        }
+        };
         locationPermission();
     }, []);
 
@@ -41,50 +69,36 @@ const Map = () => {
         const userPosition = await getUserPosition();
 
         const mapOptions = {
-            center: {lat: 21.42251641101661, lng: 39.826182015499995}, // Kaaba coordinates
+            center: { lat: 21.42251641101661, lng: 39.826182015499995 }, // Kaaba coordinates
             zoom: 15,
         };
 
-        const map = new window.google.maps.Map(document.getElementById('map'), mapOptions);
-
-        const kaabaMarker = new window.google.maps.Marker({
-            position: {lat: 21.42251641101661, lng: 39.826182015499995},
-            map: map,
+        const kaabaMarker = {
+            position: { lat: 21.42251641101661, lng: 39.826182015499995 },
             icon: {
-                url: '/kaaba2.png', // Replace with the path to your custom image
+                url: '/kaaba2.png',
                 scaledSize: new window.google.maps.Size(50, 50),
             },
-        });
+        };
 
-        if (userPosition) {
-            const userLocation = new window.google.maps.LatLng(
-                userPosition.coords.latitude,
-                userPosition.coords.longitude
-            );
+        const userMarker =
+            userPosition &&
+            userPosition.coords && {
+                position: {
+                    lat: userPosition.coords.latitude,
+                    lng: userPosition.coords.longitude,
+                },
+            };
 
-            const userMarker = new window.google.maps.Marker({
-                position: userLocation,
-                map: map,
-            });
-
-            const linePath = [userLocation, kaabaMarker.getPosition()];
-            const line = new window.google.maps.Polyline({
-                path: linePath,
-                geodesic: true,
-                strokeColor: '#FF0000', // Red color for the line
-                strokeOpacity: 0.8,
-                strokeWeight: 2,
-            });
-            line.setMap(map);
-        }
-
-        setMap(map);
+        setMap({ mapOptions, kaabaMarker, userMarker });
     };
 
     const getUserPosition = async () => {
         try {
             const position = await Geolocation.getCurrentPosition();
             setUserLocation(position.coords);
+            console.log("user position, lat", position.coords.latitude)
+            console.log("user position, lon", position.coords.longitude)
             return position;
         } catch (error) {
             console.error('Error getting user position:', error);
@@ -92,11 +106,51 @@ const Map = () => {
         }
     };
 
+    const openLocationSettings = () => {
+        NativeSettings.openAndroid({
+            option: AndroidSettings.Location,
+        });
+    };
+
     return (
         <>
-            {permission == "granted" && <div id="map" style={{width: '100%', height: '100vh'}}></div>}
-            {permission == "denied" && <Denied/>}
-            {permission == "prompt" && <Prompt/>}
+            {permission == 'granted' && (
+                <div style={{ width: '100%', height: '100vh' }}>
+                    <GoogleMap
+                        mapContainerStyle={{
+                            width: '100%',
+                            height: '100%',
+                        }}
+                        zoom={map?.mapOptions?.zoom}
+                        center={map?.mapOptions?.center}
+                    >
+                        {map && map.kaabaMarker && (
+                            <Marker
+                                position={map.kaabaMarker.position}
+                                icon={map.kaabaMarker.icon}
+                            />
+                        )}
+                        {map && map.userMarker && (
+                            <Marker position={map.userMarker.position} />
+                        )}
+                        {map && map.userMarker && map.kaabaMarker && (
+                            <Polyline
+                                path={[
+                                    map.userMarker.position,
+                                    map.kaabaMarker.position,
+                                ]}
+                                options={{
+                                    strokeColor: '#FF0000',
+                                    strokeOpacity: 0.8,
+                                    strokeWeight: 2,
+                                }}
+                            />
+                        )}
+                    </GoogleMap>
+                </div>
+            )}
+            {permission == 'denied' && <Denied openLocationSettings={openLocationSettings} />}
+            {permission == 'prompt' && <Prompt />}
         </>
     );
 };
@@ -105,26 +159,27 @@ const Prompt = () => {
     return (
         <div className="flex flex-col justify-center items-center mt-5">
             <div className="text-center">
-                <span className="text-lg text-gray-500">Haritaları kullanabilmek için konumunuza izin vermeniz gerekmektedir.</span>
+        <span className="text-lg text-gray-500">
+          Haritaları kullanabilmek için konumunuza izin vermeniz gerekmektedir.
+        </span>
             </div>
         </div>
-    )
-}
+    );
+};
 
-const Denied = () => {
-    const openLocationSettings = () => {
-        NativeSettings.openAndroid({
-            option: AndroidSettings.Location,
-        });
-    }
+const Denied = ({ openLocationSettings }: { openLocationSettings: () => void }) => {
     return (
         <div className="flex flex-col justify-center items-center mt-5">
             <div className="text-center">
-                <span className="text-lg text-gray-500">Haritaları kullanabilmek için konumunuza izin vermeniz gerekmektedir.</span>
+        <span className="text-lg text-gray-500">
+          Haritaları kullanabilmek için konumunuza izin vermeniz gerekmektedir.
+        </span>
             </div>
-            <IonButton className="mt-5" onClick={openLocationSettings}>İzin Ver</IonButton>
+            <IonButton className="mt-5" onClick={openLocationSettings}>
+                İzin Ver
+            </IonButton>
         </div>
-    )
-}
+    );
+};
 
 export default Map;

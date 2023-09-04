@@ -12,6 +12,8 @@ import {Storage} from "@ionic/storage";
 import {getNearestPrayerTime, prayerTimesHandler} from "../../utils/functions";
 
 import {SettingsProps, PrayerTimesProps, ContainerProps} from "../../utils/types";
+import Kitaplar from "../pages/Kitaplar/Kitaplar";
+import {all_books} from "../../data/books";
 
 const HomeContainer: React.FC<ContainerProps> = () => {
     const [prayerTimes, setPrayerTimes] = useState<PrayerTimesProps>();
@@ -125,7 +127,7 @@ const HomeContainer: React.FC<ContainerProps> = () => {
                         </IonNavLink>
                     </IonCol>
                     <IonCol className={"m-3 aspect-square bg-opacity-60 shadow-xl bg-[#438e6f] w-fit sm:aspect-auto"}>
-                        <IonNavLink routerDirection="forward" component={() => <Hatirlaticilar/>}>
+                        <IonNavLink routerDirection="forward" component={() => <Kitaplar title={"Kitaplar"} books={all_books}/>}>
                             <IonIcon icon={bookOutline} size={"large"}></IonIcon>
                             <span className={"my-[1px] font-medium text-lg text-center"}>Kitaplar</span>
                         </IonNavLink>
