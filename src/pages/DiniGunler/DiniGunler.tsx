@@ -7,30 +7,34 @@ import {
 } from '@ionic/react';
 import "./DiniGunler.css"
 import Header from "../../components/Header";
-import {ozelGunler_2023, ozelGunler_2024} from "../../../data/dini-gunler";
+import {ozelGunler_2024, ozelGunler_2025, ozelGunler_2026} from "../../../data/dini-gunler";
 
 function DiniGunler() {
-    const [activeTab, setActiveTab] = useState("2023");
+    const [activeTab, setActiveTab] = useState("2024");
     return (
         <>
             <Header pageTitle={"Dini Günler"}/>
             <IonContent class="ion-padding bg-white bg-color-white">
                 <IonGrid>
                     <IonRow>
-                        <IonCol onClick={() => setActiveTab("2023")}
-                                className={`py-3 ${activeTab == "2023" ? "bg-[#4ac3a4]" : "bg-[#2c7663] "}`}>
-                            <span className={"text-white mx-auto"}>2023</span>
-                        </IonCol>
                         <IonCol onClick={() => setActiveTab("2024")}
                                 className={`py-3 ${activeTab == "2024" ? "bg-[#4ac3a4]" : "bg-[#2c7663] "}`}>
                             <span className={"text-white mx-auto"}>2024</span>
                         </IonCol>
+                        <IonCol onClick={() => setActiveTab("2025")}
+                                className={`py-3 ${activeTab == "2025" ? "bg-[#4ac3a4]" : "bg-[#2c7663] "}`}>
+                            <span className={"text-white mx-auto"}>2025</span>
+                        </IonCol>
+                        <IonCol onClick={() => setActiveTab("2026")}
+                                className={`py-3 ${activeTab == "2026" ? "bg-[#4ac3a4]" : "bg-[#2c7663] "}`}>
+                            <span className={"text-white mx-auto"}>2026</span>
+                        </IonCol>
                     </IonRow>
                 </IonGrid>
                 <IonList lines={"none"}>
-                    {activeTab == "2023" && (
-                        ozelGunler_2023.map((gun, index) => (
-                            <IonItem key={`2023-${index}`} className={"mt-3 dg-ion-item"}>
+                    {activeTab == "2024" && (
+                        ozelGunler_2024.map((gun, index) => (
+                            <IonItem key={`2024-${index}`} className={"mt-3 dg-ion-item"}>
                                 <IonLabel><span className={"font-medium text-sm text-green-800 whitespace-pre-wrap"}>
                             {gun.title}
                         </span></IonLabel>
@@ -41,10 +45,22 @@ function DiniGunler() {
                             </IonItem>
                         ))
                     )}
-
-                    {activeTab == "2024" && (
-                        ozelGunler_2024.map((gun, index) => (
-                            <IonItem key={`2023-${index}`} className={"mt-3 dg-ion-item"}>
+                    {activeTab == "2025" && (
+                        ozelGunler_2025.map((gun, index) => (
+                            <IonItem key={`2025-${index}`} className={"mt-3 dg-ion-item"}>
+                                <IonLabel><span className={"font-medium text-sm text-green-800 whitespace-pre-wrap"}>
+                            {gun.title}
+                        </span></IonLabel>
+                                <IonLabel slot={"end"}><span
+                                    className={"font-medium text-sm float-right text-green-800 whitespace-pre-wrap"}>
+                            {gun.date}
+                        </span></IonLabel>
+                            </IonItem>
+                        ))
+                    )}
+                    {activeTab == "2026" && (
+                        ozelGunler_2026.map((gun, index) => (
+                            <IonItem key={`2026-${index}`} className={"mt-3 dg-ion-item"}>
                                 <IonLabel><span className={"font-medium text-sm text-green-800 whitespace-pre-wrap"}>
                             {gun.title}
                         </span></IonLabel>

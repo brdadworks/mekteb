@@ -1,5 +1,6 @@
 export interface ContainerProps {
 }
+
 export interface PrayerTimesProps {
     Aksam: string;
     AyinSekliURL: string;
@@ -21,11 +22,13 @@ export interface PrayerTimesProps {
     Ogle: string;
     Yatsi: string;
 }
+
 export interface CountryProps {
     UlkeAdi: string;
     UlkeAdiEn: string;
     UlkeID: string;
 }
+
 export interface CityProps {
     SehirAdi: string;
     SehirAdiEn: string;
@@ -37,6 +40,7 @@ export interface DistrictProps {
     IlceAdiEn: string;
     IlceID: string;
 }
+
 export interface SettingsProps {
     country: CountryProps | null;
     city: CityProps | null;
@@ -55,4 +59,12 @@ export interface BookProps {
     slug: string;
     content: string;
     page: number;
+    direction?: string;
+}
+
+export interface IlahiProps {
+    title: string,
+    slug: string,
+    content: string
+    split: number
 }

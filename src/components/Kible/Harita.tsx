@@ -115,7 +115,7 @@ const Map = () => {
     return (
         <>
             {permission == 'granted' && (
-                <div style={{ width: '100%', height: '100vh' }}>
+                <div style={{ width: '100%', height: '76vh' }}>
                     <GoogleMap
                         mapContainerStyle={{
                             width: '100%',

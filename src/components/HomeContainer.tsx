@@ -12,7 +12,7 @@ import {Storage} from "@ionic/storage";
 import {getNearestPrayerTime, prayerTimesHandler} from "../../utils/functions";
 
 import {SettingsProps, PrayerTimesProps, ContainerProps} from "../../utils/types";
-import Kitaplar from "../pages/Kitaplar/Kitaplar";
+import Kitaplar from "../pages/Kitaplarr/Kitaplar/Kitaplar";
 import {all_books} from "../../data/books";
 
 const HomeContainer: React.FC<ContainerProps> = () => {
@@ -41,124 +41,125 @@ const HomeContainer: React.FC<ContainerProps> = () => {
 
     return (
         <>
+            {/*logo*/
+            }
+            <div className={"w-full my-2"}>
+                <img src="/logo.png" alt="logo" className={"max-w-[40%] mx-auto mt-9 sm:max-w-[20%]"}/>
+            </div>
             {/*top*/}
             <IonGrid>
                 <IonRow>
                     <IonCol>
-                        <span className={"opacity-80"}>{settings?.district?.IlceAdi}</span>
-                        <span><img src="/home/mosque.svg" alt="" className={"w-[72px] h-auto"}/></span>
+                        <span className={"opacity-80 text-sm"}>{settings?.district?.IlceAdi}</span>
+                        <span><img src="/home/mosque.svg" alt="" className={"w-[64px] h-auto"}/></span>
                     </IonCol>
                     <IonCol>
                         {nearestPrayerTime?.time ? (
                             <>
-                                <span className={"font-medium text-lg text-center"}>Sonraki Vakit:</span>
+                                <span className={"font-medium text-[1rem] text-center"}>Sonraki Vakit:</span>
                                 <span>{nearestPrayerTime.name}</span>
-                                <span className={"text-4xl font-medium"}>{nearestPrayerTime.time}</span>
+                                <span className={"text-3xl font-medium "}>{nearestPrayerTime.time}</span>
                                 <span className={"opacity-95"}><LiveClock/></span>
                             </>
                         ) : <span className={"opacity-95 text-xl"}><LiveClock/></span>}
 
                     </IonCol>
                     <IonCol><img src={"/moon/" + prayerTimes?.AyinSekliURL.split("images/")[1]} alt="ayinsekli"
-                                 className={"w-[100px] h-[100px] z-10 "}/></IonCol>
+                                 className={"w-[80px] h-[80px] z-10 "}/></IonCol>
                 </IonRow>
                 <IonRow>
                     <IonCol>
-                        <span className={"opacity-80"}>{formattedClock}</span>
+                        <span className={"font-semibold text-sm"}>{formattedClock}</span>
                     </IonCol>
-                    <IonCol><span className={"opacity-80"}>{prayerTimes?.HicriTarihUzun}</span></IonCol>
+                    <IonCol><span className={"font-semibold text-sm"}>{prayerTimes?.HicriTarihUzun}</span></IonCol>
                 </IonRow>
             </IonGrid>
             <div className={"divider"}></div>
 
             {/*middle*/}
-            <IonGrid className={"mt-6"}>
+            <IonGrid className={"mt-2"}>
                 <IonRow>
-                    <IonCol className={"border-b-[1px] border-[#fdfdfd4f]"}><img src="/home/imsak.png"
+                    <IonCol className={"border-b-[1px] border-[#fdfdfd4f]"}><img className={"w-[30px]"} src="/home/imsak.png"
                                                                                  alt="imsak"/><span
-                        className={"my-[1px] font-medium text-lg text-center"}>İmsak</span></IonCol>
-                    <IonCol className={"border-b-[1px] border-[#fdfdfd4f]"}><img src="/home/gunes.png"
+                        className={"my-[1px] font-medium text-[1rem] text-center text-black font-semibold text-sm"}>İmsak</span></IonCol>
+                    <IonCol className={"border-b-[1px] border-[#fdfdfd4f]"}><img className={"w-[30px]"} src="/home/gunes.png"
                                                                                  alt="gunes"/><span
-                        className={"my-[1px] font-medium text-lg text-center"}>Güneş</span></IonCol>
-                    <IonCol className={"border-b-[1px] border-[#fdfdfd4f]"}><img src="/home/ogle.png" alt="ogle"/><span
-                        className={"my-[1px] font-medium text-lg text-center"}>Öğle</span></IonCol>
+                        className={"my-[1px] font-medium text-[1rem] text-center text-black font-semibold text-sm"}>Güneş</span></IonCol>
+                    <IonCol className={"border-b-[1px] border-[#fdfdfd4f]"}><img className={"w-[30px]"} src="/home/ogle.png" alt="ogle"/><span
+                        className={"my-[1px] font-medium text-[1rem] text-center text-black font-semibold text-sm"}>Öğle</span></IonCol>
                 </IonRow>
                 <IonRow>
                     <IonCol><span
-                        className={"my-[1px] font-medium text-lg text-center"}>{prayerTimes?.Imsak}</span></IonCol>
+                        className={"my-[1px] font-medium text-[1rem] text-center text-black font-semibold text-sm"}>{prayerTimes?.Imsak}</span></IonCol>
                     <IonCol><span
-                        className={"my-[1px] font-medium text-lg text-center"}>{prayerTimes?.Gunes}</span></IonCol>
+                        className={"my-[1px] font-medium text-[1rem] text-center text-black font-semibold text-sm"}>{prayerTimes?.Gunes}</span></IonCol>
                     <IonCol><span
-                        className={"my-[1px] font-medium text-lg text-center"}>{prayerTimes?.Ogle}</span></IonCol>
+                        className={"my-[1px] font-medium text-[1rem] text-center text-black font-semibold text-sm"}>{prayerTimes?.Ogle}</span></IonCol>
                 </IonRow>
-                <IonRow className={"mt-8"}>
-                    <IonCol className={"border-b-[1px] border-[#fdfdfd4f]"}><img src="/home/ikindi.png"
+                <IonRow className={"mt-3"}>
+                    <IonCol className={"border-b-[1px] border-[#fdfdfd4f]"}><img className={"w-[30px]"} src="/home/ikindi.png"
                                                                                  alt="İkindi"/><span
-                        className={"my-[1px] font-medium text-lg text-center"}>İkindi</span></IonCol>
-                    <IonCol className={"border-b-[1px] border-[#fdfdfd4f]"}><img src="/home/aksam.png"
+                        className={"my-[1px] font-medium text-[1rem] text-center text-black font-semibold text-sm"}>İkindi</span></IonCol>
+                    <IonCol className={"border-b-[1px] border-[#fdfdfd4f]"}><img className={"w-[30px]"} src="/home/aksam.png"
                                                                                  alt="Aksam"/><span
-                        className={"my-[1px] font-medium text-lg text-center"}>Akşam</span></IonCol>
-                    <IonCol className={"border-b-[1px] border-[#fdfdfd4f]"}><img src="/home/yatsi.png"
+                        className={"my-[1px] font-medium text-[1rem] text-center text-black font-semibold text-sm"}>Akşam</span></IonCol>
+                    <IonCol className={"border-b-[1px] border-[#fdfdfd4f]"}><img className={"w-[30px]"} src="/home/yatsi.png"
                                                                                  alt="Yatsi"/><span
-                        className={"my-[1px] font-medium text-lg text-center"}>Yatsı</span></IonCol>
+                        className={"my-[1px] font-medium text-[1rem] text-center text-black font-semibold text-sm"}>Yatsı</span></IonCol>
                 </IonRow>
                 <IonRow>
                     <IonCol><span
-                        className={"my-[1px] font-medium text-lg text-center"}>{prayerTimes?.Ikindi}</span></IonCol>
+                        className={"my-[1px] font-medium text-[1rem] text-center text-black font-semibold text-sm"}>{prayerTimes?.Ikindi}</span></IonCol>
                     <IonCol><span
-                        className={"my-[1px] font-medium text-lg text-center"}>{prayerTimes?.Aksam}</span></IonCol>
+                        className={"my-[1px] font-medium text-[1rem] text-center text-black font-semibold text-sm"}>{prayerTimes?.Aksam}</span></IonCol>
                     <IonCol><span
-                        className={"my-[1px] font-medium text-lg text-center"}>{prayerTimes?.Yatsi}</span></IonCol>
+                        className={"my-[1px] font-medium text-[1rem] text-center text-black font-semibold text-sm"}>{prayerTimes?.Yatsi}</span></IonCol>
                 </IonRow>
             </IonGrid>
             {/*end*/}
-            <IonGrid>
-                <IonRow>
-                    <IonCol className={"m-3 aspect-square bg-opacity-60 shadow-xl bg-[#438e6f] w-fit sm:aspect-auto"}>
+            <IonGrid className={"w-full flex justify-center items-center flex-col"}>
+                <IonRow className={"w-[80%] flex justify-center items-center"}>
+                    <IonCol className={"m-2 aspect-square bg-opacity-60 shadow-xl bg-[#438e6f] w-fit sm:aspect-auto"}>
                         <IonNavLink routerDirection="forward" component={() => <Kible/>}>
-                            <IonIcon icon={compassOutline} size={"large"}></IonIcon>
-                            <span className={"my-[1px] font-medium text-lg text-center"}>Kıble</span>
+                            <IonIcon className={"w-[25px]"} icon={compassOutline} size={"large"}></IonIcon>
+                            <span className={"my-[1px] font-medium text-[1rem] text-center text-sm"}>Kıble</span>
                         </IonNavLink>
                     </IonCol>
-                    <IonCol className={"m-3 aspect-square bg-opacity-60 shadow-xl bg-[#438e6f] w-fit sm:aspect-auto"}>
+                    <IonCol className={"m-2 aspect-square bg-opacity-60 shadow-xl bg-[#438e6f] w-fit sm:aspect-auto"}>
                         <IonNavLink routerDirection="forward" component={() => <DiniGunler/>}>
-                            <IonIcon icon={calendarOutline} size={"large"}></IonIcon>
-                            <span className={"my-[1px] font-medium text-lg text-center"}>Dini Günler</span>
+                            <IonIcon className={"w-[25px]"} icon={calendarOutline} size={"large"}></IonIcon>
+                            <span className={"my-[1px] font-medium text-[1rem] text-center text-sm"}>Dini Günler</span>
                         </IonNavLink>
                     </IonCol>
-                    <IonCol className={"m-3 aspect-square bg-opacity-60 shadow-xl bg-[#438e6f] w-fit sm:aspect-auto"}>
+                    <IonCol className={"m-2 aspect-square bg-opacity-60 shadow-xl bg-[#438e6f] w-fit sm:aspect-auto"}>
                         <IonNavLink routerDirection="forward" component={() => <Kitaplar title={"Kitaplar"} books={all_books}/>}>
-                            <IonIcon icon={bookOutline} size={"large"}></IonIcon>
-                            <span className={"my-[1px] font-medium text-lg text-center"}>Kitaplar</span>
+                            <IonIcon className={"w-[25px]"} icon={bookOutline} size={"large"}></IonIcon>
+                            <span className={"my-[1px] font-medium text-[1rem] text-center text-sm"}>Kitaplar</span>
                         </IonNavLink>
                     </IonCol>
                 </IonRow>
-                <IonRow>
-                    <IonCol className={"m-3 aspect-square bg-opacity-60 shadow-xl bg-[#438e6f] w-fit sm:aspect-auto"}>
+                <IonRow className={"w-[80%] flex justify-center items-center"}>
+                    <IonCol className={"m-2 aspect-square bg-opacity-60 shadow-xl bg-[#438e6f] w-fit sm:aspect-auto"}>
                         <IonNavLink routerDirection="forward" component={() => <Imsakiye />}>
-                            <IonIcon icon={moonOutline} size={"large"}></IonIcon>
-                            <span className={"my-[1px] font-medium text-lg text-center"}>İmsakiye</span>
+                            <IonIcon className={"w-[25px]"} icon={moonOutline} size={"large"}></IonIcon>
+                            <span className={"my-[1px] font-medium text-[1rem] text-center text-sm"}>İmsakiye</span>
                         </IonNavLink>
                     </IonCol>
-                    <IonCol className={"m-3 aspect-square bg-opacity-60 shadow-xl bg-[#438e6f] w-fit sm:aspect-auto"}>
+                    <IonCol className={"m-2 aspect-square bg-opacity-60 shadow-xl bg-[#438e6f] w-fit sm:aspect-auto"}>
                         <IonNavLink routerDirection="forward" component={() => <Hatirlaticilar/>}>
-                            <IonIcon icon={alarmOutline} size={"large"}></IonIcon>
-                            <span className={"my-[1px] font-medium text-lg text-center"}>Hatırlatıcılar</span>
+                            <IonIcon className={"w-[25px]"} icon={alarmOutline} size={"large"}></IonIcon>
+                            <span className={"my-[1px] font-medium text-[1rem] text-center text-sm"}>Hatırlatıcılar</span>
                         </IonNavLink>
                     </IonCol>
-                    <IonCol className={"m-3 aspect-square bg-opacity-60 shadow-xl bg-[#438e6f] w-fit sm:aspect-auto"}>
+                    <IonCol className={"m-2 aspect-square bg-opacity-60 shadow-xl bg-[#438e6f] w-fit sm:aspect-auto"}>
                         <IonNavLink ref={settingsRef} routerDirection="forward" component={() => <Ayarlar/>}>
-                            <IonIcon icon={settingsOutline} size={"large"}></IonIcon>
-                            <span className={"my-[1px] font-medium text-lg text-center"}>Ayarlar</span>
+                            <IonIcon className={"w-[25px]"} icon={settingsOutline} size={"large"}></IonIcon>
+                            <span className={"my-[1px] font-medium text-[1rem] text-center text-sm"}>Ayarlar</span>
                         </IonNavLink>
                     </IonCol>
                 </IonRow>
             </IonGrid>
-            {/*logo*/
-            }
-            <div className={"w-full"}>
-                <img src="/logo.png" alt="logo" className={"max-w-[50%] mx-auto mt-9 sm:max-w-[20%]"}/>
-            </div>
+
         </>
     )
         ;
