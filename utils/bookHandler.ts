@@ -259,6 +259,8 @@ export const currentBook = (slug: string): BookProps => {
             return allBooks.teheccud;
         case "zikir":
             return allBooks.zikir;
+        case "iman":
+            return allBooks.iman;
 
         default:
             return [] as unknown as BookProps;

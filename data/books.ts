@@ -1390,7 +1390,7 @@ export const hadisler = [
     },
     {
         id: 9,
-        title: 'Salatu',
+        title: 'Salat-ü Selam',
         slug: 'salatu',
         read: true
     },
@@ -1479,7 +1479,7 @@ export const riba = {
 }
 
 export const salatu = {
-    title: 'Salatu',
+    title: 'Salat-ü Selam',
     slug: 'salatu',
     content: "/books/hadis/salatu/",
     page: 8,
