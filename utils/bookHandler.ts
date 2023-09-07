@@ -193,10 +193,10 @@ export const currentBook = (slug: string): BookProps => {
             return allBooks.fatiha_hatmesi;
         case "hac_ve_umre_programi":
             return allBooks.hac_ve_umre_programi;
-        case "hateme_adabi":
-            return allBooks.hateme_adabi;
-        case "hatmi_enbiaa":
-            return allBooks.hatmi_enbiaa;
+        case "hatme_adabi":
+            return allBooks.hatme_adabi;
+        case "hatmi_enbiya":
+            return allBooks.hatmi_enbiya;
         case "ihyasi_mustehab_olan_geceler":
             return allBooks.ihyasi_mustehab_olan_geceler;
         case "itikaf":
@@ -213,8 +213,8 @@ export const currentBook = (slug: string): BookProps => {
             return allBooks.pazartesi_gun_ve_gecesi;
         case "ramazan_ayi":
             return allBooks.ramazan_ayi;
-        case "rebiulahir_cemazielevvel_cemazielahir":
-            return allBooks.rebiulahir_cemazielevvel_cemazielahir;
+        case "rebiulahir_cemaziyelevvel_cemaziyelahir":
+            return allBooks.rebiulahir_cemaziyelevvel_cemaziyelahir;
         case "rebiulevvel_ayi":
             return allBooks.rebiulevvel_ayi;
         case "recep_ayi":

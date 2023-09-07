@@ -19,7 +19,7 @@ import {LocalNotifications} from "@capacitor/local-notifications";
 
 const notifications = [
     {title: "Dini Günler", checked: false},
-    {title: "İmksak", checked: false},
+    {title: "İmsak", checked: false},
     {title: "Güneş", checked: false},
     {title: "Öğle", checked: false},
     {title: "İkindi", checked: false},

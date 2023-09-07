@@ -991,14 +991,14 @@ export const hayati_hakika = [
     },
     {
         id: 6,
-        title: 'Hateme Adabı',
-        slug: 'hateme_adabi',
+        title: 'Hatme Adabı',
+        slug: 'hatme_adabi',
         read: true
     },
     {
         id: 7,
-        title: 'Hatmi Enbiaa',
-        slug: 'hatmi_enbiaa',
+        title: 'Hatmi Enbiya',
+        slug: 'hatmi_enbiya',
         read: true
     },
     {
@@ -1051,8 +1051,8 @@ export const hayati_hakika = [
     },
     {
         id: 16,
-        title: 'Rebiulahir, Cemazielevvel, Cemazielahir',
-        slug: 'rebiulahir_cemazielevvel_cemazielahir',
+        title: 'Rebiulahir, Cemaziyelevvel, Cemaziyelahir',
+        slug: 'rebiulahir_cemaziyelevvel_cemaziyelahir',
         read: true
     },
     {
@@ -1163,18 +1163,18 @@ export const hac_ve_umre_programi = {
     direction: 'ltr'
 }
 
-export const hateme_adabi = {
-    title: 'Hateme Adabı',
-    slug: 'hateme_adabi',
-    content: "/books/hayati_hakika/hateme_adabi/",
+export const hatme_adabi = {
+    title: 'Hatme Adabı',
+    slug: 'hatme_adabi',
+    content: "/books/hayati_hakika/hatme_adabi/",
     page: 1,
     direction: 'ltr'
 }
 
-export const hatmi_enbiaa = {
-    title: 'Hatmi Enbiaa',
-    slug: 'hatmi_enbiaa',
-    content: "/books/hayati_hakika/hatmi_enbiaa/",
+export const hatmi_enbiya = {
+    title: 'Hatmi Enbiya',
+    slug: 'hatmi_enbiya',
+    content: "/books/hayati_hakika/hatmi_enbiya/",
     page: 5,
     direction: 'ltr'
 }
@@ -1243,10 +1243,10 @@ export const ramazan_ayi = {
     direction: 'ltr'
 }
 
-export const rebiulahir_cemazielevvel_cemazielahir = {
-    title: 'Rebiulahir, Cemazielevvel, Cemazielahir',
-    slug: 'rebiulahir_cemazielevvel_cemazielahir',
-    content: "/books/hayati_hakika/rebiulahir_cemazielevvel_cemazielahir/",
+export const rebiulahir_cemaziyelevvel_cemaziyelahir = {
+    title: 'Rebiulahir, Cemaziyelevvel, Cemaziyelahir',
+    slug: 'rebiulahir_cemaziyelevvel_cemaziyelahir',
+    content: "/books/hayati_hakika/rebiulahir_cemaziyelevvel_cemaziyelahir/",
     page: 1,
     direction: 'ltr'
 }
