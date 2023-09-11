@@ -3,11 +3,18 @@
 @tailwind utilities;
 
 .background-image {
-    --background: url('/background.png') no-repeat center center fixed;
-    -webkit-background-size: contain;
-    -moz-background-size: contain;
-    -o-background-size: contain;
-    background-size:contain;
+    /*--background: url('/background.png') no-repeat cover fixed;*/
+    /*-webkit-background-size: cover;*/
+    /*-moz-background-size: cover;*/
+    /*-o-background-size: cover;*/
+    /*background-size:cover;*/
+
+    --background: url('/background.png')  no-repeat cover fixed center;
+
+    background: url('/background.png') no-repeat fixed center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
 }
 
 ion-header {

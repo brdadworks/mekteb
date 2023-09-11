@@ -43,7 +43,7 @@ const HomeContainer: React.FC<ContainerProps> = () => {
         <>
             {/*logo*/
             }
-            <div className={"w-full my-2"}>
+            <div className={"w-full my-2 mt-[120px]"}>
                 <img src="/logo.png" alt="logo" className={"max-w-[40%] mx-auto mt-9 sm:max-w-[20%]"}/>
             </div>
             {/*top*/}
@@ -81,39 +81,39 @@ const HomeContainer: React.FC<ContainerProps> = () => {
                 <IonRow>
                     <IonCol className={"border-b-[1px] border-[#fdfdfd4f]"}><img className={"w-[30px]"} src="/home/imsak.png"
                                                                                  alt="imsak"/><span
-                        className={"my-[1px] font-medium text-[1rem] text-center text-black font-semibold text-sm"}>İmsak</span></IonCol>
+                        className={"my-[1px] font-medium text-[1rem] text-center  font-semibold text-sm"}>İmsak</span></IonCol>
                     <IonCol className={"border-b-[1px] border-[#fdfdfd4f]"}><img className={"w-[30px]"} src="/home/gunes.png"
                                                                                  alt="gunes"/><span
-                        className={"my-[1px] font-medium text-[1rem] text-center text-black font-semibold text-sm"}>Güneş</span></IonCol>
+                        className={"my-[1px] font-medium text-[1rem] text-center  font-semibold text-sm"}>Güneş</span></IonCol>
                     <IonCol className={"border-b-[1px] border-[#fdfdfd4f]"}><img className={"w-[30px]"} src="/home/ogle.png" alt="ogle"/><span
-                        className={"my-[1px] font-medium text-[1rem] text-center text-black font-semibold text-sm"}>Öğle</span></IonCol>
+                        className={"my-[1px] font-medium text-[1rem] text-center  font-semibold text-sm"}>Öğle</span></IonCol>
                 </IonRow>
                 <IonRow>
                     <IonCol><span
-                        className={"my-[1px] font-medium text-[1rem] text-center text-black font-semibold text-sm"}>{prayerTimes?.Imsak}</span></IonCol>
+                        className={"my-[1px] font-medium text-[1rem] text-center  font-semibold text-sm"}>{prayerTimes?.Imsak}</span></IonCol>
                     <IonCol><span
-                        className={"my-[1px] font-medium text-[1rem] text-center text-black font-semibold text-sm"}>{prayerTimes?.Gunes}</span></IonCol>
+                        className={"my-[1px] font-medium text-[1rem] text-center  font-semibold text-sm"}>{prayerTimes?.Gunes}</span></IonCol>
                     <IonCol><span
-                        className={"my-[1px] font-medium text-[1rem] text-center text-black font-semibold text-sm"}>{prayerTimes?.Ogle}</span></IonCol>
+                        className={"my-[1px] font-medium text-[1rem] text-center  font-semibold text-sm"}>{prayerTimes?.Ogle}</span></IonCol>
                 </IonRow>
                 <IonRow className={"mt-3"}>
                     <IonCol className={"border-b-[1px] border-[#fdfdfd4f]"}><img className={"w-[30px]"} src="/home/ikindi.png"
                                                                                  alt="İkindi"/><span
-                        className={"my-[1px] font-medium text-[1rem] text-center text-black font-semibold text-sm"}>İkindi</span></IonCol>
+                        className={"my-[1px] font-medium text-[1rem] text-center  font-semibold text-sm"}>İkindi</span></IonCol>
                     <IonCol className={"border-b-[1px] border-[#fdfdfd4f]"}><img className={"w-[30px]"} src="/home/aksam.png"
                                                                                  alt="Aksam"/><span
-                        className={"my-[1px] font-medium text-[1rem] text-center text-black font-semibold text-sm"}>Akşam</span></IonCol>
+                        className={"my-[1px] font-medium text-[1rem] text-center  font-semibold text-sm"}>Akşam</span></IonCol>
                     <IonCol className={"border-b-[1px] border-[#fdfdfd4f]"}><img className={"w-[30px]"} src="/home/yatsi.png"
                                                                                  alt="Yatsi"/><span
-                        className={"my-[1px] font-medium text-[1rem] text-center text-black font-semibold text-sm"}>Yatsı</span></IonCol>
+                        className={"my-[1px] font-medium text-[1rem] text-center  font-semibold text-sm"}>Yatsı</span></IonCol>
                 </IonRow>
                 <IonRow>
                     <IonCol><span
-                        className={"my-[1px] font-medium text-[1rem] text-center text-black font-semibold text-sm"}>{prayerTimes?.Ikindi}</span></IonCol>
+                        className={"my-[1px] font-medium text-[1rem] text-center  font-semibold text-sm"}>{prayerTimes?.Ikindi}</span></IonCol>
                     <IonCol><span
-                        className={"my-[1px] font-medium text-[1rem] text-center text-black font-semibold text-sm"}>{prayerTimes?.Aksam}</span></IonCol>
+                        className={"my-[1px] font-medium text-[1rem] text-center  font-semibold text-sm"}>{prayerTimes?.Aksam}</span></IonCol>
                     <IonCol><span
-                        className={"my-[1px] font-medium text-[1rem] text-center text-black font-semibold text-sm"}>{prayerTimes?.Yatsi}</span></IonCol>
+                        className={"my-[1px] font-medium text-[1rem] text-center  font-semibold text-sm"}>{prayerTimes?.Yatsi}</span></IonCol>
                 </IonRow>
             </IonGrid>
             {/*end*/}

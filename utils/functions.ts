@@ -1,10 +1,7 @@
 import axios from "axios";
 import {Storage} from "@ionic/storage";
-import {LocalNotificationRequest, LocalNotifications, LocalNotificationSchema} from "@capacitor/local-notifications";
-import {val} from "cheerio/lib/api/attributes";
-import {key} from "ionicons/icons";
-import {Simulate} from "react-dom/test-utils";
-import cancel = Simulate.cancel;
+import {LocalNotifications, LocalNotificationSchema} from "@capacitor/local-notifications";
+import { Geolocation } from '@capacitor/geolocation';
 
 export const addStorageData = async (key: string, value: any) => {
     const store = new Storage();
@@ -24,12 +21,17 @@ export const removeStorageData = async (key: string) => {
 }
 
 export const requestLocationPermission = async () => {
-    const status = await LocalNotifications.requestPermissions();
-    return status.display;
+    const status = await Geolocation.requestPermissions();
+    return status.location;
 }
 export const getLocationPermissionStatus = async () => {
-    const status = await LocalNotifications.checkPermissions();
-    return status.display;
+    const status = await Geolocation.checkPermissions();
+    return status.location;
+}
+
+export const getLocation = async () => {
+    const status = await Geolocation.getCurrentPosition();
+    return status.coords;
 }
 
 export const requestNotificationPermission = async () => {
@@ -277,3 +279,19 @@ function convertTurkishToEnglish(input: string) {
         .replace(/ç/g, 'c')
         .replace(/Ç/g, 'C');
 }
+
+export const calculateQiblaDirection = (lat: number, lon: number) => {
+  var PI = Math.PI;
+  const latk = (21.4225 * PI) / 180.0;
+  const longk = (39.8264 * PI) / 180.0;
+  const phi = (lat * PI) / 180.0;
+  const lambda = (lon * PI) / 180.0;
+  const qiblad =
+    (180.0 / PI) *
+    Math.atan2(
+      Math.sin(longk - lambda),
+      Math.cos(phi) * Math.tan(latk) - Math.sin(phi) * Math.cos(longk - lambda)
+    );
+  console.log(qiblad);
+  return qiblad;
+};

@@ -69,8 +69,12 @@ const Map = () => {
         const userPosition = await getUserPosition();
 
         const mapOptions = {
-            center: { lat: 21.42251641101661, lng: 39.826182015499995 }, // Kaaba coordinates
-            zoom: 15,
+          // center: { lat: 21.42251641101661, lng: 39.826182015499995 }, // Kaaba coordinates
+          center: {
+            lat: userPosition?.coords.latitude!,
+            lng: userPosition?.coords.longitude!
+          },
+          zoom: 15,
         };
 
         const kaabaMarker = {
