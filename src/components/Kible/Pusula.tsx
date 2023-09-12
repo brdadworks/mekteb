@@ -122,11 +122,11 @@ const Pusula: React.FC = () => {
 
     function handler(e: any) {
       compass = e.webkitCompassHeading || Math.abs(e.alpha - 360);
-      compassCircle.style.transform = `translate(-50%, -50%) rotate(${-compass}deg)`;
+      (compassCircle as any).style.transform = `translate(-50%, -50%) rotate(${-compass}deg)`;
     }
     if (isIOS) {
-      DeviceOrientationEvent.requestPermission()
-        .then((response) => {
+      (DeviceOrientationEvent as any).requestPermission()
+        .then((response: any) => {
           console.log("device motion request response", response);
           
           if (response === "granted") {
