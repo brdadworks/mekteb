@@ -1,5 +1,10 @@
-import React, { useEffect, useState, useRef } from "react";
-import { GoogleMap } from "@capacitor/google-maps";
+import React, { useEffect, useState } from "react";
+import {
+  GoogleMap,
+  Marker,
+  Polyline,
+  useJsApiLoader,
+} from "@react-google-maps/api";
 import { Geolocation } from "@capacitor/geolocation";
 import {
   getLocationPermissionStatus,
@@ -48,10 +53,14 @@ const Map = () => {
   const [userLocation, setUserLocation] = useState<CoordinatesType>();
   const [permission, setPermission] = useState<string>("prompt");
 
-  const mapRef = useRef<HTMLElement>();
-  let newMap: GoogleMap;
+  const { isLoaded } = useJsApiLoader({
+    id: "google-map-script",
+    googleMapsApiKey: "AIzaSyD4CdlHopKnLqD0P0nvXawdqU7rold2p28",
+  });
 
   useEffect(() => {
+    loadMap();
+
     const locationPermission = async () => {
       const perm = await getLocationPermissionStatus();
       console.log("perm", perm);
@@ -64,64 +73,45 @@ const Map = () => {
       }
     };
     locationPermission();
-
-    loadMap();
   }, []);
 
-  const loadMap = React.useCallback(async function callback() {
+  const loadMap = async () => {
     const userPosition = await getUserPosition();
 
-    if (!mapRef.current) return;
-
-    newMap = await GoogleMap.create({
-      id: "my-cool-map",
-      element: mapRef.current,
-      apiKey: "AIzaSyD4CdlHopKnLqD0P0nvXawdqU7rold2p28",
-      config: {
-        center: {
-          lat: userPosition?.coords.latitude!,
-          lng: userPosition?.coords.longitude!,
-        },
-        zoom: 8,
-      },
-    });
-    //user marker
-    newMap.addMarker({
-      coordinate: {
+    const mapOptions = {
+      // center: { lat: 21.42251641101661, lng: 39.826182015499995 }, // Kaaba coordinates
+      center: {
         lat: userPosition?.coords.latitude!,
         lng: userPosition?.coords.longitude!,
       },
-      title: "You",
-      snippet: "You",
-    });
-    //kaaba marker
-    newMap.addMarker({
-      coordinate: { lat: 21.42251641101661, lng: 39.826182015499995 },
-      title: "Kaaba",
-      snippet: "Kaaba",
-      iconUrl: "/kaaba2.png",
-      iconSize: { width: 50, height: 50 },
-    });
-    newMap.addPolylines({
-      path: [
-          { lat: 21.42251641101661, lng: 39.826182015499995 },
-          { lat: 25.42251641101661, lng: 59.826182015499995 },
-        //   {
-        //   lat: userPosition?.coords.latitude!,
-        //   lng: userPosition?.coords.longitude!,
-        // },
-      ],
-      strokeColor: "#FF0000",
-      strokeOpacity: 1.0,
-      strokeWeight: 2,
-      geodesic: true,
-    });
-  }, []);
+      zoom: 15,
+    };
+
+    const kaabaMarker = {
+      position: { lat: 21.42251641101661, lng: 39.826182015499995 },
+      icon: {
+        url: "/kaaba2.png",
+        scaledSize: new window.google.maps.Size(50, 50),
+      },
+    };
+
+    const userMarker = userPosition &&
+      userPosition.coords && {
+        position: {
+          lat: userPosition.coords.latitude,
+          lng: userPosition.coords.longitude,
+        },
+      };
+
+    setMap({ mapOptions, kaabaMarker, userMarker });
+  };
 
   const getUserPosition = async () => {
     try {
       const position = await Geolocation.getCurrentPosition();
       setUserLocation(position.coords);
+      console.log("user position, lat", position.coords.latitude);
+      console.log("user position, lon", position.coords.longitude);
       return position;
     } catch (error) {
       console.error("Error getting user position:", error);
@@ -137,47 +127,37 @@ const Map = () => {
 
   return (
     <>
-      {permission == "granted" && (
+      {permission == "granted" && isLoaded && (
         <div style={{ width: "100%", height: "76vh" }}>
-          <capacitor-google-map
-            ref={mapRef}
-            style={{
-              display: "inline-block",
+          <GoogleMap
+            mapContainerStyle={{
               width: "100%",
               height: "100%",
             }}
-          ></capacitor-google-map>
+            zoom={map?.mapOptions?.zoom}
+            center={map?.mapOptions?.center}
+          >
+            {map && map.kaabaMarker && (
+              <Marker
+                position={map.kaabaMarker.position}
+                icon={map.kaabaMarker.icon}
+              />
+            )}
+            {map && map.userMarker && (
+              <Marker position={map.userMarker.position} />
+            )}
+            {map && map.userMarker && map.kaabaMarker && (
+              <Polyline
+                path={[map.userMarker.position, map.kaabaMarker.position]}
+                options={{
+                  strokeColor: "#FF0000",
+                  strokeOpacity: 0.8,
+                  strokeWeight: 2,
+                }}
+              />
+            )}
+          </GoogleMap>
         </div>
-        //   <GoogleMap
-        //     mapContainerStyle={{
-        //       width: "100%",
-        //       height: "100%",
-        //     }}
-        //     zoom={map?.mapOptions?.zoom}
-        //     center={map?.mapOptions?.center}
-        //     onLoad={loadMap}
-        //     onUnmount={onUnmount}
-        //   >
-        //     {map && map.kaabaMarker && (
-        //       <Marker
-        //         position={map.kaabaMarker.position}
-        //         icon={map.kaabaMarker.icon}
-        //       />
-        //     )}
-        //     {map && map.userMarker && (
-        //       <Marker position={map.userMarker.position} />
-        //     )}
-        //     {map && map.userMarker && map.kaabaMarker && (
-        //       <Polyline
-        //         path={[map.userMarker.position, map.kaabaMarker.position]}
-        //         options={{
-        //           strokeColor: "#FF0000",
-        //           strokeOpacity: 0.8,
-        //           strokeWeight: 2,
-        //         }}
-        //       />
-        //     )}
-        //   </GoogleMap>
       )}
       {permission == "denied" && (
         <Denied openLocationSettings={openLocationSettings} />
