@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { GoogleMap, Marker, Polyline } from '@react-google-maps/api';
+import { GoogleMap, Marker, Polyline, useJsApiLoader } from '@react-google-maps/api';
 import { Geolocation } from '@capacitor/geolocation';
 import {
     getLocationPermissionStatus,
@@ -47,6 +47,11 @@ const Map = () => {
     const [map, setMap] = useState<MapState | null>(null);
     const [userLocation, setUserLocation] = useState<CoordinatesType>();
     const [permission, setPermission] = useState<string>('prompt');
+
+    const { isLoaded } = useJsApiLoader({
+      id: "google-map-script",
+      googleMapsApiKey: "AIzaSyD4CdlHopKnLqD0P0nvXawdqU7rold2p28",
+    });
 
     useEffect(() => {
         loadMap();
@@ -118,7 +123,7 @@ const Map = () => {
 
     return (
         <>
-            {permission == 'granted' && (
+            {permission == 'granted' && isLoaded && (
                 <div style={{ width: '100%', height: '76vh' }}>
                     <GoogleMap
                         mapContainerStyle={{
