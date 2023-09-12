@@ -13,7 +13,59 @@ import { IonButton } from "@ionic/react";
 const Pusula: React.FC = () => {
   const [compassHeading, setCompassHeading] = useState<number>(0);
   const [qiblaDirection, setQiblaDirection] = useState<number>(0);
-  const [permission, setPermission] = useState<string>("prompt");
+  const [permission, setPermission] = useState<{
+    location: string;
+    motion: string;
+  }>({ location: "prompt", motion: "prompt" });
+
+  useEffect(() => {
+    const locationPermission = async () => {
+      const perm = await getLocationPermissionStatus();
+      console.log("perm", perm);
+
+      if (perm == "denied") {
+        setPermission({ location: "denied", motion: permission.motion });
+      } else if (perm == "prompt") {
+        requestLocationPermission().then((res) => {
+          console.log("res", res);
+          if (res == "granted") {
+            setPermission({ location: "granted", motion: permission.motion });
+          } else {
+            setPermission({ location: "denied", motion: permission.motion });
+          }
+        });
+      } else {
+        setPermission({ location: "granted", motion: permission.motion });
+      }
+    };
+    locationPermission();
+
+    // const motionPermission = async () => {
+    //   const isIOS = !(
+    //     navigator.userAgent.match(/(iPod|iPhone|iPad)/) &&
+    //     navigator.userAgent.match(/AppleWebKit/)
+    //   );
+    //   if (isIOS) {
+    //     DeviceOrientationEvent.requestPermission()
+    //       .then((response) => {
+    //         if (response === "granted") {
+    //           window.addEventListener("deviceorientation", handler, true);
+    //         } else {
+    //           alert("has to be allowed!");
+    //         }
+    //       })
+    //       .catch(() => alert("not supported"));
+    //   } else {
+    //     window.addEventListener("deviceorientationabsolute", handler, true);
+    //   }
+    // };
+
+    // motionPermission();
+  }, []);
+
+  const motionPermission = async () => {
+    await DeviceMotionEvent.requestPermission();
+  };
 
   useEffect(() => {
     const getQiblaDirection = async () => {
@@ -36,52 +88,31 @@ const Pusula: React.FC = () => {
       const { latitude, longitude, heading } = position!.coords;
       console.log("lan long", latitude, longitude);
       console.log("heading", heading);
-      
-    //   setCompassHeading(heading!);
+
+      //   setCompassHeading(heading!);
 
       const qiblaDirection = calculateQiblaDirection(latitude, longitude);
       setQiblaDirection(qiblaDirection);
     });
 
     Motion.addListener("orientation", (event) => {
-        console.log("event alpha",event.alpha);
-        console.log("event beta",event.beta);
-        console.log("event gamma",event.gamma);
-        
-        setCompassHeading(event.alpha);
+      console.log("event alpha", event.alpha);
+      console.log("event beta", event.beta);
+      console.log("event gamma", event.gamma);
+
+      setCompassHeading(event.alpha);
     });
     getQiblaDirection();
 
-    const locationPermission = async () => {
-      const perm = await getLocationPermissionStatus();
-      console.log("perm", perm);
-
-      if (perm == "denied") {
-        setPermission("denied");
-      } else if (perm == "prompt") {
-        requestLocationPermission().then((res) => {
-          console.log("res", res);
-
-          if (res == "granted") {
-            setPermission("granted");
-          } else {
-            setPermission("denied");
-          }
-        });
-      } else {
-        setPermission("granted");
-      }
-    };
-    locationPermission();
-
     return () => {
-    //   Motion.removeAllListeners();
+      //   Motion.removeAllListeners();
     };
   }, [permission]);
 
   return (
     <>
-      {permission == "granted" && (
+      <button onClick={motionPermission}>Motion Perm</button>
+      {permission.location == "granted" && (
         <div className="ion-padding">
           <div className="compass-container">
             <div
@@ -103,8 +134,8 @@ const Pusula: React.FC = () => {
           </div>
         </div>
       )}
-      {permission == "denied" && <Denied />}
-      {permission == "prompt" && <Prompt />}
+      {permission.location == "denied" && <Denied />}
+      {permission.location == "prompt" && <Prompt />}
     </>
   );
 };
