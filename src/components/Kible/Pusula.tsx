@@ -18,6 +18,13 @@ const Pusula: React.FC = () => {
     motion: string;
   }>({ location: "prompt", motion: "prompt" });
 
+  const isIOS = (
+    navigator.userAgent.match(/(iPod|iPhone|iPad)/) &&
+    navigator.userAgent.match(/AppleWebKit/)
+  );
+  console.log("isIOS", isIOS);
+  
+
   useEffect(() => {
     const locationPermission = async () => {
       const perm = await getLocationPermissionStatus();
@@ -63,9 +70,6 @@ const Pusula: React.FC = () => {
     // motionPermission();
   }, []);
 
-  const motionPermission = async () => {
-    await DeviceMotionEvent.requestPermission();
-  };
 
   useEffect(() => {
     const getQiblaDirection = async () => {
@@ -79,6 +83,7 @@ const Pusula: React.FC = () => {
         console.error("Error getting user location:", error);
       }
     };
+    getQiblaDirection();
 
     Geolocation.watchPosition({}, (position, err) => {
       if (err) {
@@ -95,23 +100,59 @@ const Pusula: React.FC = () => {
       setQiblaDirection(qiblaDirection);
     });
 
-    Motion.addListener("orientation", (event) => {
-      console.log("event alpha", event.alpha);
-      console.log("event beta", event.beta);
-      console.log("event gamma", event.gamma);
+    if (!isIOS) {
+      Motion.addListener("orientation", (event) => {
+        console.log("event alpha", event.alpha);
+        console.log("event beta", event.beta);
+        console.log("event gamma", event.gamma);
 
-      setCompassHeading(event.alpha);
-    });
-    getQiblaDirection();
+        setCompassHeading(event.alpha);
+      });
+    }
 
     return () => {
       //   Motion.removeAllListeners();
     };
   }, [permission]);
 
+  
+  const motionPermission = async () => {
+    let compass;
+    const compassCircle = document.querySelector(".compass-circle");
+
+    function handler(e: any) {
+      compass = e.webkitCompassHeading || Math.abs(e.alpha - 360);
+      compassCircle.style.transform = `translate(-50%, -50%) rotate(${-compass}deg)`;
+    }
+    if (isIOS) {
+      DeviceOrientationEvent.requestPermission()
+        .then((response) => {
+          console.log("device motion request response", response);
+          
+          if (response === "granted") {
+            // window.addEventListener("deviceorientation", handler, true);
+            Motion.addListener("orientation", (event) => {
+              console.log("event alpha", event.alpha);
+              console.log("event beta", event.beta);
+              console.log("event gamma", event.gamma);
+
+              setCompassHeading(event.alpha);
+            });
+          } else {
+            alert(
+              "Cihaz hareket sensörüne erişim izni vermeniz gerekmektedir."
+            );
+          }
+        })
+        .catch(() => alert("Desteklenmemektedir."));
+    } else {
+      window.addEventListener("deviceorientationabsolute", handler, true);
+    }
+  };
+
   return (
     <>
-      <button onClick={motionPermission}>Motion Perm</button>
+      {isIOS && <button onClick={motionPermission}>Motion Perm</button>}
       {permission.location == "granted" && (
         <div className="ion-padding">
           <div className="compass-container">
