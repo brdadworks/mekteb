@@ -10,8 +10,12 @@ import {
   getLocationPermissionStatus,
   requestLocationPermission,
 } from "../../../utils/functions";
-import { IonButton } from "@ionic/react";
-import { AndroidSettings, NativeSettings } from "capacitor-native-settings";
+import { IonButton, isPlatform } from "@ionic/react";
+import {
+  AndroidSettings,
+  IOSSettings,
+  NativeSettings,
+} from "capacitor-native-settings";
 
 interface CoordinatesType {
   latitude: number;
@@ -44,7 +48,7 @@ interface MarkerOptions {
 
 interface MapState {
   mapOptions: MapOptions | null;
-  kaabaMarker: MarkerOptions | null;
+  kaabaMarker: any | null;
   userMarker: MarkerOptions | null;
 }
 
@@ -59,6 +63,7 @@ const Map = () => {
   });
 
   useEffect(() => {
+    console.log("isPlatform(android) &&", isPlatform("android"));
     loadMap();
 
     const locationPermission = async () => {
@@ -86,12 +91,11 @@ const Map = () => {
       },
       zoom: 15,
     };
-
     const kaabaMarker = {
       position: { lat: 21.42251641101661, lng: 39.826182015499995 },
       icon: {
         url: "/kaaba2.png",
-        scaledSize: new window.google.maps.Size(50, 50),
+        scaledSize: { height: 50, width: 50 },
       },
     };
 
@@ -120,9 +124,17 @@ const Map = () => {
   };
 
   const openLocationSettings = () => {
-    NativeSettings.openAndroid({
-      option: AndroidSettings.Location,
-    });
+    console.log("isPlatform(android) &&", isPlatform("android"));
+
+    if (isPlatform("android")) {
+      NativeSettings.openAndroid({
+        option: AndroidSettings.ApplicationDetails,
+      });
+    } else {
+      NativeSettings.openIOS({
+        option: IOSSettings.App,
+      });
+    }
   };
 
   return (

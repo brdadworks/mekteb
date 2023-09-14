@@ -1,1649 +1,1663 @@
 export const all_books = [
-    {
-        id: 1,
-        title: 'Mecmuat’ul İrfaniyye',
-        slug: 'mecmua',
-        read: false
-    },
-    {
-        id: 2,
-        title: 'Mecmuat’ul İrfaniyye (Mealli)',
-        slug: 'mecmua_meal',
-        read: false
-    },
-    {
-        id: 3,
-        title: 'Şems-i Nuriye',
-        slug: 'semsi_nuriye',
-        read: true
-    },
-    {
-        id: 4,
-        title: 'Hayat-ı Hakika Risalesi',
-        slug: 'hayati_hakika',
-        read: false
-    },
-    {
-        id: 5,
-        title: 'Hadisler',
-        slug: 'hadisler',
-        read: false
-    },
-    {
-        id: 6,
-        title: 'İlahiler',
-        slug: 'ilahiler',
-        read: false
-    }
-]
+  {
+    id: 1,
+    title: "Mecmuat’ul İrfaniyye",
+    slug: "mecmua",
+    read: false,
+  },
+  {
+    id: 2,
+    title: "Mecmuat’ul İrfaniyye (Mealli)",
+    slug: "mecmua_meal",
+    read: false,
+  },
+  {
+    id: 3,
+    title: "Şems-i Nuriye",
+    slug: "semsi_nuriye",
+    read: true,
+  },
+  {
+    id: 4,
+    title: "Hayat-ı Hakika Risalesi",
+    slug: "hayati_hakika",
+    read: false,
+  },
+  {
+    id: 5,
+    title: "Hadisler",
+    slug: "hadisler",
+    read: false,
+  },
+  {
+    id: 6,
+    title: "İlahiler",
+    slug: "ilahiler",
+    read: false,
+  },
+];
 
 export const mecmua = [
-    {
-        id: 1,
-        title: "Kur'an-ı Kerim",
-        slug: "kurani_kerim",
-        read: false
-    },
-    {
-        id: 2,
-        title: "Dua-ı Müstecab",
-        slug: "duayi_mustecab",
-        read: true
-    },
-    {
-        id: 3,
-        title: "Cevşen-ül Kebir",
-        slug: "cevseni_kebir",
-        read: false
-    },
-    {
-        id: 4,
-        title: "Dua-ı İsmi Azam",
-        slug: "duayi_mustecab",
-        read: true
-    },
-    {
-        id: 5,
-        title: "Evrad-ı Ümmül Kur'aniyye",
-        slug: "evradi_ummul_kuraniyye",
-        read: true
-    },
-    {
-        id: 6,
-        title: "Munacat-ı Veysel Karani",
-        slug: "munacati_veysel_karani",
-        read: true
-    },
-    {
-        id: 7,
-        title: "Evrad-ı Fethiyye",
-        slug: "evradi_fethiyye",
-        read: true
-    },
-    {
-        id: 8,
-        title: "Evrad-ı Rufaiyye",
-        slug: "evradi_rufaiyye",
-        read: true
-    },
-    {
-        id: 9,
-        title: "Evrad-ı Kadiriyye",
-        slug: "evradi_kadiriyye",
-        read: true
-    },
-    {
-        id: 10,
-        title: "Evrad-ı Naşibendiyye",
-        slug: "evradi_nasibendiyye",
-        read: true
-    },
-    {
-        id: 11,
-        title: "Delail-ül İrfaniyye",
-        slug: "delilul_irfaniyye",
-        read: true
-    },
-    {
-        id: 12,
-        title: "Kur'an-ı Kerim'den Dualar",
-        slug: "kurani_kerimden_dualar",
-        read: true
-    },
-]
-
-export const kurani_kerim = [
-    {
-        id: 5,
-        title: "Fatiha Suresi",
-        slug: "fatiha",
-        read: true
-    },
-    {
-        id: 2,
-        title: "Bakara Suresi",
-        slug: "bakara",
-        read: true
-    },
-    {
-        id: 17,
-        title: "Yusuf Suresi",
-        slug: "yusuf",
-        read: true
-    },
-    {
-        id: 10,
-        title: "Kehf Suresi",
-        slug: "kehf",
-        read: true
-    },
-    {
-        id: 16,
-        title: "Yasin Suresi",
-        slug: "yasin",
-        read: true
-    },
-    {
-        id: 4,
-        title: "Duhan Suresi",
-        slug: "duhan",
-        read: true
-    },
-    {
-        id: 6,
-        title: "Fetih Suresi",
-        slug: "fetih",
-        read: true
-    },
-    {
-        id: 13,
-        title: "Rahman Suresi",
-        slug: "rahman",
-        read: true
-    },
-    {
-        id: 15,
-        title: "Vakia Suresi",
-        slug: "vakia",
-        read: true
-    },
-    {
-        id: 7,
-        title: "Haşr Suresi",
-        slug: "hasr",
-        read: true
-    },
-    {
-        id: 3,
-        title: "Cuma Suresi",
-        slug: "cuma",
-        read: true
-    },
-    {
-        id: 14,
-        title: "Tahrim Suresi",
-        slug: "tahrim",
-        read: true
-    },
-    {
-        id: 11,
-        title: "Mulk Suresi",
-        slug: "mulk",
-        read: true
-    },
-    {
-        id: 9,
-        title: "İnsan Suresi",
-        slug: "insan",
-        read: true
-    },
-    {
-        id: 12,
-        title: "Nebe Suresi",
-        slug: "nebe",
-        read: true
-    },
-    {
-        id: 1,
-        title: "A'la Suresi",
-        slug: "ala",
-        read: true
-    },
-    {
-        id: 8,
-        title: "Hatim Suresi",
-        slug: "hatim",
-        read: true
-    },
-]
-
-export const ala = {
-    title: "Ala",
-    slug: "ala",
-    content: "/books/mecmua/kurani_kerim/ala/",
-    page: 1
-}
-
-export const bakara = {
-    title: "Bakara",
-    slug: "bakara",
-    content: "/books/mecmua/kurani_kerim/bakara/",
-    page: 1
-}
-
-export const cuma = {
-    title: "Cuma",
-    slug: "cuma",
-    content: "/books/mecmua/kurani_kerim/cuma/",
-    page: 2
-}
-
-export const duhan = {
-    title: "Duhan",
-    slug: "duhan",
-    content: "/books/mecmua/kurani_kerim/duhan/",
-    page: 3
-}
-
-export const fatiha = {
-    title: "Fatiha",
-    slug: "fatiha",
-    content: "/books/mecmua/kurani_kerim/fatiha/",
-    page: 1
-}
-
-export const fetih = {
-    title: "Fetih",
-    slug: "fetih",
-    content: "/books/mecmua/kurani_kerim/fetih/",
-    page: 5
-}
-
-export const hasr = {
-    title: "Hasr",
-    slug: "hasr",
-    content: "/books/mecmua/kurani_kerim/hasr/",
-    page: 2
-}
-
-export const hatim = {
-    title: "Hatim",
-    slug: "hatim",
-    content: "/books/mecmua/kurani_kerim/hatim/",
-    page: 1
-}
-
-export const insan = {
-    title: "İnsan",
-    slug: "insan",
-    content: "/books/mecmua/kurani_kerim/insan/",
-    page: 3
-}
-
-export const kehf = {
-    title: "Kehf",
-    slug: "kehf",
-    content: "/books/mecmua/kurani_kerim/kehf/",
-    page: 2
-}
-
-export const mulk = {
-    title: "Mulk",
-    slug: "mulk",
-    content: "/books/mecmua/kurani_kerim/mulk/",
-    page: 3
-}
-
-export const nebe = {
-    title: "Nebe",
-    slug: "nebe",
-    content: "/books/mecmua/kurani_kerim/nebe/",
-    page: 3
-}
-
-export const rahman = {
-    title: "Rahman",
-    slug: "rahman",
-    content: "/books/mecmua/kurani_kerim/rahman/",
-    page: 4
-}
-
-export const tahrim = {
-    title: "Tahrim",
-    slug: "tahrim",
-    content: "/books/mecmua/kurani_kerim/tahrim/",
-    page: 1
-}
-
-export const vakia = {
-    title: "Vakia",
-    slug: "vakia",
-    content: "/books/mecmua/kurani_kerim/vakia/",
-    page: 4
-}
-
-export const yasin = {
-    title: "Yasin",
-    slug: "yasin",
-    content: "/books/mecmua/kurani_kerim/yasin/",
-    page: 6
-}
-
-export const yusuf = {
-    title: "Yusuf",
-    slug: "yusuf",
-    content: "/books/mecmua/kurani_kerim/yusuf/",
-    page: 1
-}
-
-export const duayi_mustecab = {
+  {
+    id: 1,
+    title: "Kur'an-ı Kerim",
+    slug: "kurani_kerim",
+    read: false,
+  },
+  {
+    id: 2,
     title: "Dua-ı Müstecab",
     slug: "duayi_mustecab",
-    content: "/books/mecmua/duayi_mustecab/",
-    page: 4
-}
-
-export const cevseni_kebir = [
-    {
-        id: 1,
-        title: "Pazartesi",
-        slug: "pazartesi",
-        read: true
-    },
-    {
-        id: 2,
-        title: "Salı",
-        slug: "sali",
-        read: true
-    },
-    {
-        id: 3,
-        title: "Çarşamba",
-        slug: "carsamba",
-        read: true
-    },
-    {
-        id: 4,
-        title: "Perşembe",
-        slug: "persembe",
-        read: true
-    },
-    {
-        id: 5,
-        title: "Cuma",
-        slug: "cuma",
-        read: true
-    },
-    {
-        id: 6,
-        title: "Cumartesi",
-        slug: "cumartesi",
-        read: true
-    },
-    {
-        id: 7,
-        title: "Pazar",
-        slug: "pazar",
-        read: true
-    },
-]
-
-export const pazartesi = {
-    title: "Pazartesi",
-    slug: "pazartesi",
-    content: "/books/mecmua/cevseni_kebir/pazartesi/",
-    page: 8
-}
-
-export const sali = {
-    title: "Salı",
-    slug: "sali",
-    content: "/books/mecmua/cevseni_kebir/sali/",
-    page: 4
-}
-
-export const carsamba = {
-    title: "Çarşamba",
-    slug: "carsamba",
-    content: "/books/mecmua/cevseni_kebir/carsamba/",
-    page: 5
-}
-
-export const persembe = {
-    title: "Perşembe",
-    slug: "persembe",
-    content: "/books/mecmua/cevseni_kebir/persembe/",
-    page: 8
-}
-
-export const kebir_cuma = {
-    title: "Cuma",
-    slug: "kebir_cuma",
-    content: "/books/mecmua/cevseni_kebir/cuma/",
-    page: 6
-}
-
-export const cumartesi = {
-    title: "Cumartesi",
-    slug: "cumartesi",
-    content: "/books/mecmua/cevseni_kebir/cumartesi/",
-    page: 4
-}
-
-export const pazar = {
-    title: "Pazar",
-    slug: "pazar",
-    content: "/books/mecmua/cevseni_kebir/pazar/",
-    page: 10
-}
-
-export const evradi_ummul_kuraniyye = {
+    read: true,
+  },
+  {
+    id: 3,
+    title: "Cevşen-ül Kebir",
+    slug: "cevseni_kebir",
+    read: false,
+  },
+  {
+    id: 4,
+    title: "Dua-ı İsmi Azam",
+    slug: "duayi_ismi_azam",
+    read: true,
+  },
+  {
+    id: 5,
     title: "Evrad-ı Ümmül Kur'aniyye",
     slug: "evradi_ummul_kuraniyye",
-    content: "/books/mecmua/evradi_ummul_kuraniyye/",
-    page: 6
-}
-
-export const munacati_veysel_karani = {
+    read: true,
+  },
+  {
+    id: 6,
     title: "Munacat-ı Veysel Karani",
     slug: "munacati_veysel_karani",
-    content: "/books/mecmua/munacati_veysel_karani/",
-    page: 6
-}
-
-export const evradi_fethiyye = {
+    read: true,
+  },
+  {
+    id: 7,
     title: "Evrad-ı Fethiyye",
     slug: "evradi_fethiyye",
-    content: "/books/mecmua/evradi_fethiyye/",
-    page: 6
-}
-
-export const evradi_rufaiyye = {
+    read: true,
+  },
+  {
+    id: 8,
     title: "Evrad-ı Rufaiyye",
     slug: "evradi_rufaiyye",
-    content: "/books/mecmua/evradi_rufaiyye/",
-    page: 14
-}
-
-export const evradi_kadiriyye = {
+    read: true,
+  },
+  {
+    id: 9,
     title: "Evrad-ı Kadiriyye",
     slug: "evradi_kadiriyye",
-    content: "/books/mecmua/evradi_kadiriyye/",
-    page: 8
-}
-
-export const evradi_nasibendiyye = {
-    title: "Evrad-ı Nakşibendiyye",
+    read: true,
+  },
+  {
+    id: 10,
+    title: "Evrad-ı Naşibendiyye",
     slug: "evradi_nasibendiyye",
-    content: "/books/mecmua/evradi_nasibendiyye/",
-    page: 8
-}
-
-export const delilul_irfaniyye = {
+    read: true,
+  },
+  {
+    id: 11,
     title: "Delail-ül İrfaniyye",
     slug: "delilul_irfaniyye",
-    content: "/books/mecmua/delilul_irfaniyye/",
-    page: 28
-}
-
-export const kurani_kerimden_dualar = {
+    read: true,
+  },
+  {
+    id: 12,
     title: "Kur'an-ı Kerim'den Dualar",
     slug: "kurani_kerimden_dualar",
-    content: "/books/mecmua/kurani_kerimden_dualar/",
-    page: 7
-}
+    read: true,
+  },
+];
+
+export const kurani_kerim = [
+  {
+    id: 5,
+    title: "Fatiha Suresi",
+    slug: "fatiha",
+    read: true,
+  },
+  {
+    id: 2,
+    title: "Bakara Suresi",
+    slug: "bakara",
+    read: true,
+  },
+  {
+    id: 17,
+    title: "Yusuf Suresi",
+    slug: "yusuf",
+    read: true,
+  },
+  {
+    id: 10,
+    title: "Kehf Suresi",
+    slug: "kehf",
+    read: true,
+  },
+  {
+    id: 16,
+    title: "Yasin Suresi",
+    slug: "yasin",
+    read: true,
+  },
+  {
+    id: 4,
+    title: "Duhan Suresi",
+    slug: "duhan",
+    read: true,
+  },
+  {
+    id: 6,
+    title: "Fetih Suresi",
+    slug: "fetih",
+    read: true,
+  },
+  {
+    id: 13,
+    title: "Rahman Suresi",
+    slug: "rahman",
+    read: true,
+  },
+  {
+    id: 15,
+    title: "Vakia Suresi",
+    slug: "vakia",
+    read: true,
+  },
+  {
+    id: 7,
+    title: "Haşr Suresi",
+    slug: "hasr",
+    read: true,
+  },
+  {
+    id: 3,
+    title: "Cuma Suresi",
+    slug: "cuma",
+    read: true,
+  },
+  {
+    id: 14,
+    title: "Tahrim Suresi",
+    slug: "tahrim",
+    read: true,
+  },
+  {
+    id: 11,
+    title: "Mulk Suresi",
+    slug: "mulk",
+    read: true,
+  },
+  {
+    id: 9,
+    title: "İnsan Suresi",
+    slug: "insan",
+    read: true,
+  },
+  {
+    id: 12,
+    title: "Nebe Suresi",
+    slug: "nebe",
+    read: true,
+  },
+  {
+    id: 1,
+    title: "A'la Suresi",
+    slug: "ala",
+    read: true,
+  },
+  {
+    id: 8,
+    title: "Hatim Duası",
+    slug: "hatim",
+    read: true,
+  },
+];
+
+export const ala = {
+  title: "Ala",
+  slug: "ala",
+  content: "/books/mecmua/kurani_kerim/ala/",
+  page: 1,
+};
+
+export const duayi_ismi_azam = {
+  title: "Dua-ı İsmi Azam",
+  slug: "duayi_ismi_azam",
+  content: "/books/mecmua/duayi_ismi_azam/",
+  page: 4,
+};
+
+export const duayi_ismi_azam_meal = {
+  title: "Dua-ı İsmi Azam",
+  slug: "duayi_ismi_azam_meal",
+  content: "/books/mecmua_meal/duayi_ismi_azam_meal/",
+  page: 6,
+};
+
+export const bakara = {
+  title: "Bakara",
+  slug: "bakara",
+  content: "/books/mecmua/kurani_kerim/bakara/",
+  page: 1,
+};
+
+export const cuma = {
+  title: "Cuma",
+  slug: "cuma",
+  content: "/books/mecmua/kurani_kerim/cuma/",
+  page: 2,
+};
+
+export const duhan = {
+  title: "Duhan",
+  slug: "duhan",
+  content: "/books/mecmua/kurani_kerim/duhan/",
+  page: 3,
+};
+
+export const fatiha = {
+  title: "Fatiha",
+  slug: "fatiha",
+  content: "/books/mecmua/kurani_kerim/fatiha/",
+  page: 1,
+};
+
+export const fetih = {
+  title: "Fetih",
+  slug: "fetih",
+  content: "/books/mecmua/kurani_kerim/fetih/",
+  page: 5,
+};
+
+export const hasr = {
+  title: "Hasr",
+  slug: "hasr",
+  content: "/books/mecmua/kurani_kerim/hasr/",
+  page: 2,
+};
+
+export const hatim = {
+  title: "Hatim",
+  slug: "hatim",
+  content: "/books/mecmua/kurani_kerim/hatim/",
+  page: 1,
+};
+
+export const insan = {
+  title: "İnsan",
+  slug: "insan",
+  content: "/books/mecmua/kurani_kerim/insan/",
+  page: 3,
+};
+
+export const kehf = {
+  title: "Kehf",
+  slug: "kehf",
+  content: "/books/mecmua/kurani_kerim/kehf/",
+  page: 2,
+};
+
+export const mulk = {
+  title: "Mulk",
+  slug: "mulk",
+  content: "/books/mecmua/kurani_kerim/mulk/",
+  page: 3,
+};
+
+export const nebe = {
+  title: "Nebe",
+  slug: "nebe",
+  content: "/books/mecmua/kurani_kerim/nebe/",
+  page: 3,
+};
+
+export const rahman = {
+  title: "Rahman",
+  slug: "rahman",
+  content: "/books/mecmua/kurani_kerim/rahman/",
+  page: 4,
+};
+
+export const tahrim = {
+  title: "Tahrim",
+  slug: "tahrim",
+  content: "/books/mecmua/kurani_kerim/tahrim/",
+  page: 1,
+};
+
+export const vakia = {
+  title: "Vakia",
+  slug: "vakia",
+  content: "/books/mecmua/kurani_kerim/vakia/",
+  page: 4,
+};
+
+export const yasin = {
+  title: "Yasin",
+  slug: "yasin",
+  content: "/books/mecmua/kurani_kerim/yasin/",
+  page: 6,
+};
+
+export const yusuf = {
+  title: "Yusuf",
+  slug: "yusuf",
+  content: "/books/mecmua/kurani_kerim/yusuf/",
+  page: 1,
+};
+
+export const duayi_mustecab = {
+  title: "Dua-ı Müstecab",
+  slug: "duayi_mustecab",
+  content: "/books/mecmua/duayi_mustecab/",
+  page: 4,
+};
+
+export const cevseni_kebir = [
+  {
+    id: 1,
+    title: "Pazartesi",
+    slug: "pazartesi",
+    read: true,
+  },
+  {
+    id: 2,
+    title: "Salı",
+    slug: "sali",
+    read: true,
+  },
+  {
+    id: 3,
+    title: "Çarşamba",
+    slug: "carsamba",
+    read: true,
+  },
+  {
+    id: 4,
+    title: "Perşembe",
+    slug: "persembe",
+    read: true,
+  },
+  {
+    id: 5,
+    title: "Cuma",
+    slug: "cuma",
+    read: true,
+  },
+  {
+    id: 6,
+    title: "Cumartesi",
+    slug: "cumartesi",
+    read: true,
+  },
+  {
+    id: 7,
+    title: "Pazar",
+    slug: "pazar",
+    read: true,
+  },
+];
+
+export const pazartesi = {
+  title: "Pazartesi",
+  slug: "pazartesi",
+  content: "/books/mecmua/cevseni_kebir/pazartesi/",
+  page: 8,
+};
+
+export const sali = {
+  title: "Salı",
+  slug: "sali",
+  content: "/books/mecmua/cevseni_kebir/sali/",
+  page: 4,
+};
+
+export const carsamba = {
+  title: "Çarşamba",
+  slug: "carsamba",
+  content: "/books/mecmua/cevseni_kebir/carsamba/",
+  page: 5,
+};
+
+export const persembe = {
+  title: "Perşembe",
+  slug: "persembe",
+  content: "/books/mecmua/cevseni_kebir/persembe/",
+  page: 8,
+};
+
+export const kebir_cuma = {
+  title: "Cuma",
+  slug: "kebir_cuma",
+  content: "/books/mecmua/cevseni_kebir/cuma/",
+  page: 6,
+};
+
+export const cumartesi = {
+  title: "Cumartesi",
+  slug: "cumartesi",
+  content: "/books/mecmua/cevseni_kebir/cumartesi/",
+  page: 4,
+};
+
+export const pazar = {
+  title: "Pazar",
+  slug: "pazar",
+  content: "/books/mecmua/cevseni_kebir/pazar/",
+  page: 10,
+};
+
+export const evradi_ummul_kuraniyye = {
+  title: "Evrad-ı Ümmül Kur'aniyye",
+  slug: "evradi_ummul_kuraniyye",
+  content: "/books/mecmua/evradi_ummul_kuraniyye/",
+  page: 6,
+};
+
+export const munacati_veysel_karani = {
+  title: "Munacat-ı Veysel Karani",
+  slug: "munacati_veysel_karani",
+  content: "/books/mecmua/munacati_veysel_karani/",
+  page: 6,
+};
+
+export const evradi_fethiyye = {
+  title: "Evrad-ı Fethiyye",
+  slug: "evradi_fethiyye",
+  content: "/books/mecmua/evradi_fethiyye/",
+  page: 6,
+};
+
+export const evradi_rufaiyye = {
+  title: "Evrad-ı Rufaiyye",
+  slug: "evradi_rufaiyye",
+  content: "/books/mecmua/evradi_rufaiyye/",
+  page: 14,
+};
+
+export const evradi_kadiriyye = {
+  title: "Evrad-ı Kadiriyye",
+  slug: "evradi_kadiriyye",
+  content: "/books/mecmua/evradi_kadiriyye/",
+  page: 8,
+};
+
+export const evradi_nasibendiyye = {
+  title: "Evrad-ı Nakşibendiyye",
+  slug: "evradi_nasibendiyye",
+  content: "/books/mecmua/evradi_nasibendiyye/",
+  page: 8,
+};
+
+export const delilul_irfaniyye = {
+  title: "Delail-ül İrfaniyye",
+  slug: "delilul_irfaniyye",
+  content: "/books/mecmua/delilul_irfaniyye/",
+  page: 28,
+};
+
+export const kurani_kerimden_dualar = {
+  title: "Kur'an-ı Kerim'den Dualar",
+  slug: "kurani_kerimden_dualar",
+  content: "/books/mecmua/kurani_kerimden_dualar/",
+  page: 7,
+};
 
 // ----- MEAL
 
 export const mecmua_meal = [
-    {
-        id: 1,
-        title: "Kur'an-ı Kerim",
-        slug: "kurani_kerim_meal",
-        read: false
-    },
-    {
-        id: 2,
-        title: "Dua-ı Müstecab",
-        slug: "duayi_mustecab",
-        read: true
-    },
-    {
-        id: 3,
-        title: "Cevşen-ül Kebir",
-        slug: "cevseni_kebir",
-        read: false
-    },
-    {
-        id: 4,
-        title: "Dua-ı İsmi Azam",
-        slug: "duayi_mustecab",
-        read: true
-    },
-    {
-        id: 5,
-        title: "Evrad-ı Ümmül Kur'aniyye",
-        slug: "evradi_ummul_kuraniyye",
-        read: true
-    },
-    {
-        id: 6,
-        title: "Munacat-ı Veysel Karani",
-        slug: "munacati_veysel_karani",
-        read: true
-    },
-    {
-        id: 7,
-        title: "Evrad-ı Fethiyye",
-        slug: "evradi_fethiyye",
-        read: true
-    },
-    {
-        id: 8,
-        title: "Evrad-ı Rufaiyye",
-        slug: "evradi_rufaiyye",
-        read: true
-    },
-    {
-        id: 9,
-        title: "Evrad-ı Kadiriyye",
-        slug: "evradi_kadiriyye",
-        read: true
-    },
-    {
-        id: 10,
-        title: "Evrad-ı Nakşibendiyye",
-        slug: "evradi_nasibendiyye",
-        read: true
-    },
-    {
-        id: 11,
-        title: "Delail-ül İrfaniyye",
-        slug: "delilul_irfaniyye",
-        read: true
-    },
-    {
-        id: 12,
-        title: "Kur'an-ı Kerim'den Dualar",
-        slug: "kurani_kerimden_dualar",
-        read: true
-    },
-]
-
-export const kurani_kerim_meal = [
-    {
-        id: 1,
-        title: "Ala",
-        slug: "ala_meal",
-        read: true
-    },
-    {
-        id: 2,
-        title: "Bakara",
-        slug: "bakara_meal",
-        read: true
-    },
-    {
-        id: 3,
-        title: "Cuma",
-        slug: "cuma_meal",
-        read: true
-    },
-    {
-        id: 4,
-        title: "Duhan",
-        slug: "duhan_meal",
-        read: true
-    },
-    {
-        id: 5,
-        title: "Fatiha",
-        slug: "fatiha_meal",
-        read: true
-    },
-    {
-        id: 6,
-        title: "Fetih",
-        slug: "fetih_meal",
-        read: true
-    },
-    {
-        id: 7,
-        title: "Hasr",
-        slug: "hasr_meal",
-        read: true
-    },
-    {
-        id: 8,
-        title: "Hatim",
-        slug: "hatim_meal",
-        read: true
-    },
-    {
-        id: 9,
-        title: "İnsan",
-        slug: "insan_meal",
-        read: true
-    },
-    {
-        id: 10,
-        title: "Kehf",
-        slug: "kehf_meal",
-        read: true
-    },
-    {
-        id: 11,
-        title: "Mulk",
-        slug: "mulk_meal",
-        read: true
-    },
-    {
-        id: 12,
-        title: "Nebe",
-        slug: "nebe_meal",
-        read: true
-    },
-    {
-        id: 13,
-        title: "Rahman",
-        slug: "rahman_meal",
-        read: true
-    },
-    {
-        id: 14,
-        title: "Tahrim",
-        slug: "tahrim_meal",
-        read: true
-    },
-    {
-        id: 15,
-        title: "Vakia",
-        slug: "vakia_meal",
-        read: true
-    },
-    {
-        id: 16,
-        title: "Yasin",
-        slug: "yasin_meal",
-        read: true
-    },
-    {
-        id: 17,
-        title: "Yusuf",
-        slug: "yusuf_meal",
-        read: true
-    },
-]
-
-export const ala_meal = {
-    title: "Ala",
-    slug: "ala_meal",
-    content: "/books/mecmua_meal/kurani_kerim/ala/",
-    page: 2
-}
-
-export const bakara_meal = {
-    title: "Bakara",
-    slug: "bakara_meal",
-    content: "/books/mecmua_meal/kurani_kerim/bakara/",
-    page: 2
-}
-
-export const cuma_meal = {
-    title: "Cuma",
-    slug: "cuma_meal",
-    content: "/books/mecmua_meal/kurani_kerim/cuma/",
-    page: 4
-}
-
-export const duhan_meal = {
-    title: "Duhan",
-    slug: "duhan_meal",
-    content: "/books/mecmua_meal/kurani_kerim/duhan/",
-    page: 6
-}
-
-export const fatiha_meal = {
-    title: "Fatiha",
-    slug: "fatiha_meal",
-    content: "/books/mecmua_meal/kurani_kerim/fatiha/",
-    page: 2
-}
-
-export const fetih_meal = {
-    title: "Fetih",
-    slug: "fetih_meal",
-    content: "/books/mecmua_meal/kurani_kerim/fetih/",
-    page: 10
-}
-
-export const hasr_meal = {
-    title: "Hasr",
-    slug: "hasr_meal",
-    content: "/books/mecmua_meal/kurani_kerim/hasr/",
-    page: 4
-}
-
-export const hatim_meal = {
-    title: "Hatim",
-    slug: "hatim_meal",
-    content: "/books/mecmua_meal/kurani_kerim/hatim/",
-    page: 2
-}
-
-export const insan_meal = {
-    title: "İnsan",
-    slug: "insan_meal",
-    content: "/books/mecmua_meal/kurani_kerim/insan/",
-    page: 6
-}
-
-export const kehf_meal = {
-    title: "Kehf",
-    slug: "kehf_meal",
-    content: "/books/mecmua_meal/kurani_kerim/kehf/",
-    page: 4
-}
-
-export const mulk_meal = {
-    title: "Mulk",
-    slug: "mulk_meal",
-    content: "/books/mecmua_meal/kurani_kerim/mulk/",
-    page: 6
-}
-
-export const nebe_meal = {
-    title: "Nebe",
-    slug: "nebe_meal",
-    content: "/books/mecmua_meal/kurani_kerim/nebe/",
-    page: 6
-}
-
-export const rahman_meal = {
-    title: "Rahman",
-    slug: "rahman_meal",
-    content: "/books/mecmua_meal/kurani_kerim/rahman/",
-    page: 8
-}
-
-export const tahrim_meal = {
-    title: "Tahrim",
-    slug: "tahrim_meal",
-    content: "/books/mecmua_meal/kurani_kerim/tahrim/",
-    page: 2
-}
-
-export const vakia_meal = {
-    title: "Vakia",
-    slug: "vakia_meal",
-    content: "/books/mecmua_meal/kurani_kerim/vakia/",
-    page: 8
-}
-
-export const yasin_meal = {
-    title: "Yasin",
-    slug: "yasin_meal",
-    content: "/books/mecmua_meal/kurani_kerim/yasin/",
-    page: 12
-}
-
-export const yusuf_meal = {
-    title: "Yusuf",
-    slug: "yusuf_meal",
-    content: "/books/mecmua_meal/kurani_kerim/yusuf/",
-    page: 2
-}
-
-export const duayi_mustecab_meal = {
+  {
+    id: 1,
+    title: "Kur'an-ı Kerim",
+    slug: "kurani_kerim_meal",
+    read: false,
+  },
+  {
+    id: 2,
     title: "Dua-ı Müstecab",
     slug: "duayi_mustecab_meal",
-    content: "/books/mecmua_meal/duayi_mustecab/",
-    page: 6
-}
-
-export const cevseni_kebir_meal = [
-    {
-        id: 1,
-        title: "Pazartesi",
-        slug: "pazartesi_meal",
-        read: true
-    },
-    {
-        id: 2,
-        title: "Salı",
-        slug: "sali_meal",
-        read: true
-    },
-    {
-        id: 3,
-        title: "Çarşamba",
-        slug: "carsamba_meal",
-        read: true
-    },
-    {
-        id: 4,
-        title: "Perşembe",
-        slug: "persembe_meal",
-        read: true
-    },
-    {
-        id: 5,
-        title: "Cuma",
-        slug: "cuma_meal",
-        read: true
-    },
-    {
-        id: 6,
-        title: "Cumartesi",
-        slug: "cumartesi_meal",
-        read: true
-    },
-    {
-        id: 7,
-        title: "Pazar",
-        slug: "pazar_meal",
-        read: true
-    },
-]
-
-export const pazartesi_meal = {
-    title: "Pazartesi",
-    slug: "pazartesi_meal",
-    content: "/books/mecmua_meal/cevseni_kebir/pazartesi/",
-    page: 14
-}
-
-export const sali_meal = {
-    title: "Salı",
-    slug: "sali_meal",
-    content: "/books/mecmua_meal/cevseni_kebir/sali/",
-    page: 8
-}
-
-export const carsamba_meal = {
-    title: "Çarşamba",
-    slug: "carsamba_meal",
-    content: "/books/mecmua_meal/cevseni_kebir/carsamba/",
-    page: 10
-}
-
-export const persembe_meal = {
-    title: "Perşembe",
-    slug: "persembe_meal",
-    content: "/books/mecmua_meal/cevseni_kebir/persembe/",
-    page: 16
-}
-
-export const kebir_cuma_meal = {
-    title: "Cuma",
-    slug: "kebir_cuma_meal",
-    content: "/books/mecmua_meal/cevseni_kebir/cuma/",
-    page: 12
-}
-
-export const cumartesi_meal = {
-    title: "Cumartesi",
-    slug: "cumartesi_meal",
-    content: "/books/mecmua_meal/cevseni_kebir/cumartesi/",
-    page: 8
-}
-
-export const pazar_meal = {
-    title: "Pazar",
-    slug: "pazar_meal",
-    content: "/books/mecmua_meal/cevseni_kebir/pazar/",
-    page: 20
-}
-
-export const evradi_ummul_kuraniyye_meal = {
+    read: true,
+  },
+  {
+    id: 3,
+    title: "Cevşen-ül Kebir",
+    slug: "cevseni_kebir_meal",
+    read: false,
+  },
+  {
+    id: 4,
+    title: "Dua-ı İsmi Azam",
+    slug: "duayi_ismi_azam_meal",
+    read: true,
+  },
+  {
+    id: 5,
     title: "Evrad-ı Ümmül Kur'aniyye",
     slug: "evradi_ummul_kuraniyye_meal",
-    content: "/books/mecmua_meal/evradi_ummul_kuraniyye/",
-    page: 10
-}
-
-export const munacati_veysel_karani_meal = {
+    read: true,
+  },
+  {
+    id: 6,
     title: "Munacat-ı Veysel Karani",
     slug: "munacati_veysel_karani_meal",
-    content: "/books/mecmua_meal/munacati_veysel_karani/",
-    page: 10
-}
-
-export const evradi_fethiyye_meal = {
+    read: true,
+  },
+  {
+    id: 7,
     title: "Evrad-ı Fethiyye",
     slug: "evradi_fethiyye_meal",
-    content: "/books/mecmua_meal/evradi_fethiyye/",
-    page: 10
-}
-
-export const evradi_rufaiyye_meal = {
+    read: true,
+  },
+  {
+    id: 8,
     title: "Evrad-ı Rufaiyye",
     slug: "evradi_rufaiyye_meal",
-    content: "/books/mecmua_meal/evradi_rufaiyye/",
-    page: 25
-}
-
-export const evradi_kadiriyye_meal = {
+    read: true,
+  },
+  {
+    id: 9,
     title: "Evrad-ı Kadiriyye",
     slug: "evradi_kadiriyye_meal",
-    content: "/books/mecmua_meal/evradi_kadiriyye/",
-    page: 14
-}
-
-export const evradi_nasibendiyye_meal = {
+    read: true,
+  },
+  {
+    id: 10,
     title: "Evrad-ı Nakşibendiyye",
-    slug: "evradi_nasibendiyye",
-    content: "/books/mecmua/evradi_nasibendiyye/",
-    page: 14
-}
-
-export const delilul_irfaniyye_meal = {
+    slug: "evradi_nasibendiyye_meal",
+    read: true,
+  },
+  {
+    id: 11,
     title: "Delail-ül İrfaniyye",
     slug: "delilul_irfaniyye_meal",
-    content: "/books/mecmua_meal/delilul_irfaniyye/",
-    page: 51
-}
-
-export const kurani_kerimden_dualar_meal = {
+    read: true,
+  },
+  {
+    id: 12,
     title: "Kur'an-ı Kerim'den Dualar",
     slug: "kurani_kerimden_dualar_meal",
-    content: "/books/mecmua_meal/kurani_kerimden_dualar/",
-    page: 11
-}
+    read: true,
+  },
+];
+
+export const kurani_kerim_meal = [
+  {
+    id: 5,
+    title: "Fatiha Suresi",
+    slug: "fatiha_meal",
+    read: true,
+  },
+  {
+    id: 2,
+    title: "Bakara Suresi",
+    slug: "bakara_meal",
+    read: true,
+  },
+  {
+    id: 17,
+    title: "Yusuf Suresi",
+    slug: "yusuf_meal",
+    read: true,
+  },
+  {
+    id: 10,
+    title: "Kehf Suresi",
+    slug: "kehf_meal",
+    read: true,
+  },
+  {
+    id: 16,
+    title: "Yasin Suresi",
+    slug: "yasin_meal",
+    read: true,
+  },
+  {
+    id: 4,
+    title: "Duhan Suresi",
+    slug: "duhan_meal",
+    read: true,
+  },
+  {
+    id: 6,
+    title: "Fetih Suresi",
+    slug: "fetih_meal",
+    read: true,
+  },
+  {
+    id: 13,
+    title: "Rahman Suresi",
+    slug: "rahman_meal",
+    read: true,
+  },
+  {
+    id: 15,
+    title: "Vakia Suresi",
+    slug: "vakia_meal",
+    read: true,
+  },
+  {
+    id: 7,
+    title: "Haşr Suresi",
+    slug: "hasr_meal",
+    read: true,
+  },
+  {
+    id: 3,
+    title: "Cuma Suresi",
+    slug: "cuma_meal",
+    read: true,
+  },
+  {
+    id: 14,
+    title: "Tahrim Suresi",
+    slug: "tahrim_meal",
+    read: true,
+  },
+  {
+    id: 11,
+    title: "Mulk Suresi",
+    slug: "mulk_meal",
+    read: true,
+  },
+  {
+    id: 9,
+    title: "İnsan Suresi",
+    slug: "insan_meal",
+    read: true,
+  },
+  {
+    id: 12,
+    title: "Nebe Suresi",
+    slug: "nebe_meal",
+    read: true,
+  },
+  {
+    id: 1,
+    title: "A'la Suresi",
+    slug: "ala_meal",
+    read: true,
+  },
+  {
+    id: 8,
+    title: "Hatim Duası",
+    slug: "hatim_meal",
+    read: true,
+  },
+];
+
+export const ala_meal = {
+  title: "Ala",
+  slug: "ala_meal",
+  content: "/books/mecmua_meal/kurani_kerim/ala/",
+  page: 2,
+};
+
+export const bakara_meal = {
+  title: "Bakara",
+  slug: "bakara_meal",
+  content: "/books/mecmua_meal/kurani_kerim/bakara/",
+  page: 2,
+};
+
+export const cuma_meal = {
+  title: "Cuma",
+  slug: "cuma_meal",
+  content: "/books/mecmua_meal/kurani_kerim/cuma/",
+  page: 4,
+};
+
+export const duhan_meal = {
+  title: "Duhan",
+  slug: "duhan_meal",
+  content: "/books/mecmua_meal/kurani_kerim/duhan/",
+  page: 6,
+};
+
+export const fatiha_meal = {
+  title: "Fatiha",
+  slug: "fatiha_meal",
+  content: "/books/mecmua_meal/kurani_kerim/fatiha/",
+  page: 2,
+};
+
+export const fetih_meal = {
+  title: "Fetih",
+  slug: "fetih_meal",
+  content: "/books/mecmua_meal/kurani_kerim/fetih/",
+  page: 10,
+};
+
+export const hasr_meal = {
+  title: "Hasr",
+  slug: "hasr_meal",
+  content: "/books/mecmua_meal/kurani_kerim/hasr/",
+  page: 4,
+};
+
+export const hatim_meal = {
+  title: "Hatim",
+  slug: "hatim_meal",
+  content: "/books/mecmua_meal/kurani_kerim/hatim/",
+  page: 2,
+};
+
+export const insan_meal = {
+  title: "İnsan",
+  slug: "insan_meal",
+  content: "/books/mecmua_meal/kurani_kerim/insan/",
+  page: 6,
+};
+
+export const kehf_meal = {
+  title: "Kehf",
+  slug: "kehf_meal",
+  content: "/books/mecmua_meal/kurani_kerim/kehf/",
+  page: 4,
+};
+
+export const mulk_meal = {
+  title: "Mulk",
+  slug: "mulk_meal",
+  content: "/books/mecmua_meal/kurani_kerim/mulk/",
+  page: 6,
+};
+
+export const nebe_meal = {
+  title: "Nebe",
+  slug: "nebe_meal",
+  content: "/books/mecmua_meal/kurani_kerim/nebe/",
+  page: 6,
+};
+
+export const rahman_meal = {
+  title: "Rahman",
+  slug: "rahman_meal",
+  content: "/books/mecmua_meal/kurani_kerim/rahman/",
+  page: 8,
+};
+
+export const tahrim_meal = {
+  title: "Tahrim",
+  slug: "tahrim_meal",
+  content: "/books/mecmua_meal/kurani_kerim/tahrim/",
+  page: 2,
+};
+
+export const vakia_meal = {
+  title: "Vakia",
+  slug: "vakia_meal",
+  content: "/books/mecmua_meal/kurani_kerim/vakia/",
+  page: 8,
+};
+
+export const yasin_meal = {
+  title: "Yasin",
+  slug: "yasin_meal",
+  content: "/books/mecmua_meal/kurani_kerim/yasin/",
+  page: 12,
+};
+
+export const yusuf_meal = {
+  title: "Yusuf",
+  slug: "yusuf_meal",
+  content: "/books/mecmua_meal/kurani_kerim/yusuf/",
+  page: 2,
+};
+
+export const duayi_mustecab_meal = {
+  title: "Dua-ı Müstecab",
+  slug: "duayi_mustecab_meal",
+  content: "/books/mecmua_meal/duayi_mustecab/",
+  page: 6,
+};
+
+export const cevseni_kebir_meal = [
+  {
+    id: 1,
+    title: "Pazartesi",
+    slug: "pazartesi_meal",
+    read: true,
+  },
+  {
+    id: 2,
+    title: "Salı",
+    slug: "sali_meal",
+    read: true,
+  },
+  {
+    id: 3,
+    title: "Çarşamba",
+    slug: "carsamba_meal",
+    read: true,
+  },
+  {
+    id: 4,
+    title: "Perşembe",
+    slug: "persembe_meal",
+    read: true,
+  },
+  {
+    id: 5,
+    title: "Cuma",
+    slug: "cuma_meal",
+    read: true,
+  },
+  {
+    id: 6,
+    title: "Cumartesi",
+    slug: "cumartesi_meal",
+    read: true,
+  },
+  {
+    id: 7,
+    title: "Pazar",
+    slug: "pazar_meal",
+    read: true,
+  },
+];
+
+export const pazartesi_meal = {
+  title: "Pazartesi",
+  slug: "pazartesi_meal",
+  content: "/books/mecmua_meal/cevseni_kebir/pazartesi/",
+  page: 14,
+};
+
+export const sali_meal = {
+  title: "Salı",
+  slug: "sali_meal",
+  content: "/books/mecmua_meal/cevseni_kebir/sali/",
+  page: 8,
+};
+
+export const carsamba_meal = {
+  title: "Çarşamba",
+  slug: "carsamba_meal",
+  content: "/books/mecmua_meal/cevseni_kebir/carsamba/",
+  page: 10,
+};
+
+export const persembe_meal = {
+  title: "Perşembe",
+  slug: "persembe_meal",
+  content: "/books/mecmua_meal/cevseni_kebir/persembe/",
+  page: 16,
+};
+
+export const kebir_cuma_meal = {
+  title: "Cuma",
+  slug: "kebir_cuma_meal",
+  content: "/books/mecmua_meal/cevseni_kebir/cuma/",
+  page: 12,
+};
+
+export const cumartesi_meal = {
+  title: "Cumartesi",
+  slug: "cumartesi_meal",
+  content: "/books/mecmua_meal/cevseni_kebir/cumartesi/",
+  page: 8,
+};
+
+export const pazar_meal = {
+  title: "Pazar",
+  slug: "pazar_meal",
+  content: "/books/mecmua_meal/cevseni_kebir/pazar/",
+  page: 20,
+};
+
+export const evradi_ummul_kuraniyye_meal = {
+  title: "Evrad-ı Ümmül Kur'aniyye",
+  slug: "evradi_ummul_kuraniyye_meal",
+  content: "/books/mecmua_meal/evradi_ummul_kuraniyye/",
+  page: 10,
+};
+
+export const munacati_veysel_karani_meal = {
+  title: "Munacat-ı Veysel Karani",
+  slug: "munacati_veysel_karani_meal",
+  content: "/books/mecmua_meal/munacati_veysel_karani/",
+  page: 10,
+};
+
+export const evradi_fethiyye_meal = {
+  title: "Evrad-ı Fethiyye",
+  slug: "evradi_fethiyye_meal",
+  content: "/books/mecmua_meal/evradi_fethiyye/",
+  page: 10,
+};
+
+export const evradi_rufaiyye_meal = {
+  title: "Evrad-ı Rufaiyye",
+  slug: "evradi_rufaiyye_meal",
+  content: "/books/mecmua_meal/evradi_rufaiyye/",
+  page: 25,
+};
+
+export const evradi_kadiriyye_meal = {
+  title: "Evrad-ı Kadiriyye",
+  slug: "evradi_kadiriyye_meal",
+  content: "/books/mecmua_meal/evradi_kadiriyye/",
+  page: 14,
+};
+
+export const evradi_nasibendiyye_meal = {
+  title: "Evrad-ı Nakşibendiyye",
+  slug: "evradi_nasibendiyye_meal",
+  content: "/books/mecmua_meal/evradi_nasibendiyye/",
+  page: 14,
+};
+
+export const delilul_irfaniyye_meal = {
+  title: "Delail-ül İrfaniyye",
+  slug: "delilul_irfaniyye_meal",
+  content: "/books/mecmua_meal/delilul_irfaniyye/",
+  page: 51,
+};
+
+export const kurani_kerimden_dualar_meal = {
+  title: "Kur'an-ı Kerim'den Dualar",
+  slug: "kurani_kerimden_dualar_meal",
+  content: "/books/mecmua_meal/kurani_kerimden_dualar/",
+  page: 11,
+};
 
 export const semsi_nuriye = {
-    title: 'Şems-i Nuriye',
-    slug: 'semsi_nuriye',
-    content: "/books/semsi_nuriye/",
-    page: 22
-}
+  title: "Şems-i Nuriye",
+  slug: "semsi_nuriye",
+  content: "/books/semsi_nuriye/",
+  page: 22,
+};
 
 export const hayati_hakika = [
-    {
-        id: 1,
-        title: 'Beraat Gecesi',
-        slug: 'beraat_gecesi',
-        read: true
-    },
-    {
-        id: 2,
-        title: 'Cuma Gün ve Gecesi',
-        slug: 'cuma_gun_ve_gecesi',
-        read: true
-    },
-    {
-        id: 3,
-        title: 'Dua',
-        slug: 'dua',
-        read: true
-    },
-    {
-        id: 4,
-        title: 'Fatiha Hatmesi',
-        slug: 'fatiha_hatmesi',
-        read: true
-    },
-    {
-        id: 5,
-        title: 'Hac ve Umre Programı',
-        slug: 'hac_ve_umre_programi',
-        read: true
-    },
-    {
-        id: 6,
-        title: 'Hatme Adabı',
-        slug: 'hatme_adabi',
-        read: true
-    },
-    {
-        id: 7,
-        title: 'Hatmi Enbiya',
-        slug: 'hatmi_enbiya',
-        read: true
-    },
-    {
-        id: 8,
-        title: 'İhyası Mustehab Olan Geceler',
-        slug: 'ihyasi_mustehab_olan_geceler',
-        read: true
-    },
-    {
-        id: 9,
-        title: 'İtikaf',
-        slug: 'itikaf',
-        read: true
-    },
-    {
-        id: 10,
-        title: 'Kadir Gecesi',
-        slug: 'kadir_gecesi',
-        read: true
-    },
-    {
-        id: 11,
-        title: 'Mirac Gecesi',
-        slug: 'mirac_gecesi',
-        read: true
-    },
-    {
-        id: 12,
-        title: 'Muharrem Ayı',
-        slug: 'muharrem_ayi',
-        read: true
-    },
-    {
-        id: 13,
-        title: 'Mukaddime',
-        slug: 'mukaddime',
-        read: true
-    },
-    {
-        id: 14,
-        title: 'Pazartesi Gün ve Gecesi',
-        slug: 'pazartesi_gun_ve_gecesi',
-        read: true
-    },
-    {
-        id: 15,
-        title: 'Ramazan Ayı',
-        slug: 'ramazan_ayi',
-        read: true
-    },
-    {
-        id: 16,
-        title: 'Rebiulahir, Cemaziyelevvel, Cemaziyelahir',
-        slug: 'rebiulahir_cemaziyelevvel_cemaziyelahir',
-        read: true
-    },
-    {
-        id: 17,
-        title: 'Rebiulevvel Ayı',
-        slug: 'rebiulevvel_ayi',
-        read: true
-    },
-    {
-        id: 18,
-        title: 'Recep Ayı',
-        slug: 'recep_ayi',
-        read: true
-    },
-    {
-        id: 19,
-        title: 'Regaib Gecesi',
-        slug: 'regaib_gecesi',
-        read: true
-    },
-    {
-        id: 20,
-        title: 'Şaban Ayı',
-        slug: 'saban_ayi',
-        read: true
-    },
-    {
-        id: 21,
-        title: 'Şaban Ayının Son Gecesi',
-        slug: 'saban_ayinin_son_Gecesi',
-        read: true
-    },
-    {
-        id: 22,
-        title: 'Safer Ayı',
-        slug: 'safer_ayi',
-        read: true
-    },
-    {
-        id: 23,
-        title: 'Salavat Hatmesi',
-        slug: 'salavat_hatmesi',
-        read: true
-    },
-    {
-        id: 24,
-        title: 'Şevval Ayı',
-        slug: 'sevval_ayi',
-        read: true
-    },
-    {
-        id: 25,
-        title: 'Tevbe-i İstiğfar',
-        slug: 'tevbei_istigfar',
-        read: true
-    },
-    {
-        id: 26,
-        title: 'Zilhicce Ayı',
-        slug: 'zilhicce_ayi',
-        read: true
-    },
-    {
-        id: 27,
-        title: 'Zilhicce Ayının Son Gecesi',
-        slug: 'zilhicce_son_gecesi',
-        read: true
-    }
-]
-
-export const beraat_gecesi = {
+  {
+    id: 13,
+    title: "Mukaddime",
+    slug: "mukaddime",
+    read: true,
+  },
+  {
+    id: 8,
+    title: "İhyası Mustehab Olan Geceler",
+    slug: "ihyasi_mustehab_olan_geceler",
+    read: true,
+  },
+  {
+    id: 2,
+    title: "Cuma Gün ve Gecesi",
+    slug: "cuma_gun_ve_gecesi",
+    read: true,
+  },
+  {
+    id: 14,
+    title: "Pazartesi Gün ve Gecesi",
+    slug: "pazartesi_gun_ve_gecesi",
+    read: true,
+  },
+  {
+    id: 12,
+    title: "Muharrem Ayı",
+    slug: "muharrem_ayi",
+    read: true,
+  },
+  {
+    id: 22,
+    title: "Safer Ayı",
+    slug: "safer_ayi",
+    read: true,
+  },
+  {
+    id: 17,
+    title: "Rebiulevvel Ayı",
+    slug: "rebiulevvel_ayi",
+    read: true,
+  },
+  {
+    id: 16,
+    title: "Rebiulahir, Cemaziyelevvel, Cemaziyelahir",
+    slug: "rebiulahir_cemaziyelevvel_cemaziyelahir",
+    read: true,
+  },
+  {
+    id: 18,
+    title: "Recep Ayı",
+    slug: "recep_ayi",
+    read: true,
+  },
+  {
+    id: 19,
+    title: "Regaib Gecesi",
+    slug: "regaib_gecesi",
+    read: true,
+  },
+  {
+    id: 11,
+    title: "Mirac Gecesi",
+    slug: "mirac_gecesi",
+    read: true,
+  },
+  {
+    id: 20,
+    title: "Şaban Ayı",
+    slug: "saban_ayi",
+    read: true,
+  },
+  {
+    id: 1,
     title: "Beraat Gecesi",
     slug: "beraat_gecesi",
-    content: "/books/hayati_hakika/beraat_gecesi/",
-    page: 5,
-    direction: 'ltr'
-}
+    read: true,
+  },
+  {
+    id: 21,
+    title: "Şaban Ayının Son Gecesi",
+    slug: "saban_ayinin_son_Gecesi",
+    read: true,
+  },
+  {
+    id: 15,
+    title: "Ramazan Ayı",
+    slug: "ramazan_ayi",
+    read: true,
+  },
+  {
+    id: 9,
+    title: "İtikaf",
+    slug: "itikaf",
+    read: true,
+  },
+  {
+    id: 10,
+    title: "Kadir Gecesi",
+    slug: "kadir_gecesi",
+    read: true,
+  },
+  {
+    id: 24,
+    title: "Şevval Ayı",
+    slug: "sevval_ayi",
+    read: true,
+  },
+  {
+    id: 26,
+    title: "Zilhicce Ayı",
+    slug: "zilhicce_ayi",
+    read: true,
+  },
+  {
+    id: 27,
+    title: "Zilhicce Ayının Son Gecesi",
+    slug: "zilhicce_son_gecesi",
+    read: true,
+  },
+  {
+    id: 6,
+    title: "Hateme Adabı",
+    slug: "hatme_adabi",
+    read: true,
+  },
+  {
+    id: 4,
+    title: "Fatiha Hatmesi",
+    slug: "fatiha_hatmesi",
+    read: true,
+  },
+  {
+    id: 7,
+    title: "Hatmi Enbiya",
+    slug: "hatmi_enbiya",
+    read: true,
+  },
+  {
+    id: 25,
+    title: "Tevbe-i İstiğfar",
+    slug: "tevbei_istigfar",
+    read: true,
+  },
+  {
+    id: 23,
+    title: "Salavat Hatmesi",
+    slug: "salavat_hatmesi",
+    read: true,
+  },
+  {
+    id: 3,
+    title: "Dua",
+    slug: "dua",
+    read: true,
+  },
+  {
+    id: 5,
+    title: "Hac ve Umre Programı",
+    slug: "hac_ve_umre_programi",
+    read: true,
+  },
+];
+
+export const beraat_gecesi = {
+  title: "Beraat Gecesi",
+  slug: "beraat_gecesi",
+  content: "/books/hayati_hakika/beraat_gecesi/",
+  page: 5,
+  direction: "ltr",
+};
 
 export const cuma_gun_ve_gecesi = {
-    title: 'Cuma Gün ve Gecesi',
-    slug: 'cuma_gun_ve_gecesi',
-    content: "/books/hayati_hakika/cuma_gun_ve_gecesi/",
-    page: 5,
-    direction: 'ltr'
-}
+  title: "Cuma Gün ve Gecesi",
+  slug: "cuma_gun_ve_gecesi",
+  content: "/books/hayati_hakika/cuma_gun_ve_gecesi/",
+  page: 5,
+  direction: "ltr",
+};
 
 export const dua = {
-    title: 'Dua',
-    slug: 'dua',
-    content: "/books/hayati_hakika/dua/",
-    page: 2,
-    direction: 'ltr'
-}
+  title: "Dua",
+  slug: "dua",
+  content: "/books/hayati_hakika/dua/",
+  page: 2,
+  direction: "ltr",
+};
 
 export const fatiha_hatmesi = {
-    title: 'Fatiha Hatmesi',
-    slug: 'fatiha_hatmesi',
-    content: "/books/hayati_hakika/fatiha_hatmesi/",
-    page: 7,
-    direction: 'ltr'
-}
+  title: "Fatiha Hatmesi",
+  slug: "fatiha_hatmesi",
+  content: "/books/hayati_hakika/fatiha_hatmesi/",
+  page: 7,
+  direction: "ltr",
+};
 
 export const hac_ve_umre_programi = {
-    title: 'Hac ve Umre Programı',
-    slug: 'hac_ve_umre_programi',
-    content: "/books/hayati_hakika/hac_ve_umre_programi/",
-    page: 9,
-    direction: 'ltr'
-}
+  title: "Hac ve Umre Programı",
+  slug: "hac_ve_umre_programi",
+  content: "/books/hayati_hakika/hac_ve_umre_programi/",
+  page: 9,
+  direction: "ltr",
+};
 
 export const hatme_adabi = {
-    title: 'Hatme Adabı',
-    slug: 'hatme_adabi',
-    content: "/books/hayati_hakika/hatme_adabi/",
-    page: 1,
-    direction: 'ltr'
-}
+  title: "Hatme Adabı",
+  slug: "hatme_adabi",
+  content: "/books/hayati_hakika/hatme_adabi/",
+  page: 1,
+  direction: "ltr",
+};
 
 export const hatmi_enbiya = {
-    title: 'Hatmi Enbiya',
-    slug: 'hatmi_enbiya',
-    content: "/books/hayati_hakika/hatmi_enbiya/",
-    page: 5,
-    direction: 'ltr'
-}
+  title: "Hatmi Enbiya",
+  slug: "hatmi_enbiya",
+  content: "/books/hayati_hakika/hatmi_enbiya/",
+  page: 5,
+  direction: "ltr",
+};
 
 export const ihyasi_mustehab_olan_geceler = {
-    title: 'İhyası Mustehab Olan Geceler',
-    slug: 'ihyasi_mustehab_olan_geceler',
-    content: "/books/hayati_hakika/ihyasi_mustehab_olan_geceler/",
-    page: 4,
-    direction: 'ltr'
-}
+  title: "İhyası Mustehab Olan Geceler",
+  slug: "ihyasi_mustehab_olan_geceler",
+  content: "/books/hayati_hakika/ihyasi_mustehab_olan_geceler/",
+  page: 4,
+  direction: "ltr",
+};
 
 export const itikaf = {
-    title: 'İtikaf',
-    slug: 'itikaf',
-    content: "/books/hayati_hakika/itikaf/",
-    page: 5,
-    direction: 'ltr'
-}
+  title: "İtikaf",
+  slug: "itikaf",
+  content: "/books/hayati_hakika/itikaf/",
+  page: 5,
+  direction: "ltr",
+};
 
 export const kadir_gecesi = {
-    title: 'Kadir Gecesi',
-    slug: 'kadir_gecesi',
-    content: "/books/hayati_hakika/kadir_gecesi/",
-    page: 1,
-    direction: 'ltr'
-}
+  title: "Kadir Gecesi",
+  slug: "kadir_gecesi",
+  content: "/books/hayati_hakika/kadir_gecesi/",
+  page: 1,
+  direction: "ltr",
+};
 
 export const mirac_gecesi = {
-    title: 'Mirac Gecesi',
-    slug: 'mirac_gecesi',
-    content: "/books/hayati_hakika/mirac_gecesi/",
-    page: 2,
-    direction: 'ltr'
-}
+  title: "Mirac Gecesi",
+  slug: "mirac_gecesi",
+  content: "/books/hayati_hakika/mirac_gecesi/",
+  page: 2,
+  direction: "ltr",
+};
 
 export const muharrem_ayi = {
-    title: 'Muharrem Ayı',
-    slug: 'muharrem_ayi',
-    content: "/books/hayati_hakika/muharrem_ayi/",
-    page: 8,
-    direction: 'ltr'
-}
+  title: "Muharrem Ayı",
+  slug: "muharrem_ayi",
+  content: "/books/hayati_hakika/muharrem_ayi/",
+  page: 8,
+  direction: "ltr",
+};
 
 export const mukaddime = {
-    title: 'Mukaddime',
-    slug: 'mukaddime',
-    content: "/books/hayati_hakika/mukaddime/",
-    page: 2,
-    direction: 'ltr'
-}
+  title: "Mukaddime",
+  slug: "mukaddime",
+  content: "/books/hayati_hakika/mukaddime/",
+  page: 2,
+  direction: "ltr",
+};
 
 export const pazartesi_gun_ve_gecesi = {
-    title: 'Pazartesi Gün ve Gecesi',
-    slug: 'pazartesi_gun_ve_gecesi',
-    content: "/books/hayati_hakika/pazartesi_gun_ve_gecesi/",
-    page: 2,
-    direction: 'ltr'
-}
+  title: "Pazartesi Gün ve Gecesi",
+  slug: "pazartesi_gun_ve_gecesi",
+  content: "/books/hayati_hakika/pazartesi_gun_ve_gecesi/",
+  page: 2,
+  direction: "ltr",
+};
 
 export const ramazan_ayi = {
-    title: 'Ramazan Ayı',
-    slug: 'ramazan_ayi',
-    content: "/books/hayati_hakika/ramazan_ayi/",
-    page: 4,
-    direction: 'ltr'
-}
+  title: "Ramazan Ayı",
+  slug: "ramazan_ayi",
+  content: "/books/hayati_hakika/ramazan_ayi/",
+  page: 4,
+  direction: "ltr",
+};
 
 export const rebiulahir_cemaziyelevvel_cemaziyelahir = {
-    title: 'Rebiulahir, Cemaziyelevvel, Cemaziyelahir',
-    slug: 'rebiulahir_cemaziyelevvel_cemaziyelahir',
-    content: "/books/hayati_hakika/rebiulahir_cemaziyelevvel_cemaziyelahir/",
-    page: 1,
-    direction: 'ltr'
-}
+  title: "Rebiulahir, Cemaziyelevvel, Cemaziyelahir",
+  slug: "rebiulahir_cemaziyelevvel_cemaziyelahir",
+  content: "/books/hayati_hakika/rebiulahir_cemaziyelevvel_cemaziyelahir/",
+  page: 1,
+  direction: "ltr",
+};
 
 export const rebiulevvel_ayi = {
-    title: 'Rebiulevvel Ayı',
-    slug: 'rebiulevvel_ayi',
-    content: "/books/hayati_hakika/rebiulevvel_ayi/",
-    page: 4,
-    direction: 'ltr'
-}
+  title: "Rebiulevvel Ayı",
+  slug: "rebiulevvel_ayi",
+  content: "/books/hayati_hakika/rebiulevvel_ayi/",
+  page: 4,
+  direction: "ltr",
+};
 
 export const recep_ayi = {
-    title: 'Recep Ayı',
-    slug: 'recep_ayi',
-    content: "/books/hayati_hakika/recep_ayi/",
-    page: 7,
-    direction: 'ltr'
-}
+  title: "Recep Ayı",
+  slug: "recep_ayi",
+  content: "/books/hayati_hakika/recep_ayi/",
+  page: 7,
+  direction: "ltr",
+};
 
 export const regaib_gecesi = {
-    title: 'Regaib Gecesi',
-    slug: 'regaib_gecesi',
-    content: "/books/hayati_hakika/regaib_gecesi/",
-    page: 3,
-    direction: 'ltr'
-}
+  title: "Regaib Gecesi",
+  slug: "regaib_gecesi",
+  content: "/books/hayati_hakika/regaib_gecesi/",
+  page: 3,
+  direction: "ltr",
+};
 
 export const saban_ayi = {
-    title: 'Şaban Ayı',
-    slug: 'saban_ayi',
-    content: "/books/hayati_hakika/saban_ayi/",
-    page: 5,
-    direction: 'ltr'
-}
+  title: "Şaban Ayı",
+  slug: "saban_ayi",
+  content: "/books/hayati_hakika/saban_ayi/",
+  page: 5,
+  direction: "ltr",
+};
 
 export const saban_ayinin_son_Gecesi = {
-    title: 'Şaban Ayının Son Gecesi',
-    slug: 'saban_ayinin_son_Gecesi',
-    content: "/books/hayati_hakika/saban_ayinin_son_Gecesi/",
-    page: 1,
-    direction: 'ltr'
-}
+  title: "Şaban Ayının Son Gecesi",
+  slug: "saban_ayinin_son_Gecesi",
+  content: "/books/hayati_hakika/saban_ayinin_son_Gecesi/",
+  page: 1,
+  direction: "ltr",
+};
 
 export const safer_ayi = {
-    title: 'Safer Ayı',
-    slug: 'safer_ayi',
-    content: "/books/hayati_hakika/safer_ayi/",
-    page: 2,
-    direction: 'ltr'
-}
+  title: "Safer Ayı",
+  slug: "safer_ayi",
+  content: "/books/hayati_hakika/safer_ayi/",
+  page: 2,
+  direction: "ltr",
+};
 
 export const salavat_hatmesi = {
-    title: 'Salavat Hatmesi',
-    slug: 'salavat_hatmesi',
-    content: "/books/hayati_hakika/salavat_hatmesi/",
-    page: 5,
-    direction: 'ltr'
-}
+  title: "Salavat Hatmesi",
+  slug: "salavat_hatmesi",
+  content: "/books/hayati_hakika/salavat_hatmesi/",
+  page: 5,
+  direction: "ltr",
+};
 
 export const sevval_ayi = {
-    title: 'Şevval Ayı',
-    slug: 'sevval_ayi',
-    content: "/books/hayati_hakika/sevval_ayi/",
-    page: 1,
-    direction: 'ltr'
-}
+  title: "Şevval Ayı",
+  slug: "sevval_ayi",
+  content: "/books/hayati_hakika/sevval_ayi/",
+  page: 1,
+  direction: "ltr",
+};
 
 export const tevbei_istigfar = {
-    title: 'Tevbe-i İstiğfar',
-    slug: 'tevbei_istigfar',
-    content: "/books/hayati_hakika/tevbei_istigfar/",
-    page: 4,
-    direction: 'ltr'
-}
+  title: "Tevbe-i İstiğfar",
+  slug: "tevbei_istigfar",
+  content: "/books/hayati_hakika/tevbei_istigfar/",
+  page: 4,
+  direction: "ltr",
+};
 
 export const zilhicce_ayi = {
-    title: 'Zilhicce Ayı',
-    slug: 'zilhicce_ayi',
-    content: "/books/hayati_hakika/zilhicce_ayi/",
-    page: 6,
-    direction: 'ltr'
-}
+  title: "Zilhicce Ayı",
+  slug: "zilhicce_ayi",
+  content: "/books/hayati_hakika/zilhicce_ayi/",
+  page: 6,
+  direction: "ltr",
+};
 
 export const zilhicce_son_gecesi = {
-    title: 'Zilhicce Ayının Son Gecesi',
-    slug: 'zilhicce_son_gecesi',
-    content: "/books/hayati_hakika/zilhicce_son_gecesi/",
-    page: 1,
-    direction: 'ltr'
-}
+  title: "Zilhicce Ayının Son Gecesi",
+  slug: "zilhicce_son_gecesi",
+  content: "/books/hayati_hakika/zilhicce_son_gecesi/",
+  page: 1,
+  direction: "ltr",
+};
 
 export const hadisler = [
-    {
-        id: 1,
-        title: 'Amel',
-        slug: 'amel',
-        read: true
-    },
-    {
-        id: 2,
-        title: 'Anne Baba',
-        slug: 'annebaba',
-        read: true
-    },
-    {
-        id: 3,
-        title: 'Güzel Ahlak',
-        slug: 'guzelahlak',
-        read: true
-    },
-    {
-        id: 4,
-        title: 'Haset',
-        slug: 'haset',
-        read: true
-    },
-    {
-        id: 5,
-        title: 'İman',
-        slug: 'iman',
-        read: true
-    },
-    {
-        id: 6,
-        title: 'Kibir',
-        slug: 'kibir',
-        read: true
-    },
-    {
-        id: 7,
-        title: 'Muhabbet',
-        slug: 'muhabbet',
-        read: true
-    },
-    {
-        id: 8,
-        title: 'Riba',
-        slug: 'riba',
-        read: true
-    },
-    {
-        id: 9,
-        title: 'Salat-ü Selam',
-        slug: 'salatu',
-        read: true
-    },
-    {
-        id: 10,
-        title: 'Takva',
-        slug: 'takva',
-        read: true
-    },
-    {
-        id: 11,
-        title: 'Teheccud',
-        slug: 'teheccud',
-        read: true
-    },
-    {
-        id: 12,
-        title: 'Zikir',
-        slug: 'zikir',
-        read: true
-    },
-]
+  {
+    id: 1,
+    title: "Amel",
+    slug: "amel",
+    read: true,
+  },
+  {
+    id: 2,
+    title: "Anne Baba",
+    slug: "annebaba",
+    read: true,
+  },
+  {
+    id: 3,
+    title: "Güzel Ahlak",
+    slug: "guzelahlak",
+    read: true,
+  },
+  {
+    id: 4,
+    title: "Haset",
+    slug: "haset",
+    read: true,
+  },
+  {
+    id: 5,
+    title: "İman",
+    slug: "iman",
+    read: true,
+  },
+  {
+    id: 6,
+    title: "Kibir",
+    slug: "kibir",
+    read: true,
+  },
+  {
+    id: 7,
+    title: "Muhabbet",
+    slug: "muhabbet",
+    read: true,
+  },
+  {
+    id: 8,
+    title: "Riba",
+    slug: "riba",
+    read: true,
+  },
+  {
+    id: 9,
+    title: "Salat-ü Selam",
+    slug: "salatu",
+    read: true,
+  },
+  {
+    id: 10,
+    title: "Takva",
+    slug: "takva",
+    read: true,
+  },
+  {
+    id: 11,
+    title: "Teheccud",
+    slug: "teheccud",
+    read: true,
+  },
+  {
+    id: 12,
+    title: "Zikir",
+    slug: "zikir",
+    read: true,
+  },
+];
 
 export const amel = {
-    title: 'Amel',
-    slug: 'amel',
-    content: "/books/hadis/amel/",
-    page: 9,
-    direction: 'ltr'
-}
+  title: "Amel",
+  slug: "amel",
+  content: "/books/hadis/amel/",
+  page: 9,
+  direction: "ltr",
+};
 
 export const annebaba = {
-    title: 'Anne Baba',
-    slug: 'annebaba',
-    content: "/books/hadis/annebaba/",
-    page: 6,
-    direction: 'ltr'
-}
+  title: "Anne Baba",
+  slug: "annebaba",
+  content: "/books/hadis/annebaba/",
+  page: 6,
+  direction: "ltr",
+};
 
 export const guzelahlak = {
-    title: 'Güzel Ahlak',
-    slug: 'guzelahlak',
-    content: "/books/hadis/guzelahlak/",
-    page: 9,
-    direction: 'ltr'
-}
+  title: "Güzel Ahlak",
+  slug: "guzelahlak",
+  content: "/books/hadis/guzelahlak/",
+  page: 9,
+  direction: "ltr",
+};
 
 export const haset = {
-    title: 'Haset',
-    slug: 'haset',
-    content: "/books/hadis/haset/",
-    page: 5,
-    direction: 'ltr'
-}
+  title: "Haset",
+  slug: "haset",
+  content: "/books/hadis/haset/",
+  page: 5,
+  direction: "ltr",
+};
 
 export const iman = {
-    title: 'İman',
-    slug: 'iman',
-    content: "/books/hadis/iman/",
-    page: 8,
-    direction: 'ltr'
-}
+  title: "İman",
+  slug: "iman",
+  content: "/books/hadis/iman/",
+  page: 8,
+  direction: "ltr",
+};
 
 export const kibir = {
-    title: 'Kibir',
-    slug: 'kibir',
-    content: "/books/hadis/kibir/",
-    page: 6,
-    direction: 'ltr'
-}
+  title: "Kibir",
+  slug: "kibir",
+  content: "/books/hadis/kibir/",
+  page: 6,
+  direction: "ltr",
+};
 
 export const muhabbet = {
-    title: 'Muhabbet',
-    slug: 'muhabbet',
-    content: "/books/hadis/muhabbet/",
-    page: 9,
-    direction: 'ltr'
-}
+  title: "Muhabbet",
+  slug: "muhabbet",
+  content: "/books/hadis/muhabbet/",
+  page: 9,
+  direction: "ltr",
+};
 
 export const riba = {
-    title: 'Riba',
-    slug: 'riba',
-    content: "/books/hadis/riba/",
-    page: 4,
-    direction: 'ltr'
-}
+  title: "Riba",
+  slug: "riba",
+  content: "/books/hadis/riba/",
+  page: 4,
+  direction: "ltr",
+};
 
 export const salatu = {
-    title: 'Salat-ü Selam',
-    slug: 'salatu',
-    content: "/books/hadis/salatu/",
-    page: 8,
-    direction: 'ltr'
-}
+  title: "Salat-ü Selam",
+  slug: "salatu",
+  content: "/books/hadis/salatu/",
+  page: 8,
+  direction: "ltr",
+};
 
 export const takva = {
-    title: 'Takva',
-    slug: 'takva',
-    content: "/books/hadis/takva/",
-    page: 12,
-    direction: 'ltr'
-}
+  title: "Takva",
+  slug: "takva",
+  content: "/books/hadis/takva/",
+  page: 12,
+  direction: "ltr",
+};
 
 export const teheccud = {
-    title: 'Teheccud',
-    slug: 'teheccud',
-    content: "/books/hadis/teheccud/",
-    page: 5,
-    direction: 'ltr'
-}
+  title: "Teheccud",
+  slug: "teheccud",
+  content: "/books/hadis/teheccud/",
+  page: 5,
+  direction: "ltr",
+};
 
 export const zikir = {
-    title: 'Zikir',
-    slug: 'zikir',
-    content: "/books/hadis/zikir/",
-    page: 6,
-    direction: 'ltr'
-}
+  title: "Zikir",
+  slug: "zikir",
+  content: "/books/hadis/zikir/",
+  page: 6,
+  direction: "ltr",
+};
 
 export const ilahiler = [
-    {
-        id: 1,
-        title: 'Nabi',
-        slug: 'nabi',
-        read: true
-    },
-    {
-        id: 2,
-        title: 'Yunus',
-        slug: 'yunus',
-        read: false
-    },
-    {
-        id: 3,
-        title: 'Kuddusi',
-        slug: 'kuddusi',
-        read: false
-    },
-    {
-        id: 4,
-        title: 'Eşrefoğlu',
-        slug: 'esrefoglu',
-        read: true
-    },
-    {
-        id: 5,
-        title: 'Niyazi',
-        slug: 'niyazi',
-        read: false
-    },
-    {
-        id: 6,
-        title: 'İbrahim Hakkı',
-        slug: 'ibrahim_hakki',
-        read: false
-    },
-    {
-        id: 7,
-        title: 'Abdülgani Efendi',
-        slug: 'abdulgani_efendi',
-        read: false
-    },
-    {
-        id: 8,
-        title: 'Alvarlı-Efe',
-        slug: 'alvarlı_efe',
-        read: false
-    },
-    {
-        id: 9,
-        title: 'İrfani',
-        slug: 'irfani',
-        read: false
-    },
-    {
-        id: 10,
-        title: 'Habeşi',
-        slug: 'habesi',
-        read: true
-    },
-    {
-        id: 11,
-        title: 'Seyfullah',
-        slug: 'seyfullah',
-        read: true
-    },
-    {
-        id: 12,
-        title: "Şem'i",
-        slug: 'semi',
-        read: true
-    },
-    {
-        id: 13,
-        title: "Şeyh Said",
-        slug: 'seyh_said',
-        read: true
-    },
-    {
-        id: 14,
-        title: "Kul Yusuf",
-        slug: 'kul_yusuf',
-        read: true
-    },
-    {
-        id: 15,
-        title: "Es'ad Erbili",
-        slug: 'esad_erbili',
-        read: true
-    },
-    {
-        id: 16,
-        title: "Seyyid Nızamoğlu",
-        slug: 'seyyid_nizamoğlu',
-        read: true
-    },
-    {
-        id: 17,
-        title: "Ali Ulvi Kurucu",
-        slug: 'ali_ulvi_kurucu',
-        read: true
-    },
-    {
-        id: 18,
-        title: "Aziz Mahmud Hüdai",
-        slug: 'aziz_mahmud_hudai',
-        read: true
-    },
-    {
-        id: 19,
-        title: "Hacı Bayram Veli",
-        slug: 'haci_bayram_veli',
-        read: true
-    },
-    {
-        id: 20,
-        title: "Fuzuli",
-        slug: 'fuzuli',
-        read: true
-    },
-    {
-        id: 21,
-        title: "La Edri",
-        slug: 'la_edri',
-        read: false
-    },
-]
+  {
+    id: 1,
+    title: "Nabi",
+    slug: "nabi",
+    read: true,
+  },
+  {
+    id: 2,
+    title: "Yunus",
+    slug: "yunus",
+    read: false,
+  },
+  {
+    id: 3,
+    title: "Kuddusi",
+    slug: "kuddusi",
+    read: false,
+  },
+  {
+    id: 4,
+    title: "Eşrefoğlu",
+    slug: "esrefoglu",
+    read: true,
+  },
+  {
+    id: 5,
+    title: "Niyazi",
+    slug: "niyazi",
+    read: false,
+  },
+  {
+    id: 6,
+    title: "İbrahim Hakkı",
+    slug: "ibrahim_hakki",
+    read: false,
+  },
+  {
+    id: 7,
+    title: "Abdülgani Efendi",
+    slug: "abdulgani_efendi",
+    read: false,
+  },
+  {
+    id: 8,
+    title: "Alvarlı-Efe",
+    slug: "alvarlı_efe",
+    read: false,
+  },
+  {
+    id: 9,
+    title: "İrfani",
+    slug: "irfani",
+    read: false,
+  },
+  {
+    id: 10,
+    title: "Habeşi",
+    slug: "habesi",
+    read: true,
+  },
+  {
+    id: 11,
+    title: "Seyfullah",
+    slug: "seyfullah",
+    read: true,
+  },
+  {
+    id: 12,
+    title: "Şem'i",
+    slug: "semi",
+    read: true,
+  },
+  {
+    id: 13,
+    title: "Şeyh Said",
+    slug: "seyh_said",
+    read: true,
+  },
+  {
+    id: 14,
+    title: "Kul Yusuf",
+    slug: "kul_yusuf",
+    read: true,
+  },
+  {
+    id: 15,
+    title: "Es'ad Erbili",
+    slug: "esad_erbili",
+    read: true,
+  },
+  {
+    id: 16,
+    title: "Seyyid Nızamoğlu",
+    slug: "seyyid_nizamoğlu",
+    read: true,
+  },
+  {
+    id: 17,
+    title: "Ali Ulvi Kurucu",
+    slug: "ali_ulvi_kurucu",
+    read: true,
+  },
+  {
+    id: 18,
+    title: "Aziz Mahmud Hüdai",
+    slug: "aziz_mahmud_hudai",
+    read: true,
+  },
+  {
+    id: 19,
+    title: "Hacı Bayram Veli",
+    slug: "haci_bayram_veli",
+    read: true,
+  },
+  {
+    id: 20,
+    title: "Fuzuli",
+    slug: "fuzuli",
+    read: true,
+  },
+  {
+    id: 21,
+    title: "La Edri",
+    slug: "la_edri",
+    read: false,
+  },
+];
 
 export const nabi = {
-    1: {
-        title: '',
-        slug: '',
-        content: `Sakın terki edepten Kuy’ı mahbubu Hüdadır bu
+  1: {
+    title: "",
+    slug: "",
+    content: `Sakın terki edepten Kuy’ı mahbubu Hüdadır bu
         Nazargahı ilahidir makamı Mustafa’dır bu
         
         Habibi kibriyanın hab gahıdır hakikatte
@@ -1657,53 +1671,53 @@ export const nabi = {
         
         Muraatı edeb şartıyle gir Nabi bu dergaha
         Metafı Kudsiyandır Busegah’ı enbiyadır bu`,
-        split: 2
-    }
-}
+    split: 2,
+  },
+};
 
 export const yunus = [
-    {
-        id: 1,
-        title: 'Yar yüreğim yar gör ki nerler var',
-        slug: 'yunus_1',
-        read: true
-    },
-    {
-        id: 2,
-        title: 'Şeyhimin illeri uzaktır yolları',
-        slug: 'yunus_2',
-        read: true
-    },
-    {
-        id: 3,
-        title: 'Milk i bekadan gelmişem fani cihanı neylerim',
-        slug: 'yunus_3',
-        read: true
-    },
-    {
-        id: 4,
-        title: 'Gel ey kardaş Hakkı bulayım dersen',
-        slug: 'yunus_4',
-        read: true
-    },
-    {
-        id: 5,
-        title: 'Ne zaman anarsam seni kararım kalmaz Allahım',
-        slug: 'yunus_5',
-        read: true
-    },
-    {
-        id: 6,
-        title: 'Hak yarattı alemi aşkına Muhammed’in',
-        slug: 'yunus_6',
-        read: true
-    },
-]
+  {
+    id: 1,
+    title: "Yar yüreğim yar gör ki nerler var",
+    slug: "yunus_1",
+    read: true,
+  },
+  {
+    id: 2,
+    title: "Şeyhimin illeri uzaktır yolları",
+    slug: "yunus_2",
+    read: true,
+  },
+  {
+    id: 3,
+    title: "Milk i bekadan gelmişem fani cihanı neylerim",
+    slug: "yunus_3",
+    read: true,
+  },
+  {
+    id: 4,
+    title: "Gel ey kardaş Hakkı bulayım dersen",
+    slug: "yunus_4",
+    read: true,
+  },
+  {
+    id: 5,
+    title: "Ne zaman anarsam seni kararım kalmaz Allahım",
+    slug: "yunus_5",
+    read: true,
+  },
+  {
+    id: 6,
+    title: "Hak yarattı alemi aşkına Muhammed’in",
+    slug: "yunus_6",
+    read: true,
+  },
+];
 
 export const yunus_1 = {
-    title: 'Yar yüreğim yar gör ki nerler var',
-    slug: 'yunus_1',
-    content: `Yar yüreğim yar gör ki nerler var
+  title: "Yar yüreğim yar gör ki nerler var",
+  slug: "yunus_1",
+  content: `Yar yüreğim yar gör ki nerler var
 Bu halk içinde bize güller var
 Gittin bu yola aşk ile bile
 Gariblik ile bizi salar var
@@ -1718,13 +1732,13 @@ Kalmasın cane kimde hüner var
 Yunus sen meydan isteme 
 Meydan içinde merdaneler var
 `,
-    split: 4
-}
+  split: 4,
+};
 
 export const yunus_2 = {
-    title: 'Şeyhimin illeri uzaktır yolları',
-    slug: 'yunus_2',
-    content: `Yar yüreğim yar gör ki nerler var
+  title: "Şeyhimin illeri uzaktır yolları",
+  slug: "yunus_2",
+  content: `Yar yüreğim yar gör ki nerler var
     Bu halk içinde bize güller var
     Gittin bu yola aşk ile bile
     Gariblik ile bizi salar var
@@ -1738,13 +1752,13 @@ Herkim pervane gelsin meydane
 Kalmasın cane kimde hüner var
 Yunus sen meydan isteme 
 Meydan içinde merdaneler var`,
-    split: 4
-}
+  split: 4,
+};
 
 export const yunus_3 = {
-    title: 'Milk i bekadan gelmişem fani cihanı neylerim',
-    slug: 'yunus_3',
-    content: `Milk i bekadan gelmişem fani cihanı neylerim
+  title: "Milk i bekadan gelmişem fani cihanı neylerim",
+  slug: "yunus_3",
+  content: `Milk i bekadan gelmişem fani cihanı neylerim
 Ben dost cemalin görmüşem huri cinanı neylerim
 
 Vahdet meyinin cürasın maşuk elinden içmişem
@@ -1764,13 +1778,13 @@ Ismailem Hakk yoluna canımı kurban eylerem
 
 Aşık Yunus maşukuna vuslat bulunca mest olur 
 Ben şişeyi çaldım taşa namusu arı neylerim`,
-    split: 2
-}
+  split: 2,
+};
 
 export const yunus_4 = {
-    title: 'Gel ey kardaş Hakkı bulayım dersen',
-    slug: 'yunus_4',
-    content: `Gel ey kardaş Hakkı bulayım dersen
+  title: "Gel ey kardaş Hakkı bulayım dersen",
+  slug: "yunus_4",
+  content: `Gel ey kardaş Hakkı bulayım dersen
 Bir kamil mürşide varmayınca olmaz
 Resülün cemalin göreyim dersen 
 Bir kamil mürşide varmayınca olmaz
@@ -1794,13 +1808,13 @@ Yunus Emre bunda mana var dedi
 Bir kamil mürşide sende var imdi 
 Hazreti Musaya Hızra var dedi 
 Bir kamil mürşide varmayınca olmaz`,
-    split: 4
-}
+  split: 4,
+};
 
 export const yunus_5 = {
-    title: 'Ne zaman anarsam seni kararım kalmaz Allahım',
-    slug: 'yunus_5',
-    content: `Ne zaman anarsam seni kararım kalmaz Allahım
+  title: "Ne zaman anarsam seni kararım kalmaz Allahım",
+  slug: "yunus_5",
+  content: `Ne zaman anarsam seni kararım kalmaz Allahım
 Senden gayrı gözüm yaşın kimseler silmez Allahım
 
 Sensin ismi Baki olan, sensin dillerde okunan
@@ -1814,13 +1828,13 @@ Senin cemalin görmeyen meydana gelmez Allahım
 
 Aşık Yunus seni ister lutf eyle cemalin göster
 Cemalin gören aşıklar ebedi ölmez Allahım`,
-    split: 2
-}
+  split: 2,
+};
 
 export const yunus_6 = {
-    title: 'Hak yarattı alemi aşkına Muhammed’in',
-    slug: 'yunus_6',
-    content: `Hak yarattı alemi aşkına Muhammed’in
+  title: "Hak yarattı alemi aşkına Muhammed’in",
+  slug: "yunus_6",
+  content: `Hak yarattı alemi aşkına Muhammed’in
 Ay ve günü yarattı aşkına Muhammed’in
 
 Ol dedi oldu alem yazıldı levhü kalem
@@ -1831,34 +1845,34 @@ Zikri tevhid ettiler nuruna Muhammed’in
 
 Yunus kim ede methi över Kur’an ayeti
 An vergil salavatı aşkına Muhammed’in`,
-    split: 2
-}
+  split: 2,
+};
 
 export const kuddusi = [
-    {
-        id: 1,
-        title: 'Ey rahmeti bol padişah ',
-        slug: 'kuddusi_1',
-        read: true
-    },
-    {
-        id: 2,
-        title: 'Sülük ahvalini salik yola gidüp gelenden sor',
-        slug: 'kuddusi_2',
-        read: true
-    },
-    {
-        id: 3,
-        title: 'Arz-ı hal içün sultana geldim',
-        slug: 'kuddusi_3',
-        read: true
-    },
-]
+  {
+    id: 1,
+    title: "Ey rahmeti bol padişah ",
+    slug: "kuddusi_1",
+    read: true,
+  },
+  {
+    id: 2,
+    title: "Sülük ahvalini salik yola gidüp gelenden sor",
+    slug: "kuddusi_2",
+    read: true,
+  },
+  {
+    id: 3,
+    title: "Arz-ı hal içün sultana geldim",
+    slug: "kuddusi_3",
+    read: true,
+  },
+];
 
 export const kuddusi_1 = {
-    title: 'Ey rahmeti bol padişah',
-    slug: 'kuddusi_1',
-    content: `Ey rahmeti bol padişah 
+  title: "Ey rahmeti bol padişah",
+  slug: "kuddusi_1",
+  content: `Ey rahmeti bol padişah 
 Cürmüm ile geldim sana 
 Ben eyledim hadsiz günah 
 Cürmüm ile geldim sana
@@ -1907,13 +1921,13 @@ Isyanda Kuddusi şedid
 Kullukta bir battal pelid 
 Der kesmeyub senden umid 
 Cürmüm ile geldim sana`,
-    split: 4
-}
+  split: 4,
+};
 
 export const kuddusi_2 = {
-    title: 'Sülük ahvalini salik yola gidüp gelenden sor',
-    slug: 'kuddusi_2',
-    content: `Sülük ahvalini salik yola gidüp gelenden sor
+  title: "Sülük ahvalini salik yola gidüp gelenden sor",
+  slug: "kuddusi_2",
+  content: `Sülük ahvalini salik yola gidüp gelenden sor
 Eğer gavvas olam dersen bu deryaya dalandan sor
 
 Tarikat sırrını sorma mühaddisten müderristen
@@ -1927,13 +1941,13 @@ Billur arif bu ilmi kim yürü anı menenden sor
 
 Bu Kuddusi’leyin cahil mudda-i çokdurur zira
 Visalin tarzını murşid olup vasıl olandan sor`,
-    split: 2
-}
+  split: 2,
+};
 
 export const kuddusi_3 = {
-    title: 'Arz-ı hal içün sultana geldim',
-    slug: 'kuddusi_3',
-    content: `Arz-ı hal içün sultana geldim
+  title: "Arz-ı hal içün sultana geldim",
+  slug: "kuddusi_3",
+  content: `Arz-ı hal içün sultana geldim
 Sailim lutfu ihsana geldim
 
 Derdi firaka derman aradım
@@ -1965,13 +1979,13 @@ Bir katra iken umman geldim
 
 Der ki Kuddusi elhamdulillah 
 Kaçtım sivadan yezdana geldim`,
-    split: 2
-}
+  split: 2,
+};
 
 export const esrefoglu_1 = {
-    title: 'Ey Allahım beni senden ayırma',
-    slug: 'esrefoglu',
-    content: `Ey Allahım beni senden ayırma
+  title: "Ey Allahım beni senden ayırma",
+  slug: "esrefoglu",
+  content: `Ey Allahım beni senden ayırma
 Beni senin didarından ayırma 
 
 Seni sevmek benim dinim imanım
@@ -1992,34 +2006,34 @@ Balığın canı suda dediler
 Eşrefoğlu senin kemter kulundur
 Ilahi kulun sultandan ayırma
 `,
-    split: 2
-}
+  split: 2,
+};
 
 export const niyazi = [
-    {
-        id: 1,
-        title: 'Zat-ı Hak’ta mahrem-i irfan olan anlar bizi,',
-        slug: 'niyazi_1',
-        read: true
-    },
-    {
-        id: 2,
-        title: 'Derman arardım derdime',
-        slug: 'niyazi_2',
-        read: true
-    },
-    {
-        id: 3,
-        title: 'Derdi Hakk’a talip ol dermana erem dersen',
-        slug: 'niyazi_3',
-        read: true
-    },
-]
+  {
+    id: 1,
+    title: "Zat-ı Hak’ta mahrem-i irfan olan anlar bizi,",
+    slug: "niyazi_1",
+    read: true,
+  },
+  {
+    id: 2,
+    title: "Derman arardım derdime",
+    slug: "niyazi_2",
+    read: true,
+  },
+  {
+    id: 3,
+    title: "Derdi Hakk’a talip ol dermana erem dersen",
+    slug: "niyazi_3",
+    read: true,
+  },
+];
 
 export const niyazi_1 = {
-    title: 'Zat-ı Hak’ta mahrem-i irfan olan anlar bizi',
-    slug: 'niyazi_1',
-    content: `Zat-ı Hak’ta mahrem-i irfan olan anlar bizi,
+  title: "Zat-ı Hak’ta mahrem-i irfan olan anlar bizi",
+  slug: "niyazi_1",
+  content: `Zat-ı Hak’ta mahrem-i irfan olan anlar bizi,
 İlm-i sırda bahri bipayan olan anlar bizi.
 
 Bu fena gülzarına bülbül olanlar anlamaz,
@@ -2036,13 +2050,13 @@ Bu cihanda sanmayın hayvan olan anlar bizi.
 
 Ey Niyazi katremiz deryaya saldık biz bugün,
 Katre nice anlasın umman olan anlar bizi.`,
-    split: 2
-}
+  split: 2,
+};
 
 export const niyazi_2 = {
-    title: 'Derman arardım derdime',
-    slug: 'niyazi_2',
-    content: `Derman arardım derdime
+  title: "Derman arardım derdime",
+  slug: "niyazi_2",
+  content: `Derman arardım derdime
 Derdim bana derman imiş 
 Bürhan sorardım aslıma 
 Aslım bana bürhan imiş
@@ -2061,13 +2075,13 @@ Lazım olan irfan imiş
 Bir nesne örtmez hak yüzün
 Haktan ayan bir nesne yok
 Gözsüzlere pinhan imiş`,
-    split: 4
-}
+  split: 4,
+};
 
 export const niyazi_3 = {
-    title: 'Derdi Hakk’a talip ol dermana erem dersen',
-    slug: 'niyazi_3',
-    content: `Derdi Hakk’a talip ol dermana erem dersen
+  title: "Derdi Hakk’a talip ol dermana erem dersen",
+  slug: "niyazi_3",
+  content: `Derdi Hakk’a talip ol dermana erem dersen
 Mihnetlere nakip ol ihsana erem dersen
 
 Aşk yolu belalıdır her karı cefalıdır
@@ -2084,34 +2098,34 @@ Yusuf gibi mahbub ol kenana erem dersen
 
 Terk et kuru davayı hem ücb ile riyayı
 Mısri kov bu sevdayı sübhana erem dersen`,
-    split: 2
-}
+  split: 2,
+};
 
 export const ibrahim_hakki = [
-    {
-        id: 1,
-        title: 'Canü dilde fani kıldın akibet',
-        slug: 'ibrahim_hakki_1',
-        read: true
-    },
-    {
-        id: 2,
-        title: 'Hak şerleri hayr eyler ',
-        slug: 'ibrahim_hakki_2',
-        read: true
-    },
-    {
-        id: 3,
-        title: 'Ne devlettir ki dildarım sen oldun',
-        slug: 'ibrahim_hakki_3',
-        read: true
-    },
-]
+  {
+    id: 1,
+    title: "Canü dilde fani kıldın akibet",
+    slug: "ibrahim_hakki_1",
+    read: true,
+  },
+  {
+    id: 2,
+    title: "Hak şerleri hayr eyler ",
+    slug: "ibrahim_hakki_2",
+    read: true,
+  },
+  {
+    id: 3,
+    title: "Ne devlettir ki dildarım sen oldun",
+    slug: "ibrahim_hakki_3",
+    read: true,
+  },
+];
 
 export const ibrahim_hakki_1 = {
-    title: 'Canü dilde fani kıldın akibet',
-    slug: 'ibrahim_hakki_1',
-    content: `Canü dilde fani kıldın akibet
+  title: "Canü dilde fani kıldın akibet",
+  slug: "ibrahim_hakki_1",
+  content: `Canü dilde fani kıldın akibet
 Gönlümü virane kıldın akibet
 
 Ol cünün zincirini tahrik edüp
@@ -2137,13 +2151,13 @@ Gönlümü meyhane kıldın akibet
 
 Ey fakirullah bu hakkı bendei
 Aşıki ferzane kıldın akibet`,
-    split: 2
-}
+  split: 2,
+};
 
 export const ibrahim_hakki_2 = {
-    title: 'Hak şerleri hayr eyler',
-    slug: 'ibrahim_hakki_2',
-    content: `Hak şerleri hayr eyler 
+  title: "Hak şerleri hayr eyler",
+  slug: "ibrahim_hakki_2",
+  content: `Hak şerleri hayr eyler 
 Zannetmeki gayreyler 
 Arif anı seyreyler
 Mevla görelim neyler
@@ -2191,13 +2205,13 @@ Hoş eyle kabul canla
 Vallahi güzel etmiş
 Billahi güzel etmiş
 Tellahi güzel etmiş`,
-    split: 4
-}
+  split: 4,
+};
 
 export const ibrahim_hakki_3 = {
-    title: 'Ne devlettir ki dildarım sen oldun',
-    slug: 'ibrahim_hakki_3',
-    content: `Ne devlettir ki dildarım sen oldun
+  title: "Ne devlettir ki dildarım sen oldun",
+  slug: "ibrahim_hakki_3",
+  content: `Ne devlettir ki dildarım sen oldun
 Enisü münisü yarim sen oldun
 
 Dili pür derdimin dermanı sensin
@@ -2214,66 +2228,66 @@ Ezelden çün nigahtarım sen oldun
 
 Sana tazim eder dillerde Hakkı
 Der inkarım yok ikrarım sen oldun`,
-    split: 2
-}
+  split: 2,
+};
 
 export const abdulgani_efendi = [
-    {
-        id: 1,
-        title: 'Eyni hidayettir lutfun ezeli ',
-        slug: 'abdulgani_efendi_1',
-        read: true
-    },
-    {
-        id: 2,
-        title: 'Alemi eşyaya bakıp olma mükedder',
-        slug: 'abdulgani_efendi_2',
-        read: true
-    },
-    {
-        id: 3,
-        title: 'Gönül sana senden şikayetim var',
-        slug: 'abdulgani_efendi_3',
-        read: true
-    },
-    {
-        id: 4,
-        title: 'Bugün canan bizi davet eyledi',
-        slug: 'abdulgani_efendi_4',
-        read: true
-    },
-    // {
-    //     id: 5,
-    //     title: 'Ey gönül kılsan tefekkür pendimi alsan nolur',
-    //     slug: 'abdulgani_efendi_5',
-    //     read: true
-    // }, {
-    //     id: 6,
-    //     title: 'Bekledim babı gülistan nev baharım gelmedi',
-    //     slug: 'abdulgani_efendi_6',
-    //     read: true
-    // }, {
-    //     id: 7,
-    //     title: 'Ararken seherde gönül levhinde',
-    //     slug: 'abdulgani_efendi_7',
-    //     read: true
-    // }, {
-    //     id: 8,
-    //     title: 'Dertlerime haktan derman dilerken',
-    //     slug: 'abdulgani_efendi_8',
-    //     read: true
-    // }, {
-    //     id: 9,
-    //     title: 'İnsan-ı kamile hizmet eyleyen',
-    //     slug: 'abdulgani_efendi_9',
-    //     read: true
-    // },
-]
+  {
+    id: 1,
+    title: "Eyni hidayettir lutfun ezeli ",
+    slug: "abdulgani_efendi_1",
+    read: true,
+  },
+  {
+    id: 2,
+    title: "Alemi eşyaya bakıp olma mükedder",
+    slug: "abdulgani_efendi_2",
+    read: true,
+  },
+  {
+    id: 3,
+    title: "Gönül sana senden şikayetim var",
+    slug: "abdulgani_efendi_3",
+    read: true,
+  },
+  {
+    id: 4,
+    title: "Bugün canan bizi davet eyledi",
+    slug: "abdulgani_efendi_4",
+    read: true,
+  },
+  // {
+  //     id: 5,
+  //     title: 'Ey gönül kılsan tefekkür pendimi alsan nolur',
+  //     slug: 'abdulgani_efendi_5',
+  //     read: true
+  // }, {
+  //     id: 6,
+  //     title: 'Bekledim babı gülistan nev baharım gelmedi',
+  //     slug: 'abdulgani_efendi_6',
+  //     read: true
+  // }, {
+  //     id: 7,
+  //     title: 'Ararken seherde gönül levhinde',
+  //     slug: 'abdulgani_efendi_7',
+  //     read: true
+  // }, {
+  //     id: 8,
+  //     title: 'Dertlerime haktan derman dilerken',
+  //     slug: 'abdulgani_efendi_8',
+  //     read: true
+  // }, {
+  //     id: 9,
+  //     title: 'İnsan-ı kamile hizmet eyleyen',
+  //     slug: 'abdulgani_efendi_9',
+  //     read: true
+  // },
+];
 
 export const abdulgani_efendi_1 = {
-    title: 'Eyni hidayettir lutfun ezeli',
-    slug: 'abdulgani_efendi_1',
-    content: `Eyni hidayettir lutfun ezeli 
+  title: "Eyni hidayettir lutfun ezeli",
+  slug: "abdulgani_efendi_1",
+  content: `Eyni hidayettir lutfun ezeli 
 Bildim bu dünyaya gelmeden evvel 
 Aradım levhinde olan takdiri 
 Buldum bu dünyaya gelmeden evvel
@@ -2297,13 +2311,13 @@ Yeter olma zikri dillere destan
 Gönül bahçesini eyle gülistan
 Göz yaşınla sula hoş ola bostan
 Feryad ede bülbül güle solmadan evvel`,
-    split: 4
-}
+  split: 4,
+};
 
 export const abdulgani_efendi_2 = {
-    title: 'Alemi eşyaya bakıp olma mükedder',
-    slug: 'abdulgani_efendi_2',
-    content: `Alemi eşyaya bakıp olma mükedder
+  title: "Alemi eşyaya bakıp olma mükedder",
+  slug: "abdulgani_efendi_2",
+  content: `Alemi eşyaya bakıp olma mükedder
 Hevayi terk eylede bul sen seni sende 
 Ta ezel böyle yazılmış levhi mukadder
 Sivayı terk eylede bul sen seni sende
@@ -2322,13 +2336,13 @@ Gördüğün alemleri bildin mi ne oldu
 Zikrinin bu demde yaş ile doldu 
 Arifler bak derde çare sabr ile buldu
 Sabreyle gönül bulasın sen seni sende`,
-    split: 4
-}
+  split: 4,
+};
 
 export const abdulgani_efendi_3 = {
-    title: 'Gönül sana senden şikayetim var',
-    slug: 'abdulgani_efendi_3',
-    content: `Gönül sana senden şikayetim var 
+  title: "Gönül sana senden şikayetim var",
+  slug: "abdulgani_efendi_3",
+  content: `Gönül sana senden şikayetim var 
 Daima ağlat beni güldürme sakın
 Ruhuma bir sürur gelse aşikar
 Setr eyle nefsime bildirme sakın
@@ -2352,13 +2366,13 @@ Zikri aşk oduyla ciğerin dağla
 Gam hasret kuşağın beline bağla
 Seherlerde kanlı yaş ile ağla
 Yağlıkla gözlerin sildirme sakın`,
-    split: 4
-}
+  split: 4,
+};
 
 export const abdulgani_efendi_4 = {
-    title: 'Bugün canan bizi davet eyledi',
-    slug: 'abdulgani_efendi_4',
-    content: `Bugün canan bizi davet eyledi
+  title: "Bugün canan bizi davet eyledi",
+  slug: "abdulgani_efendi_4",
+  content: `Bugün canan bizi davet eyledi
 Buyurun nasibi olanlar gelsin
 Gönül mihrabına etmiş esselah 
 Iktida eyleyip kılanlar gelsinler
@@ -2382,52 +2396,52 @@ Zikri zikret hakkı her seherde
 Seherde açılır nice bin perde
 Yağar derya gibi şifa her derde
 O rahmet bahrine dalanlar gelsin`,
-    split: 4
-}
+  split: 4,
+};
 
 export const alvarlı_efe = [
-    {
-        id: 1,
-        title: 'Bu derd meyhanesinde kimi gördüm şaduman olmuş',
-        slug: 'alvarlı_efe_1',
-        read: true
-    },
-    {
-        id: 2,
-        title: 'Ey kerem-kanı vucudun rahmeti rahman değil mi',
-        slug: 'alvarlı_efe_2',
-        read: true
-    },
-    {
-        id: 3,
-        title: 'Gülistan-ı risalette gül-i handan Muhammed’dir',
-        slug: 'alvarlı_efe_3',
-        read: true
-    },
-    {
-        id: 4,
-        title: 'Ne kadar cevr-u cefa eylesen ey nur-i basar',
-        slug: 'alvarlı_efe_4',
-        read: true
-    },
-    {
-        id: 5,
-        title: 'Birgün olur yar perdeyi kaldırır',
-        slug: 'alvarlı_efe_5',
-        read: true
-    },
-    {
-        id: 6,
-        title: 'Ol peri verş Dilberi dildarı gördüm ben bugün',
-        slug: 'alvarlı_efe_6',
-        read: true
-    },
-]
+  {
+    id: 1,
+    title: "Bu derd meyhanesinde kimi gördüm şaduman olmuş",
+    slug: "alvarlı_efe_1",
+    read: true,
+  },
+  {
+    id: 2,
+    title: "Ey kerem-kanı vucudun rahmeti rahman değil mi",
+    slug: "alvarlı_efe_2",
+    read: true,
+  },
+  {
+    id: 3,
+    title: "Gülistan-ı risalette gül-i handan Muhammed’dir",
+    slug: "alvarlı_efe_3",
+    read: true,
+  },
+  {
+    id: 4,
+    title: "Ne kadar cevr-u cefa eylesen ey nur-i basar",
+    slug: "alvarlı_efe_4",
+    read: true,
+  },
+  {
+    id: 5,
+    title: "Birgün olur yar perdeyi kaldırır",
+    slug: "alvarlı_efe_5",
+    read: true,
+  },
+  {
+    id: 6,
+    title: "Ol peri verş Dilberi dildarı gördüm ben bugün",
+    slug: "alvarlı_efe_6",
+    read: true,
+  },
+];
 
 export const alvarlı_efe_1 = {
-    title: 'Bu derd meyhanesinde kimi gördüm şaduman olmuş',
-    slug: 'alvarlı_efe_1',
-    content: `Bu derd meyhanesinde kimi gördüm şaduman olmuş
+  title: "Bu derd meyhanesinde kimi gördüm şaduman olmuş",
+  slug: "alvarlı_efe_1",
+  content: `Bu derd meyhanesinde kimi gördüm şaduman olmuş
 Bu gam-hane-i mihnetde beladan kim eman bulmuş
 
 Bu bir devvar-ı gaddardır gözü gördüğünü hep yer
@@ -2441,13 +2455,13 @@ Hüner bir ibret almaktır bu gaflet alemi almış
 
 Muhammet lutfi’ye lutfet eman ey halik-ı alem
 Belayı ekber oldur ki özünü gaflete salmış`,
-    split: 2
-}
+  split: 2,
+};
 
 export const alvarlı_efe_2 = {
-    title: 'Ey kerem-kanı vucudun rahmeti rahman değil mi',
-    slug: 'alvarlı_efe_2',
-    content: `Ey kerem-kanı vucudun rahmeti rahman değil mi
+  title: "Ey kerem-kanı vucudun rahmeti rahman değil mi",
+  slug: "alvarlı_efe_2",
+  content: `Ey kerem-kanı vucudun rahmeti rahman değil mi
 Vücudundaki o cudun umman-ı ihsan değil mi
 
 Kemahi vasfında vassaf Hazret-i Kur’an nur’isaf
@@ -2467,13 +2481,13 @@ Kaametin kaf-ı se’adet vücudun mihr’i hidayet
 
 Der-i dergahinde cibril derban olmuş ey nur-i dil
 Lutfi bir ahkar-ı sail muhtaç perişan değil mi`,
-    split: 2
-}
+  split: 2,
+};
 
 export const alvarlı_efe_3 = {
-    title: 'Gülistan-ı risalette gül-i handan Muhammed’dir',
-    slug: 'alvarlı_efe_3',
-    content: `Gülistan-ı risalette gül-i handan Muhammed’dir
+  title: "Gülistan-ı risalette gül-i handan Muhammed’dir",
+  slug: "alvarlı_efe_3",
+  content: `Gülistan-ı risalette gül-i handan Muhammed’dir
 O bostan-ı hidayette gül-i reyhan Muhammed’dir
 
 Güneşler yüzünün nuri ziyasından nümayişdir
@@ -2487,13 +2501,13 @@ Harem-i kabe kavseyn’de olan mihman Muhammed’dir
 
 Muhammed lutfi musterhim kemal-i merhametinden
 Üsatın derdine ruz-i ceza derman Muhammed’dir`,
-    split: 2
-}
+  split: 2,
+};
 
 export const alvarlı_efe_4 = {
-    title: 'Ne kadar cevr-u cefa eylesen ey nur-i basar',
-    slug: 'alvarlı_efe_4',
-    content: `Ne kadar cevr-u cefa eylesen ey nur-i basar
+  title: "Ne kadar cevr-u cefa eylesen ey nur-i basar",
+  slug: "alvarlı_efe_4",
+  content: `Ne kadar cevr-u cefa eylesen ey nur-i basar
 Mihirde zerre gibi men seninem sen de menim.
 
 Mihr-i veş nur-i ruhun gönlüme pertev salalı
@@ -2507,13 +2521,13 @@ Sadefe dürre gibi men seninem sen de menim
 
 Lütfi ya kesme nazar ruy dilâra görünür
 Bahirde katre gibi men seninem sen de menim`,
-    split: 2
-}
+  split: 2,
+};
 
 export const alvarlı_efe_5 = {
-    title: 'Birgün olur yar perdeyi kaldırır',
-    slug: 'alvarlı_efe_5',
-    content: `Birgün olur yar perdeyi kaldırır
+  title: "Birgün olur yar perdeyi kaldırır",
+  slug: "alvarlı_efe_5",
+  content: `Birgün olur yar perdeyi kaldırır
 seyr-i cemal ile seni güldürür
 
 Birgün olur nazlı nezaket yapar
@@ -2539,13 +2553,13 @@ Birgün olur buyine boyandırır
 
 Birgün olur cahe atar lutfi'yi
 sonra mısır şahlığına aldırır`,
-    split: 2
-}
+  split: 2,
+};
 
 export const alvarlı_efe_6 = {
-    title: 'Ya Rab kerem derdimi dermana yetiştir',
-    slug: 'alvarlı_efe_6',
-    content: `Ya Rab kerem derdimi dermana yetiştir
+  title: "Ya Rab kerem derdimi dermana yetiştir",
+  slug: "alvarlı_efe_6",
+  content: `Ya Rab kerem derdimi dermana yetiştir
 Bu yolda benim ıtkımı fermana yetiştir
 
 Ya Rab derunum derdini bin dürlüfüzun et
@@ -2559,46 +2573,46 @@ Ver nur-i aref didemi seyrane yetiştir
 
 Ya Rab ne diyem ben sana ey alim ü dana
 Bu lutfi kulun lütf ile ihsana yetiştir`,
-    split: 2
-}
+  split: 2,
+};
 
 export const irfani = [
-    {
-        id: 1,
-        title: 'Dervişana esrarı hüdadan haberim var',
-        slug: 'irfani_1',
-        read: true
-    },
-    {
-        id: 2,
-        title: 'Vasıl olmaz salik cümle faniden dur olmadan',
-        slug: 'irfani_2',
-        read: true
-    },
-    {
-        id: 3,
-        title: 'Tevhid zikrin eftali',
-        slug: 'irfani_3',
-        read: true
-    },
-    {
-        id: 4,
-        title: 'Vücudun mazhari nuri hüviyet ya Resullallah',
-        slug: 'irfani_4',
-        read: true
-    },
-    {
-        id: 5,
-        title: 'Kendine kul eyle, resule ümmet',
-        slug: 'irfani_5',
-        read: true
-    },
-]
+  {
+    id: 1,
+    title: "Dervişana esrarı hüdadan haberim var",
+    slug: "irfani_1",
+    read: true,
+  },
+  {
+    id: 2,
+    title: "Vasıl olmaz salik cümle faniden dur olmadan",
+    slug: "irfani_2",
+    read: true,
+  },
+  {
+    id: 3,
+    title: "Tevhid zikrin eftali",
+    slug: "irfani_3",
+    read: true,
+  },
+  {
+    id: 4,
+    title: "Vücudun mazhari nuri hüviyet ya Resullallah",
+    slug: "irfani_4",
+    read: true,
+  },
+  {
+    id: 5,
+    title: "Kendine kul eyle, resule ümmet",
+    slug: "irfani_5",
+    read: true,
+  },
+];
 
 export const irfani_1 = {
-    title: 'Dervişana esrarı hüdadan haberim var',
-    slug: 'irfani_1',
-    content: `Dervişana esrarı hüdadan haberim var
+  title: "Dervişana esrarı hüdadan haberim var",
+  slug: "irfani_1",
+  content: `Dervişana esrarı hüdadan haberim var
 Meczubuna dildarı bekadan haberim var
 
 Men aref sırrına uyupta bağrı köpüğen
@@ -2615,13 +2629,13 @@ Ademdeki ayeti hüdadan haberim var
 
 Rahi alide vasfı ilahiye irfanı
 Ol behirde evsafı imandan haberim var`,
-    split: 2
-}
+  split: 2,
+};
 
 export const irfani_2 = {
-    title: 'Vasıl olmaz salik cümle faniden dur olmadan',
-    slug: 'irfani_2',
-    content: `Vasıl olmaz salik cümle faniden dur olmadan
+  title: "Vasıl olmaz salik cümle faniden dur olmadan",
+  slug: "irfani_2",
+  content: `Vasıl olmaz salik cümle faniden dur olmadan
 Sır açılmaz ol gönülde taki pür nur olmadan
 At çıkar ağyarı dilden ta tecelli ede hak
 O sultan girmez saraya hanen mamur olmadan
@@ -2640,13 +2654,13 @@ Bir acep sevdaya düştüm yanıp irfani daim
 Cemale kavuşmak ister halka ifşa olmadan
 Erkanı Muhammede uyarda gayriden geçer
 Feyzi rüfaidir bil arada kimse olmadan`,
-    split: 4
-}
+  split: 4,
+};
 
 export const irfani_3 = {
-    title: 'Tevhid zikrin eftali',
-    slug: 'irfani_3',
-    content: `Tevhid zikrin eftali
+  title: "Tevhid zikrin eftali",
+  slug: "irfani_3",
+  content: `Tevhid zikrin eftali
 Kalplerden siler pası
 Gönüllerin muradı
 Lailahe illellah
@@ -2685,13 +2699,13 @@ Ruhuma hem devlet bu
 Gönlüme hem irfan bu
 İrfaniye vuslat bu
 Lailahe illellah`,
-    split: 4
-}
+  split: 4,
+};
 
 export const irfani_4 = {
-    title: 'Vücudun mazhari nuri hüviyet ya Resullallah',
-    slug: 'irfani_4',
-    content: `Vücudun mazhari nuri hüviyet ya Resullallah
+  title: "Vücudun mazhari nuri hüviyet ya Resullallah",
+  slug: "irfani_4",
+  content: `Vücudun mazhari nuri hüviyet ya Resullallah
 Zuhurun keşf-i esrarı tekdir ya Resullallah
 Alemde kamu eşya senin zatınla kaimdir
 Bize muhabbetinle yanmak saadet ya Resullallah
@@ -2710,13 +2724,13 @@ Okundu minberi eflakte hutbe-i levlakın
 Yazıldı arşa ismi celilin ya Resullallah
 İrfani’nin dü alemde maksudu hemen sensin
 Umar dergah-ı lutfundan inayet ya Resullallah`,
-    split: 4
-}
+  split: 4,
+};
 
 export const irfani_5 = {
-    title: 'Kendine kul eyle, resule ümmet',
-    slug: 'irfani_5',
-    content: `Kendine kul eyle, resule ümmet
+  title: "Kendine kul eyle, resule ümmet",
+  slug: "irfani_5",
+  content: `Kendine kul eyle, resule ümmet
 Iki cihan lütfunla bulalım himmet
 Kalmasın arada minnet-ü zimmet
 Bizleri ağyare düçar eyleme
@@ -2750,13 +2764,13 @@ Bizleri ağyare düçar eyleme
 Gam verdin dert verdin hem iki ahmed
 Ahiri ömründe kıl ona medet
 Bizleri ağyare düçar eyleme`,
-    split: 4
-}
+  split: 4,
+};
 
 export const habesi_1 = {
-    title: 'Hayli zaman hasretiyle yandığım',
-    slug: 'habesi',
-    content: `Hayli zaman hasretiyle yandığım
+  title: "Hayli zaman hasretiyle yandığım",
+  slug: "habesi",
+  content: `Hayli zaman hasretiyle yandığım
 Ey mürşidi emin sen sefa geldin
 Güzel cemalini güneş sandığım
 Ey sadıkı kelam hoş sefa geldin
@@ -2791,13 +2805,13 @@ Halden yoldan bilmez bir avareyim
 Perişan halimi kime diyeyim
 Ey derde dermanım hoş sefa geldin
 `,
-    split: 4
-}
+  split: 4,
+};
 
 export const seyfullah_1 = {
-    title: 'Bu aşk bir bahri ummandır',
-    slug: 'seyfullah',
-    content: `Bu aşk bir bahri ummandır
+  title: "Bu aşk bir bahri ummandır",
+  slug: "seyfullah",
+  content: `Bu aşk bir bahri ummandır
 Buna hatt-ü kenar olmaz
 Delilim sırrı Kur’an’dır
 Bunu bilene ar olmaz
@@ -2831,13 +2845,13 @@ Seyfullah sözünde mestir
 Şeyhinden aldığı destir
 Divaneye kalem pestir
 Ne söylerse inan olmaz`,
-    split: 4
-}
+  split: 4,
+};
 
 export const semi_1 = {
-    title: 'Tulumbanal yetiş ey sevdiğim imdade yangın var',
-    slug: 'semi',
-    content: `Tulumbanal yetiş ey sevdiğim imdade yangın var
+  title: "Tulumbanal yetiş ey sevdiğim imdade yangın var",
+  slug: "semi",
+  content: `Tulumbanal yetiş ey sevdiğim imdade yangın var
 Dedim zahirdemi aşık dedi ihfada yangın var
 
 Sefine kalbime yağlı paçavra attın ey dilsüz
@@ -2848,13 +2862,13 @@ Melekler zannederki meskeni İsada yangın var
 
 Bu mahi sebile derya yanar derlerse gerçektir
 Sade sendemi şem’i bütün alemde yangın var`,
-    split: 4
-}
+  split: 4,
+};
 
 export const seyh_said_1 = {
-    title: 'Şem’e yanan pervaneler',
-    slug: 'seyh_said',
-    content: `Şem’e yanan pervaneler
+  title: "Şem’e yanan pervaneler",
+  slug: "seyh_said",
+  content: `Şem’e yanan pervaneler
 Gelsin beraber yanalım
 
 Derde düşen divaneler
@@ -2874,13 +2888,13 @@ Ariflerin kıtmırıyam
 Arif değiş bir ümmiyem
 Şeyh said paloli
 Gelsin beraber yanalım`,
-    split: 4
-}
+  split: 4,
+};
 
 export const kul_yusuf_1 = {
-    title: 'Şu benim divane gönlüm',
-    slug: 'kul_yusuf',
-    content: `Şu benim divane gönlüm
+  title: "Şu benim divane gönlüm",
+  slug: "kul_yusuf",
+  content: `Şu benim divane gönlüm
 Yine hubdan huba düştü
 Mah cemalin şulesinden
 Çalkalanıp göle düştü
@@ -2903,13 +2917,13 @@ Kul Yusuf’undur bu demler
 Didemden akıyor nemler
 Benim çektiğim sitemler
 Dosttan bize caba düştü`,
-    split: 4
-}
+  split: 4,
+};
 
 export const esad_erbili_1 = {
-    title: 'Gönül nur-i cemalinden habibim bir ziya ister',
-    slug: 'esad_erbili',
-    content: `Gönül nur-i cemalinden habibim bir ziya ister
+  title: "Gönül nur-i cemalinden habibim bir ziya ister",
+  slug: "esad_erbili",
+  content: `Gönül nur-i cemalinden habibim bir ziya ister
 Gözüm hak-ı rehinden ey Tabibim tutiya ister
 
 Safayı sineme zulmet veren fengi günahımdır
@@ -2923,13 +2937,13 @@ Ne mülk ü malü cah ister, ne de zevk ü safa ister
 
 Nola bir kerre şad olsun cemal-i  ba kemalinle
 Ki kemter bendeniz Es’ad sana olmak feda ister`,
-    split: 2
-}
+  split: 2,
+};
 
 export const seyyid_nizamoğlu_1 = {
-    title: 'Gece gündüz döne döne',
-    slug: 'seyyid_nizamoğlu',
-    content: `Gece gündüz döne döne
+  title: "Gece gündüz döne döne",
+  slug: "seyyid_nizamoğlu",
+  content: `Gece gündüz döne döne
 İstediğim Hak’dır benim
 Allah deyip yana yana
 İstediğim Hak’dır benim
@@ -2953,13 +2967,13 @@ Seyyid Nizamoğlu yürü
 Bulagör kendinde yari
 İnleyüben zari zari
 İstediğim Hak’dır benim`,
-    split: 2
-}
+  split: 2,
+};
 
 export const ali_ulvi_kurucu_1 = {
-    title: 'Mevlam sana ersem diye',
-    slug: 'ali_ulvi_kurucu',
-    content: `Mevlam sana ersem diye
+  title: "Mevlam sana ersem diye",
+  slug: "ali_ulvi_kurucu",
+  content: `Mevlam sana ersem diye
 Aşka düşen pervaneyim
 Cemalini görsem diye
 Aşka düşen pervaneyim
@@ -2979,13 +2993,13 @@ Kevni temaşa eylerim
 Nevay-ı aşkı söylerim
 Sensiz cihanı neylerim
 Aşka düşen pervaneyim`,
-    split: 4
-}
+  split: 4,
+};
 
 export const aziz_mahmud_hudai_1 = {
-    title: 'Neyleyeyim dünyayı bana Allah’ım gerek',
-    slug: 'aziz_mahmud_hudai',
-    content: `Neyleyeyim dünyayı bana Allah’ım gerek
+  title: "Neyleyeyim dünyayı bana Allah’ım gerek",
+  slug: "aziz_mahmud_hudai",
+  content: `Neyleyeyim dünyayı bana Allah’ım gerek
 Gerekmez masivayı bana Allah’ım gerek
 
 Ehl-i dünya dünyada ehl-i ukba ukbada
@@ -2999,13 +3013,13 @@ Her kulun bir derdi var, bana Allah’ım gerek
 
 Beyhude hevayı ko, Hakkı bula göre ya hu
 Hüdai’nin sözü bu, bana Allah’ım gerek`,
-    split: 2
-}
+  split: 2,
+};
 
 export const haci_bayram_veli_1 = {
-    title: 'Neyleyeyim dünyayı bana Allah’ım gerek',
-    slug: 'haci_bayram_veli',
-    content: `N’oldu bu gönlüm, n’oldu bu gönlüm
+  title: "Neyleyeyim dünyayı bana Allah’ım gerek",
+  slug: "haci_bayram_veli",
+  content: `N’oldu bu gönlüm, n’oldu bu gönlüm
 Derdi gam ile doldu bu gönlüm
 Yandı bu gönlüm, yandı bu gönlüm
 Yanmada derman, buldu bu gönlüm
@@ -3024,13 +3038,13 @@ Bayramım imdi, Bayramım imdi
 Bayram edersin yar ile şimdi
 Hamdü senalar, hamdü senalar
 Yar ile bayram kıldı bu gönlüm`,
-    split: 4
-}
+  split: 4,
+};
 
 export const fuzuli_1 = {
-    title: 'Beni candan usandırdı',
-    slug: 'fuzuli',
-    content: `Beni candan usandırdı
+  title: "Beni candan usandırdı",
+  slug: "fuzuli",
+  content: `Beni candan usandırdı
 cefâdan yâr usanmaz mı
 Felekler yandı âhımdan
 murâdım şem'i yanmaz mı
@@ -3064,46 +3078,46 @@ Fuzûlî rind-i şeydâdır
 hemîşe halka rüsvâdır
 Sorun kim bu ne sevdâdır
 bu sevdâdan usanmaz mı`,
-    split: 4
-}
+  split: 4,
+};
 
 export const la_edri = [
-    {
-        id: 1,
-        title: 'Seherlerde kalkmaz mısın',
-        slug: 'la_edri_1',
-        read: true
-    },
-    {
-        id: 2,
-        title: 'Ey benim sultanım özüm',
-        slug: 'la_edri_2',
-        read: true
-    },
-    {
-        id: 3,
-        title: 'Şahidim arzu semadır bütün ecram ile',
-        slug: 'la_edri_3',
-        read: true
-    },
-    {
-        id: 4,
-        title: 'Vücudun mazhari nuri hüviyet ya Resullallah',
-        slug: 'la_edri_4',
-        read: true
-    },
-    {
-        id: 5,
-        title: 'Bir leylinin Mecnunuyam',
-        slug: 'la_edri_5',
-        read: true
-    },
-]
+  {
+    id: 1,
+    title: "Seherlerde kalkmaz mısın",
+    slug: "la_edri_1",
+    read: true,
+  },
+  {
+    id: 2,
+    title: "Ey benim sultanım özüm",
+    slug: "la_edri_2",
+    read: true,
+  },
+  {
+    id: 3,
+    title: "Şahidim arzu semadır bütün ecram ile",
+    slug: "la_edri_3",
+    read: true,
+  },
+  {
+    id: 4,
+    title: "Vücudun mazhari nuri hüviyet ya Resullallah",
+    slug: "la_edri_4",
+    read: true,
+  },
+  {
+    id: 5,
+    title: "Bir leylinin Mecnunuyam",
+    slug: "la_edri_5",
+    read: true,
+  },
+];
 
 export const la_edri_1 = {
-    title: 'Seherlerde kalkmaz mısın',
-    slug: 'la_edri_1',
-    content: `Seherlerde kalkmaz mısın
+  title: "Seherlerde kalkmaz mısın",
+  slug: "la_edri_1",
+  content: `Seherlerde kalkmaz mısın
 Nur çıranı yakmaz mısın
 Sen Allah’tan korkmaz mısın
 Allah de kalbim Allah de
@@ -3127,13 +3141,13 @@ Seherlerde kalkmaz mısın
 Hak divana durmaz mısın
 Sen teveccühe bakmaz mısın
 Allah de kalbim Allah de`,
-    split: 4
-}
+  split: 4,
+};
 
 export const la_edri_2 = {
-    title: 'Ey benim sultanım özüm',
-    slug: 'la_edri_2',
-    content: `Ey benim sultanım özüm
+  title: "Ey benim sultanım özüm",
+  slug: "la_edri_2",
+  content: `Ey benim sultanım özüm
 Hicranım çok gülmez yüzüm
 Yakub oldum ağlar gözüm
 Çağırırım ey dost seni
@@ -3152,13 +3166,13 @@ Yüzüm gülmez bu dünyada
 Kaldım artık ben sılada 
 Hüseyin’le Kerbela’da
 Çağırırım ey dost seni`,
-    split: 4
-}
+  split: 4,
+};
 
 export const la_edri_3 = {
-    title: 'Şahidim arzu semadır bütün ecram ile',
-    slug: 'la_edri_3',
-    content: `Şahidim arzu semadır bütün ecram ile
+  title: "Şahidim arzu semadır bütün ecram ile",
+  slug: "la_edri_3",
+  content: `Şahidim arzu semadır bütün ecram ile
 Aşıkım sıdk ile ben Hazreti Şah-ı Rusüle
 
 Yaksada ahu derunum beni bu hasret ile
@@ -3184,13 +3198,13 @@ Aman ey kan-ı şefaat pek büyük isyanım var
 
 Ey bad-ı saba uğrarsa yolun semt-i harameyne
 Selamımı arz eyle Rasülus-sekaleyne`,
-    split: 2
-}
+  split: 2,
+};
 
 export const la_edri_4 = {
-    title: 'Bir leylinin Mecnunuyam',
-    slug: 'la_edri_4',
-    content: `Bir leylinin Mecnunuyam
+  title: "Bir leylinin Mecnunuyam",
+  slug: "la_edri_4",
+  content: `Bir leylinin Mecnunuyam
 Alem O’nun divanesi
 
 Bir Yusuf’un Mefdunuyam
@@ -3213,5 +3227,5 @@ Huri ile gılman istemem
 
 Mülk-i Süleyman istemem
 Mest-i gönül viranesi`,
-    split: 2
-}
+  split: 2,
+};
