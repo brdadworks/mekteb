@@ -19,10 +19,6 @@ const Pusula: React.FC = () => {
   const [qiblaDirection, setQiblaDirection] = useState<number>(0);
   const [permission, setPermission] = useState<string>("prompt");
 
-  const isIOS =
-    navigator.userAgent.match(/(iPod|iPhone|iPad)/) &&
-    navigator.userAgent.match(/AppleWebKit/);
-  console.log("isIOS", isIOS);
 
   useEffect(() => {
     const locationPermission = async () => {
@@ -66,18 +62,18 @@ const Pusula: React.FC = () => {
         };
         getQiblaDirection();
 
-        Geolocation.watchPosition({}, (position, err) => {
-          if (err) {
-            console.error("Error getting user location:", err);
-            return;
-          }
-          const { latitude, longitude, heading } = position!.coords;
-          console.log("lan long", latitude, longitude);
-          console.log("heading", heading);
+        // Geolocation.watchPosition({}, (position, err) => {
+        //   if (err) {
+        //     console.error("Error getting user location:", err);
+        //     return;
+        //   }
+        //   const { latitude, longitude, heading } = position!.coords;
+        //   console.log("lan long", latitude, longitude);
+        //   console.log("heading", heading);
 
-          const qiblaDirection = calculateQiblaDirection(latitude, longitude);
-          setQiblaDirection(qiblaDirection);
-        });
+        //   const qiblaDirection = calculateQiblaDirection(latitude, longitude);
+        //   setQiblaDirection(qiblaDirection);
+        // });
 
         Motion.addListener("orientation", (event) => {
           setCompassHeading(event.alpha);
@@ -93,15 +89,6 @@ const Pusula: React.FC = () => {
   }, [permission]);
 
   const motionPermission = async () => {
-    let compass;
-    const compassCircle = document.querySelector(".compass-circle");
-
-    function handler(e: any) {
-      compass = e.webkitCompassHeading || Math.abs(e.alpha - 360);
-      (
-        compassCircle as any
-      ).style.transform = `translate(-50%, -50%) rotate(${-compass}deg)`;
-    }
     if (isPlatform("ios")) {
       (DeviceOrientationEvent as any)
         .requestPermission()
@@ -125,7 +112,13 @@ const Pusula: React.FC = () => {
         })
         .catch(() => alert("Desteklenmemektedir."));
     } else {
-      window.addEventListener("deviceorientationabsolute", handler, true);
+      Motion.addListener("orientation", (event) => {
+        console.log("event alpha", event.alpha);
+        console.log("event beta", event.beta);
+        console.log("event gamma", event.gamma);
+
+        setCompassHeading(event.alpha);
+      });
     }
   };
 

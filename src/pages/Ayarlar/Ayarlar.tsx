@@ -52,6 +52,7 @@ function Ayarlar() {
     const districtRef = useRef<HTMLIonSelectElement | null>(null);
 
     useEffect(() => {
+    
         const loadSettings = async () => {
             const getSettings = (await getStorageData("settings")) as SettingsProps;
             if (getSettings) {
