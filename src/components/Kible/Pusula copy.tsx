@@ -1,15 +1,21 @@
 import React, { useEffect, useState } from "react";
 import { Motion } from "@capacitor/motion";
+import { Geolocation } from "@capacitor/geolocation";
 import {
-  calculateQiblaDirection,
   getLocationPermissionStatus,
   requestLocationPermission,
+  getLocation,
+  calculateQiblaDirection,
 } from "../../../utils/functions";
-import { AndroidSettings, NativeSettings } from "capacitor-native-settings";
+import {
+  AndroidSettings,
+  IOSSettings,
+  NativeSettings,
+} from "capacitor-native-settings";
 import { IonButton, isPlatform } from "@ionic/react";
-import { Geolocation } from "@capacitor/geolocation";
+import { PluginListenerHandle } from "@capacitor/core";
 
-const QiblaAngle = 39.8; // Qibla direction angle in degrees clockwise from North
+let accelHandler: PluginListenerHandle;
 
 const Pusula: React.FC = () => {
   const [compassHeading, setCompassHeading] = useState<number>(0);
@@ -18,46 +24,90 @@ const Pusula: React.FC = () => {
   const [motionPermissionStatus, setMotionPermissionStatus] = useState(false);
 
   useEffect(() => {
-    Geolocation.watchPosition({}, (position, err) => {
-      if (err) {
-        console.error("Error getting user location:", err);
-        return;
-      }
-      const { latitude, longitude, heading } = position!.coords;
-      console.log("lan long", latitude, longitude);
-      console.log("heading", heading);
+    console.log("Pusula useEffect");
 
-      const qiblaDirection = calculateQiblaDirection(latitude, longitude);
-      setQiblaDirection(qiblaDirection);
-    });
-    const watch = Motion.addListener("orientation", (event) => {
-      setCompassHeading(event.alpha);
-      // setQiblaDirection(event.alpha - QiblaAngle);
-    });
-    // Motion.addListener('orientation', (eventData) => {
-    //     const newHeading = eventData.alpha || 0;
-    //     console.log("newHeading", newHeading)
-    //     const relativeAngle = (QiblaAngle - newHeading + 360) % 360;
-    //     setCompassHeading(newHeading);
-    //     setQiblaDirection(relativeAngle);
-    // });
     const locationPermission = async () => {
-      const perm = await getLocationPermissionStatus();
-      if (perm == "denied") {
-        setPermission("denied");
-      } else if (perm == "prompt") {
-        await requestLocationPermission();
-      } else {
-        setPermission("granted");
+      try {
+        const perm = await getLocationPermissionStatus();
+        console.log("perm", perm);
+
+        if (perm == "denied") {
+          setPermission("denied");
+        } else if (perm == "prompt") {
+          requestLocationPermission().then((res) => {
+            console.log("res", res);
+            if (res == "granted") {
+              setPermission("granted");
+            } else {
+              setPermission("denied");
+            }
+          });
+        } else {
+          setPermission("granted");
+        }
+      } catch (e) {
+        console.log("Pusula location permission error", e);
       }
     };
     locationPermission();
 
-    return () => {
-      // watch.remove();
-      // Motion.removeAllListeners();
+    const motionListener = async () => {
+      try {
+        await Motion.addListener("orientation", (event) => {
+          console.log(event.alpha);
+          console.log(event.beta);
+          console.log(event.gamma);
+
+          setCompassHeading(event.alpha);
+        });
+      } catch (e) {
+        console.log("pusula motionListener error", e);
+      }
     };
+    motionListener();
+
+    // return () => {
+    //   Motion.removeAllListeners();
+    // };
   }, []);
+
+  useEffect(() => {
+    console.log("Pusula useEffect - permission");
+
+    const locationPermission = async () => {
+      const perm = await getLocationPermissionStatus();
+      console.log("perm", perm);
+
+      if (perm == "granted") {
+        const getQiblaDirection = async () => {
+          try {
+            const location = await getLocation();
+            const { latitude, longitude } = location;
+
+            const qiblaDirection = calculateQiblaDirection(latitude, longitude);
+            setQiblaDirection(qiblaDirection);
+          } catch (error) {
+            console.error("Error getting user location:", error);
+          }
+        };
+        getQiblaDirection();
+
+        // Geolocation.watchPosition({}, (position, err) => {
+        //   if (err) {
+        //     console.error("Error getting user location:", err);
+        //     return;
+        //   }
+        //   const { latitude, longitude, heading } = position!.coords;
+        //   console.log("lan long", latitude, longitude);
+        //   console.log("heading", heading);
+
+        //   const qiblaDirection = calculateQiblaDirection(latitude, longitude);
+        //   setQiblaDirection(qiblaDirection);
+        // });
+      }
+    };
+    locationPermission();
+  }, [permission]);
 
   const motionPermission = async () => {
     (DeviceOrientationEvent as any)
@@ -87,9 +137,8 @@ const Pusula: React.FC = () => {
   return (
     <>
       {!motionPermissionStatus && isPlatform("ios") && (
-        <button onClick={motionPermission}>Telefon hareketlerini algılamak için tıklayınız.</button>
+        <button onClick={motionPermission}>Motion Perm</button>
       )}
-
       {permission == "granted" && (
         <div className="ion-padding">
           <div className="compass-container">
@@ -131,9 +180,17 @@ const Prompt = () => {
 
 const Denied = () => {
   const openLocationSettings = () => {
-    NativeSettings.openAndroid({
-      option: AndroidSettings.Location,
-    });
+    console.log("isPlatform(android) &&", isPlatform("android"));
+
+    if (isPlatform("android")) {
+      NativeSettings.openAndroid({
+        option: AndroidSettings.ApplicationDetails,
+      });
+    } else {
+      NativeSettings.openIOS({
+        option: IOSSettings.App,
+      });
+    }
   };
   return (
     <div className="flex flex-col justify-center items-center mt-5">

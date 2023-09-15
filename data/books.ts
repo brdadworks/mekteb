@@ -234,7 +234,7 @@ export const duayi_ismi_azam = {
 export const duayi_ismi_azam_meal = {
   title: "Dua-ı İsmi Azam",
   slug: "duayi_ismi_azam_meal",
-  content: "/books/mecmua_meal/duayi_ismi_azam_meal/",
+  content: "/books/mecmua_meal/duayi_ismi_azam/",
   page: 6,
 };
 
