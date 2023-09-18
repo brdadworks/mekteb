@@ -1,5 +1,10 @@
 export default [
     {
+        "UlkeAdi": "TÜRKİYE",
+        "UlkeAdiEn": "TÜRKİYE",
+        "UlkeID": "2"
+    },
+    {
         "UlkeAdi": "ABD",
         "UlkeAdiEn": "USA",
         "UlkeID": "33"
@@ -953,11 +958,6 @@ export default [
         "UlkeAdi": "TUNUS",
         "UlkeAdiEn": "TUNUSIA",
         "UlkeID": "118"
-    },
-    {
-        "UlkeAdi": "TÜRKİYE",
-        "UlkeAdiEn": "TÜRKİYE",
-        "UlkeID": "2"
     },
     {
         "UlkeAdi": "TURKMENISTAN",
