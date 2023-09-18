@@ -2884,8 +2884,8 @@ Neden aşık olmuş güle
 Onun için düşmüş dile
 Gelsin beraber yanalım
 
-Ariflerin kıtmırıyam 
-Arif değiş bir ümmiyem
+Ariflerin kıtmırıyam
+Arif değil bir ümmiyem
 Şeyh said paloli
 Gelsin beraber yanalım`,
   split: 4,
