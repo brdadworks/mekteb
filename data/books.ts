@@ -385,7 +385,7 @@ export const cevseni_kebir = [
   {
     id: 5,
     title: "Cuma",
-    slug: "cuma",
+    slug: "kebir_cuma",
     read: true,
   },
   {
@@ -843,7 +843,7 @@ export const cevseni_kebir_meal = [
   {
     id: 5,
     title: "Cuma",
-    slug: "cuma_meal",
+    slug: "kebir_cuma_meal",
     read: true,
   },
   {
