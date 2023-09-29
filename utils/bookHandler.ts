@@ -1,14 +1,5 @@
 import {BookProps, BooksProps, IlahiProps} from "./types";
 import * as allBooks from "../data/books";
-import {
-    abdulgani_efendi,
-    abdulgani_efendi_3,
-    abdulgani_efendi_4, alvarlı_efe,
-    alvarlı_efe_6,
-    aziz_mahmud_hudai_1, esrefoglu_1, ibrahim_hakki, ibrahim_hakki_3, irfani,
-    irfani_5, kuddusi, kuddusi_3, la_edri,
-    la_edri_1, niyazi, niyazi_3
-} from "../data/books";
 
 export const bookHandler = (slug: string): BooksProps[] => {
     switch (slug) {

@@ -52,6 +52,7 @@ export interface BooksProps {
     title: string,
     slug: string,
     read: boolean,
+    startPage?: number,
 }
 
 export interface BookProps {

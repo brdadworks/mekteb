@@ -11,6 +11,7 @@ import KitapOku from "../KitapOku/KitapOku";
 import {BooksProps} from "../../../../utils/types";
 import {currentBook, bookHandler} from "../../../../utils/bookHandler";
 import Ilahiler from "../Ilahiler/Ilahiler";
+import KuraniKerim from '../KuraniKerim/KuraniKerim';
 
 
 function Kitaplar({books, title}: { books: BooksProps[], title: string }) {
@@ -28,6 +29,8 @@ function Kitaplar({books, title}: { books: BooksProps[], title: string }) {
                         <IonNavLink key={`${book.id}`} routerDirection="forward" component={() =>
                             book.slug.includes("ilahi") ?
                                 <Ilahiler title={book.title} books={bookHandler(book.slug)}/> :
+                                book.slug.includes("kuran") ?
+                                <KuraniKerim title={book.title} books={bookHandler(book.slug)}/> :
                                 book.read ?
                                     <KitapOku title={book.title} book={currentBook(book.slug)}/> :
                                     <Kitaplar title={book.title} books={bookHandler(book.slug)}/>}>
