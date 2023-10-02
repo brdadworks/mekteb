@@ -8,10 +8,7 @@ import {
 } from "@ionic/react";
 import Header from "../../../components/Header";
 import "./Kitaplar.css";
-import KitapOku from "../KitapOku/KitapOku";
 import { BooksProps } from "../../../../utils/types";
-import { currentBook, bookHandler } from "../../../../utils/bookHandler";
-import Ilahiler from "../Ilahiler/Ilahiler";
 import KuraniKerimOku from "../KuraniKerimOku/KuraniKerimOku";
 
 function KuraniKerim({ books, title }: { books: BooksProps[]; title: string }) {
