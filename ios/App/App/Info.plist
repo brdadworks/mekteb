@@ -26,6 +26,10 @@
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
+   <key>NSLocationAlwaysUsageDescription</key>
+    <string>The App may collect and use your device's location data to provide you with location-based services, such as finding qibla location. We only collect location data with your explicit.</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>The App may collect and use your device's location data to provide you with location-based services, such as finding qibla location. We only collect location data with your explicit.</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
