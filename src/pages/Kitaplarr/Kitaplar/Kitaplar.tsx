@@ -12,14 +12,10 @@ import {BooksProps} from "../../../../utils/types";
 import {currentBook, bookHandler} from "../../../../utils/bookHandler";
 import Ilahiler from "../Ilahiler/Ilahiler";
 import KuraniKerim from '../KuraniKerim/KuraniKerim';
+import KuraniKerimMeal from '../KuraniKerimMeal/KuraniKerimMeal';
 
 
 function Kitaplar({books, title}: { books: BooksProps[], title: string }) {
-    // const directionHandler = (slug:string) => {
-    //     switch (slug){
-    //         case ""
-    //     }
-    // }
     return (
       <>
         <Header pageTitle={title} />
@@ -37,6 +33,11 @@ function Kitaplar({books, title}: { books: BooksProps[], title: string }) {
                     />
                   ) : book.slug == "kurani_kerim" ? (
                     <KuraniKerim
+                      title={book.title}
+                      books={bookHandler(book.slug)}
+                    />
+                  ) : book.slug == "kurani_kerim_meal" ? (
+                    <KuraniKerimMeal
                       title={book.title}
                       books={bookHandler(book.slug)}
                     />

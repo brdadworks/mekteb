@@ -17,35 +17,34 @@ import {
 } from "ionicons/icons";
 import { BookProps } from "../../../../utils/types";
 import {
-  fatiha,
-  bakara,
-  yusuf,
-  kehf,
-  yasin,
-  duhan,
-  fetih,
-  rahman,
-  vakia,
-  hasr,
-  cuma,
-  tahrim,
-  mulk,
-  insan,
-  nebe,
-  ala,
-  hatim,
+  fatiha_meal,
+  bakara_meal,
+  yusuf_meal,
+  kehf_meal,
+  yasin_meal,
+  duhan_meal,
+  fetih_meal,
+  rahman_meal,
+  vakia_meal,
+  hasr_meal,
+  cuma_meal,
+  tahrim_meal,
+  mulk_meal,
+  insan_meal,
+  nebe_meal,
+  ala_meal,
+  hatim_meal,
 } from "../../../../data/books";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
-function KuraniKerimOku({ startPage, pageTitle }: { startPage: number, pageTitle: string }) {
+function KuraniKerimMealOku({ startPage, pageTitle }: { startPage: number, pageTitle: string }) {
   const [swipe, setSwipe] = useState<any>();
   const [title, setTitle] = useState<string>(pageTitle);
   const topRef = useRef<any>(null);
 
   console.log(pageTitle);
-  
 
   const goFirstPage = () => {
     swipe?.slideTo(0);
@@ -65,6 +64,9 @@ function KuraniKerimOku({ startPage, pageTitle }: { startPage: number, pageTitle
   };
 
   const images: JSX.Element[] = imagesHandler();
+
+  console.log("images", images);
+  
 
   return (
     <>
@@ -91,7 +93,6 @@ function KuraniKerimOku({ startPage, pageTitle }: { startPage: number, pageTitle
         >
           {images}
         </Swiper>
-        {/*<img src={`${currentBook.content}${currentPage}-fs8.png`} alt={""} className={"w-full h-auto"}/>*/}
       </IonContent>
 
       <IonFooter
@@ -123,45 +124,27 @@ function KuraniKerimOku({ startPage, pageTitle }: { startPage: number, pageTitle
   );
 }
 
-export default KuraniKerimOku;
+export default KuraniKerimMealOku;
 
 const imagesHandler = () => {
-  /*fatiha,
-  bakara,
-  yusuf,
-  kehf,
-  yasin,
-  duhan,
-  fetih,
-  rahman,
-  vakia,
-  hasr,
-  cuma,
-  tahrim,
-  mulk,
-  insan,
-  nebe,
-  ala,
-  hatim,*/
-  //for above books do this code
   const images: JSX.Element[] = [];
-  images.push(pushImages(fatiha));
-  images.push(pushImages(bakara));
-  images.push(pushImages(yusuf));
-  images.push(pushImages(kehf));
-  images.push(pushImages(yasin));
-  images.push(pushImages(duhan));
-  images.push(pushImages(fetih));
-  images.push(pushImages(rahman));
-  images.push(pushImages(vakia));
-  images.push(pushImages(hasr));
-  images.push(pushImages(cuma));
-  images.push(pushImages(tahrim));
-  images.push(pushImages(mulk));
-  images.push(pushImages(insan));
-  images.push(pushImages(nebe));
-  images.push(pushImages(ala));
-  images.push(pushImages(hatim));
+  images.push(pushImages(fatiha_meal));
+  images.push(pushImages(bakara_meal));
+  images.push(pushImages(yusuf_meal));
+  images.push(pushImages(kehf_meal));
+  images.push(pushImages(yasin_meal));
+  images.push(pushImages(duhan_meal));
+  images.push(pushImages(fetih_meal));
+  images.push(pushImages(rahman_meal));
+  images.push(pushImages(vakia_meal));
+  images.push(pushImages(hasr_meal));
+  images.push(pushImages(cuma_meal));
+  images.push(pushImages(tahrim_meal));
+  images.push(pushImages(mulk_meal));
+  images.push(pushImages(insan_meal));
+  images.push(pushImages(nebe_meal));
+  images.push(pushImages(ala_meal));
+  images.push(pushImages(hatim_meal));
 
   return images;
 };
@@ -184,23 +167,23 @@ const pushImages = (data: any) => {
 
 const titleHandler = (activePage: number) => {
   const titlesMapping = [
-    { page: 1, title: "Fatiha Suresi" },
-    { page: 2, title: "Bakara Suresi" },
-    { page: 3, title: "Yusuf Suresi" },
-    { page: 5, title: "Kehf Suresi" },
-    { page: 11, title: "Yasin Suresi" },
-    { page: 14, title: "Duhan Suresi" },
-    { page: 19, title: "Fetih Suresi" },
-    { page: 23, title: "Rahman Suresi" },
-    { page: 27, title: "Vakia Suresi" },
-    { page: 29, title: "Hasr Suresi" },
-    { page: 31, title: "Cuma Suresi" },
-    { page: 32, title: "Tahrim Suresi" },
-    { page: 35, title: "Mulk Suresi" },
-    { page: 38, title: "Insan Suresi" },
-    { page: 41, title: "Nebe Suresi" },
-    { page: 42, title: "Ala Suresi" },
-    { page: 60, title: "Hatim Suresi" },
+    { page: 2, title: "Fatiha Suresi" },
+    { page: 4, title: "Bakara Suresi" },
+    { page: 6, title: "Yusuf Suresi" },
+    { page: 10, title: "Kehf Suresi" },
+    { page: 22, title: "Yasin Suresi" },
+    { page: 28, title: "Duhan Suresi" },
+    { page: 38, title: "Fetih Suresi" },
+    { page: 46, title: "Rahman Suresi" },
+    { page: 54, title: "Vakia Suresi" },
+    { page: 58, title: "Hasr Suresi" },
+    { page: 62, title: "Cuma Suresi" },
+    { page: 64, title: "Tahrim Suresi" },
+    { page: 70, title: "Mulk Suresi" },
+    { page: 76, title: "Insan Suresi" },
+    { page: 82, title: "Nebe Suresi" },
+    { page: 84, title: "Ala Suresi" },
+    { page: 100, title: "Hatim Suresi" },
   ];
 
   const mappedTitle = titlesMapping.find(
