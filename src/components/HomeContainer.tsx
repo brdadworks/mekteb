@@ -29,6 +29,8 @@ const HomeContainer: React.FC<ContainerProps> = () => {
             const getSettings = await store.get('settings');
             setSettings(getSettings)
             if (getSettings) {
+                console.log(getSettings.district.IlceID);
+                
                 const times = await prayerTimesHandler(getSettings.district.IlceID)
                 console.log("times", times)
                 setPrayerTimes(times)

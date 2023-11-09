@@ -1,7 +1,8 @@
 import axios from "axios";
-import {Storage} from "@ionic/storage";
-import {LocalNotifications, LocalNotificationSchema} from "@capacitor/local-notifications";
+import { Storage } from "@ionic/storage";
+import { LocalNotifications, LocalNotificationSchema } from "@capacitor/local-notifications";
 import { Geolocation } from '@capacitor/geolocation';
+import { get } from "cheerio/lib/api/traversing";
 
 export const addStorageData = async (key: string, value: any) => {
     const store = new Storage();
@@ -46,21 +47,21 @@ export const getCities = async (id: string) => {
     const cities = await axios.get('https://ezanvakti.herokuapp.com/sehirler/' + id);
     const res = await cities.data;
     console.log('citiesJson:', res);
-    return {status: cities.status, cities: res}
+    return { status: cities.status, cities: res }
 }
 
 export const getDistrict = async (id: string) => {
     const district = await axios.get('https://ezanvakti.herokuapp.com/ilceler/' + id);
     const res = await district.data;
     console.log('getDistrict:', res);
-    return {status: district.status, district: res}
+    return { status: district.status, district: res }
 }
 
 export const getPrayerTimes = async (id: string) => {
     const prayerTimes = await axios.get('https://ezanvakti.herokuapp.com/vakitler/' + id);
     const res = await prayerTimes.data;
     console.log('prayerTimes:', res);
-    return {status: prayerTimes.status, prayerTimes: res}
+    return { status: prayerTimes.status, prayerTimes: res }
 }
 
 export const prayerTimesHandler = async (id: string) => {
@@ -69,24 +70,41 @@ export const prayerTimesHandler = async (id: string) => {
     await store.create();
     const storedPrayerTimes = await store.get('prayerTimes');
     if (storedPrayerTimes) {
-        return storedPrayerTimes.prayerTimes.find((item: any) => {
+        const getSettings = await store.get('settings');
+        if (
+            storedPrayerTimes.prayerTimes[storedPrayerTimes.prayerTimes.length - 1]
+                .MiladiTarihUzunIso8601 < new Date().toISOString()
+        ) {
+            const data = await getPrayerTimes(getSettings.district.IlceID);
+            console.log('data:', data);
+            
+            return data.prayerTimes.find((item: any) => {
                 if (item.MiladiTarihKisa === formattedDate) {
                     return item;
                 }
             }
-        )
+            )
+        }
+        else {
+            return storedPrayerTimes.prayerTimes.find((item: any) => {
+                if (item.MiladiTarihKisa === formattedDate) {
+                    return item;
+                }
+            }
+            )
+        }
     }
-    const {status, prayerTimes} = await getPrayerTimes(id);
+    const { status, prayerTimes } = await getPrayerTimes(id);
     if (status !== 200) {
         return false;
     }
     await store.set('prayerTimes', prayerTimes);
 
     return prayerTimes.find((item: any) => {
-            if (item.MiladiTarihKisa === formattedDate) {
-                return item;
-            }
+        if (item.MiladiTarihKisa === formattedDate) {
+            return item;
         }
+    }
     )
 }
 
@@ -107,7 +125,7 @@ export function getNearestPrayerTime(data: any) {
         }
     }
     const prayTimeName = getPrayTimeName(nearestPrayerTime)
-    return {time: nearestPrayerTime, name: prayTimeName};
+    return { time: nearestPrayerTime, name: prayTimeName };
 }
 
 
@@ -147,7 +165,7 @@ export function getCurrentDate() {
 
 export const notificationHandler = async (noti: { title: string, checked: boolean }[]) => {
     const pendingNotifications = await LocalNotifications.getPending()
-    await LocalNotifications.cancel({notifications: pendingNotifications.notifications})
+    await LocalNotifications.cancel({ notifications: pendingNotifications.notifications })
 
     function parseTimeToMilliseconds(time: string): number {
         const [hours, minutes] = time.split(':').map(Number);
@@ -155,14 +173,14 @@ export const notificationHandler = async (noti: { title: string, checked: boolea
     }
 
     try {
-        const {prayerTimes: prayerTimesData} = await getStorageData("prayerTimes");
+        const { prayerTimes: prayerTimesData } = await getStorageData("prayerTimes");
         const currentDate = getCurrentDate();
         const clock = getCurrentClock()
 
         console.log("prayerTimesData", prayerTimesData);
 
         for (const prayerTimes of prayerTimesData) {
-            const {Ogle, Yatsi, Imsak, Gunes, Ikindi, Aksam, MiladiTarihKisaIso8601, MiladiTarihUzunIso8601} = prayerTimes;
+            const { Ogle, Yatsi, Imsak, Gunes, Ikindi, Aksam, MiladiTarihKisaIso8601, MiladiTarihUzunIso8601 } = prayerTimes;
             const date = new Date(MiladiTarihUzunIso8601);
 
             const ogleTime = new Date(date.getTime() + parseTimeToMilliseconds(Ogle)).getTime();
@@ -197,7 +215,7 @@ export const notificationHandler = async (noti: { title: string, checked: boolea
                                         title: 'Namaz Vakti Hatırlatma',
                                         body: `${n.title} namazı vakti`,
                                         id: Math.floor(Math.random() * 10000),
-                                        schedule: {at: new Date(notificationTimeImsak)},
+                                        schedule: { at: new Date(notificationTimeImsak) },
                                     });
                                 }
                                 break;
@@ -207,7 +225,7 @@ export const notificationHandler = async (noti: { title: string, checked: boolea
                                         title: 'Namaz Vakti Hatırlatma',
                                         body: `${n.title} namazı vakti`,
                                         id: Math.floor(Math.random() * 10000),
-                                        schedule: {at: new Date(notificationTimeGunes)},
+                                        schedule: { at: new Date(notificationTimeGunes) },
                                     });
                                 }
                                 break;
@@ -217,7 +235,7 @@ export const notificationHandler = async (noti: { title: string, checked: boolea
                                         title: 'Namaz Vakti Hatırlatma',
                                         body: `${n.title} namazı vakti`,
                                         id: Math.floor(Math.random() * 10000),
-                                        schedule: {at: new Date(notificationTimeOgle)},
+                                        schedule: { at: new Date(notificationTimeOgle) },
                                     });
                                 }
                                 break;
@@ -226,7 +244,7 @@ export const notificationHandler = async (noti: { title: string, checked: boolea
                                     title: 'Namaz Vakti Hatırlatma',
                                     body: `${n.title} namazı vakti`,
                                     id: Math.floor(Math.random() * 10000),
-                                    schedule: {at: new Date(notificationTimeIkindi)},
+                                    schedule: { at: new Date(notificationTimeIkindi) },
                                 });
                                 break;
                             case "Akşam":
@@ -234,7 +252,7 @@ export const notificationHandler = async (noti: { title: string, checked: boolea
                                     title: 'Namaz Vakti Hatırlatma',
                                     body: `${n.title} namazı vakti`,
                                     id: Math.floor(Math.random() * 10000),
-                                    schedule: {at: new Date(notificationTimeAksam)},
+                                    schedule: { at: new Date(notificationTimeAksam) },
                                 });
                                 break;
                             case "Yatsı":
@@ -242,7 +260,7 @@ export const notificationHandler = async (noti: { title: string, checked: boolea
                                     title: 'Namaz Vakti Hatırlatma',
                                     body: `${n.title} namazı vakti`,
                                     id: Math.floor(Math.random() * 10000),
-                                    schedule: {at: new Date(notificationTimeYatsi)},
+                                    schedule: { at: new Date(notificationTimeYatsi) },
                                 });
                                 break;
                         }
@@ -281,17 +299,17 @@ function convertTurkishToEnglish(input: string) {
 }
 
 export const calculateQiblaDirection = (lat: number, lon: number) => {
-  var PI = Math.PI;
-  const latk = (21.4225 * PI) / 180.0;
-  const longk = (39.8264 * PI) / 180.0;
-  const phi = (lat * PI) / 180.0;
-  const lambda = (lon * PI) / 180.0;
-  const qiblad =
-    (180.0 / PI) *
-    Math.atan2(
-      Math.sin(longk - lambda),
-      Math.cos(phi) * Math.tan(latk) - Math.sin(phi) * Math.cos(longk - lambda)
-    );
-  console.log(qiblad);
-  return qiblad;
+    var PI = Math.PI;
+    const latk = (21.4225 * PI) / 180.0;
+    const longk = (39.8264 * PI) / 180.0;
+    const phi = (lat * PI) / 180.0;
+    const lambda = (lon * PI) / 180.0;
+    const qiblad =
+        (180.0 / PI) *
+        Math.atan2(
+            Math.sin(longk - lambda),
+            Math.cos(phi) * Math.tan(latk) - Math.sin(phi) * Math.cos(longk - lambda)
+        );
+    console.log(qiblad);
+    return qiblad;
 };
