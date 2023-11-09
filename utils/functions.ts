@@ -86,6 +86,8 @@ export const prayerTimesHandler = async (id: string) => {
             )
         }
         else {
+            console.log('storedPrayerTimes:', storedPrayerTimes);
+            
             return storedPrayerTimes.prayerTimes.find((item: any) => {
                 if (item.MiladiTarihKisa === formattedDate) {
                     return item;
