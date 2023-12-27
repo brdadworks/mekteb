@@ -59,7 +59,7 @@ const Map = () => {
 
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
-    googleMapsApiKey: "AIzaSyD4CdlHopKnLqD0P0nvXawdqU7rold2p28",
+    googleMapsApiKey: "AIzaSyDq-ng90yBn7Bo0Sq8l6gA6reT1pHEDayY",
   });
 
   useEffect(() => {
