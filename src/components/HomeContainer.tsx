@@ -37,7 +37,7 @@ const HomeContainer: React.FC<ContainerProps> = () => {
                 setNearestPrayerTime(getNearestPrayerTime(times))
             } else settingsRef.current.click();
         })()
-
+        
     }, []);
 
 
