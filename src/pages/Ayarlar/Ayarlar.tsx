@@ -16,12 +16,13 @@ import {
     getDistrict,
     getPrayerTimes, getStorageData, removeStorageData,
 } from '../../../utils/functions';
-
+import { App } from '@capacitor/app';
 //types
 import {CountryProps, CityProps, DistrictProps, SettingsProps} from '../../../utils/types'
 
 function Ayarlar() {
     //states
+    const [appVersion, setAppVersion] = useState<string>('');
     const [loading, setLoading] = useState(true);
     const [cities, setCities] = useState<CityProps[]>([
         {
@@ -52,7 +53,12 @@ function Ayarlar() {
     const districtRef = useRef<HTMLIonSelectElement | null>(null);
 
     useEffect(() => {
-    
+        const getAppVersion = async () => {
+            const info = await App.getInfo();
+            setAppVersion(info.version);
+        };
+        getAppVersion();
+
         const loadSettings = async () => {
             const getSettings = (await getStorageData("settings")) as SettingsProps;
             if (getSettings) {
@@ -90,6 +96,8 @@ function Ayarlar() {
 
         }
         loadSettings();
+
+
     }, []);
 
     const formHandler = (e: React.FormEvent) => {
@@ -244,6 +252,9 @@ function Ayarlar() {
                         </IonList>
                     </form>
                 )}
+                <p className={'text-center text-sm mt-4'}>
+                    Uygulama Versiyonu: {appVersion}
+                </p>
             </IonContent>
         </>
     );

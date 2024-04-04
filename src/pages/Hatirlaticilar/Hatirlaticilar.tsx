@@ -1,9 +1,11 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import {
     IonContent,
     IonItem,
     IonList,
-    IonLabel, IonToggle, IonButton
+    IonLabel, IonToggle, IonButton,
+    useIonRouter,
+    IonToast
 } from '@ionic/react';
 import Header from "../../components/Header";
 
@@ -12,25 +14,26 @@ import {
     getNotificationPermissionStatus,
     getStorageData, notificationHandler,
     requestNotificationPermission,
+    testSendNotification,
 } from "../../../utils/functions";
 
-import {NativeSettings, AndroidSettings, IOSSettings} from 'capacitor-native-settings';
-import {LocalNotifications} from "@capacitor/local-notifications";
+import { NativeSettings, AndroidSettings, IOSSettings } from 'capacitor-native-settings';
 
 const notifications = [
-    {title: "Dini Günler", checked: false},
-    {title: "İmsak", checked: false},
-    {title: "Güneş", checked: false},
-    {title: "Öğle", checked: false},
-    {title: "İkindi", checked: false},
-    {title: "Akşam", checked: false},
-    {title: "Yatsı", checked: false},
+    // { title: "Dini Günler", checked: false },
+    { title: "İmsak", checked: false },
+    { title: "Güneş", checked: false },
+    { title: "Öğle", checked: false },
+    { title: "İkindi", checked: false },
+    { title: "Akşam", checked: false },
+    { title: "Yatsı", checked: false },
 ];
 
 function Hatirlaticilar() {
     const [notificationStates, setNotificationStates] = useState(notifications);
     const [permissionStatus, setPermissionStatus] = useState<string>("none");
     const [loading, setLoading] = useState(true);
+    const [showToast, setShowToast] = useState(false);
 
     useEffect(() => {
         getStorageData("notifications").then(data => {
@@ -39,32 +42,30 @@ function Hatirlaticilar() {
             setNotificationStates(data)
         })
         getNotificationPermissionStatus().then((status) => {
-                if (status === "denied") {
-                    setPermissionStatus("denied")
-                } else if (status === "prompt") {
-                    requestNotificationPermission().then((status) => {
-                            setPermissionStatus(status);
-                        }
-                    );
-                } else {
-                    //eğer hali hazırda izin alındıysa
-                    setPermissionStatus("granted")
+            if (status === "denied") {
+                setPermissionStatus("denied")
+            } else if (status === "prompt") {
+                requestNotificationPermission().then((status) => {
+                    setPermissionStatus(status);
                 }
+                );
+            } else {
+                //eğer hali hazırda izin alındıysa
+                setPermissionStatus("granted")
             }
+        }
         );
     }, []);
 
     const handleToggleAll = (checked: boolean) => {
-        const updatedStates = notificationStates.map(state => ({...state, checked: true}));
+        const updatedStates = notificationStates.map(state => ({ ...state, checked: true }));
         console.log("updated", updatedStates)
         setNotificationStates(updatedStates);
-        addStorageData("notifications", updatedStates)
     };
     const handleToggle = (index: number) => {
         const updatedStates = [...notificationStates];
         updatedStates[index].checked = !updatedStates[index].checked;
         setNotificationStates(updatedStates);
-        addStorageData("notifications", updatedStates)
     };
     const openNotificationSettings = () => {
         NativeSettings.openAndroid({
@@ -73,18 +74,25 @@ function Hatirlaticilar() {
     }
     const checkPermission = () => {
         requestNotificationPermission().then((status) => {
-                setPermissionStatus(status);
-            }
+            setPermissionStatus(status);
+        }
         );
     }
     const sendNotification = async () => {
+        console.log("sending notification", notificationStates);
+        
+        await addStorageData("notifications", notificationStates);
         notificationHandler(notificationStates);
+        //go to home page
+        setShowToast(true);
     }
     const isAllChecked = notificationStates.every((state) => state.checked);
 
     return (
         <>
-            <Header pageTitle={'Hatırlatıcılar'}/>
+            <Header pageTitle={'Hatırlatıcılar'} />
+            {/* <IonButton onClick={testSendNotification}>Test Notification</IonButton> */}
+            <IonToast isOpen={showToast} onDidDismiss={() => setShowToast(false)} message="Bildirimler başarıyla kayıt edildi." duration={5000}></IonToast>
             <IonContent class="ion-padding bg-white bg-color-white">
                 {permissionStatus === "none" ? <p>Yükleniyor...</p> : permissionStatus === "denied" ?
                     //access denied
@@ -96,39 +104,42 @@ function Hatirlaticilar() {
                     </>
                     :
                     //access granted
-                    <IonList lines={'none'}>
-                        {/*<p><IonButton onClick={sendNotification}>Send Noti</IonButton></p>*/}
-                        <IonItem>
-                            <IonLabel>
-                            <span className={'font-medium text-lg text-black'}>
-                                Tümü
-                            </span>
-                            </IonLabel>
-                            <IonToggle
-                                aria-label={'Tümü'}
-                                slot="end"
-                                checked={isAllChecked}
-                                onIonChange={(e) =>
-                                    handleToggleAll(e.detail.checked)
-                                }
-                            />
-                        </IonItem>
-                        {notificationStates.map((notification, index) => (
-                            <IonItem key={index}>
+                    <>
+                        <IonList lines={'none'}>
+                            {/*<p><IonButton onClick={sendNotification}>Send Noti</IonButton></p>*/}
+                            <IonItem>
                                 <IonLabel>
-                                <span className={'font-medium text-lg text-black'}>
-                                    {notification.title}
-                                </span>
+                                    <span className={'font-medium text-lg text-black'}>
+                                        Tümü
+                                    </span>
                                 </IonLabel>
                                 <IonToggle
-                                    aria-label={notification.title}
+                                    aria-label={'Tümü'}
                                     slot="end"
-                                    checked={notification.checked}
-                                    onIonChange={() => handleToggle(index)}
+                                    checked={isAllChecked}
+                                    onIonChange={(e) =>
+                                        handleToggleAll(e.detail.checked)
+                                    }
                                 />
                             </IonItem>
-                        ))}
-                    </IonList>
+                            {notificationStates.map((notification, index) => (
+                                <IonItem key={index}>
+                                    <IonLabel>
+                                        <span className={'font-medium text-lg text-black'}>
+                                            {notification.title}
+                                        </span>
+                                    </IonLabel>
+                                    <IonToggle
+                                        aria-label={notification.title}
+                                        slot="end"
+                                        checked={notification.checked}
+                                        onIonChange={() => handleToggle(index)}
+                                    />
+                                </IonItem>
+                            ))}
+                        </IonList>
+                        <IonButton onClick={sendNotification}>Kaydet</IonButton>
+                    </>
                 }
             </IonContent>
         </>

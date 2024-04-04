@@ -1240,7 +1240,7 @@ export const itikaf = {
   title: "İtikaf",
   slug: "itikaf",
   content: "/books/hayati_hakika/itikaf/",
-  page: 5,
+  page: 4,
   direction: "ltr",
 };
 
@@ -1248,7 +1248,7 @@ export const kadir_gecesi = {
   title: "Kadir Gecesi",
   slug: "kadir_gecesi",
   content: "/books/hayati_hakika/kadir_gecesi/",
-  page: 1,
+  page: 3,
   direction: "ltr",
 };
 
@@ -1288,7 +1288,7 @@ export const ramazan_ayi = {
   title: "Ramazan Ayı",
   slug: "ramazan_ayi",
   content: "/books/hayati_hakika/ramazan_ayi/",
-  page: 4,
+  page: 6,
   direction: "ltr",
 };
 
