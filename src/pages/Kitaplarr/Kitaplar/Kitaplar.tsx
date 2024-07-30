@@ -13,6 +13,7 @@ import {currentBook, bookHandler} from "../../../../utils/bookHandler";
 import Ilahiler from "../Ilahiler/Ilahiler";
 import KuraniKerim from '../KuraniKerim/KuraniKerim';
 import KuraniKerimMeal from '../KuraniKerimMeal/KuraniKerimMeal';
+import Kuran from '../Kuran/KuraniKerim';
 
 
 function Kitaplar({books, title}: { books: BooksProps[], title: string }) {
@@ -33,6 +34,11 @@ function Kitaplar({books, title}: { books: BooksProps[], title: string }) {
                     />
                   ) : book.slug == "kurani_kerim" ? (
                     <KuraniKerim
+                      title={book.title}
+                      books={bookHandler(book.slug)}
+                    />
+                  ) : book.slug == "kuran" ? (
+                    <Kuran
                       title={book.title}
                       books={bookHandler(book.slug)}
                     />

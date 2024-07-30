@@ -1,36 +1,42 @@
 export const all_books = [
   {
     id: 1,
+    title: "Kuran",
+    slug: "kuran",
+    read: false,
+  },
+  {
+    id: 2,
     title: "Mecmuat’ul İrfaniyye",
     slug: "mecmua",
     read: false,
   },
   {
-    id: 2,
+    id: 3,
     title: "Mecmuat’ul İrfaniyye (Mealli)",
     slug: "mecmua_meal",
     read: false,
   },
   {
-    id: 3,
+    id: 4,
     title: "Şems-i Nuriye",
     slug: "semsi_nuriye",
     read: true,
   },
   {
-    id: 4,
+    id: 5,
     title: "Hayat-ı Hakika Risalesi",
     slug: "hayati_hakika",
     read: false,
   },
   {
-    id: 5,
+    id: 6,
     title: "Hadisler",
     slug: "hadisler",
     read: false,
   },
   {
-    id: 6,
+    id: 7,
     title: "İlahiler",
     slug: "ilahiler",
     read: false,
