@@ -13,7 +13,7 @@ import {currentBook, bookHandler} from "../../../../utils/bookHandler";
 import Ilahiler from "../Ilahiler/Ilahiler";
 import KuraniKerim from '../KuraniKerim/KuraniKerim';
 import KuraniKerimMeal from '../KuraniKerimMeal/KuraniKerimMeal';
-import Kuran from '../Kuran/KuraniKerim';
+import Kuran from '../Kuran';
 
 
 function Kitaplar({books, title}: { books: BooksProps[], title: string }) {

@@ -14,6 +14,11 @@ import {
   arrowBackOutline,
   arrowForwardOutline,
   enterOutline,
+  playCircle,
+  pauseCircle,
+  stopCircle,
+  playSkipForwardCircle,
+  playSkipBackCircle,
 } from "ionicons/icons";
 import { BookProps } from "../../../../utils/types";
 import {
@@ -35,17 +40,26 @@ import {
   ala,
   hatim,
 } from "../../../../data/books";
+import ringer from "../../../../assets/sound.mp3";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
-function KuraniKerimOku({ startPage, pageTitle }: { startPage: number, pageTitle: string }) {
+function KuraniKerimOku({
+  startPage,
+  pageTitle,
+}: {
+  startPage: number;
+  pageTitle: string;
+}) {
   const [swipe, setSwipe] = useState<any>();
   const [title, setTitle] = useState<string>(pageTitle);
   const topRef = useRef<any>(null);
 
-  console.log(pageTitle);
-  
+  const audio = new Audio(ringer);
+  audio.loop = false;
+
+  // console.log(pageTitle);
 
   const goFirstPage = () => {
     swipe?.slideTo(0);
@@ -60,7 +74,7 @@ function KuraniKerimOku({ startPage, pageTitle }: { startPage: number, pageTitle
     console.log("scrollTop");
     topRef.current?.scrollToTop();
     console.log(swipe?.activeIndex);
-    
+
     setTitle(titleHandler(swipe?.activeIndex));
   };
 
@@ -70,19 +84,28 @@ function KuraniKerimOku({ startPage, pageTitle }: { startPage: number, pageTitle
     <>
       <IonHeader className={"p-2"}>
         <IonToolbar>
-          <IonButtons slot="start">
+          <IonButtons
+            slot="start"
+            onClick={() => {
+              audio.pause();
+              audio.currentTime = 0;
+            }}
+          >
             <IonBackButton text={"Geri"}></IonBackButton>
           </IonButtons>
-          <IonTitle className={"text-xl"}>{title != "pageTitle" ? title : pageTitle}</IonTitle>
+          <IonTitle className={"text-xl"}>
+            {title != "pageTitle" ? title : pageTitle}
+          </IonTitle>
         </IonToolbar>
       </IonHeader>
 
       <IonContent
         ref={topRef}
         scrollEvents={true}
-        class="ion-padding bg-white bg-color-white"
+        className="ion-padding bg-white bg-color-white"
       >
         <Swiper
+          loop={true}
           initialSlide={startPage}
           onSlideChangeTransitionEnd={scrollTop}
           onBeforeInit={(swipper) => setSwipe(swipper)}
@@ -97,7 +120,71 @@ function KuraniKerimOku({ startPage, pageTitle }: { startPage: number, pageTitle
       <IonFooter
         className={"w-full flex justify-evenly items-center p-3 bg-gray-200"}
       >
-        <button onClick={prevPage}>
+        <div className="flex justify-center align-center gap-2">
+          <>{console.log({ activeSlide: swipe?.activeIndex })}</>
+          <button
+            onClick={() => {
+              audio.pause();
+              audio.currentTime = 0;
+              prevPage();
+            }}
+          >
+            <IonIcon
+              className="text-[#4ac3a4]"
+              icon={playSkipBackCircle}
+              size="large"
+            />
+          </button>
+          <button
+            onClick={() => {
+              audio.pause();
+            }}
+          >
+            <IonIcon
+              className="text-[#4ac3a4]"
+              icon={pauseCircle}
+              size="large"
+            />
+          </button>
+          <button
+            onClick={() => {
+              audio.play();
+              console.log({ audio });
+            }}
+          >
+            <IonIcon
+              className="text-[#4ac3a4]"
+              icon={playCircle}
+              size="large"
+            />
+          </button>
+          <button
+            onClick={() => {
+              audio.pause();
+              audio.currentTime = 0;
+            }}
+          >
+            <IonIcon
+              className="text-[#4ac3a4]"
+              icon={stopCircle}
+              size="large"
+            />
+          </button>
+          <button
+            onClick={() => {
+              audio.pause();
+              audio.currentTime = 0;
+              nextPage();
+            }}
+          >
+            <IonIcon
+              className="text-[#4ac3a4]"
+              icon={playSkipForwardCircle}
+              size="large"
+            />
+          </button>
+        </div>
+        {/* <button onClick={prevPage}>
           <IonIcon
             className={"text-[#4ac3a4]"}
             icon={arrowBackOutline}
@@ -117,7 +204,7 @@ function KuraniKerimOku({ startPage, pageTitle }: { startPage: number, pageTitle
             icon={enterOutline}
             size={"large"}
           ></IonIcon>
-        </button>
+        </button> */}
       </IonFooter>
     </>
   );

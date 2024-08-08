@@ -12,12 +12,13 @@ import { BooksProps } from "../../../../utils/types";
 import KuraniKerimOku from "../KuraniKerimOku/KuraniKerimOku";
 
 export default function Kuran({ books, title }: { books: BooksProps[]; title: string }) {
+  console.log({ books, title });
   return (
     <>
       <Header pageTitle={title} />
       <IonContent class="ion-padding bg-white bg-color-white">
         Kuran Sayfası
-        {/* <IonList lines={"none"}>
+        <IonList lines={"none"}>
           {books.map((book) => (
             <IonNavLink
               key={`${book.id}`}
@@ -37,7 +38,7 @@ export default function Kuran({ books, title }: { books: BooksProps[]; title: st
               </IonItem>
             </IonNavLink>
           ))}
-        </IonList> */}
+        </IonList>
       </IonContent>
     </>
   );
