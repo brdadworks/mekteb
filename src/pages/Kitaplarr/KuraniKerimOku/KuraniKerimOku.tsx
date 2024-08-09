@@ -1,15 +1,22 @@
 import React, { useEffect, useRef, useState } from "react";
 import {
   IonBackButton,
+  IonButton,
   IonButtons,
   IonContent,
   IonFooter,
   IonHeader,
   IonIcon,
+  IonInput,
+  IonItem,
+  IonModal,
+  IonPage,
   IonTitle,
   IonToolbar,
+  useIonModal,
 } from "@ionic/react";
-import "./Kitaplar.css";
+import "react-h5-audio-player/lib/styles.css";
+import { OverlayEventDetail } from "@ionic/react/dist/types/components/react-component-lib/interfaces";
 import {
   arrowBackOutline,
   arrowForwardOutline,
@@ -40,10 +47,69 @@ import {
   ala,
   hatim,
 } from "../../../../data/books";
-import ringer from "../../../../assets/sound.mp3";
+import "./Kitaplar.css";
+import ringer from "../../../../assets/fatiha.mp3";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import AudioPlayer, { RHAP_UI } from "react-h5-audio-player";
+
+const ModalExample = ({
+  dismiss,
+}: {
+  dismiss: (data?: string | null | undefined | number, role?: string) => void;
+}) => {
+  const inputRef = useRef<HTMLIonInputElement>(null);
+  return (
+    <IonPage>
+      <IonHeader>
+        <IonToolbar>
+          {/* <IonButtons slot="start">
+            <IonButton color="medium" onClick={() => dismiss(null, "cancel")}>
+              Cancel
+            </IonButton>
+          </IonButtons> */}
+          <IonTitle>Fatiha - Meal</IonTitle>
+          {/* <IonButtons slot="end">
+            <IonButton
+              onClick={() => dismiss(inputRef.current?.value, "confirm")}
+              strong={true}
+            >
+              Kapat
+            </IonButton>
+          </IonButtons> */}
+        </IonToolbar>
+      </IonHeader>
+      <IonContent className="ion-padding">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
+          dolore temporibus aliquid perspiciatis, aut adipisci fugit officia
+          consequatur corporis aliquam impedit maxime quos, veniam esse rerum
+          doloremque vel quia architecto libero. Itaque fuga corrupti ratione
+          accusantium magni nostrum velit modi voluptatum? Est, accusamus ex,
+          repellat quaerat architecto iusto atque dolore quidem facere porro
+          libero beatae, officiis maxime odit nulla repellendus error id sed
+          velit excepturi quos quibusdam cum! Quas, quisquam ab. Commodi vitae,
+          cupiditate sunt molestiae quas excepturi optio culpa, iste aliquid
+          facere ipsa aut maxime! Aspernatur pariatur illum repudiandae nemo,
+          exercitationem nostrum eos architecto error magni necessitatibus
+          repellat tempora?
+        </p>
+        <IonButton
+          onClick={() => dismiss(inputRef.current?.value, "confirm")}
+          strong={true}
+          expand="block"
+          fill="outline"
+          size="default"
+          color="success"
+          className="mt-4"
+        >
+          Kapat
+        </IonButton>
+      </IonContent>
+    </IonPage>
+  );
+};
 
 function KuraniKerimOku({
   startPage,
@@ -56,8 +122,24 @@ function KuraniKerimOku({
   const [title, setTitle] = useState<string>(pageTitle);
   const topRef = useRef<any>(null);
 
-  const audio = new Audio(ringer);
-  audio.loop = false;
+  const [present, dismiss] = useIonModal(ModalExample, {
+    dismiss: (data: string, role: string) => dismiss(data, role),
+  });
+
+  function openModal() {
+    present({
+      onWillDismiss: (ev: CustomEvent<OverlayEventDetail>) => {
+        if (ev.detail.role === "confirm") {
+          console.log("Modal confirmed");
+        } else {
+          console.log("Modal dissmised");
+        }
+      },
+    });
+  }
+
+  // const audio = new Audio(ringer);
+  // audio.loop = false;
 
   // console.log(pageTitle);
 
@@ -86,10 +168,10 @@ function KuraniKerimOku({
         <IonToolbar>
           <IonButtons
             slot="start"
-            onClick={() => {
-              audio.pause();
-              audio.currentTime = 0;
-            }}
+            // onClick={() => {
+            //   audio.pause();
+            //   audio.currentTime = 0;
+            // }}
           >
             <IonBackButton text={"Geri"}></IonBackButton>
           </IonButtons>
@@ -120,9 +202,52 @@ function KuraniKerimOku({
       <IonFooter
         className={"w-full flex justify-evenly items-center p-3 bg-gray-200"}
       >
-        <div className="flex justify-center align-center gap-2">
+        <div className="flex flex-column justify-center align-stretch gap-2 w-full">
           <>{console.log({ activeSlide: swipe?.activeIndex })}</>
-          <button
+          <AudioPlayer
+            src={ringer}
+            layout="stacked"
+            showJumpControls={false}
+            showSkipControls={true}
+            autoPlayAfterSrcChange={false}
+            onClickPrevious={() => console.log("click prev")}
+            onClickNext={() => console.log("click next")}
+            customVolumeControls={[]}
+            customAdditionalControls={[]}
+            header={
+              <div className="flex justify-center items-center gap-4 w-full text-black">
+                Fatiha
+                <IonButton
+                  shape="round"
+                  fill="outline"
+                  size="small"
+                  color="success"
+                  onClick={() => openModal()}
+                >
+                  Meal oku
+                </IonButton>
+              </div>
+            }
+            customIcons={{
+              play: <IonIcon className="text-[#4ac3a4]" icon={playCircle} />,
+              pause: <IonIcon className="text-[#4ac3a4]" icon={pauseCircle} />,
+              previous: (
+                <IonIcon
+                  className="text-[#4ac3a4]"
+                  icon={playSkipBackCircle}
+                  size="large"
+                />
+              ),
+              next: (
+                <IonIcon
+                  className="text-[#4ac3a4]"
+                  icon={playSkipForwardCircle}
+                  size="large"
+                />
+              ),
+            }}
+          />
+          {/* <button
             onClick={() => {
               audio.pause();
               audio.currentTime = 0;
@@ -182,7 +307,7 @@ function KuraniKerimOku({
               icon={playSkipForwardCircle}
               size="large"
             />
-          </button>
+          </button> */}
         </div>
         {/* <button onClick={prevPage}>
           <IonIcon
