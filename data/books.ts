@@ -247,6 +247,7 @@ export const kuran = [
     slug: "fatiha",
     read: true,
     startPage: 0,
+    sound: "fatiha.mp3",
   },
   {
     id: 2,
@@ -254,6 +255,7 @@ export const kuran = [
     slug: "bakara",
     read: true,
     startPage: 1,
+    sound: "sound.mp3",
   },
   {
     id: 17,
@@ -261,6 +263,7 @@ export const kuran = [
     slug: "yusuf",
     read: true,
     startPage: 2,
+    sound: "fatiha.mp3",
   },
   {
     id: 10,
@@ -268,6 +271,7 @@ export const kuran = [
     slug: "kehf",
     read: true,
     startPage: 3,
+    sound: "sound.mp3",
   },
   {
     id: 16,
@@ -275,6 +279,7 @@ export const kuran = [
     slug: "yasin",
     read: true,
     startPage: 5,
+    sound: "sound.mp3",
   },
   {
     id: 4,
@@ -282,6 +287,7 @@ export const kuran = [
     slug: "duhan",
     read: true,
     startPage: 11,
+    sound: "sound.mp3",
   },
   {
     id: 6,
@@ -289,6 +295,7 @@ export const kuran = [
     slug: "fetih",
     read: true,
     startPage: 14,
+    sound: "sound.mp3",
   },
   {
     id: 13,
@@ -296,6 +303,7 @@ export const kuran = [
     slug: "rahman",
     read: true,
     startPage: 19,
+    sound: "sound.mp3",
   },
   {
     id: 15,
@@ -303,6 +311,7 @@ export const kuran = [
     slug: "vakia",
     read: true,
     startPage: 23,
+    sound: "sound.mp3",
   },
   {
     id: 7,
@@ -310,6 +319,7 @@ export const kuran = [
     slug: "hasr",
     read: true,
     startPage: 27,
+    sound: "sound.mp3",
   },
   {
     id: 3,
@@ -317,6 +327,7 @@ export const kuran = [
     slug: "cuma",
     read: true,
     startPage: 29,
+    sound: "sound.mp3",
   },
   {
     id: 14,
@@ -324,6 +335,7 @@ export const kuran = [
     slug: "tahrim",
     read: true,
     startPage: 31,
+    sound: "sound.mp3",
   },
   {
     id: 11,
@@ -331,6 +343,7 @@ export const kuran = [
     slug: "mulk",
     read: true,
     startPage: 32,
+    sound: "sound.mp3",
   },
   {
     id: 9,
@@ -338,6 +351,7 @@ export const kuran = [
     slug: "insan",
     read: true,
     startPage: 35,
+    sound: "sound.mp3",
   },
   {
     id: 12,
@@ -345,6 +359,7 @@ export const kuran = [
     slug: "nebe",
     read: true,
     startPage: 38,
+    sound: "sound.mp3",
   },
   {
     id: 1,
@@ -352,6 +367,7 @@ export const kuran = [
     slug: "ala",
     read: true,
     startPage: 41,
+    sound: "sound.mp3",
   },
   {
     id: 8,
@@ -359,6 +375,7 @@ export const kuran = [
     slug: "hatim",
     read: true,
     startPage: 42,
+    sound: "sound.mp3",
   },
 ];
 
@@ -848,7 +865,6 @@ export const kurani_kerim_meal = [
     slug: "hatim_meal",
     read: true,
     startPage: 84,
-
   },
 ];
 

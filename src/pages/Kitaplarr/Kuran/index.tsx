@@ -11,7 +11,13 @@ import "./Kitaplar.css";
 import { BooksProps } from "../../../../utils/types";
 import KuraniKerimOku from "../KuraniKerimOku/KuraniKerimOku";
 
-export default function Kuran({ books, title }: { books: BooksProps[]; title: string }) {
+export default function Kuran({
+  books,
+  title,
+}: {
+  books: BooksProps[];
+  title: string;
+}) {
   console.log({ books, title });
   return (
     <>
@@ -19,11 +25,17 @@ export default function Kuran({ books, title }: { books: BooksProps[]; title: st
       <IonContent class="ion-padding bg-white bg-color-white">
         Kuran Sayfası
         <IonList lines={"none"}>
-          {books.map((book) => (
+          {books.map((book, i) => (
             <IonNavLink
-              key={`${book.id}`}
+              key={i}
               routerDirection="forward"
-              component={() => <KuraniKerimOku pageTitle={book.title} startPage={book.startPage as number} />}
+              component={() => (
+                <KuraniKerimOku
+                  sound={book.sound}
+                  pageTitle={book.title}
+                  startPage={book.startPage as number}
+                />
+              )}
             >
               <IonItem className={"mt-[3px] k-ion-item w-full"}>
                 <IonLabel className={"text-center"}>

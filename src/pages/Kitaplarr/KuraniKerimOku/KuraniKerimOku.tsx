@@ -46,9 +46,11 @@ import {
   nebe,
   ala,
   hatim,
+  kuran,
 } from "../../../../data/books";
 import "./Kitaplar.css";
-import ringer from "../../../../assets/fatiha.mp3";
+import sound1 from "../../../../assets/fatiha.mp3";
+import sound2 from "../../../../assets/sound.mp3";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -114,13 +116,21 @@ const ModalExample = ({
 function KuraniKerimOku({
   startPage,
   pageTitle,
+  sound,
 }: {
   startPage: number;
   pageTitle: string;
+  sound: string;
 }) {
   const [swipe, setSwipe] = useState<any>();
   const [title, setTitle] = useState<string>(pageTitle);
+  const [playerSrc, setPlayerSrc] = useState<string>();
   const topRef = useRef<any>(null);
+  const player = useRef<any>();
+
+  useEffect(() => {
+    setPlayerSrc(`../../../../assets/${sound}`);
+  }, [sound]);
 
   const [present, dismiss] = useIonModal(ModalExample, {
     dismiss: (data: string, role: string) => dismiss(data, role),
@@ -158,12 +168,14 @@ function KuraniKerimOku({
     console.log(swipe?.activeIndex);
 
     setTitle(titleHandler(swipe?.activeIndex));
+    setPlayerSrc(`../../../../assets/${soundHandler(swipe?.activeIndex)}`);
   };
 
   const images: JSX.Element[] = imagesHandler();
 
   return (
     <>
+      {console.log({ sound, pageTitle })}
       <IonHeader className={"p-2"}>
         <IonToolbar>
           <IonButtons
@@ -205,13 +217,21 @@ function KuraniKerimOku({
         <div className="flex flex-column justify-center align-stretch gap-2 w-full">
           <>{console.log({ activeSlide: swipe?.activeIndex })}</>
           <AudioPlayer
-            src={ringer}
+            ref={player}
+            src={playerSrc}
             layout="stacked"
             showJumpControls={false}
             showSkipControls={true}
             autoPlayAfterSrcChange={false}
-            onClickPrevious={() => console.log("click prev")}
-            onClickNext={() => console.log("click next")}
+            onClickPrevious={() => {
+              swipe?.slideNext();
+              console.log("audioRef", player.current);
+              player?.current.audio.current.pause();
+            }}
+            onClickNext={() => {
+              swipe?.slidePrev();
+              player?.current.audio.current.pause();
+            }}
             customVolumeControls={[]}
             customAdditionalControls={[]}
             header={
@@ -394,6 +414,14 @@ const pushImages = (data: any) => {
   return images;
 };
 
+const soundHandler = (activePage: number) => {
+  const mappedPage = kuran.find(
+    (mapping) => activePage < mapping.startPage + 1
+  );
+
+  return mappedPage?.sound;
+};
+
 const titleHandler = (activePage: number) => {
   const titlesMapping = [
     { page: 1, title: "Fatiha Suresi" },
@@ -415,8 +443,8 @@ const titleHandler = (activePage: number) => {
     { page: 60, title: "Hatim Suresi" },
   ];
 
-  const mappedTitle = titlesMapping.find(
-    (mapping) => activePage < mapping.page
+  const mappedTitle = kuran.find(
+    (mapping) => activePage < mapping.startPage + 1
   );
 
   if (mappedTitle) {
