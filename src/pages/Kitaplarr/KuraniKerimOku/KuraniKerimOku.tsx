@@ -49,69 +49,10 @@ import {
   kuran,
 } from "../../../../data/books";
 import "./Kitaplar.css";
-import sound1 from "../../../../assets/fatiha.mp3";
-import sound2 from "../../../../assets/sound.mp3";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import AudioPlayer, { RHAP_UI } from "react-h5-audio-player";
-
-const ModalExample = ({
-  dismiss,
-}: {
-  dismiss: (data?: string | null | undefined | number, role?: string) => void;
-}) => {
-  const inputRef = useRef<HTMLIonInputElement>(null);
-  return (
-    <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          {/* <IonButtons slot="start">
-            <IonButton color="medium" onClick={() => dismiss(null, "cancel")}>
-              Cancel
-            </IonButton>
-          </IonButtons> */}
-          <IonTitle>Fatiha - Meal</IonTitle>
-          {/* <IonButtons slot="end">
-            <IonButton
-              onClick={() => dismiss(inputRef.current?.value, "confirm")}
-              strong={true}
-            >
-              Kapat
-            </IonButton>
-          </IonButtons> */}
-        </IonToolbar>
-      </IonHeader>
-      <IonContent className="ion-padding">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
-          dolore temporibus aliquid perspiciatis, aut adipisci fugit officia
-          consequatur corporis aliquam impedit maxime quos, veniam esse rerum
-          doloremque vel quia architecto libero. Itaque fuga corrupti ratione
-          accusantium magni nostrum velit modi voluptatum? Est, accusamus ex,
-          repellat quaerat architecto iusto atque dolore quidem facere porro
-          libero beatae, officiis maxime odit nulla repellendus error id sed
-          velit excepturi quos quibusdam cum! Quas, quisquam ab. Commodi vitae,
-          cupiditate sunt molestiae quas excepturi optio culpa, iste aliquid
-          facere ipsa aut maxime! Aspernatur pariatur illum repudiandae nemo,
-          exercitationem nostrum eos architecto error magni necessitatibus
-          repellat tempora?
-        </p>
-        <IonButton
-          onClick={() => dismiss(inputRef.current?.value, "confirm")}
-          strong={true}
-          expand="block"
-          fill="outline"
-          size="default"
-          color="success"
-          className="mt-4"
-        >
-          Kapat
-        </IonButton>
-      </IonContent>
-    </IonPage>
-  );
-};
 
 function KuraniKerimOku({
   startPage,
@@ -131,6 +72,63 @@ function KuraniKerimOku({
   useEffect(() => {
     setPlayerSrc(`../../../../assets/${sound}`);
   }, [sound]);
+
+  const ModalExample = ({
+    dismiss,
+  }: {
+    dismiss: (data?: string | null | undefined | number, role?: string) => void;
+  }) => {
+    const inputRef = useRef<HTMLIonInputElement>(null);
+    return (
+      <IonPage>
+        <IonHeader>
+          <IonToolbar>
+            {/* <IonButtons slot="start">
+            <IonButton color="medium" onClick={() => dismiss(null, "cancel")}>
+              Cancel
+            </IonButton>
+          </IonButtons> */}
+            <IonTitle>{title} - Meal</IonTitle>
+            {/* <IonButtons slot="end">
+            <IonButton
+              onClick={() => dismiss(inputRef.current?.value, "confirm")}
+              strong={true}
+            >
+              Kapat
+            </IonButton>
+          </IonButtons> */}
+          </IonToolbar>
+        </IonHeader>
+        <IonContent className="ion-padding">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
+            dolore temporibus aliquid perspiciatis, aut adipisci fugit officia
+            consequatur corporis aliquam impedit maxime quos, veniam esse rerum
+            doloremque vel quia architecto libero. Itaque fuga corrupti ratione
+            accusantium magni nostrum velit modi voluptatum? Est, accusamus ex,
+            repellat quaerat architecto iusto atque dolore quidem facere porro
+            libero beatae, officiis maxime odit nulla repellendus error id sed
+            velit excepturi quos quibusdam cum! Quas, quisquam ab. Commodi
+            vitae, cupiditate sunt molestiae quas excepturi optio culpa, iste
+            aliquid facere ipsa aut maxime! Aspernatur pariatur illum
+            repudiandae nemo, exercitationem nostrum eos architecto error magni
+            necessitatibus repellat tempora?
+          </p>
+          <IonButton
+            onClick={() => dismiss(inputRef.current?.value, "confirm")}
+            strong={true}
+            expand="block"
+            fill="outline"
+            size="default"
+            color="success"
+            className="mt-4"
+          >
+            Kapat
+          </IonButton>
+        </IonContent>
+      </IonPage>
+    );
+  };
 
   const [present, dismiss] = useIonModal(ModalExample, {
     dismiss: (data: string, role: string) => dismiss(data, role),
@@ -236,7 +234,7 @@ function KuraniKerimOku({
             customAdditionalControls={[]}
             header={
               <div className="flex justify-center items-center gap-4 w-full text-black">
-                Fatiha
+                {title}
                 <IonButton
                   shape="round"
                   fill="outline"
