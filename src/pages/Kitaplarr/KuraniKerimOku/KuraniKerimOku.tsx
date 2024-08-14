@@ -73,6 +73,10 @@ function KuraniKerimOku({
     setPlayerSrc(`../../../../assets/${sound}`);
   }, [sound]);
 
+  useEffect(() => {
+    setTitle(pageTitle);
+  }, []);
+
   const ModalExample = ({
     dismiss,
   }: {
@@ -173,7 +177,7 @@ function KuraniKerimOku({
 
   return (
     <>
-      {console.log({ sound, pageTitle })}
+      {console.log({ sound, pageTitle, title })}
       <IonHeader className={"p-2"}>
         <IonToolbar>
           <IonButtons
@@ -197,7 +201,7 @@ function KuraniKerimOku({
         className="ion-padding bg-white bg-color-white"
       >
         <Swiper
-          loop={true}
+          loop={false}
           initialSlide={startPage}
           onSlideChangeTransitionEnd={scrollTop}
           onBeforeInit={(swipper) => setSwipe(swipper)}
@@ -413,14 +417,13 @@ const pushImages = (data: any) => {
 };
 
 const soundHandler = (activePage: number) => {
-  const mappedPage = kuran.find(
-    (mapping) => activePage < mapping.startPage + 1
-  );
+  const mappedPage = kuran.find((mapping) => activePage <= mapping.startPage);
 
   return mappedPage?.sound;
 };
 
 const titleHandler = (activePage: number) => {
+  console.log("titleHandler called");
   const titlesMapping = [
     { page: 1, title: "Fatiha Suresi" },
     { page: 2, title: "Bakara Suresi" },
@@ -441,11 +444,10 @@ const titleHandler = (activePage: number) => {
     { page: 60, title: "Hatim Suresi" },
   ];
 
-  const mappedTitle = kuran.find(
-    (mapping) => activePage < mapping.startPage + 1
-  );
+  const mappedTitle = kuran.find((mapping) => activePage <= mapping.startPage);
 
   if (mappedTitle) {
+    console.log({ mappedTitle: mappedTitle.title });
     return mappedTitle.title;
   } else {
     return "pageTitle";
