@@ -21,7 +21,11 @@ function KuraniKerim({ books, title }: { books: BooksProps[]; title: string }) {
             <IonNavLink
               key={`${book.id}`}
               routerDirection="forward"
-              component={() => <KuraniKerimOku pageTitle={book.title} startPage={book.startPage as number} />}
+              component={() => (
+                <KuraniKerimOku
+                  startPage={book.startPage as number}
+                />
+              )}
             >
               <IonItem className={"mt-[3px] k-ion-item w-full"}>
                 <IonLabel className={"text-center"}>
