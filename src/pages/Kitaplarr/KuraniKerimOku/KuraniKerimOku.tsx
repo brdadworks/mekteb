@@ -20,21 +20,21 @@ import {
   playSkipForwardCircle,
   playSkipBackCircle,
 } from "ionicons/icons";
-import { kuran } from "../../../../data/books";
+import AudioPlayer from "react-h5-audio-player";
+import { sayfalar } from "../../../../data/books";
 import "./Kitaplar.css";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import AudioPlayer from "react-h5-audio-player";
 
 const soundHandler = (activePage: number) => {
-  const mappedPage = kuran.find((mapping) => activePage === mapping.id);
+  const mappedPage = sayfalar.find((mapping) => activePage === mapping.id);
 
   return mappedPage?.sound;
 };
 
 const titleHandler = (activePage: number) => {
-  const mappedTitle = kuran.find((mapping) => activePage <= mapping.startPage);
+  const mappedTitle = sayfalar.find((mapping) => activePage <= mapping.startPage);
   if (mappedTitle) {
     return `${mappedTitle.title} - ${mappedTitle.sure}`;
   } else {
@@ -147,7 +147,7 @@ function KuraniKerimOku({ startPage }: { startPage: number }) {
           dir={"rtl"}
           className="mySwiper"
         >
-          {kuran.map(({ sure, id, title, img }) => (
+          {sayfalar.map(({ sure, id, title, img }) => (
             <SwiperSlide key={id}>
               <img
                 src={`/assets/pages/${img}`}

@@ -51,7 +51,6 @@ export interface BooksProps {
     id: number,
     title: string,
     slug: string,
-    sure: string,
     read: boolean,
     startPage?: number,
 }

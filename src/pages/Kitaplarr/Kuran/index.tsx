@@ -10,6 +10,7 @@ import Header from "../../../components/Header";
 import "./Kitaplar.css";
 import { BooksProps } from "../../../../utils/types";
 import KuraniKerimOku from "../KuraniKerimOku/KuraniKerimOku";
+import { sayfalar } from "../../../../data/books";
 
 export default function Kuran({
   books,
@@ -18,6 +19,8 @@ export default function Kuran({
   books: BooksProps[];
   title: string;
 }) {
+  const getPageData = (title: string) =>
+    sayfalar.find((item) => item.title === title);
   return (
     <>
       <Header pageTitle={title} />
@@ -31,14 +34,10 @@ export default function Kuran({
                 <KuraniKerimOku startPage={book.startPage as number} />
               )}
             >
-              <IonItem className={"mt-[3px] k-ion-item w-full"}>
-                <IonLabel className={"text-left"}>
-                  <span
-                    className={
-                      "font-medium text-[1rem] text-white whitespace-pre-wrap"
-                    }
-                  >
-                    {book.title} - {book.sure}
+              <IonItem className="mt-[3px] k-ion-item w-full">
+                <IonLabel className="text-left">
+                  <span className="font-medium text-[1rem] text-white whitespace-pre-wrap">
+                    {book.title} - {getPageData(book.title)?.sure}
                   </span>
                 </IonLabel>
               </IonItem>
