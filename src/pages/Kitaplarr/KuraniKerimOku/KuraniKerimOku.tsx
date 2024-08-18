@@ -7,9 +7,6 @@ import {
   IonFooter,
   IonHeader,
   IonIcon,
-  IonInput,
-  IonItem,
-  IonModal,
   IonPage,
   IonTitle,
   IonToolbar,
@@ -18,64 +15,47 @@ import {
 import "react-h5-audio-player/lib/styles.css";
 import { OverlayEventDetail } from "@ionic/react/dist/types/components/react-component-lib/interfaces";
 import {
-  arrowBackOutline,
-  arrowForwardOutline,
-  enterOutline,
   playCircle,
   pauseCircle,
-  stopCircle,
   playSkipForwardCircle,
   playSkipBackCircle,
 } from "ionicons/icons";
-import { BookProps } from "../../../../utils/types";
-import {
-  fatiha,
-  bakara,
-  yusuf,
-  kehf,
-  yasin,
-  duhan,
-  fetih,
-  rahman,
-  vakia,
-  hasr,
-  cuma,
-  tahrim,
-  mulk,
-  insan,
-  nebe,
-  ala,
-  hatim,
-  kuran,
-} from "../../../../data/books";
+import { kuran } from "../../../../data/books";
 import "./Kitaplar.css";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import AudioPlayer, { RHAP_UI } from "react-h5-audio-player";
+import AudioPlayer from "react-h5-audio-player";
 
-function KuraniKerimOku({
-  startPage,
-  pageTitle,
-  sound,
-}: {
-  startPage: number;
-  pageTitle: string;
-  sound: string;
-}) {
+const soundHandler = (activePage: number) => {
+  const mappedPage = kuran.find((mapping) => activePage === mapping.id);
+
+  return mappedPage?.sound;
+};
+
+const titleHandler = (activePage: number) => {
+  const mappedTitle = kuran.find((mapping) => activePage <= mapping.startPage);
+  if (mappedTitle) {
+    return `${mappedTitle.title} - ${mappedTitle.sure}`;
+  } else {
+    return "Sayfa bulunamadı";
+  }
+};
+
+function KuraniKerimOku({ startPage }: { startPage: number }) {
   const [swipe, setSwipe] = useState<any>();
-  const [title, setTitle] = useState<string>(pageTitle);
+  const [title, setTitle] = useState<string>();
   const [playerSrc, setPlayerSrc] = useState<string>();
   const topRef = useRef<any>(null);
   const player = useRef<any>();
 
   useEffect(() => {
-    setPlayerSrc(`../../../../assets/${sound}`);
-  }, [sound]);
+    setPlayerSrc(`/assets/sounds/${soundHandler(swipe?.activeIndex)}`);
+  }, [swipe?.activeIndex]);
 
   useEffect(() => {
-    setTitle(pageTitle);
-  }, []);
+    setTitle(titleHandler(swipe?.activeIndex));
+  }, [swipe?.activeIndex]);
 
   const ModalExample = ({
     dismiss,
@@ -87,20 +67,7 @@ function KuraniKerimOku({
       <IonPage>
         <IonHeader>
           <IonToolbar>
-            {/* <IonButtons slot="start">
-            <IonButton color="medium" onClick={() => dismiss(null, "cancel")}>
-              Cancel
-            </IonButton>
-          </IonButtons> */}
             <IonTitle>{title} - Meal</IonTitle>
-            {/* <IonButtons slot="end">
-            <IonButton
-              onClick={() => dismiss(inputRef.current?.value, "confirm")}
-              strong={true}
-            >
-              Kapat
-            </IonButton>
-          </IonButtons> */}
           </IonToolbar>
         </IonHeader>
         <IonContent className="ion-padding">
@@ -149,49 +116,21 @@ function KuraniKerimOku({
       },
     });
   }
-
-  // const audio = new Audio(ringer);
-  // audio.loop = false;
-
-  // console.log(pageTitle);
-
-  const goFirstPage = () => {
-    swipe?.slideTo(0);
-  };
-  const nextPage = () => {
-    swipe?.slidePrev();
-  };
-  const prevPage = () => {
-    swipe?.slideNext();
-  };
   const scrollTop = () => {
-    console.log("scrollTop");
     topRef.current?.scrollToTop();
-    console.log(swipe?.activeIndex);
 
     setTitle(titleHandler(swipe?.activeIndex));
-    setPlayerSrc(`../../../../assets/${soundHandler(swipe?.activeIndex)}`);
+    setPlayerSrc(`/assets/sounds/${soundHandler(swipe?.activeIndex)}`);
   };
-
-  const images: JSX.Element[] = imagesHandler();
 
   return (
     <>
-      {console.log({ sound, pageTitle, title })}
       <IonHeader className={"p-2"}>
         <IonToolbar>
-          <IonButtons
-            slot="start"
-            // onClick={() => {
-            //   audio.pause();
-            //   audio.currentTime = 0;
-            // }}
-          >
+          <IonButtons slot="start">
             <IonBackButton text={"Geri"}></IonBackButton>
           </IonButtons>
-          <IonTitle className={"text-xl"}>
-            {title != "pageTitle" ? title : pageTitle}
-          </IonTitle>
+          <IonTitle className={"text-xl"}>{title}</IonTitle>
         </IonToolbar>
       </IonHeader>
 
@@ -208,16 +147,22 @@ function KuraniKerimOku({
           dir={"rtl"}
           className="mySwiper"
         >
-          {images}
+          {kuran.map(({ sure, id, title, img }) => (
+            <SwiperSlide key={id}>
+              <img
+                src={`/assets/pages/${img}`}
+                alt={`${title} - ${sure}`}
+                className={"w-full h-auto"}
+              />
+            </SwiperSlide>
+          ))}
         </Swiper>
-        {/*<img src={`${currentBook.content}${currentPage}-fs8.png`} alt={""} className={"w-full h-auto"}/>*/}
       </IonContent>
 
       <IonFooter
         className={"w-full flex justify-evenly items-center p-3 bg-gray-200"}
       >
         <div className="flex flex-column justify-center align-stretch gap-2 w-full">
-          <>{console.log({ activeSlide: swipe?.activeIndex })}</>
           <AudioPlayer
             ref={player}
             src={playerSrc}
@@ -227,7 +172,6 @@ function KuraniKerimOku({
             autoPlayAfterSrcChange={false}
             onClickPrevious={() => {
               swipe?.slideNext();
-              console.log("audioRef", player.current);
               player?.current.audio.current.pause();
             }}
             onClickNext={() => {
@@ -269,187 +213,10 @@ function KuraniKerimOku({
               ),
             }}
           />
-          {/* <button
-            onClick={() => {
-              audio.pause();
-              audio.currentTime = 0;
-              prevPage();
-            }}
-          >
-            <IonIcon
-              className="text-[#4ac3a4]"
-              icon={playSkipBackCircle}
-              size="large"
-            />
-          </button>
-          <button
-            onClick={() => {
-              audio.pause();
-            }}
-          >
-            <IonIcon
-              className="text-[#4ac3a4]"
-              icon={pauseCircle}
-              size="large"
-            />
-          </button>
-          <button
-            onClick={() => {
-              audio.play();
-              console.log({ audio });
-            }}
-          >
-            <IonIcon
-              className="text-[#4ac3a4]"
-              icon={playCircle}
-              size="large"
-            />
-          </button>
-          <button
-            onClick={() => {
-              audio.pause();
-              audio.currentTime = 0;
-            }}
-          >
-            <IonIcon
-              className="text-[#4ac3a4]"
-              icon={stopCircle}
-              size="large"
-            />
-          </button>
-          <button
-            onClick={() => {
-              audio.pause();
-              audio.currentTime = 0;
-              nextPage();
-            }}
-          >
-            <IonIcon
-              className="text-[#4ac3a4]"
-              icon={playSkipForwardCircle}
-              size="large"
-            />
-          </button> */}
         </div>
-        {/* <button onClick={prevPage}>
-          <IonIcon
-            className={"text-[#4ac3a4]"}
-            icon={arrowBackOutline}
-            size={"large"}
-          ></IonIcon>
-        </button>
-        <button onClick={nextPage}>
-          <IonIcon
-            className={"text-[#4ac3a4]"}
-            icon={arrowForwardOutline}
-            size={"large"}
-          ></IonIcon>
-        </button>
-        <button onClick={goFirstPage}>
-          <IonIcon
-            className={"text-[#4ac3a4]"}
-            icon={enterOutline}
-            size={"large"}
-          ></IonIcon>
-        </button> */}
       </IonFooter>
     </>
   );
 }
 
 export default KuraniKerimOku;
-
-const imagesHandler = () => {
-  /*fatiha,
-  bakara,
-  yusuf,
-  kehf,
-  yasin,
-  duhan,
-  fetih,
-  rahman,
-  vakia,
-  hasr,
-  cuma,
-  tahrim,
-  mulk,
-  insan,
-  nebe,
-  ala,
-  hatim,*/
-  //for above books do this code
-  const images: JSX.Element[] = [];
-  images.push(pushImages(fatiha));
-  images.push(pushImages(bakara));
-  images.push(pushImages(yusuf));
-  images.push(pushImages(kehf));
-  images.push(pushImages(yasin));
-  images.push(pushImages(duhan));
-  images.push(pushImages(fetih));
-  images.push(pushImages(rahman));
-  images.push(pushImages(vakia));
-  images.push(pushImages(hasr));
-  images.push(pushImages(cuma));
-  images.push(pushImages(tahrim));
-  images.push(pushImages(mulk));
-  images.push(pushImages(insan));
-  images.push(pushImages(nebe));
-  images.push(pushImages(ala));
-  images.push(pushImages(hatim));
-
-  return images;
-};
-
-const pushImages = (data: any) => {
-  const images: any = [];
-  for (let i = 0; i < data.page; i++) {
-    images.push(
-      <SwiperSlide key={data.title + "-" + i}>
-        <img
-          src={`${data.content}${i + 1}-fs8.png`}
-          alt={""}
-          className={"w-full h-auto"}
-        />
-      </SwiperSlide>
-    );
-  }
-  return images;
-};
-
-const soundHandler = (activePage: number) => {
-  const mappedPage = kuran.find((mapping) => activePage <= mapping.startPage);
-
-  return mappedPage?.sound;
-};
-
-const titleHandler = (activePage: number) => {
-  console.log("titleHandler called");
-  const titlesMapping = [
-    { page: 1, title: "Fatiha Suresi" },
-    { page: 2, title: "Bakara Suresi" },
-    { page: 3, title: "Yusuf Suresi" },
-    { page: 5, title: "Kehf Suresi" },
-    { page: 11, title: "Yasin Suresi" },
-    { page: 14, title: "Duhan Suresi" },
-    { page: 19, title: "Fetih Suresi" },
-    { page: 23, title: "Rahman Suresi" },
-    { page: 27, title: "Vakia Suresi" },
-    { page: 29, title: "Hasr Suresi" },
-    { page: 31, title: "Cuma Suresi" },
-    { page: 32, title: "Tahrim Suresi" },
-    { page: 35, title: "Mulk Suresi" },
-    { page: 38, title: "Insan Suresi" },
-    { page: 41, title: "Nebe Suresi" },
-    { page: 42, title: "Ala Suresi" },
-    { page: 60, title: "Hatim Suresi" },
-  ];
-
-  const mappedTitle = kuran.find((mapping) => activePage <= mapping.startPage);
-
-  if (mappedTitle) {
-    console.log({ mappedTitle: mappedTitle.title });
-    return mappedTitle.title;
-  } else {
-    return "pageTitle";
-  }
-};
