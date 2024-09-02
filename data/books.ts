@@ -1,7 +1,7 @@
 export const all_books = [
   {
     id: 1,
-    title: "Kuran",
+    title: "Kuran-ı Kerim",
     slug: "kuran",
     read: false,
   },
@@ -250,6 +250,7 @@ export const kuran = [
     startPage: 0,
     sound: "page-000.mp3",
     img: "page-000.png",
+    cuz: 1,
   },
   {
     sure: "Bakara Sûresi",
@@ -450,6 +451,7 @@ export const kuran = [
     startPage: 20,
     sound: "page-020.mp3",
     img: "page-020.png",
+    cuz: 2,
   },
   {
     sure: "Bakara Sûresi",
@@ -650,6 +652,7 @@ export const kuran = [
     startPage: 40,
     sound: "page-040.mp3",
     img: "page-040.png",
+    cuz: 3,
   },
   {
     sure: "Bakara Sûresi",
@@ -850,6 +853,7 @@ export const kuran = [
     startPage: 60,
     sound: "page-060.mp3",
     img: "page-060.png",
+    cuz: 4,
   },
   {
     sure: "Âl-i İmrân Sûresi",
@@ -1050,6 +1054,7 @@ export const kuran = [
     startPage: 80,
     sound: "page-080.mp3",
     img: "page-080.png",
+    cuz: 5,
   },
   {
     sure: "Nisâ Sûresi",
@@ -1250,6 +1255,7 @@ export const kuran = [
     startPage: 100,
     sound: "page-100.mp3",
     img: "page-100.png",
+    cuz: 6,
   },
   {
     sure: "Nisâ Sûresi",
@@ -1450,6 +1456,7 @@ export const kuran = [
     startPage: 120,
     sound: "page-120.mp3",
     img: "page-120.png",
+    cuz: 7,
   },
   {
     sure: "Mâide Sûresi",
@@ -1650,6 +1657,7 @@ export const kuran = [
     startPage: 140,
     sound: "page-140.mp3",
     img: "page-140.png",
+    cuz: 8,
   },
   {
     sure: "En'âm Sûresi",
@@ -1850,6 +1858,7 @@ export const kuran = [
     startPage: 160,
     sound: "page-160.mp3",
     img: "page-160.png",
+    cuz: 9,
   },
   {
     sure: "A'râf Sûresi",
@@ -2650,6 +2659,7 @@ export const kuran = [
     startPage: 240,
     sound: "page-240.mp3",
     img: "page-240.png",
+    cuz: 13,
   },
   {
     sure: "Yusuf Sûresi",
@@ -2850,6 +2860,7 @@ export const kuran = [
     startPage: 260,
     sound: "page-260.mp3",
     img: "page-260.png",
+    cuz: 14,
   },
   {
     sure: "Hicr Sûresi",
@@ -3050,6 +3061,7 @@ export const kuran = [
     startPage: 280,
     sound: "page-280.mp3",
     img: "page-280.png",
+    cuz: 15,
   },
   {
     sure: "İsrâ Sûresi",
@@ -3250,6 +3262,7 @@ export const kuran = [
     startPage: 300,
     sound: "page-300.mp3",
     img: "page-300.png",
+    cuz: 16,
   },
   {
     sure: "Kehf Sûresi",
@@ -3450,6 +3463,7 @@ export const kuran = [
     startPage: 320,
     sound: "page-320.mp3",
     img: "page-320.png",
+    cuz: 17,
   },
   {
     sure: "Enbiyâ Sûresi",
@@ -3650,6 +3664,7 @@ export const kuran = [
     startPage: 340,
     sound: "page-340.mp3",
     img: "page-340.png",
+    cuz: 18,
   },
   {
     sure: "Mü'minûn Sûresi",
@@ -3850,6 +3865,7 @@ export const kuran = [
     startPage: 360,
     sound: "page-360.mp3",
     img: "page-360.png",
+    cuz: 19,
   },
   {
     sure: "Furkan Sûresi",
@@ -4050,6 +4066,7 @@ export const kuran = [
     startPage: 380,
     sound: "page-380.mp3",
     img: "page-380.png",
+    cuz: 20,
   },
   {
     sure: "Neml Sûresi",
@@ -4250,6 +4267,7 @@ export const kuran = [
     startPage: 400,
     sound: "page-400.mp3",
     img: "page-400.png",
+    cuz: 21,
   },
   {
     sure: "Ankebût Sûresi",
@@ -4450,6 +4468,7 @@ export const kuran = [
     startPage: 420,
     sound: "page-420.mp3",
     img: "page-420.png",
+    cuz: 22,
   },
   {
     sure: "Ahzâb Sûresi",
@@ -4650,6 +4669,7 @@ export const kuran = [
     startPage: 440,
     sound: "page-440.mp3",
     img: "page-440.png",
+    cuz: 23,
   },
   {
     sure: "Yâsin Sûresi",
@@ -4850,6 +4870,7 @@ export const kuran = [
     startPage: 460,
     sound: "page-460.mp3",
     img: "page-460.png",
+    cuz: 24,
   },
   {
     sure: "Zümer Sûresi",
@@ -5050,6 +5071,7 @@ export const kuran = [
     startPage: 480,
     sound: "page-480.mp3",
     img: "page-480.png",
+    cuz: 25,
   },
   {
     sure: "Fussilet Sûresi",
@@ -5250,6 +5272,7 @@ export const kuran = [
     startPage: 500,
     sound: "page-500.mp3",
     img: "page-500.png",
+    cuz: 26,
   },
   {
     sure: "Ahkaf Sûresi",
@@ -5450,6 +5473,7 @@ export const kuran = [
     startPage: 520,
     sound: "page-520.mp3",
     img: "page-520.png",
+    cuz: 27,
   },
   {
     sure: "Zâriyât Sûresi",
@@ -5650,6 +5674,7 @@ export const kuran = [
     startPage: 540,
     sound: "page-540.mp3",
     img: "page-540.png",
+    cuz: 28,
   },
   {
     sure: "Mücâdele Sûresi",
@@ -5850,6 +5875,7 @@ export const kuran = [
     startPage: 560,
     sound: "page-560.mp3",
     img: "page-560.png",
+    cuz: 29,
   },
   {
     sure: "Mülk Sûresi",
@@ -6050,6 +6076,7 @@ export const kuran = [
     startPage: 580,
     sound: "page-580.mp3",
     img: "page-580.png",
+    cuz: 30,
   },
   {
     sure: "Nebe' Sûresi",
@@ -6303,6 +6330,7 @@ export const sayfalar = [
     startPage: 0,
     sound: "page-000.mp3",
     img: "page-000.png",
+    cuz: 1,
   },
   {
     sure: "Bakara Sûresi",
@@ -6503,6 +6531,7 @@ export const sayfalar = [
     startPage: 20,
     sound: "page-020.mp3",
     img: "page-020.png",
+    cuz: 2,
   },
   {
     sure: "Bakara Sûresi",
@@ -6703,6 +6732,7 @@ export const sayfalar = [
     startPage: 40,
     sound: "page-040.mp3",
     img: "page-040.png",
+    cuz: 3,
   },
   {
     sure: "Bakara Sûresi",
@@ -6903,6 +6933,7 @@ export const sayfalar = [
     startPage: 60,
     sound: "page-060.mp3",
     img: "page-060.png",
+    cuz: 4,
   },
   {
     sure: "Âl-i İmrân Sûresi",
@@ -7103,6 +7134,7 @@ export const sayfalar = [
     startPage: 80,
     sound: "page-080.mp3",
     img: "page-080.png",
+    cuz: 5,
   },
   {
     sure: "Nisâ Sûresi",
@@ -7303,6 +7335,7 @@ export const sayfalar = [
     startPage: 100,
     sound: "page-100.mp3",
     img: "page-100.png",
+    cuz: 6,
   },
   {
     sure: "Nisâ Sûresi",
@@ -7503,6 +7536,7 @@ export const sayfalar = [
     startPage: 120,
     sound: "page-120.mp3",
     img: "page-120.png",
+    cuz: 7,
   },
   {
     sure: "Mâide Sûresi",
@@ -7703,6 +7737,7 @@ export const sayfalar = [
     startPage: 140,
     sound: "page-140.mp3",
     img: "page-140.png",
+    cuz: 8,
   },
   {
     sure: "En'âm Sûresi",
@@ -7903,6 +7938,7 @@ export const sayfalar = [
     startPage: 160,
     sound: "page-160.mp3",
     img: "page-160.png",
+    cuz: 9,
   },
   {
     sure: "A'râf Sûresi",
@@ -8703,6 +8739,7 @@ export const sayfalar = [
     startPage: 240,
     sound: "page-240.mp3",
     img: "page-240.png",
+    cuz: 13,
   },
   {
     sure: "Yusuf Sûresi",
@@ -8903,6 +8940,7 @@ export const sayfalar = [
     startPage: 260,
     sound: "page-260.mp3",
     img: "page-260.png",
+    cuz: 14,
   },
   {
     sure: "Hicr Sûresi",
@@ -9103,6 +9141,7 @@ export const sayfalar = [
     startPage: 280,
     sound: "page-280.mp3",
     img: "page-280.png",
+    cuz: 15,
   },
   {
     sure: "İsrâ Sûresi",
@@ -9303,6 +9342,7 @@ export const sayfalar = [
     startPage: 300,
     sound: "page-300.mp3",
     img: "page-300.png",
+    cuz: 16,
   },
   {
     sure: "Kehf Sûresi",
@@ -9503,6 +9543,7 @@ export const sayfalar = [
     startPage: 320,
     sound: "page-320.mp3",
     img: "page-320.png",
+    cuz: 17,
   },
   {
     sure: "Enbiyâ Sûresi",
@@ -9703,6 +9744,7 @@ export const sayfalar = [
     startPage: 340,
     sound: "page-340.mp3",
     img: "page-340.png",
+    cuz: 18,
   },
   {
     sure: "Mü'minûn Sûresi",
@@ -9903,6 +9945,7 @@ export const sayfalar = [
     startPage: 360,
     sound: "page-360.mp3",
     img: "page-360.png",
+    cuz: 19,
   },
   {
     sure: "Furkan Sûresi",
@@ -10103,6 +10146,7 @@ export const sayfalar = [
     startPage: 380,
     sound: "page-380.mp3",
     img: "page-380.png",
+    cuz: 20,
   },
   {
     sure: "Neml Sûresi",
@@ -10303,6 +10347,7 @@ export const sayfalar = [
     startPage: 400,
     sound: "page-400.mp3",
     img: "page-400.png",
+    cuz: 21,
   },
   {
     sure: "Ankebût Sûresi",
@@ -10503,6 +10548,7 @@ export const sayfalar = [
     startPage: 420,
     sound: "page-420.mp3",
     img: "page-420.png",
+    cuz: 22,
   },
   {
     sure: "Ahzâb Sûresi",
@@ -10703,6 +10749,7 @@ export const sayfalar = [
     startPage: 440,
     sound: "page-440.mp3",
     img: "page-440.png",
+    cuz: 23,
   },
   {
     sure: "Yâsin Sûresi",
@@ -10903,6 +10950,7 @@ export const sayfalar = [
     startPage: 460,
     sound: "page-460.mp3",
     img: "page-460.png",
+    cuz: 24,
   },
   {
     sure: "Zümer Sûresi",
@@ -11103,6 +11151,7 @@ export const sayfalar = [
     startPage: 480,
     sound: "page-480.mp3",
     img: "page-480.png",
+    cuz: 25,
   },
   {
     sure: "Fussilet Sûresi",
@@ -11303,6 +11352,7 @@ export const sayfalar = [
     startPage: 500,
     sound: "page-500.mp3",
     img: "page-500.png",
+    cuz: 26,
   },
   {
     sure: "Ahkaf Sûresi",
@@ -11503,6 +11553,7 @@ export const sayfalar = [
     startPage: 520,
     sound: "page-520.mp3",
     img: "page-520.png",
+    cuz: 27,
   },
   {
     sure: "Zâriyât Sûresi",
@@ -11703,6 +11754,7 @@ export const sayfalar = [
     startPage: 540,
     sound: "page-540.mp3",
     img: "page-540.png",
+    cuz: 28,
   },
   {
     sure: "Mücâdele Sûresi",
@@ -11903,6 +11955,7 @@ export const sayfalar = [
     startPage: 560,
     sound: "page-560.mp3",
     img: "page-560.png",
+    cuz: 29,
   },
   {
     sure: "Mülk Sûresi",
@@ -12103,6 +12156,7 @@ export const sayfalar = [
     startPage: 580,
     sound: "page-580.mp3",
     img: "page-580.png",
+    cuz: 30,
   },
   {
     sure: "Nebe' Sûresi",

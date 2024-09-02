@@ -34,7 +34,9 @@ const soundHandler = (activePage: number) => {
 };
 
 const titleHandler = (activePage: number) => {
-  const mappedTitle = sayfalar.find((mapping) => activePage <= mapping.startPage);
+  const mappedTitle = sayfalar.find(
+    (mapping) => activePage <= mapping.startPage
+  );
   if (mappedTitle) {
     return `${mappedTitle.title} - ${mappedTitle.sure}`;
   } else {
@@ -125,19 +127,19 @@ function KuraniKerimOku({ startPage }: { startPage: number }) {
 
   return (
     <>
-      <IonHeader className={"p-2"}>
+      <IonHeader className="px-2 py-0 mt-n1">
         <IonToolbar>
           <IonButtons slot="start">
-            <IonBackButton text={"Geri"}></IonBackButton>
+            <IonBackButton text="Geri"></IonBackButton>
           </IonButtons>
-          <IonTitle className={"text-xl"}>{title}</IonTitle>
+          <IonTitle className="text-xl">{title}</IonTitle>
         </IonToolbar>
       </IonHeader>
 
       <IonContent
         ref={topRef}
         scrollEvents={true}
-        className="ion-padding bg-white bg-color-white"
+        className="ion-padding bg-white bg-color-white p-0"
       >
         <Swiper
           loop={false}
@@ -152,16 +154,18 @@ function KuraniKerimOku({ startPage }: { startPage: number }) {
               <img
                 src={`/assets/pages/${img}`}
                 alt={`${title} - ${sure}`}
-                className={"w-full h-auto"}
+                className="w-full h-auto"
+                style={{
+                  objectFit: "contain",
+                  // height: "74dvh",
+                }}
               />
             </SwiperSlide>
           ))}
         </Swiper>
       </IonContent>
 
-      <IonFooter
-        className={"w-full flex justify-evenly items-center p-3 bg-gray-200"}
-      >
+      <IonFooter className="w-full flex justify-evenly items-center p-3 bg-gray-200">
         <div className="flex flex-column justify-center align-stretch gap-2 w-full">
           <AudioPlayer
             ref={player}
@@ -182,7 +186,7 @@ function KuraniKerimOku({ startPage }: { startPage: number }) {
             customAdditionalControls={[]}
             header={
               <div className="flex justify-center items-center gap-4 w-full text-black">
-                {title}
+                {/* {title} */}
                 {/* <IonButton
                   shape="round"
                   fill="outline"

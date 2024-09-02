@@ -1,16 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   IonContent,
   IonItem,
   IonList,
   IonLabel,
   IonNavLink,
+  IonSearchbar,
+  IonButton,
+  IonTitle,
 } from "@ionic/react";
 import Header from "../../../components/Header";
 import "./Kitaplar.css";
 import { BooksProps } from "../../../../utils/types";
 import KuraniKerimOku from "../KuraniKerimOku/KuraniKerimOku";
-import { sayfalar } from "../../../../data/books";
+import { sayfalar, sureler } from "../../../../data/books";
 
 export default function Kuran({
   books,
@@ -19,13 +22,118 @@ export default function Kuran({
   books: BooksProps[];
   title: string;
 }) {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [searchResultPage, setSearchResultPage] = useState([]);
+  const [searchResultCuz, setSearchResultCuz] = useState([]);
+
   const getPageData = (title: string) =>
     sayfalar.find((item) => item.title === title);
+
+  const handleSearch = (event: any) => {
+    const value = event.detail.value;
+    setSearchTerm(value);
+
+    const filteredBooksPages =
+      value !== ""
+        ? books.filter((book) => book.startPage == Number(value) - 1)
+        : [];
+    setSearchResultPage(filteredBooksPages);
+
+    const filteredBooksCuz =
+      value !== "" ? books.filter((book) => book.cuz == Number(value)) : [];
+    setSearchResultCuz(filteredBooksCuz);
+  };
   return (
     <>
       <Header pageTitle={title} />
       <IonContent class="ion-padding bg-white bg-color-white">
-        <IonList lines={"none"}>
+        <IonSearchbar
+          animated={true}
+          placeholder="Sayfa veya Cüz ara.."
+          showClearButton="focus"
+          value={searchTerm}
+          onIonChange={handleSearch}
+        />
+        {searchResultPage?.length > 0 || searchResultCuz.length > 0 ? (
+          <>
+            <IonButton
+              expand="block"
+              fill="outline"
+              onClick={() => {
+                setSearchTerm("");
+                setSearchResultPage([]);
+                setSearchResultCuz([]);
+              }}
+            >
+              Aramayı temizle
+            </IonButton>
+            <>Sayfalar</>
+            <IonList lines={"none"}>
+              {searchResultPage.map((sayfa, i) => (
+                <IonNavLink
+                  key={i}
+                  routerDirection="forward"
+                  component={() => (
+                    <KuraniKerimOku startPage={sayfa.startPage as number} />
+                  )}
+                >
+                  <IonItem className="mt-[3px] k-ion-item w-full">
+                    <IonLabel className="text-left">
+                      <span className="font-medium text-[1rem] text-white whitespace-pre-wrap">
+                        {sayfa.title} - {sayfa.sure}
+                      </span>
+                    </IonLabel>
+                  </IonItem>
+                </IonNavLink>
+              ))}
+            </IonList>
+            <>Cüzler</>
+            {}
+            <IonList lines={"none"}>
+              {searchResultCuz.map((sayfa, i) => (
+                <IonNavLink
+                  key={i}
+                  routerDirection="forward"
+                  component={() => (
+                    <KuraniKerimOku startPage={sayfa.startPage as number} />
+                  )}
+                >
+                  <IonItem className="mt-[3px] k-ion-item w-full">
+                    <IonLabel className="text-left">
+                      <span className="font-medium text-[1rem] text-white whitespace-pre-wrap">
+                        Cüz {sayfa.cuz} - {sayfa.sure}
+                        {console.log({ sayfa })}
+                      </span>
+                    </IonLabel>
+                  </IonItem>
+                </IonNavLink>
+              ))}
+            </IonList>
+          </>
+        ) : (
+          <IonList lines={"none"}>
+            {sureler.map((sure, i) => (
+              <IonNavLink
+                key={i}
+                routerDirection="forward"
+                component={() => (
+                  <KuraniKerimOku startPage={sure.startPage as number} />
+                )}
+              >
+                <IonItem className="mt-[3px] k-ion-item w-full">
+                  <IonLabel className="text-left">
+                    <span className="font-medium text-[1rem] text-white whitespace-pre-wrap">
+                      {sure.title}
+                    </span>
+                  </IonLabel>
+                </IonItem>
+              </IonNavLink>
+            ))}
+          </IonList>
+        )}
+
+        {/* Sayfa listesi */}
+        {/* <IonList lines={"none"}>
           {books.map((book, i) => (
             <IonNavLink
               key={i}
@@ -43,7 +151,7 @@ export default function Kuran({
               </IonItem>
             </IonNavLink>
           ))}
-        </IonList>
+        </IonList> */}
       </IonContent>
     </>
   );
