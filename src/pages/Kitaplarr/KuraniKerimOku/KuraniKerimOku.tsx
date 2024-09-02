@@ -183,7 +183,7 @@ function KuraniKerimOku({ startPage }: { startPage: number }) {
             header={
               <div className="flex justify-center items-center gap-4 w-full text-black">
                 {title}
-                <IonButton
+                {/* <IonButton
                   shape="round"
                   fill="outline"
                   size="small"
@@ -191,7 +191,7 @@ function KuraniKerimOku({ startPage }: { startPage: number }) {
                   onClick={() => openModal()}
                 >
                   Meal oku
-                </IonButton>
+                </IonButton> */}
               </div>
             }
             customIcons={{
