@@ -14,6 +14,7 @@ import "./Kitaplar.css";
 import { BooksProps } from "../../../../utils/types";
 import KuraniKerimOku from "../KuraniKerimOku/KuraniKerimOku";
 import { sayfalar, sureler } from "../../../../data/books";
+import slugify from "slugify";
 
 export default function Kuran({
   books,
@@ -24,6 +25,7 @@ export default function Kuran({
 }) {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResultPage, setSearchResultPage] = useState([]);
+  const [searchResultSure, setSearchResultSure] = useState([]);
   const [searchResultCuz, setSearchResultCuz] = useState([]);
 
   const getPageData = (title: string) =>
@@ -35,9 +37,19 @@ export default function Kuran({
 
     const filteredBooksPages =
       value !== ""
-        ? books.filter((book) => book.startPage == Number(value) - 1)
+        ? books.filter((book) => book.startPage == Number(value))
         : [];
     setSearchResultPage(filteredBooksPages);
+
+    const filteredBooksSure =
+      value !== ""
+        ? books.filter((book) =>
+            slugify(book.sure.toLocaleLowerCase()).includes(
+              slugify(value.toLocaleLowerCase())
+            )
+          )
+        : [];
+    setSearchResultSure(filteredBooksSure);
 
     const filteredBooksCuz =
       value !== "" ? books.filter((book) => book.cuz == Number(value)) : [];
@@ -54,7 +66,9 @@ export default function Kuran({
           value={searchTerm}
           onIonChange={handleSearch}
         />
-        {searchResultPage?.length > 0 || searchResultCuz.length > 0 ? (
+        {searchResultPage?.length > 0 ||
+        searchResultSure?.length > 0 ||
+        searchResultCuz.length > 0 ? (
           <>
             <IonButton
               expand="block"
@@ -67,48 +81,79 @@ export default function Kuran({
             >
               Aramayı temizle
             </IonButton>
-            <>Sayfalar</>
-            <IonList lines={"none"}>
-              {searchResultPage.map((sayfa, i) => (
-                <IonNavLink
-                  key={i}
-                  routerDirection="forward"
-                  component={() => (
-                    <KuraniKerimOku startPage={sayfa.startPage as number} />
-                  )}
-                >
-                  <IonItem className="mt-[3px] k-ion-item w-full">
-                    <IonLabel className="text-left">
-                      <span className="font-medium text-[1rem] text-white whitespace-pre-wrap">
-                        {sayfa.title} - {sayfa.sure}
-                      </span>
-                    </IonLabel>
-                  </IonItem>
-                </IonNavLink>
-              ))}
-            </IonList>
-            <>Cüzler</>
-            {}
-            <IonList lines={"none"}>
-              {searchResultCuz.map((sayfa, i) => (
-                <IonNavLink
-                  key={i}
-                  routerDirection="forward"
-                  component={() => (
-                    <KuraniKerimOku startPage={sayfa.startPage as number} />
-                  )}
-                >
-                  <IonItem className="mt-[3px] k-ion-item w-full">
-                    <IonLabel className="text-left">
-                      <span className="font-medium text-[1rem] text-white whitespace-pre-wrap">
-                        Cüz {sayfa.cuz} - {sayfa.sure}
-                        {console.log({ sayfa })}
-                      </span>
-                    </IonLabel>
-                  </IonItem>
-                </IonNavLink>
-              ))}
-            </IonList>
+            {searchResultPage?.length > 0 && (
+              <>
+                <>Sayfalar</>
+                <IonList lines={"none"}>
+                  {searchResultPage.map((sayfa, i) => (
+                    <IonNavLink
+                      key={i}
+                      routerDirection="forward"
+                      component={() => (
+                        <KuraniKerimOku startPage={sayfa.startPage as number} />
+                      )}
+                    >
+                      <IonItem className="mt-[3px] k-ion-item w-full">
+                        <IonLabel className="text-left">
+                          <span className="font-medium text-[1rem] text-white whitespace-pre-wrap">
+                            {sayfa.title} - {sayfa.sure}
+                          </span>
+                        </IonLabel>
+                      </IonItem>
+                    </IonNavLink>
+                  ))}
+                </IonList>
+              </>
+            )}
+            {searchResultSure?.length > 0 && (
+              <>
+                <>Sureler</>
+                <IonList lines={"none"}>
+                  {searchResultSure.map((sayfa, i) => (
+                    <IonNavLink
+                      key={i}
+                      routerDirection="forward"
+                      component={() => (
+                        <KuraniKerimOku startPage={sayfa.startPage as number} />
+                      )}
+                    >
+                      <IonItem className="mt-[3px] k-ion-item w-full">
+                        <IonLabel className="text-left">
+                          <span className="font-medium text-[1rem] text-white whitespace-pre-wrap">
+                            {sayfa.title} - {sayfa.sure}
+                          </span>
+                        </IonLabel>
+                      </IonItem>
+                    </IonNavLink>
+                  ))}
+                </IonList>
+              </>
+            )}
+            {searchResultCuz.length > 0 && (
+              <>
+                <>Cüzler</>
+                <IonList lines={"none"}>
+                  {searchResultCuz.map((sayfa, i) => (
+                    <IonNavLink
+                      key={i}
+                      routerDirection="forward"
+                      component={() => (
+                        <KuraniKerimOku startPage={sayfa.startPage as number} />
+                      )}
+                    >
+                      <IonItem className="mt-[3px] k-ion-item w-full">
+                        <IonLabel className="text-left">
+                          <span className="font-medium text-[1rem] text-white whitespace-pre-wrap">
+                            Cüz {sayfa.cuz} - {sayfa.sure}
+                            {console.log({ sayfa })}
+                          </span>
+                        </IonLabel>
+                      </IonItem>
+                    </IonNavLink>
+                  ))}
+                </IonList>
+              </>
+            )}
           </>
         ) : (
           <IonList lines={"none"}>
