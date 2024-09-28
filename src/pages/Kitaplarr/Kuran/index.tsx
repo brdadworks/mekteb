@@ -13,7 +13,7 @@ import Header from "../../../components/Header";
 import "./Kitaplar.css";
 import { BooksProps } from "../../../../utils/types";
 import KuraniKerimOku from "../KuraniKerimOku/KuraniKerimOku";
-import { sayfalar, sureler } from "../../../../data/books";
+import { sureler } from "../../../../data/books";
 import slugify from "slugify";
 
 export default function Kuran({
@@ -27,9 +27,6 @@ export default function Kuran({
   const [searchResultPage, setSearchResultPage] = useState([]);
   const [searchResultSure, setSearchResultSure] = useState([]);
   const [searchResultCuz, setSearchResultCuz] = useState([]);
-
-  const getPageData = (title: string) =>
-    sayfalar.find((item) => item.title === title);
 
   const handleSearch = (event: any) => {
     const value = event.detail.value;

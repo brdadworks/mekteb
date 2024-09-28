@@ -21,24 +21,31 @@ import {
   playSkipBackCircle,
 } from "ionicons/icons";
 import AudioPlayer from "react-h5-audio-player";
-import { sayfalar } from "../../../../data/books";
+import { kuran } from "../../../../data/books";
 import "./Kitaplar.css";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
 const soundHandler = (activePage: number) => {
-  const mappedPage = sayfalar.find((mapping) => activePage === mapping.id);
+  const mappedPage = kuran.find((mapping) => activePage === mapping.id);
 
   return mappedPage?.sound;
 };
 
 const titleHandler = (activePage: number) => {
-  const mappedTitle = sayfalar.find(
-    (mapping) => activePage <= mapping.startPage
-  );
+  const mappedTitle = kuran.find((mapping) => activePage <= mapping.startPage);
   if (mappedTitle) {
     return `${mappedTitle.title} - ${mappedTitle.sure}`;
+  } else {
+    return "Sayfa bulunamadı";
+  }
+};
+
+const mealHandler = (activePage: number) => {
+  const mappedMeal = kuran.find((mapping) => activePage <= mapping.startPage);
+  if (mappedMeal) {
+    return `${mappedMeal.meal} - ${mappedMeal.sure}`;
   } else {
     return "Sayfa bulunamadı";
   }
@@ -47,6 +54,7 @@ const titleHandler = (activePage: number) => {
 function KuraniKerimOku({ startPage }: { startPage: number }) {
   const [swipe, setSwipe] = useState<any>();
   const [title, setTitle] = useState<string>();
+  const [meal, setMeal] = useState<string>();
   const [playerSrc, setPlayerSrc] = useState<string>();
   const topRef = useRef<any>(null);
   const player = useRef<any>();
@@ -57,6 +65,7 @@ function KuraniKerimOku({ startPage }: { startPage: number }) {
 
   useEffect(() => {
     setTitle(titleHandler(swipe?.activeIndex));
+    setMeal(mealHandler(swipe?.activeIndex));
   }, [swipe?.activeIndex]);
 
   const ModalExample = ({
@@ -73,20 +82,7 @@ function KuraniKerimOku({ startPage }: { startPage: number }) {
           </IonToolbar>
         </IonHeader>
         <IonContent className="ion-padding">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
-            dolore temporibus aliquid perspiciatis, aut adipisci fugit officia
-            consequatur corporis aliquam impedit maxime quos, veniam esse rerum
-            doloremque vel quia architecto libero. Itaque fuga corrupti ratione
-            accusantium magni nostrum velit modi voluptatum? Est, accusamus ex,
-            repellat quaerat architecto iusto atque dolore quidem facere porro
-            libero beatae, officiis maxime odit nulla repellendus error id sed
-            velit excepturi quos quibusdam cum! Quas, quisquam ab. Commodi
-            vitae, cupiditate sunt molestiae quas excepturi optio culpa, iste
-            aliquid facere ipsa aut maxime! Aspernatur pariatur illum
-            repudiandae nemo, exercitationem nostrum eos architecto error magni
-            necessitatibus repellat tempora?
-          </p>
+          <p dangerouslySetInnerHTML={{ __html: meal }} />
           <IonButton
             onClick={() => dismiss(inputRef.current?.value, "confirm")}
             strong={true}
@@ -149,7 +145,7 @@ function KuraniKerimOku({ startPage }: { startPage: number }) {
           dir={"rtl"}
           className="mySwiper"
         >
-          {sayfalar.map(({ sure, id, title, img }) => (
+          {kuran.map(({ sure, id, title, img }) => (
             <SwiperSlide key={id}>
               <img
                 src={`/assets/pages/${img}`}
@@ -186,7 +182,7 @@ function KuraniKerimOku({ startPage }: { startPage: number }) {
             customAdditionalControls={[]}
             header={
               <div className="flex justify-center items-center gap-4 w-full text-black">
-                {/* {title} */}
+                {title}
                 {/* <IonButton
                   shape="round"
                   fill="outline"
