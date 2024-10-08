@@ -42,14 +42,8 @@ const titleHandler = (activePage: number) => {
   }
 };
 
-const mealHandler = (activePage: number) => {
-  const mappedMeal = kuran.find((mapping) => activePage <= mapping.startPage);
-  if (mappedMeal) {
-    return `${mappedMeal.meal} - ${mappedMeal.sure}`;
-  } else {
-    return "Sayfa bulunamadı";
-  }
-};
+const mealHandler = (activePage: number) =>
+  kuran.find((mapping) => activePage <= mapping.startPage)?.meal;
 
 function KuraniKerimOku({ startPage }: { startPage: number }) {
   const [swipe, setSwipe] = useState<any>();
@@ -183,15 +177,18 @@ function KuraniKerimOku({ startPage }: { startPage: number }) {
             header={
               <div className="flex justify-center items-center gap-4 w-full text-black">
                 {title}
-                {/* <IonButton
-                  shape="round"
-                  fill="outline"
-                  size="small"
-                  color="success"
-                  onClick={() => openModal()}
-                >
-                  Meal oku
-                </IonButton> */}
+                {console.log({ meal })}
+                {!!meal && (
+                  <IonButton
+                    shape="round"
+                    fill="outline"
+                    size="small"
+                    color="success"
+                    onClick={() => openModal()}
+                  >
+                    Meal oku
+                  </IonButton>
+                )}
               </div>
             }
             customIcons={{
