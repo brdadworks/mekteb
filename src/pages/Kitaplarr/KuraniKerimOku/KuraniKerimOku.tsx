@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
     IonBackButton,
     IonButton,
@@ -21,10 +21,23 @@ import {
     playSkipBackCircle,
 } from "ionicons/icons";
 import AudioPlayer from "react-h5-audio-player";
-import {kuran} from "../../../../data/books";
+import { kuran } from "../../../../data/books";
 import "./Kitaplar.css";
-import {Swiper, SwiperSlide} from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import mammoth from "mammoth";
+
+const fetchMeal = async (mealPath: string): Promise<string> => {
+    try {
+        const response = await fetch(mealPath);
+        const arrayBuffer = await response.arrayBuffer();
+        const result = await mammoth.convertToHtml({ arrayBuffer });
+        return result.value;
+    } catch (error) {
+        console.error("Dosya okunurken hata oluştu:", error);
+        return "<p>Meali yüklerken bir hata oluştu.</p>";
+    }
+};
 
 const soundHandler = (activePage: number) => {
     const mappedPage = kuran.find((mapping) => activePage === mapping.id);
@@ -52,7 +65,7 @@ const mealHandler = (activePage: number) => {
 function KuraniKerimOku({startPage}: { startPage: number }) {
     const [swipe, setSwipe] = useState<any>();
     const [title, setTitle] = useState<string>();
-    const [meal, setMeal] = useState<string>();
+    const [meal, setMeal] = useState<string>("");
     const [playerSrc, setPlayerSrc] = useState<string>();
     const [isFooterVisible, setIsFooterVisible] = useState(true);
     const topRef = useRef<any>(null);
@@ -64,7 +77,10 @@ function KuraniKerimOku({startPage}: { startPage: number }) {
 
     useEffect(() => {
         setTitle(titleHandler(swipe?.activeIndex));
-        setMeal(mealHandler(swipe?.activeIndex));
+        const currentPage = kuran.find((mapping) => swipe?.activeIndex === mapping.id);
+        if (currentPage?.meal) {
+            fetchMeal(currentPage.meal).then((htmlContent) => setMeal(htmlContent));
+        }
     }, [swipe?.activeIndex]);
 
     useEffect(() => {
