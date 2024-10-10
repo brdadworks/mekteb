@@ -29,7 +29,7 @@ function Kitaplar({ books, title }: { books: BooksProps[]; title: string }) {
               component={() =>
                 book.slug.includes("ilahi") ? (
                   <Ilahiler title={book.title} books={bookHandler(book.slug)} />
-                ) : book.slug == "kurani_kerim" ? (
+                ) : book.slug == "kurani_kerim_mecmua" ? (
                   <KuraniKerim
                     title={book.title}
                     books={bookHandler(book.slug)}

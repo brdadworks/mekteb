@@ -23,6 +23,7 @@ function KuraniKerim({ books, title }: { books: BooksProps[]; title: string }) {
               routerDirection="forward"
               component={() => (
                 <KuraniKerimOku
+                  pageTitle={book.title}
                   startPage={book.startPage as number}
                 />
               )}

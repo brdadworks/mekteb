@@ -12,7 +12,7 @@ import {
 import Header from "../../../components/Header";
 import "./Kitaplar.css";
 import { BooksProps } from "../../../../utils/types";
-import KuraniKerimOku from "../KuraniKerimOku/KuraniKerimOku";
+import KuraniKerimOku from "../KuranSayfalar/KuraniKerimOku";
 import { sureler } from "../../../../data/books";
 import slugify from "slugify";
 
@@ -58,7 +58,7 @@ export default function Kuran({
       <IonContent class="ion-padding bg-white bg-color-white">
         <IonSearchbar
           animated={true}
-          placeholder="Sayfa veya Cüz ara.."
+          placeholder="Sayfa, Sure veya Cüz ara.."
           showClearButton="focus"
           value={searchTerm}
           onIonChange={handleSearch}
