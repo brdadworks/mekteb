@@ -251,7 +251,7 @@ export const kuran = [
     sound: "page-000.mp3",
     img: "page-000.png",
     sure: "Fâtiha Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${0}.docx`,
   },
   {
     cuz: null,
@@ -263,7 +263,7 @@ export const kuran = [
     sound: "page-001.mp3",
     img: "page-001.png",
     sure: "Bakara Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${1}.docx`,
   },
   {
     cuz: null,
@@ -275,7 +275,7 @@ export const kuran = [
     sound: "page-002.mp3",
     img: "page-002.png",
     sure: "Bakara Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${2}.docx`,
   },
   {
     cuz: null,
@@ -287,7 +287,7 @@ export const kuran = [
     sound: "page-003.mp3",
     img: "page-003.png",
     sure: "Bakara Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${3}.docx`,
   },
   {
     cuz: null,
@@ -299,7 +299,7 @@ export const kuran = [
     sound: "page-004.mp3",
     img: "page-004.png",
     sure: "Bakara Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${4}.docx`,
   },
   {
     cuz: null,
@@ -311,7 +311,7 @@ export const kuran = [
     sound: "page-005.mp3",
     img: "page-005.png",
     sure: "Bakara Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${5}.docx`,
   },
   {
     cuz: null,
@@ -323,7 +323,7 @@ export const kuran = [
     sound: "page-006.mp3",
     img: "page-006.png",
     sure: "Bakara Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${6}.docx`,
   },
   {
     cuz: null,
@@ -335,7 +335,7 @@ export const kuran = [
     sound: "page-007.mp3",
     img: "page-007.png",
     sure: "Bakara Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${7}.docx`,
   },
   {
     cuz: null,
@@ -347,7 +347,7 @@ export const kuran = [
     sound: "page-008.mp3",
     img: "page-008.png",
     sure: "Bakara Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${8}.docx`,
   },
   {
     cuz: null,
@@ -359,7 +359,7 @@ export const kuran = [
     sound: "page-009.mp3",
     img: "page-009.png",
     sure: "Bakara Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${9}.docx`,
   },
   {
     cuz: null,
@@ -371,7 +371,7 @@ export const kuran = [
     sound: "page-010.mp3",
     img: "page-010.png",
     sure: "Bakara Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${10}.docx`,
   },
   {
     cuz: null,
@@ -383,7 +383,7 @@ export const kuran = [
     sound: "page-011.mp3",
     img: "page-011.png",
     sure: "Bakara Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${11}.docx`,
   },
   {
     cuz: null,
@@ -395,7 +395,7 @@ export const kuran = [
     sound: "page-012.mp3",
     img: "page-012.png",
     sure: "Bakara Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${12}.docx`,
   },
   {
     cuz: null,
@@ -407,7 +407,7 @@ export const kuran = [
     sound: "page-013.mp3",
     img: "page-013.png",
     sure: "Bakara Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${13}.docx`,
   },
   {
     cuz: null,
@@ -419,7 +419,7 @@ export const kuran = [
     sound: "page-014.mp3",
     img: "page-014.png",
     sure: "Bakara Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${14}.docx`,
   },
   {
     cuz: null,
@@ -431,7 +431,7 @@ export const kuran = [
     sound: "page-015.mp3",
     img: "page-015.png",
     sure: "Bakara Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${15}.docx`,
   },
   {
     cuz: null,
@@ -443,7 +443,7 @@ export const kuran = [
     sound: "page-016.mp3",
     img: "page-016.png",
     sure: "Bakara Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${16}.docx`,
   },
   {
     cuz: null,
@@ -455,7 +455,7 @@ export const kuran = [
     sound: "page-017.mp3",
     img: "page-017.png",
     sure: "Bakara Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${17}.docx`,
   },
   {
     cuz: null,
@@ -467,7 +467,7 @@ export const kuran = [
     sound: "page-018.mp3",
     img: "page-018.png",
     sure: "Bakara Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${18}.docx`,
   },
   {
     cuz: null,
@@ -479,7 +479,7 @@ export const kuran = [
     sound: "page-019.mp3",
     img: "page-019.png",
     sure: "Bakara Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${19}.docx`,
   },
   {
     cuz: "2",
@@ -491,7 +491,7 @@ export const kuran = [
     sound: "page-020.mp3",
     img: "page-020.png",
     sure: "Bakara Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${20}.docx`,
   },
   {
     cuz: null,
@@ -503,7 +503,7 @@ export const kuran = [
     sound: "page-021.mp3",
     img: "page-021.png",
     sure: "Bakara Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${21}.docx`,
   },
   {
     cuz: null,
@@ -515,7 +515,7 @@ export const kuran = [
     sound: "page-022.mp3",
     img: "page-022.png",
     sure: "Bakara Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${22}.docx`,
   },
   {
     cuz: null,
@@ -527,7 +527,7 @@ export const kuran = [
     sound: "page-023.mp3",
     img: "page-023.png",
     sure: "Bakara Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${23}.docx`,
   },
   {
     cuz: null,
@@ -539,7 +539,7 @@ export const kuran = [
     sound: "page-024.mp3",
     img: "page-024.png",
     sure: "Bakara Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${24}.docx`,
   },
   {
     cuz: null,
@@ -551,7 +551,7 @@ export const kuran = [
     sound: "page-025.mp3",
     img: "page-025.png",
     sure: "Bakara Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${25}.docx`,
   },
   {
     cuz: null,
@@ -563,7 +563,7 @@ export const kuran = [
     sound: "page-026.mp3",
     img: "page-026.png",
     sure: "Bakara Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${26}.docx`,
   },
   {
     cuz: null,
@@ -575,7 +575,7 @@ export const kuran = [
     sound: "page-027.mp3",
     img: "page-027.png",
     sure: "Bakara Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${27}.docx`,
   },
   {
     cuz: null,
@@ -587,7 +587,7 @@ export const kuran = [
     sound: "page-028.mp3",
     img: "page-028.png",
     sure: "Bakara Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${28}.docx`,
   },
   {
     cuz: null,
@@ -599,7 +599,7 @@ export const kuran = [
     sound: "page-029.mp3",
     img: "page-029.png",
     sure: "Bakara Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${29}.docx`,
   },
   {
     cuz: null,
@@ -611,7 +611,7 @@ export const kuran = [
     sound: "page-030.mp3",
     img: "page-030.png",
     sure: "Bakara Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${30}.docx`,
   },
   {
     cuz: null,
@@ -623,7 +623,7 @@ export const kuran = [
     sound: "page-031.mp3",
     img: "page-031.png",
     sure: "Bakara Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${31}.docx`,
   },
   {
     cuz: null,
@@ -635,7 +635,7 @@ export const kuran = [
     sound: "page-032.mp3",
     img: "page-032.png",
     sure: "Bakara Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${32}.docx`,
   },
   {
     cuz: null,
@@ -647,7 +647,7 @@ export const kuran = [
     sound: "page-033.mp3",
     img: "page-033.png",
     sure: "Bakara Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${33}.docx`,
   },
   {
     cuz: null,
@@ -659,7 +659,7 @@ export const kuran = [
     sound: "page-034.mp3",
     img: "page-034.png",
     sure: "Bakara Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${34}.docx`,
   },
   {
     cuz: null,
@@ -671,7 +671,7 @@ export const kuran = [
     sound: "page-035.mp3",
     img: "page-035.png",
     sure: "Bakara Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${35}.docx`,
   },
   {
     cuz: null,
@@ -683,7 +683,7 @@ export const kuran = [
     sound: "page-036.mp3",
     img: "page-036.png",
     sure: "Bakara Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${36}.docx`,
   },
   {
     cuz: null,
@@ -695,7 +695,7 @@ export const kuran = [
     sound: "page-037.mp3",
     img: "page-037.png",
     sure: "Bakara Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${37}.docx`,
   },
   {
     cuz: null,
@@ -707,7 +707,7 @@ export const kuran = [
     sound: "page-038.mp3",
     img: "page-038.png",
     sure: "Bakara Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${38}.docx`,
   },
   {
     cuz: null,
@@ -719,7 +719,7 @@ export const kuran = [
     sound: "page-039.mp3",
     img: "page-039.png",
     sure: "Bakara Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${39}.docx`,
   },
   {
     cuz: "3",
@@ -731,7 +731,7 @@ export const kuran = [
     sound: "page-040.mp3",
     img: "page-040.png",
     sure: "Bakara Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${40}.docx`,
   },
   {
     cuz: null,
@@ -743,7 +743,7 @@ export const kuran = [
     sound: "page-041.mp3",
     img: "page-041.png",
     sure: "Bakara Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${41}.docx`,
   },
   {
     cuz: null,
@@ -755,7 +755,7 @@ export const kuran = [
     sound: "page-042.mp3",
     img: "page-042.png",
     sure: "Bakara Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${42}.docx`,
   },
   {
     cuz: null,
@@ -767,7 +767,7 @@ export const kuran = [
     sound: "page-043.mp3",
     img: "page-043.png",
     sure: "Bakara Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${43}.docx`,
   },
   {
     cuz: null,
@@ -779,7 +779,7 @@ export const kuran = [
     sound: "page-044.mp3",
     img: "page-044.png",
     sure: "Bakara Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${44}.docx`,
   },
   {
     cuz: null,
@@ -791,7 +791,7 @@ export const kuran = [
     sound: "page-045.mp3",
     img: "page-045.png",
     sure: "Bakara Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${45}.docx`,
   },
   {
     cuz: null,
@@ -803,7 +803,7 @@ export const kuran = [
     sound: "page-046.mp3",
     img: "page-046.png",
     sure: "Bakara Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${46}.docx`,
   },
   {
     cuz: null,
@@ -815,7 +815,7 @@ export const kuran = [
     sound: "page-047.mp3",
     img: "page-047.png",
     sure: "Bakara Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${47}.docx`,
   },
   {
     cuz: null,
@@ -827,7 +827,7 @@ export const kuran = [
     sound: "page-048.mp3",
     img: "page-048.png",
     sure: "Bakara Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${48}.docx`,
   },
   {
     cuz: null,
@@ -839,7 +839,7 @@ export const kuran = [
     sound: "page-049.mp3",
     img: "page-049.png",
     sure: "Âl-i İmrân Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${49}.docx`,
   },
   {
     cuz: null,
@@ -851,7 +851,7 @@ export const kuran = [
     sound: "page-050.mp3",
     img: "page-050.png",
     sure: "Âl-i İmrân Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${50}.docx`,
   },
   {
     cuz: null,
@@ -863,7 +863,7 @@ export const kuran = [
     sound: "page-051.mp3",
     img: "page-051.png",
     sure: "Âl-i İmrân Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${51}.docx`,
   },
   {
     cuz: null,
@@ -875,7 +875,7 @@ export const kuran = [
     sound: "page-052.mp3",
     img: "page-052.png",
     sure: "Âl-i İmrân Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${52}.docx`,
   },
   {
     cuz: null,
@@ -887,7 +887,7 @@ export const kuran = [
     sound: "page-053.mp3",
     img: "page-053.png",
     sure: "Âl-i İmrân Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${53}.docx`,
   },
   {
     cuz: null,
@@ -899,7 +899,7 @@ export const kuran = [
     sound: "page-054.mp3",
     img: "page-054.png",
     sure: "Âl-i İmrân Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${54}.docx`,
   },
   {
     cuz: null,
@@ -911,7 +911,7 @@ export const kuran = [
     sound: "page-055.mp3",
     img: "page-055.png",
     sure: "Âl-i İmrân Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${55}.docx`,
   },
   {
     cuz: null,
@@ -923,7 +923,7 @@ export const kuran = [
     sound: "page-056.mp3",
     img: "page-056.png",
     sure: "Âl-i İmrân Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${56}.docx`,
   },
   {
     cuz: null,
@@ -935,7 +935,7 @@ export const kuran = [
     sound: "page-057.mp3",
     img: "page-057.png",
     sure: "Âl-i İmrân Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${57}.docx`,
   },
   {
     cuz: null,
@@ -947,7 +947,7 @@ export const kuran = [
     sound: "page-058.mp3",
     img: "page-058.png",
     sure: "Âl-i İmrân Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${58}.docx`,
   },
   {
     cuz: null,
@@ -959,7 +959,7 @@ export const kuran = [
     sound: "page-059.mp3",
     img: "page-059.png",
     sure: "Âl-i İmrân Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${59}.docx`,
   },
   {
     cuz: "4",
@@ -971,7 +971,7 @@ export const kuran = [
     sound: "page-060.mp3",
     img: "page-060.png",
     sure: "Âl-i İmrân Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${60}.docx`,
   },
   {
     cuz: null,
@@ -983,7 +983,7 @@ export const kuran = [
     sound: "page-061.mp3",
     img: "page-061.png",
     sure: "Âl-i İmrân Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${61}.docx`,
   },
   {
     cuz: null,
@@ -995,7 +995,7 @@ export const kuran = [
     sound: "page-062.mp3",
     img: "page-062.png",
     sure: "Âl-i İmrân Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${62}.docx`,
   },
   {
     cuz: null,
@@ -1007,7 +1007,7 @@ export const kuran = [
     sound: "page-063.mp3",
     img: "page-063.png",
     sure: "Âl-i İmrân Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${63}.docx`,
   },
   {
     cuz: null,
@@ -1019,7 +1019,7 @@ export const kuran = [
     sound: "page-064.mp3",
     img: "page-064.png",
     sure: "Âl-i İmrân Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${64}.docx`,
   },
   {
     cuz: null,
@@ -1031,7 +1031,7 @@ export const kuran = [
     sound: "page-065.mp3",
     img: "page-065.png",
     sure: "Âl-i İmrân Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${65}.docx`,
   },
   {
     cuz: null,
@@ -1043,7 +1043,7 @@ export const kuran = [
     sound: "page-066.mp3",
     img: "page-066.png",
     sure: "Âl-i İmrân Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${66}.docx`,
   },
   {
     cuz: null,
@@ -1055,7 +1055,7 @@ export const kuran = [
     sound: "page-067.mp3",
     img: "page-067.png",
     sure: "Âl-i İmrân Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${67}.docx`,
   },
   {
     cuz: null,
@@ -1067,7 +1067,7 @@ export const kuran = [
     sound: "page-068.mp3",
     img: "page-068.png",
     sure: "Âl-i İmrân Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${68}.docx`,
   },
   {
     cuz: null,
@@ -1079,7 +1079,7 @@ export const kuran = [
     sound: "page-069.mp3",
     img: "page-069.png",
     sure: "Âl-i İmrân Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${69}.docx`,
   },
   {
     cuz: null,
@@ -1091,7 +1091,7 @@ export const kuran = [
     sound: "page-070.mp3",
     img: "page-070.png",
     sure: "Âl-i İmrân Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${70}.docx`,
   },
   {
     cuz: null,
@@ -1103,7 +1103,7 @@ export const kuran = [
     sound: "page-071.mp3",
     img: "page-071.png",
     sure: "Âl-i İmrân Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${71}.docx`,
   },
   {
     cuz: null,
@@ -1115,7 +1115,7 @@ export const kuran = [
     sound: "page-072.mp3",
     img: "page-072.png",
     sure: "Âl-i İmrân Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${72}.docx`,
   },
   {
     cuz: null,
@@ -1127,7 +1127,7 @@ export const kuran = [
     sound: "page-073.mp3",
     img: "page-073.png",
     sure: "Âl-i İmrân Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${73}.docx`,
   },
   {
     cuz: null,
@@ -1139,7 +1139,7 @@ export const kuran = [
     sound: "page-074.mp3",
     img: "page-074.png",
     sure: "Âl-i İmrân Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${74}.docx`,
   },
   {
     cuz: null,
@@ -1151,7 +1151,7 @@ export const kuran = [
     sound: "page-075.mp3",
     img: "page-075.png",
     sure: "Âl-i İmrân Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${75}.docx`,
   },
   {
     cuz: null,
@@ -1163,7 +1163,7 @@ export const kuran = [
     sound: "page-076.mp3",
     img: "page-076.png",
     sure: "Nisâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${76}.docx`,
   },
   {
     cuz: null,
@@ -1175,7 +1175,7 @@ export const kuran = [
     sound: "page-077.mp3",
     img: "page-077.png",
     sure: "Nisâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${77}.docx`,
   },
   {
     cuz: null,
@@ -1187,7 +1187,7 @@ export const kuran = [
     sound: "page-078.mp3",
     img: "page-078.png",
     sure: "Nisâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${78}.docx`,
   },
   {
     cuz: null,
@@ -1199,7 +1199,7 @@ export const kuran = [
     sound: "page-079.mp3",
     img: "page-079.png",
     sure: "Nisâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${79}.docx`,
   },
   {
     cuz: "5",
@@ -1211,7 +1211,7 @@ export const kuran = [
     sound: "page-080.mp3",
     img: "page-080.png",
     sure: "Nisâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${80}.docx`,
   },
   {
     cuz: null,
@@ -1223,7 +1223,7 @@ export const kuran = [
     sound: "page-081.mp3",
     img: "page-081.png",
     sure: "Nisâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${81}.docx`,
   },
   {
     cuz: null,
@@ -1235,7 +1235,7 @@ export const kuran = [
     sound: "page-082.mp3",
     img: "page-082.png",
     sure: "Nisâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${82}.docx`,
   },
   {
     cuz: null,
@@ -1247,7 +1247,7 @@ export const kuran = [
     sound: "page-083.mp3",
     img: "page-083.png",
     sure: "Nisâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${83}.docx`,
   },
   {
     cuz: null,
@@ -1259,7 +1259,7 @@ export const kuran = [
     sound: "page-084.mp3",
     img: "page-084.png",
     sure: "Nisâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${84}.docx`,
   },
   {
     cuz: null,
@@ -1271,7 +1271,7 @@ export const kuran = [
     sound: "page-085.mp3",
     img: "page-085.png",
     sure: "Nisâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${85}.docx`,
   },
   {
     cuz: null,
@@ -1283,7 +1283,7 @@ export const kuran = [
     sound: "page-086.mp3",
     img: "page-086.png",
     sure: "Nisâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${86}.docx`,
   },
   {
     cuz: null,
@@ -1295,7 +1295,7 @@ export const kuran = [
     sound: "page-087.mp3",
     img: "page-087.png",
     sure: "Nisâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${87}.docx`,
   },
   {
     cuz: null,
@@ -1307,7 +1307,7 @@ export const kuran = [
     sound: "page-088.mp3",
     img: "page-088.png",
     sure: "Nisâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${88}.docx`,
   },
   {
     cuz: null,
@@ -1319,7 +1319,7 @@ export const kuran = [
     sound: "page-089.mp3",
     img: "page-089.png",
     sure: "Nisâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${89}.docx`,
   },
   {
     cuz: null,
@@ -1331,7 +1331,7 @@ export const kuran = [
     sound: "page-090.mp3",
     img: "page-090.png",
     sure: "Nisâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${90}.docx`,
   },
   {
     cuz: null,
@@ -1343,7 +1343,7 @@ export const kuran = [
     sound: "page-091.mp3",
     img: "page-091.png",
     sure: "Nisâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${91}.docx`,
   },
   {
     cuz: null,
@@ -1355,7 +1355,7 @@ export const kuran = [
     sound: "page-092.mp3",
     img: "page-092.png",
     sure: "Nisâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${92}.docx`,
   },
   {
     cuz: null,
@@ -1367,7 +1367,7 @@ export const kuran = [
     sound: "page-093.mp3",
     img: "page-093.png",
     sure: "Nisâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${93}.docx`,
   },
   {
     cuz: null,
@@ -1379,7 +1379,7 @@ export const kuran = [
     sound: "page-094.mp3",
     img: "page-094.png",
     sure: "Nisâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${94}.docx`,
   },
   {
     cuz: null,
@@ -1391,7 +1391,7 @@ export const kuran = [
     sound: "page-095.mp3",
     img: "page-095.png",
     sure: "Nisâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${95}.docx`,
   },
   {
     cuz: null,
@@ -1403,7 +1403,7 @@ export const kuran = [
     sound: "page-096.mp3",
     img: "page-096.png",
     sure: "Nisâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${96}.docx`,
   },
   {
     cuz: null,
@@ -1415,7 +1415,7 @@ export const kuran = [
     sound: "page-097.mp3",
     img: "page-097.png",
     sure: "Nisâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${97}.docx`,
   },
   {
     cuz: null,
@@ -1427,7 +1427,7 @@ export const kuran = [
     sound: "page-098.mp3",
     img: "page-098.png",
     sure: "Nisâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${98}.docx`,
   },
   {
     cuz: null,
@@ -1439,7 +1439,7 @@ export const kuran = [
     sound: "page-099.mp3",
     img: "page-099.png",
     sure: "Nisâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${99}.docx`,
   },
   {
     cuz: "6",
@@ -1451,7 +1451,7 @@ export const kuran = [
     sound: "page-100.mp3",
     img: "page-100.png",
     sure: "Nisâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${100}.docx`,
   },
   {
     cuz: null,
@@ -1463,7 +1463,7 @@ export const kuran = [
     sound: "page-101.mp3",
     img: "page-101.png",
     sure: "Nisâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${101}.docx`,
   },
   {
     cuz: null,
@@ -1475,7 +1475,7 @@ export const kuran = [
     sound: "page-102.mp3",
     img: "page-102.png",
     sure: "Nisâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${102}.docx`,
   },
   {
     cuz: null,
@@ -1487,7 +1487,7 @@ export const kuran = [
     sound: "page-103.mp3",
     img: "page-103.png",
     sure: "Nisâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${103}.docx`,
   },
   {
     cuz: null,
@@ -1499,7 +1499,7 @@ export const kuran = [
     sound: "page-104.mp3",
     img: "page-104.png",
     sure: "Nisâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${104}.docx`,
   },
   {
     cuz: null,
@@ -1511,7 +1511,7 @@ export const kuran = [
     sound: "page-105.mp3",
     img: "page-105.png",
     sure: "Mâide Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${105}.docx`,
   },
   {
     cuz: null,
@@ -1523,7 +1523,7 @@ export const kuran = [
     sound: "page-106.mp3",
     img: "page-106.png",
     sure: "Mâide Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${106}.docx`,
   },
   {
     cuz: null,
@@ -1535,7 +1535,7 @@ export const kuran = [
     sound: "page-107.mp3",
     img: "page-107.png",
     sure: "Mâide Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${107}.docx`,
   },
   {
     cuz: null,
@@ -1547,7 +1547,7 @@ export const kuran = [
     sound: "page-108.mp3",
     img: "page-108.png",
     sure: "Mâide Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${108}.docx`,
   },
   {
     cuz: null,
@@ -1559,7 +1559,7 @@ export const kuran = [
     sound: "page-109.mp3",
     img: "page-109.png",
     sure: "Mâide Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${109}.docx`,
   },
   {
     cuz: null,
@@ -1571,7 +1571,7 @@ export const kuran = [
     sound: "page-110.mp3",
     img: "page-110.png",
     sure: "Mâide Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${110}.docx`,
   },
   {
     cuz: null,
@@ -1583,7 +1583,7 @@ export const kuran = [
     sound: "page-111.mp3",
     img: "page-111.png",
     sure: "Mâide Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${111}.docx`,
   },
   {
     cuz: null,
@@ -1595,7 +1595,7 @@ export const kuran = [
     sound: "page-112.mp3",
     img: "page-112.png",
     sure: "Mâide Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${112}.docx`,
   },
   {
     cuz: null,
@@ -1607,7 +1607,7 @@ export const kuran = [
     sound: "page-113.mp3",
     img: "page-113.png",
     sure: "Mâide Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${113}.docx`,
   },
   {
     cuz: null,
@@ -1619,7 +1619,7 @@ export const kuran = [
     sound: "page-114.mp3",
     img: "page-114.png",
     sure: "Mâide Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${114}.docx`,
   },
   {
     cuz: null,
@@ -1631,7 +1631,7 @@ export const kuran = [
     sound: "page-115.mp3",
     img: "page-115.png",
     sure: "Mâide Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${115}.docx`,
   },
   {
     cuz: null,
@@ -1643,7 +1643,7 @@ export const kuran = [
     sound: "page-116.mp3",
     img: "page-116.png",
     sure: "Mâide Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${116}.docx`,
   },
   {
     cuz: null,
@@ -1655,7 +1655,7 @@ export const kuran = [
     sound: "page-117.mp3",
     img: "page-117.png",
     sure: "Mâide Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${117}.docx`,
   },
   {
     cuz: null,
@@ -1667,7 +1667,7 @@ export const kuran = [
     sound: "page-118.mp3",
     img: "page-118.png",
     sure: "Mâide Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${118}.docx`,
   },
   {
     cuz: null,
@@ -1679,7 +1679,7 @@ export const kuran = [
     sound: "page-119.mp3",
     img: "page-119.png",
     sure: "Mâide Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${119}.docx`,
   },
   {
     cuz: "7",
@@ -1691,7 +1691,7 @@ export const kuran = [
     sound: "page-120.mp3",
     img: "page-120.png",
     sure: "Mâide Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${120}.docx`,
   },
   {
     cuz: null,
@@ -1703,7 +1703,7 @@ export const kuran = [
     sound: "page-121.mp3",
     img: "page-121.png",
     sure: "Mâide Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${121}.docx`,
   },
   {
     cuz: null,
@@ -1715,7 +1715,7 @@ export const kuran = [
     sound: "page-122.mp3",
     img: "page-122.png",
     sure: "Mâide Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${122}.docx`,
   },
   {
     cuz: null,
@@ -1727,7 +1727,7 @@ export const kuran = [
     sound: "page-123.mp3",
     img: "page-123.png",
     sure: "Mâide Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${123}.docx`,
   },
   {
     cuz: null,
@@ -1739,7 +1739,7 @@ export const kuran = [
     sound: "page-124.mp3",
     img: "page-124.png",
     sure: "Mâide Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${124}.docx`,
   },
   {
     cuz: null,
@@ -1751,7 +1751,7 @@ export const kuran = [
     sound: "page-125.mp3",
     img: "page-125.png",
     sure: "Mâide Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${125}.docx`,
   },
   {
     cuz: null,
@@ -1763,7 +1763,7 @@ export const kuran = [
     sound: "page-126.mp3",
     img: "page-126.png",
     sure: "Mâide Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${126}.docx`,
   },
   {
     cuz: null,
@@ -1775,7 +1775,7 @@ export const kuran = [
     sound: "page-127.mp3",
     img: "page-127.png",
     sure: "En'âm Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${127}.docx`,
   },
   {
     cuz: null,
@@ -1787,7 +1787,7 @@ export const kuran = [
     sound: "page-128.mp3",
     img: "page-128.png",
     sure: "En'âm Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${128}.docx`,
   },
   {
     cuz: null,
@@ -1799,7 +1799,7 @@ export const kuran = [
     sound: "page-129.mp3",
     img: "page-129.png",
     sure: "En'âm Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${129}.docx`,
   },
   {
     cuz: null,
@@ -1811,7 +1811,7 @@ export const kuran = [
     sound: "page-130.mp3",
     img: "page-130.png",
     sure: "En'âm Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${130}.docx`,
   },
   {
     cuz: null,
@@ -1823,7 +1823,7 @@ export const kuran = [
     sound: "page-131.mp3",
     img: "page-131.png",
     sure: "En'âm Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${131}.docx`,
   },
   {
     cuz: null,
@@ -1835,7 +1835,7 @@ export const kuran = [
     sound: "page-132.mp3",
     img: "page-132.png",
     sure: "En'âm Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${132}.docx`,
   },
   {
     cuz: null,
@@ -1847,7 +1847,7 @@ export const kuran = [
     sound: "page-133.mp3",
     img: "page-133.png",
     sure: "En'âm Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${133}.docx`,
   },
   {
     cuz: null,
@@ -1859,7 +1859,7 @@ export const kuran = [
     sound: "page-134.mp3",
     img: "page-134.png",
     sure: "En'âm Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${134}.docx`,
   },
   {
     cuz: null,
@@ -1871,7 +1871,7 @@ export const kuran = [
     sound: "page-135.mp3",
     img: "page-135.png",
     sure: "En'âm Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${135}.docx`,
   },
   {
     cuz: null,
@@ -1883,7 +1883,7 @@ export const kuran = [
     sound: "page-136.mp3",
     img: "page-136.png",
     sure: "En'âm Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${136}.docx`,
   },
   {
     cuz: null,
@@ -1895,7 +1895,7 @@ export const kuran = [
     sound: "page-137.mp3",
     img: "page-137.png",
     sure: "En'âm Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${137}.docx`,
   },
   {
     cuz: null,
@@ -1907,7 +1907,7 @@ export const kuran = [
     sound: "page-138.mp3",
     img: "page-138.png",
     sure: "En'âm Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${138}.docx`,
   },
   {
     cuz: null,
@@ -1919,7 +1919,7 @@ export const kuran = [
     sound: "page-139.mp3",
     img: "page-139.png",
     sure: "En'âm Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${139}.docx`,
   },
   {
     cuz: "8",
@@ -1931,7 +1931,7 @@ export const kuran = [
     sound: "page-140.mp3",
     img: "page-140.png",
     sure: "En'âm Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${140}.docx`,
   },
   {
     cuz: null,
@@ -1943,7 +1943,7 @@ export const kuran = [
     sound: "page-141.mp3",
     img: "page-141.png",
     sure: "En'âm Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${141}.docx`,
   },
   {
     cuz: null,
@@ -1955,7 +1955,7 @@ export const kuran = [
     sound: "page-142.mp3",
     img: "page-142.png",
     sure: "En'âm Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${142}.docx`,
   },
   {
     cuz: null,
@@ -1967,7 +1967,7 @@ export const kuran = [
     sound: "page-143.mp3",
     img: "page-143.png",
     sure: "En'âm Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${143}.docx`,
   },
   {
     cuz: null,
@@ -1979,7 +1979,7 @@ export const kuran = [
     sound: "page-144.mp3",
     img: "page-144.png",
     sure: "En'âm Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${144}.docx`,
   },
   {
     cuz: null,
@@ -1991,7 +1991,7 @@ export const kuran = [
     sound: "page-145.mp3",
     img: "page-145.png",
     sure: "En'âm Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${145}.docx`,
   },
   {
     cuz: null,
@@ -2003,7 +2003,7 @@ export const kuran = [
     sound: "page-146.mp3",
     img: "page-146.png",
     sure: "En'âm Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${146}.docx`,
   },
   {
     cuz: null,
@@ -2015,7 +2015,7 @@ export const kuran = [
     sound: "page-147.mp3",
     img: "page-147.png",
     sure: "En'âm Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${147}.docx`,
   },
   {
     cuz: null,
@@ -2027,7 +2027,7 @@ export const kuran = [
     sound: "page-148.mp3",
     img: "page-148.png",
     sure: "En'âm Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${148}.docx`,
   },
   {
     cuz: null,
@@ -2039,7 +2039,7 @@ export const kuran = [
     sound: "page-149.mp3",
     img: "page-149.png",
     sure: "En'âm Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${149}.docx`,
   },
   {
     cuz: null,
@@ -2051,7 +2051,7 @@ export const kuran = [
     sound: "page-150.mp3",
     img: "page-150.png",
     sure: "A'râf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${150}.docx`,
   },
   {
     cuz: null,
@@ -2063,7 +2063,7 @@ export const kuran = [
     sound: "page-151.mp3",
     img: "page-151.png",
     sure: "A'râf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${151}.docx`,
   },
   {
     cuz: null,
@@ -2075,7 +2075,7 @@ export const kuran = [
     sound: "page-152.mp3",
     img: "page-152.png",
     sure: "A'râf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${152}.docx`,
   },
   {
     cuz: null,
@@ -2087,7 +2087,7 @@ export const kuran = [
     sound: "page-153.mp3",
     img: "page-153.png",
     sure: "A'râf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${153}.docx`,
   },
   {
     cuz: null,
@@ -2099,7 +2099,7 @@ export const kuran = [
     sound: "page-154.mp3",
     img: "page-154.png",
     sure: "A'râf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${154}.docx`,
   },
   {
     cuz: null,
@@ -2111,7 +2111,7 @@ export const kuran = [
     sound: "page-155.mp3",
     img: "page-155.png",
     sure: "A'râf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${155}.docx`,
   },
   {
     cuz: null,
@@ -2123,7 +2123,7 @@ export const kuran = [
     sound: "page-156.mp3",
     img: "page-156.png",
     sure: "A'râf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${156}.docx`,
   },
   {
     cuz: null,
@@ -2135,7 +2135,7 @@ export const kuran = [
     sound: "page-157.mp3",
     img: "page-157.png",
     sure: "A'râf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${157}.docx`,
   },
   {
     cuz: null,
@@ -2147,7 +2147,7 @@ export const kuran = [
     sound: "page-158.mp3",
     img: "page-158.png",
     sure: "A'râf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${158}.docx`,
   },
   {
     cuz: null,
@@ -2159,7 +2159,7 @@ export const kuran = [
     sound: "page-159.mp3",
     img: "page-159.png",
     sure: "A'râf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${159}.docx`,
   },
   {
     cuz: "9",
@@ -2171,7 +2171,7 @@ export const kuran = [
     sound: "page-160.mp3",
     img: "page-160.png",
     sure: "A'râf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${160}.docx`,
   },
   {
     cuz: null,
@@ -2183,7 +2183,7 @@ export const kuran = [
     sound: "page-161.mp3",
     img: "page-161.png",
     sure: "A'râf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${161}.docx`,
   },
   {
     cuz: null,
@@ -2195,7 +2195,7 @@ export const kuran = [
     sound: "page-162.mp3",
     img: "page-162.png",
     sure: "A'râf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${162}.docx`,
   },
   {
     cuz: null,
@@ -2207,7 +2207,7 @@ export const kuran = [
     sound: "page-163.mp3",
     img: "page-163.png",
     sure: "A'râf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${163}.docx`,
   },
   {
     cuz: null,
@@ -2219,7 +2219,7 @@ export const kuran = [
     sound: "page-164.mp3",
     img: "page-164.png",
     sure: "A'râf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${164}.docx`,
   },
   {
     cuz: null,
@@ -2231,7 +2231,7 @@ export const kuran = [
     sound: "page-165.mp3",
     img: "page-165.png",
     sure: "A'râf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${165}.docx`,
   },
   {
     cuz: null,
@@ -2243,7 +2243,7 @@ export const kuran = [
     sound: "page-166.mp3",
     img: "page-166.png",
     sure: "A'râf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${166}.docx`,
   },
   {
     cuz: null,
@@ -2255,7 +2255,7 @@ export const kuran = [
     sound: "page-167.mp3",
     img: "page-167.png",
     sure: "A'râf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${167}.docx`,
   },
   {
     cuz: null,
@@ -2267,7 +2267,7 @@ export const kuran = [
     sound: "page-168.mp3",
     img: "page-168.png",
     sure: "A'râf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${168}.docx`,
   },
   {
     cuz: null,
@@ -2279,7 +2279,7 @@ export const kuran = [
     sound: "page-169.mp3",
     img: "page-169.png",
     sure: "A'râf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${169}.docx`,
   },
   {
     cuz: null,
@@ -2291,7 +2291,7 @@ export const kuran = [
     sound: "page-170.mp3",
     img: "page-170.png",
     sure: "A'râf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${170}.docx`,
   },
   {
     cuz: null,
@@ -2303,7 +2303,7 @@ export const kuran = [
     sound: "page-171.mp3",
     img: "page-171.png",
     sure: "A'râf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${171}.docx`,
   },
   {
     cuz: null,
@@ -2315,7 +2315,7 @@ export const kuran = [
     sound: "page-172.mp3",
     img: "page-172.png",
     sure: "A'râf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${172}.docx`,
   },
   {
     cuz: null,
@@ -2327,7 +2327,7 @@ export const kuran = [
     sound: "page-173.mp3",
     img: "page-173.png",
     sure: "A'râf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${173}.docx`,
   },
   {
     cuz: null,
@@ -2339,7 +2339,7 @@ export const kuran = [
     sound: "page-174.mp3",
     img: "page-174.png",
     sure: "A'râf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${174}.docx`,
   },
   {
     cuz: null,
@@ -2351,7 +2351,7 @@ export const kuran = [
     sound: "page-175.mp3",
     img: "page-175.png",
     sure: "A'râf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${175}.docx`,
   },
   {
     cuz: null,
@@ -2363,7 +2363,7 @@ export const kuran = [
     sound: "page-176.mp3",
     img: "page-176.png",
     sure: "Enfâl Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${176}.docx`,
   },
   {
     cuz: null,
@@ -2375,7 +2375,7 @@ export const kuran = [
     sound: "page-177.mp3",
     img: "page-177.png",
     sure: "Enfâl Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${177}.docx`,
   },
   {
     cuz: null,
@@ -2387,7 +2387,7 @@ export const kuran = [
     sound: "page-178.mp3",
     img: "page-178.png",
     sure: "Enfâl Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${178}.docx`,
   },
   {
     cuz: null,
@@ -2399,7 +2399,7 @@ export const kuran = [
     sound: "page-179.mp3",
     img: "page-179.png",
     sure: "Enfâl Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${179}.docx`,
   },
   {
     cuz: "10",
@@ -2411,7 +2411,7 @@ export const kuran = [
     sound: "page-180.mp3",
     img: "page-180.png",
     sure: "Enfâl Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${180}.docx`,
   },
   {
     cuz: null,
@@ -2423,7 +2423,7 @@ export const kuran = [
     sound: "page-181.mp3",
     img: "page-181.png",
     sure: "Enfâl Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${181}.docx`,
   },
   {
     cuz: null,
@@ -2435,7 +2435,7 @@ export const kuran = [
     sound: "page-182.mp3",
     img: "page-182.png",
     sure: "Enfâl Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${182}.docx`,
   },
   {
     cuz: null,
@@ -2447,7 +2447,7 @@ export const kuran = [
     sound: "page-183.mp3",
     img: "page-183.png",
     sure: "Enfâl Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${183}.docx`,
   },
   {
     cuz: null,
@@ -2459,7 +2459,7 @@ export const kuran = [
     sound: "page-184.mp3",
     img: "page-184.png",
     sure: "Enfâl Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${184}.docx`,
   },
   {
     cuz: null,
@@ -2471,7 +2471,7 @@ export const kuran = [
     sound: "page-185.mp3",
     img: "page-185.png",
     sure: "Enfâl Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${185}.docx`,
   },
   {
     cuz: null,
@@ -2483,7 +2483,7 @@ export const kuran = [
     sound: "page-186.mp3",
     img: "page-186.png",
     sure: "Tevbe Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${186}.docx`,
   },
   {
     cuz: null,
@@ -2495,7 +2495,7 @@ export const kuran = [
     sound: "page-187.mp3",
     img: "page-187.png",
     sure: "Tevbe Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${187}.docx`,
   },
   {
     cuz: null,
@@ -2507,7 +2507,7 @@ export const kuran = [
     sound: "page-188.mp3",
     img: "page-188.png",
     sure: "Tevbe Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${188}.docx`,
   },
   {
     cuz: null,
@@ -2519,7 +2519,7 @@ export const kuran = [
     sound: "page-189.mp3",
     img: "page-189.png",
     sure: "Tevbe Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${189}.docx`,
   },
   {
     cuz: null,
@@ -2531,7 +2531,7 @@ export const kuran = [
     sound: "page-190.mp3",
     img: "page-190.png",
     sure: "Tevbe Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${190}.docx`,
   },
   {
     cuz: null,
@@ -2543,7 +2543,7 @@ export const kuran = [
     sound: "page-191.mp3",
     img: "page-191.png",
     sure: "Tevbe Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${191}.docx`,
   },
   {
     cuz: null,
@@ -2555,7 +2555,7 @@ export const kuran = [
     sound: "page-192.mp3",
     img: "page-192.png",
     sure: "Tevbe Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${192}.docx`,
   },
   {
     cuz: null,
@@ -2567,7 +2567,7 @@ export const kuran = [
     sound: "page-193.mp3",
     img: "page-193.png",
     sure: "Tevbe Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${193}.docx`,
   },
   {
     cuz: null,
@@ -2579,7 +2579,7 @@ export const kuran = [
     sound: "page-194.mp3",
     img: "page-194.png",
     sure: "Tevbe Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${194}.docx`,
   },
   {
     cuz: null,
@@ -2591,7 +2591,7 @@ export const kuran = [
     sound: "page-195.mp3",
     img: "page-195.png",
     sure: "Tevbe Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${195}.docx`,
   },
   {
     cuz: null,
@@ -2603,7 +2603,7 @@ export const kuran = [
     sound: "page-196.mp3",
     img: "page-196.png",
     sure: "Tevbe Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${196}.docx`,
   },
   {
     cuz: null,
@@ -2615,7 +2615,7 @@ export const kuran = [
     sound: "page-197.mp3",
     img: "page-197.png",
     sure: "Tevbe Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${197}.docx`,
   },
   {
     cuz: null,
@@ -2627,7 +2627,7 @@ export const kuran = [
     sound: "page-198.mp3",
     img: "page-198.png",
     sure: "Tevbe Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${198}.docx`,
   },
   {
     cuz: null,
@@ -2639,7 +2639,7 @@ export const kuran = [
     sound: "page-199.mp3",
     img: "page-199.png",
     sure: "Tevbe Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${199}.docx`,
   },
   {
     cuz: "11",
@@ -2651,7 +2651,7 @@ export const kuran = [
     sound: "page-200.mp3",
     img: "page-200.png",
     sure: "Tevbe Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${200}.docx`,
   },
   {
     cuz: null,
@@ -2663,7 +2663,7 @@ export const kuran = [
     sound: "page-201.mp3",
     img: "page-201.png",
     sure: "Tevbe Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${201}.docx`,
   },
   {
     cuz: null,
@@ -2675,7 +2675,7 @@ export const kuran = [
     sound: "page-202.mp3",
     img: "page-202.png",
     sure: "Tevbe Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${202}.docx`,
   },
   {
     cuz: null,
@@ -2687,7 +2687,7 @@ export const kuran = [
     sound: "page-203.mp3",
     img: "page-203.png",
     sure: "Tevbe Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${203}.docx`,
   },
   {
     cuz: null,
@@ -2699,7 +2699,7 @@ export const kuran = [
     sound: "page-204.mp3",
     img: "page-204.png",
     sure: "Tevbe Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${204}.docx`,
   },
   {
     cuz: null,
@@ -2711,7 +2711,7 @@ export const kuran = [
     sound: "page-205.mp3",
     img: "page-205.png",
     sure: "Tevbe Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${205}.docx`,
   },
   {
     cuz: null,
@@ -2723,7 +2723,7 @@ export const kuran = [
     sound: "page-206.mp3",
     img: "page-206.png",
     sure: "Tevbe Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${206}.docx`,
   },
   {
     cuz: null,
@@ -2735,7 +2735,7 @@ export const kuran = [
     sound: "page-207.mp3",
     img: "page-207.png",
     sure: "Yunus Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${207}.docx`,
   },
   {
     cuz: null,
@@ -2747,7 +2747,7 @@ export const kuran = [
     sound: "page-208.mp3",
     img: "page-208.png",
     sure: "Yunus Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${208}.docx`,
   },
   {
     cuz: null,
@@ -2759,7 +2759,7 @@ export const kuran = [
     sound: "page-209.mp3",
     img: "page-209.png",
     sure: "Yunus Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${209}.docx`,
   },
   {
     cuz: null,
@@ -2771,7 +2771,7 @@ export const kuran = [
     sound: "page-210.mp3",
     img: "page-210.png",
     sure: "Yunus Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${210}.docx`,
   },
   {
     cuz: null,
@@ -2783,7 +2783,7 @@ export const kuran = [
     sound: "page-211.mp3",
     img: "page-211.png",
     sure: "Yunus Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${211}.docx`,
   },
   {
     cuz: null,
@@ -2795,7 +2795,7 @@ export const kuran = [
     sound: "page-212.mp3",
     img: "page-212.png",
     sure: "Yunus Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${212}.docx`,
   },
   {
     cuz: null,
@@ -2807,7 +2807,7 @@ export const kuran = [
     sound: "page-213.mp3",
     img: "page-213.png",
     sure: "Yunus Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${213}.docx`,
   },
   {
     cuz: null,
@@ -2819,7 +2819,7 @@ export const kuran = [
     sound: "page-214.mp3",
     img: "page-214.png",
     sure: "Yunus Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${214}.docx`,
   },
   {
     cuz: null,
@@ -2831,7 +2831,7 @@ export const kuran = [
     sound: "page-215.mp3",
     img: "page-215.png",
     sure: "Yunus Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${215}.docx`,
   },
   {
     cuz: null,
@@ -2843,7 +2843,7 @@ export const kuran = [
     sound: "page-216.mp3",
     img: "page-216.png",
     sure: "Yunus Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${216}.docx`,
   },
   {
     cuz: null,
@@ -2855,7 +2855,7 @@ export const kuran = [
     sound: "page-217.mp3",
     img: "page-217.png",
     sure: "Yunus Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${217}.docx`,
   },
   {
     cuz: null,
@@ -2867,7 +2867,7 @@ export const kuran = [
     sound: "page-218.mp3",
     img: "page-218.png",
     sure: "Yunus Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${218}.docx`,
   },
   {
     cuz: null,
@@ -2879,7 +2879,7 @@ export const kuran = [
     sound: "page-219.mp3",
     img: "page-219.png",
     sure: "Yunus Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${219}.docx`,
   },
   {
     cuz: "12",
@@ -2891,7 +2891,7 @@ export const kuran = [
     sound: "page-220.mp3",
     img: "page-220.png",
     sure: "Hûd Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${220}.docx`,
   },
   {
     cuz: null,
@@ -2903,7 +2903,7 @@ export const kuran = [
     sound: "page-221.mp3",
     img: "page-221.png",
     sure: "Hûd Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${221}.docx`,
   },
   {
     cuz: null,
@@ -2915,7 +2915,7 @@ export const kuran = [
     sound: "page-222.mp3",
     img: "page-222.png",
     sure: "Hûd Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${222}.docx`,
   },
   {
     cuz: null,
@@ -2927,7 +2927,7 @@ export const kuran = [
     sound: "page-223.mp3",
     img: "page-223.png",
     sure: "Hûd Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${223}.docx`,
   },
   {
     cuz: null,
@@ -2939,7 +2939,7 @@ export const kuran = [
     sound: "page-224.mp3",
     img: "page-224.png",
     sure: "Hûd Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${224}.docx`,
   },
   {
     cuz: null,
@@ -2951,7 +2951,7 @@ export const kuran = [
     sound: "page-225.mp3",
     img: "page-225.png",
     sure: "Hûd Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${225}.docx`,
   },
   {
     cuz: null,
@@ -2963,7 +2963,7 @@ export const kuran = [
     sound: "page-226.mp3",
     img: "page-226.png",
     sure: "Hûd Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${226}.docx`,
   },
   {
     cuz: null,
@@ -2975,7 +2975,7 @@ export const kuran = [
     sound: "page-227.mp3",
     img: "page-227.png",
     sure: "Hûd Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${227}.docx`,
   },
   {
     cuz: null,
@@ -2987,7 +2987,7 @@ export const kuran = [
     sound: "page-228.mp3",
     img: "page-228.png",
     sure: "Hûd Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${228}.docx`,
   },
   {
     cuz: null,
@@ -2999,7 +2999,7 @@ export const kuran = [
     sound: "page-229.mp3",
     img: "page-229.png",
     sure: "Hûd Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${229}.docx`,
   },
   {
     cuz: null,
@@ -3011,7 +3011,7 @@ export const kuran = [
     sound: "page-230.mp3",
     img: "page-230.png",
     sure: "Hûd Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${230}.docx`,
   },
   {
     cuz: null,
@@ -3023,7 +3023,7 @@ export const kuran = [
     sound: "page-231.mp3",
     img: "page-231.png",
     sure: "Hûd Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${231}.docx`,
   },
   {
     cuz: null,
@@ -3035,7 +3035,7 @@ export const kuran = [
     sound: "page-232.mp3",
     img: "page-232.png",
     sure: "Hûd Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${232}.docx`,
   },
   {
     cuz: null,
@@ -3047,7 +3047,7 @@ export const kuran = [
     sound: "page-233.mp3",
     img: "page-233.png",
     sure: "Hûd Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${233}.docx`,
   },
   {
     cuz: null,
@@ -3059,7 +3059,7 @@ export const kuran = [
     sound: "page-234.mp3",
     img: "page-234.png",
     sure: "Yusuf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${234}.docx`,
   },
   {
     cuz: null,
@@ -3071,7 +3071,7 @@ export const kuran = [
     sound: "page-235.mp3",
     img: "page-235.png",
     sure: "Yusuf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${235}.docx`,
   },
   {
     cuz: null,
@@ -3083,7 +3083,7 @@ export const kuran = [
     sound: "page-236.mp3",
     img: "page-236.png",
     sure: "Yusuf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${236}.docx`,
   },
   {
     cuz: null,
@@ -3095,7 +3095,7 @@ export const kuran = [
     sound: "page-237.mp3",
     img: "page-237.png",
     sure: "Yusuf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${237}.docx`,
   },
   {
     cuz: null,
@@ -3107,7 +3107,7 @@ export const kuran = [
     sound: "page-238.mp3",
     img: "page-238.png",
     sure: "Yusuf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${238}.docx`,
   },
   {
     cuz: null,
@@ -3119,7 +3119,7 @@ export const kuran = [
     sound: "page-239.mp3",
     img: "page-239.png",
     sure: "Yusuf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${239}.docx`,
   },
   {
     cuz: "13",
@@ -3131,7 +3131,7 @@ export const kuran = [
     sound: "page-240.mp3",
     img: "page-240.png",
     sure: "Yusuf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${240}.docx`,
   },
   {
     cuz: null,
@@ -3143,7 +3143,7 @@ export const kuran = [
     sound: "page-241.mp3",
     img: "page-241.png",
     sure: "Yusuf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${241}.docx`,
   },
   {
     cuz: null,
@@ -3155,7 +3155,7 @@ export const kuran = [
     sound: "page-242.mp3",
     img: "page-242.png",
     sure: "Yusuf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${242}.docx`,
   },
   {
     cuz: null,
@@ -3167,7 +3167,7 @@ export const kuran = [
     sound: "page-243.mp3",
     img: "page-243.png",
     sure: "Yusuf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${243}.docx`,
   },
   {
     cuz: null,
@@ -3179,7 +3179,7 @@ export const kuran = [
     sound: "page-244.mp3",
     img: "page-244.png",
     sure: "Yusuf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${244}.docx`,
   },
   {
     cuz: null,
@@ -3191,7 +3191,7 @@ export const kuran = [
     sound: "page-245.mp3",
     img: "page-245.png",
     sure: "Yusuf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${245}.docx`,
   },
   {
     cuz: null,
@@ -3203,7 +3203,7 @@ export const kuran = [
     sound: "page-246.mp3",
     img: "page-246.png",
     sure: "Yusuf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${246}.docx`,
   },
   {
     cuz: null,
@@ -3215,7 +3215,7 @@ export const kuran = [
     sound: "page-247.mp3",
     img: "page-247.png",
     sure: "Yusuf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${247}.docx`,
   },
   {
     cuz: null,
@@ -3227,7 +3227,7 @@ export const kuran = [
     sound: "page-248.mp3",
     img: "page-248.png",
     sure: "Ra'd Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${248}.docx`,
   },
   {
     cuz: null,
@@ -3239,7 +3239,7 @@ export const kuran = [
     sound: "page-249.mp3",
     img: "page-249.png",
     sure: "Ra'd Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${249}.docx`,
   },
   {
     cuz: null,
@@ -3251,7 +3251,7 @@ export const kuran = [
     sound: "page-250.mp3",
     img: "page-250.png",
     sure: "Ra'd Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${250}.docx`,
   },
   {
     cuz: null,
@@ -3263,7 +3263,7 @@ export const kuran = [
     sound: "page-251.mp3",
     img: "page-251.png",
     sure: "Ra'd Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${251}.docx`,
   },
   {
     cuz: null,
@@ -3275,7 +3275,7 @@ export const kuran = [
     sound: "page-252.mp3",
     img: "page-252.png",
     sure: "Ra'd Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${252}.docx`,
   },
   {
     cuz: null,
@@ -3287,7 +3287,7 @@ export const kuran = [
     sound: "page-253.mp3",
     img: "page-253.png",
     sure: "Ra'd Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${253}.docx`,
   },
   {
     cuz: null,
@@ -3299,7 +3299,7 @@ export const kuran = [
     sound: "page-254.mp3",
     img: "page-254.png",
     sure: "İbrahim Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${254}.docx`,
   },
   {
     cuz: null,
@@ -3311,7 +3311,7 @@ export const kuran = [
     sound: "page-255.mp3",
     img: "page-255.png",
     sure: "İbrahim Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${255}.docx`,
   },
   {
     cuz: null,
@@ -3323,7 +3323,7 @@ export const kuran = [
     sound: "page-256.mp3",
     img: "page-256.png",
     sure: "İbrahim Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${256}.docx`,
   },
   {
     cuz: null,
@@ -3335,7 +3335,7 @@ export const kuran = [
     sound: "page-257.mp3",
     img: "page-257.png",
     sure: "İbrahim Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${257}.docx`,
   },
   {
     cuz: null,
@@ -3347,7 +3347,7 @@ export const kuran = [
     sound: "page-258.mp3",
     img: "page-258.png",
     sure: "İbrahim Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${258}.docx`,
   },
   {
     cuz: null,
@@ -3359,7 +3359,7 @@ export const kuran = [
     sound: "page-259.mp3",
     img: "page-259.png",
     sure: "İbrahim Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${259}.docx`,
   },
   {
     cuz: "14",
@@ -3371,7 +3371,7 @@ export const kuran = [
     sound: "page-260.mp3",
     img: "page-260.png",
     sure: "İbrahim Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${260}.docx`,
   },
   {
     cuz: null,
@@ -3383,7 +3383,7 @@ export const kuran = [
     sound: "page-261.mp3",
     img: "page-261.png",
     sure: "Hicr Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${261}.docx`,
   },
   {
     cuz: null,
@@ -3395,7 +3395,7 @@ export const kuran = [
     sound: "page-262.mp3",
     img: "page-262.png",
     sure: "Hicr Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${262}.docx`,
   },
   {
     cuz: null,
@@ -3407,7 +3407,7 @@ export const kuran = [
     sound: "page-263.mp3",
     img: "page-263.png",
     sure: "Hicr Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${263}.docx`,
   },
   {
     cuz: null,
@@ -3419,7 +3419,7 @@ export const kuran = [
     sound: "page-264.mp3",
     img: "page-264.png",
     sure: "Hicr Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${264}.docx`,
   },
   {
     cuz: null,
@@ -3431,7 +3431,7 @@ export const kuran = [
     sound: "page-265.mp3",
     img: "page-265.png",
     sure: "Hicr Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${265}.docx`,
   },
   {
     cuz: null,
@@ -3443,7 +3443,7 @@ export const kuran = [
     sound: "page-266.mp3",
     img: "page-266.png",
     sure: "Hicr Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${266}.docx`,
   },
   {
     cuz: null,
@@ -3455,7 +3455,7 @@ export const kuran = [
     sound: "page-267.mp3",
     img: "page-267.png",
     sure: "Hicr Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${267}.docx`,
   },
   {
     cuz: null,
@@ -3467,7 +3467,7 @@ export const kuran = [
     sound: "page-268.mp3",
     img: "page-268.png",
     sure: "Nahl Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${268}.docx`,
   },
   {
     cuz: null,
@@ -3479,7 +3479,7 @@ export const kuran = [
     sound: "page-269.mp3",
     img: "page-269.png",
     sure: "Nahl Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${269}.docx`,
   },
   {
     cuz: null,
@@ -3491,7 +3491,7 @@ export const kuran = [
     sound: "page-270.mp3",
     img: "page-270.png",
     sure: "Nahl Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${270}.docx`,
   },
   {
     cuz: null,
@@ -3503,7 +3503,7 @@ export const kuran = [
     sound: "page-271.mp3",
     img: "page-271.png",
     sure: "Nahl Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${271}.docx`,
   },
   {
     cuz: null,
@@ -3515,7 +3515,7 @@ export const kuran = [
     sound: "page-272.mp3",
     img: "page-272.png",
     sure: "Nahl Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${272}.docx`,
   },
   {
     cuz: null,
@@ -3527,7 +3527,7 @@ export const kuran = [
     sound: "page-273.mp3",
     img: "page-273.png",
     sure: "Nahl Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${273}.docx`,
   },
   {
     cuz: null,
@@ -3539,7 +3539,7 @@ export const kuran = [
     sound: "page-274.mp3",
     img: "page-274.png",
     sure: "Nahl Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${274}.docx`,
   },
   {
     cuz: null,
@@ -3551,7 +3551,7 @@ export const kuran = [
     sound: "page-275.mp3",
     img: "page-275.png",
     sure: "Nahl Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${275}.docx`,
   },
   {
     cuz: null,
@@ -3563,7 +3563,7 @@ export const kuran = [
     sound: "page-276.mp3",
     img: "page-276.png",
     sure: "Nahl Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${276}.docx`,
   },
   {
     cuz: null,
@@ -3575,7 +3575,7 @@ export const kuran = [
     sound: "page-277.mp3",
     img: "page-277.png",
     sure: "Nahl Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${277}.docx`,
   },
   {
     cuz: null,
@@ -3587,7 +3587,7 @@ export const kuran = [
     sound: "page-278.mp3",
     img: "page-278.png",
     sure: "Nahl Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${278}.docx`,
   },
   {
     cuz: null,
@@ -3599,7 +3599,7 @@ export const kuran = [
     sound: "page-279.mp3",
     img: "page-279.png",
     sure: "Nahl Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${279}.docx`,
   },
   {
     cuz: "15",
@@ -3611,7 +3611,7 @@ export const kuran = [
     sound: "page-280.mp3",
     img: "page-280.png",
     sure: "Nahl Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${280}.docx`,
   },
   {
     cuz: null,
@@ -3623,7 +3623,7 @@ export const kuran = [
     sound: "page-281.mp3",
     img: "page-281.png",
     sure: "İsrâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${281}.docx`,
   },
   {
     cuz: null,
@@ -3635,7 +3635,7 @@ export const kuran = [
     sound: "page-282.mp3",
     img: "page-282.png",
     sure: "İsrâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${282}.docx`,
   },
   {
     cuz: null,
@@ -3647,7 +3647,7 @@ export const kuran = [
     sound: "page-283.mp3",
     img: "page-283.png",
     sure: "İsrâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${283}.docx`,
   },
   {
     cuz: null,
@@ -3659,7 +3659,7 @@ export const kuran = [
     sound: "page-284.mp3",
     img: "page-284.png",
     sure: "İsrâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${284}.docx`,
   },
   {
     cuz: null,
@@ -3671,7 +3671,7 @@ export const kuran = [
     sound: "page-285.mp3",
     img: "page-285.png",
     sure: "İsrâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${285}.docx`,
   },
   {
     cuz: null,
@@ -3683,7 +3683,7 @@ export const kuran = [
     sound: "page-286.mp3",
     img: "page-286.png",
     sure: "İsrâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${286}.docx`,
   },
   {
     cuz: null,
@@ -3695,7 +3695,7 @@ export const kuran = [
     sound: "page-287.mp3",
     img: "page-287.png",
     sure: "İsrâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${287}.docx`,
   },
   {
     cuz: null,
@@ -3707,7 +3707,7 @@ export const kuran = [
     sound: "page-288.mp3",
     img: "page-288.png",
     sure: "İsrâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${288}.docx`,
   },
   {
     cuz: null,
@@ -3719,7 +3719,7 @@ export const kuran = [
     sound: "page-289.mp3",
     img: "page-289.png",
     sure: "İsrâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${289}.docx`,
   },
   {
     cuz: null,
@@ -3731,7 +3731,7 @@ export const kuran = [
     sound: "page-290.mp3",
     img: "page-290.png",
     sure: "İsrâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${290}.docx`,
   },
   {
     cuz: null,
@@ -3743,7 +3743,7 @@ export const kuran = [
     sound: "page-291.mp3",
     img: "page-291.png",
     sure: "İsrâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${291}.docx`,
   },
   {
     cuz: null,
@@ -3755,7 +3755,7 @@ export const kuran = [
     sound: "page-292.mp3",
     img: "page-292.png",
     sure: "Kehf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${292}.docx`,
   },
   {
     cuz: null,
@@ -3767,7 +3767,7 @@ export const kuran = [
     sound: "page-293.mp3",
     img: "page-293.png",
     sure: "Kehf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${293}.docx`,
   },
   {
     cuz: null,
@@ -3779,7 +3779,7 @@ export const kuran = [
     sound: "page-294.mp3",
     img: "page-294.png",
     sure: "Kehf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${294}.docx`,
   },
   {
     cuz: null,
@@ -3791,7 +3791,7 @@ export const kuran = [
     sound: "page-295.mp3",
     img: "page-295.png",
     sure: "Kehf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${295}.docx`,
   },
   {
     cuz: null,
@@ -3803,7 +3803,7 @@ export const kuran = [
     sound: "page-296.mp3",
     img: "page-296.png",
     sure: "Kehf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${296}.docx`,
   },
   {
     cuz: null,
@@ -3815,7 +3815,7 @@ export const kuran = [
     sound: "page-297.mp3",
     img: "page-297.png",
     sure: "Kehf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${297}.docx`,
   },
   {
     cuz: null,
@@ -3827,7 +3827,7 @@ export const kuran = [
     sound: "page-298.mp3",
     img: "page-298.png",
     sure: "Kehf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${298}.docx`,
   },
   {
     cuz: null,
@@ -3839,7 +3839,7 @@ export const kuran = [
     sound: "page-299.mp3",
     img: "page-299.png",
     sure: "Kehf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${299}.docx`,
   },
   {
     cuz: "16",
@@ -3851,7 +3851,7 @@ export const kuran = [
     sound: "page-300.mp3",
     img: "page-300.png",
     sure: "Kehf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${300}.docx`,
   },
   {
     cuz: null,
@@ -3863,7 +3863,7 @@ export const kuran = [
     sound: "page-301.mp3",
     img: "page-301.png",
     sure: "Kehf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${301}.docx`,
   },
   {
     cuz: null,
@@ -3875,7 +3875,7 @@ export const kuran = [
     sound: "page-302.mp3",
     img: "page-302.png",
     sure: "Kehf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${302}.docx`,
   },
   {
     cuz: null,
@@ -3887,7 +3887,7 @@ export const kuran = [
     sound: "page-303.mp3",
     img: "page-303.png",
     sure: "Kehf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${303}.docx`,
   },
   {
     cuz: null,
@@ -3899,7 +3899,7 @@ export const kuran = [
     sound: "page-304.mp3",
     img: "page-304.png",
     sure: "Meryem Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${304}.docx`,
   },
   {
     cuz: null,
@@ -3911,7 +3911,7 @@ export const kuran = [
     sound: "page-305.mp3",
     img: "page-305.png",
     sure: "Meryem Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${305}.docx`,
   },
   {
     cuz: null,
@@ -3923,7 +3923,7 @@ export const kuran = [
     sound: "page-306.mp3",
     img: "page-306.png",
     sure: "Meryem Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${306}.docx`,
   },
   {
     cuz: null,
@@ -3935,7 +3935,7 @@ export const kuran = [
     sound: "page-307.mp3",
     img: "page-307.png",
     sure: "Meryem Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${307}.docx`,
   },
   {
     cuz: null,
@@ -3947,7 +3947,7 @@ export const kuran = [
     sound: "page-308.mp3",
     img: "page-308.png",
     sure: "Meryem Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${308}.docx`,
   },
   {
     cuz: null,
@@ -3959,7 +3959,7 @@ export const kuran = [
     sound: "page-309.mp3",
     img: "page-309.png",
     sure: "Meryem Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${309}.docx`,
   },
   {
     cuz: null,
@@ -3971,7 +3971,7 @@ export const kuran = [
     sound: "page-310.mp3",
     img: "page-310.png",
     sure: "Meryem Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${310}.docx`,
   },
   {
     cuz: null,
@@ -3983,7 +3983,7 @@ export const kuran = [
     sound: "page-311.mp3",
     img: "page-311.png",
     sure: "Tâ-Hâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${311}.docx`,
   },
   {
     cuz: null,
@@ -3995,7 +3995,7 @@ export const kuran = [
     sound: "page-312.mp3",
     img: "page-312.png",
     sure: "Tâ-Hâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${312}.docx`,
   },
   {
     cuz: null,
@@ -4007,7 +4007,7 @@ export const kuran = [
     sound: "page-313.mp3",
     img: "page-313.png",
     sure: "Tâ-Hâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${313}.docx`,
   },
   {
     cuz: null,
@@ -4019,7 +4019,7 @@ export const kuran = [
     sound: "page-314.mp3",
     img: "page-314.png",
     sure: "Tâ-Hâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${314}.docx`,
   },
   {
     cuz: null,
@@ -4031,7 +4031,7 @@ export const kuran = [
     sound: "page-315.mp3",
     img: "page-315.png",
     sure: "Tâ-Hâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${315}.docx`,
   },
   {
     cuz: null,
@@ -4043,7 +4043,7 @@ export const kuran = [
     sound: "page-316.mp3",
     img: "page-316.png",
     sure: "Tâ-Hâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${316}.docx`,
   },
   {
     cuz: null,
@@ -4055,7 +4055,7 @@ export const kuran = [
     sound: "page-317.mp3",
     img: "page-317.png",
     sure: "Tâ-Hâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${317}.docx`,
   },
   {
     cuz: null,
@@ -4067,7 +4067,7 @@ export const kuran = [
     sound: "page-318.mp3",
     img: "page-318.png",
     sure: "Tâ-Hâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${318}.docx`,
   },
   {
     cuz: null,
@@ -4079,7 +4079,7 @@ export const kuran = [
     sound: "page-319.mp3",
     img: "page-319.png",
     sure: "Tâ-Hâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${319}.docx`,
   },
   {
     cuz: "17",
@@ -4091,7 +4091,7 @@ export const kuran = [
     sound: "page-320.mp3",
     img: "page-320.png",
     sure: "Tâ-Hâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${320}.docx`,
   },
   {
     cuz: null,
@@ -4103,7 +4103,7 @@ export const kuran = [
     sound: "page-321.mp3",
     img: "page-321.png",
     sure: "Enbiyâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${321}.docx`,
   },
   {
     cuz: null,
@@ -4115,7 +4115,7 @@ export const kuran = [
     sound: "page-322.mp3",
     img: "page-322.png",
     sure: "Enbiyâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${322}.docx`,
   },
   {
     cuz: null,
@@ -4127,7 +4127,7 @@ export const kuran = [
     sound: "page-323.mp3",
     img: "page-323.png",
     sure: "Enbiyâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${323}.docx`,
   },
   {
     cuz: null,
@@ -4139,7 +4139,7 @@ export const kuran = [
     sound: "page-324.mp3",
     img: "page-324.png",
     sure: "Enbiyâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${324}.docx`,
   },
   {
     cuz: null,
@@ -4151,7 +4151,7 @@ export const kuran = [
     sound: "page-325.mp3",
     img: "page-325.png",
     sure: "Enbiyâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${325}.docx`,
   },
   {
     cuz: null,
@@ -4163,7 +4163,7 @@ export const kuran = [
     sound: "page-326.mp3",
     img: "page-326.png",
     sure: "Enbiyâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${326}.docx`,
   },
   {
     cuz: null,
@@ -4175,7 +4175,7 @@ export const kuran = [
     sound: "page-327.mp3",
     img: "page-327.png",
     sure: "Enbiyâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${327}.docx`,
   },
   {
     cuz: null,
@@ -4187,7 +4187,7 @@ export const kuran = [
     sound: "page-328.mp3",
     img: "page-328.png",
     sure: "Enbiyâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${328}.docx`,
   },
   {
     cuz: null,
@@ -4199,7 +4199,7 @@ export const kuran = [
     sound: "page-329.mp3",
     img: "page-329.png",
     sure: "Enbiyâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${329}.docx`,
   },
   {
     cuz: null,
@@ -4211,7 +4211,7 @@ export const kuran = [
     sound: "page-330.mp3",
     img: "page-330.png",
     sure: "Enbiyâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${330}.docx`,
   },
   {
     cuz: null,
@@ -4223,7 +4223,7 @@ export const kuran = [
     sound: "page-331.mp3",
     img: "page-331.png",
     sure: "Hac Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${331}.docx`,
   },
   {
     cuz: null,
@@ -4235,7 +4235,7 @@ export const kuran = [
     sound: "page-332.mp3",
     img: "page-332.png",
     sure: "Hac Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${332}.docx`,
   },
   {
     cuz: null,
@@ -4247,7 +4247,7 @@ export const kuran = [
     sound: "page-333.mp3",
     img: "page-333.png",
     sure: "Hac Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${333}.docx`,
   },
   {
     cuz: null,
@@ -4259,7 +4259,7 @@ export const kuran = [
     sound: "page-334.mp3",
     img: "page-334.png",
     sure: "Hac Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${334}.docx`,
   },
   {
     cuz: null,
@@ -4271,7 +4271,7 @@ export const kuran = [
     sound: "page-335.mp3",
     img: "page-335.png",
     sure: "Hac Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${335}.docx`,
   },
   {
     cuz: null,
@@ -4283,7 +4283,7 @@ export const kuran = [
     sound: "page-336.mp3",
     img: "page-336.png",
     sure: "Hac Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${336}.docx`,
   },
   {
     cuz: null,
@@ -4295,7 +4295,7 @@ export const kuran = [
     sound: "page-337.mp3",
     img: "page-337.png",
     sure: "Hac Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${337}.docx`,
   },
   {
     cuz: null,
@@ -4307,7 +4307,7 @@ export const kuran = [
     sound: "page-338.mp3",
     img: "page-338.png",
     sure: "Hac Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${338}.docx`,
   },
   {
     cuz: null,
@@ -4319,7 +4319,7 @@ export const kuran = [
     sound: "page-339.mp3",
     img: "page-339.png",
     sure: "Hac Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${339}.docx`,
   },
   {
     cuz: "18",
@@ -4331,7 +4331,7 @@ export const kuran = [
     sound: "page-340.mp3",
     img: "page-340.png",
     sure: "Hac Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${340}.docx`,
   },
   {
     cuz: null,
@@ -4343,7 +4343,7 @@ export const kuran = [
     sound: "page-341.mp3",
     img: "page-341.png",
     sure: "Mü'minûn Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${341}.docx`,
   },
   {
     cuz: null,
@@ -4355,7 +4355,7 @@ export const kuran = [
     sound: "page-342.mp3",
     img: "page-342.png",
     sure: "Mü'minûn Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${342}.docx`,
   },
   {
     cuz: null,
@@ -4367,7 +4367,7 @@ export const kuran = [
     sound: "page-343.mp3",
     img: "page-343.png",
     sure: "Mü'minûn Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${343}.docx`,
   },
   {
     cuz: null,
@@ -4379,7 +4379,7 @@ export const kuran = [
     sound: "page-344.mp3",
     img: "page-344.png",
     sure: "Mü'minûn Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${344}.docx`,
   },
   {
     cuz: null,
@@ -4391,7 +4391,7 @@ export const kuran = [
     sound: "page-345.mp3",
     img: "page-345.png",
     sure: "Mü'minûn Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${345}.docx`,
   },
   {
     cuz: null,
@@ -4403,7 +4403,7 @@ export const kuran = [
     sound: "page-346.mp3",
     img: "page-346.png",
     sure: "Mü'minûn Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${346}.docx`,
   },
   {
     cuz: null,
@@ -4415,7 +4415,7 @@ export const kuran = [
     sound: "page-347.mp3",
     img: "page-347.png",
     sure: "Mü'minûn Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${347}.docx`,
   },
   {
     cuz: null,
@@ -4427,7 +4427,7 @@ export const kuran = [
     sound: "page-348.mp3",
     img: "page-348.png",
     sure: "Mü'minûn Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${348}.docx`,
   },
   {
     cuz: null,
@@ -4439,7 +4439,7 @@ export const kuran = [
     sound: "page-349.mp3",
     img: "page-349.png",
     sure: "Nûr Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${349}.docx`,
   },
   {
     cuz: null,
@@ -4451,7 +4451,7 @@ export const kuran = [
     sound: "page-350.mp3",
     img: "page-350.png",
     sure: "Nûr Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${350}.docx`,
   },
   {
     cuz: null,
@@ -4463,7 +4463,7 @@ export const kuran = [
     sound: "page-351.mp3",
     img: "page-351.png",
     sure: "Nûr Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${351}.docx`,
   },
   {
     cuz: null,
@@ -4475,7 +4475,7 @@ export const kuran = [
     sound: "page-352.mp3",
     img: "page-352.png",
     sure: "Nûr Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${352}.docx`,
   },
   {
     cuz: null,
@@ -4487,7 +4487,7 @@ export const kuran = [
     sound: "page-353.mp3",
     img: "page-353.png",
     sure: "Nûr Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${353}.docx`,
   },
   {
     cuz: null,
@@ -4499,7 +4499,7 @@ export const kuran = [
     sound: "page-354.mp3",
     img: "page-354.png",
     sure: "Nûr Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${354}.docx`,
   },
   {
     cuz: null,
@@ -4511,7 +4511,7 @@ export const kuran = [
     sound: "page-355.mp3",
     img: "page-355.png",
     sure: "Nûr Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${355}.docx`,
   },
   {
     cuz: null,
@@ -4523,7 +4523,7 @@ export const kuran = [
     sound: "page-356.mp3",
     img: "page-356.png",
     sure: "Nûr Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${356}.docx`,
   },
   {
     cuz: null,
@@ -4535,7 +4535,7 @@ export const kuran = [
     sound: "page-357.mp3",
     img: "page-357.png",
     sure: "Nûr Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${357}.docx`,
   },
   {
     cuz: null,
@@ -4547,7 +4547,7 @@ export const kuran = [
     sound: "page-358.mp3",
     img: "page-358.png",
     sure: "Furkan Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${358}.docx`,
   },
   {
     cuz: null,
@@ -4559,7 +4559,7 @@ export const kuran = [
     sound: "page-359.mp3",
     img: "page-359.png",
     sure: "Furkan Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${359}.docx`,
   },
   {
     cuz: "19",
@@ -4571,7 +4571,7 @@ export const kuran = [
     sound: "page-360.mp3",
     img: "page-360.png",
     sure: "Furkan Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${360}.docx`,
   },
   {
     cuz: null,
@@ -4583,7 +4583,7 @@ export const kuran = [
     sound: "page-361.mp3",
     img: "page-361.png",
     sure: "Furkan Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${361}.docx`,
   },
   {
     cuz: null,
@@ -4595,7 +4595,7 @@ export const kuran = [
     sound: "page-362.mp3",
     img: "page-362.png",
     sure: "Furkan Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${362}.docx`,
   },
   {
     cuz: null,
@@ -4607,7 +4607,7 @@ export const kuran = [
     sound: "page-363.mp3",
     img: "page-363.png",
     sure: "Furkan Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${363}.docx`,
   },
   {
     cuz: null,
@@ -4619,7 +4619,7 @@ export const kuran = [
     sound: "page-364.mp3",
     img: "page-364.png",
     sure: "Furkan Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${364}.docx`,
   },
   {
     cuz: null,
@@ -4631,7 +4631,7 @@ export const kuran = [
     sound: "page-365.mp3",
     img: "page-365.png",
     sure: "Furkan Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${365}.docx`,
   },
   {
     cuz: null,
@@ -4643,7 +4643,7 @@ export const kuran = [
     sound: "page-366.mp3",
     img: "page-366.png",
     sure: "Şuarâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${366}.docx`,
   },
   {
     cuz: null,
@@ -4655,7 +4655,7 @@ export const kuran = [
     sound: "page-367.mp3",
     img: "page-367.png",
     sure: "Şuarâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${367}.docx`,
   },
   {
     cuz: null,
@@ -4667,7 +4667,7 @@ export const kuran = [
     sound: "page-368.mp3",
     img: "page-368.png",
     sure: "Şuarâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${368}.docx`,
   },
   {
     cuz: null,
@@ -4679,7 +4679,7 @@ export const kuran = [
     sound: "page-369.mp3",
     img: "page-369.png",
     sure: "Şuarâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${369}.docx`,
   },
   {
     cuz: null,
@@ -4691,7 +4691,7 @@ export const kuran = [
     sound: "page-370.mp3",
     img: "page-370.png",
     sure: "Şuarâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${370}.docx`,
   },
   {
     cuz: null,
@@ -4703,7 +4703,7 @@ export const kuran = [
     sound: "page-371.mp3",
     img: "page-371.png",
     sure: "Şuarâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${371}.docx`,
   },
   {
     cuz: null,
@@ -4715,7 +4715,7 @@ export const kuran = [
     sound: "page-372.mp3",
     img: "page-372.png",
     sure: "Şuarâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${372}.docx`,
   },
   {
     cuz: null,
@@ -4727,7 +4727,7 @@ export const kuran = [
     sound: "page-373.mp3",
     img: "page-373.png",
     sure: "Şuarâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${373}.docx`,
   },
   {
     cuz: null,
@@ -4739,7 +4739,7 @@ export const kuran = [
     sound: "page-374.mp3",
     img: "page-374.png",
     sure: "Şuarâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${374}.docx`,
   },
   {
     cuz: null,
@@ -4751,7 +4751,7 @@ export const kuran = [
     sound: "page-375.mp3",
     img: "page-375.png",
     sure: "Şuarâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${375}.docx`,
   },
   {
     cuz: null,
@@ -4763,7 +4763,7 @@ export const kuran = [
     sound: "page-376.mp3",
     img: "page-376.png",
     sure: "Neml Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${376}.docx`,
   },
   {
     cuz: null,
@@ -4775,7 +4775,7 @@ export const kuran = [
     sound: "page-377.mp3",
     img: "page-377.png",
     sure: "Neml Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${377}.docx`,
   },
   {
     cuz: null,
@@ -4787,7 +4787,7 @@ export const kuran = [
     sound: "page-378.mp3",
     img: "page-378.png",
     sure: "Neml Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${378}.docx`,
   },
   {
     cuz: null,
@@ -4799,7 +4799,7 @@ export const kuran = [
     sound: "page-379.mp3",
     img: "page-379.png",
     sure: "Neml Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${379}.docx`,
   },
   {
     cuz: "20",
@@ -4811,7 +4811,7 @@ export const kuran = [
     sound: "page-380.mp3",
     img: "page-380.png",
     sure: "Neml Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${380}.docx`,
   },
   {
     cuz: null,
@@ -4823,7 +4823,7 @@ export const kuran = [
     sound: "page-381.mp3",
     img: "page-381.png",
     sure: "Neml Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${381}.docx`,
   },
   {
     cuz: null,
@@ -4835,7 +4835,7 @@ export const kuran = [
     sound: "page-382.mp3",
     img: "page-382.png",
     sure: "Neml Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${382}.docx`,
   },
   {
     cuz: null,
@@ -4847,7 +4847,7 @@ export const kuran = [
     sound: "page-383.mp3",
     img: "page-383.png",
     sure: "Neml Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${383}.docx`,
   },
   {
     cuz: null,
@@ -4859,7 +4859,7 @@ export const kuran = [
     sound: "page-384.mp3",
     img: "page-384.png",
     sure: "Kasas Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${384}.docx`,
   },
   {
     cuz: null,
@@ -4871,7 +4871,7 @@ export const kuran = [
     sound: "page-385.mp3",
     img: "page-385.png",
     sure: "Kasas Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${385}.docx`,
   },
   {
     cuz: null,
@@ -4883,7 +4883,7 @@ export const kuran = [
     sound: "page-386.mp3",
     img: "page-386.png",
     sure: "Kasas Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${386}.docx`,
   },
   {
     cuz: null,
@@ -4895,7 +4895,7 @@ export const kuran = [
     sound: "page-387.mp3",
     img: "page-387.png",
     sure: "Kasas Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${387}.docx`,
   },
   {
     cuz: null,
@@ -4907,7 +4907,7 @@ export const kuran = [
     sound: "page-388.mp3",
     img: "page-388.png",
     sure: "Kasas Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${388}.docx`,
   },
   {
     cuz: null,
@@ -4919,7 +4919,7 @@ export const kuran = [
     sound: "page-389.mp3",
     img: "page-389.png",
     sure: "Kasas Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${389}.docx`,
   },
   {
     cuz: null,
@@ -4931,7 +4931,7 @@ export const kuran = [
     sound: "page-390.mp3",
     img: "page-390.png",
     sure: "Kasas Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${390}.docx`,
   },
   {
     cuz: null,
@@ -4943,7 +4943,7 @@ export const kuran = [
     sound: "page-391.mp3",
     img: "page-391.png",
     sure: "Kasas Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${391}.docx`,
   },
   {
     cuz: null,
@@ -4955,7 +4955,7 @@ export const kuran = [
     sound: "page-392.mp3",
     img: "page-392.png",
     sure: "Kasas Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${392}.docx`,
   },
   {
     cuz: null,
@@ -4967,7 +4967,7 @@ export const kuran = [
     sound: "page-393.mp3",
     img: "page-393.png",
     sure: "Kasas Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${393}.docx`,
   },
   {
     cuz: null,
@@ -4979,7 +4979,7 @@ export const kuran = [
     sound: "page-394.mp3",
     img: "page-394.png",
     sure: "Kasas Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${394}.docx`,
   },
   {
     cuz: null,
@@ -4991,7 +4991,7 @@ export const kuran = [
     sound: "page-395.mp3",
     img: "page-395.png",
     sure: "Ankebût Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${395}.docx`,
   },
   {
     cuz: null,
@@ -5003,7 +5003,7 @@ export const kuran = [
     sound: "page-396.mp3",
     img: "page-396.png",
     sure: "Ankebût Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${396}.docx`,
   },
   {
     cuz: null,
@@ -5015,7 +5015,7 @@ export const kuran = [
     sound: "page-397.mp3",
     img: "page-397.png",
     sure: "Ankebût Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${397}.docx`,
   },
   {
     cuz: null,
@@ -5027,7 +5027,7 @@ export const kuran = [
     sound: "page-398.mp3",
     img: "page-398.png",
     sure: "Ankebût Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${398}.docx`,
   },
   {
     cuz: null,
@@ -5039,7 +5039,7 @@ export const kuran = [
     sound: "page-399.mp3",
     img: "page-399.png",
     sure: "Ankebût Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${399}.docx`,
   },
   {
     cuz: "21",
@@ -5051,7 +5051,7 @@ export const kuran = [
     sound: "page-400.mp3",
     img: "page-400.png",
     sure: "Ankebût Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${400}.docx`,
   },
   {
     cuz: null,
@@ -5063,7 +5063,7 @@ export const kuran = [
     sound: "page-401.mp3",
     img: "page-401.png",
     sure: "Ankebût Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${401}.docx`,
   },
   {
     cuz: null,
@@ -5075,7 +5075,7 @@ export const kuran = [
     sound: "page-402.mp3",
     img: "page-402.png",
     sure: "Ankebût Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${402}.docx`,
   },
   {
     cuz: null,
@@ -5087,7 +5087,7 @@ export const kuran = [
     sound: "page-403.mp3",
     img: "page-403.png",
     sure: "Rûm Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${403}.docx`,
   },
   {
     cuz: null,
@@ -5099,7 +5099,7 @@ export const kuran = [
     sound: "page-404.mp3",
     img: "page-404.png",
     sure: "Rûm Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${404}.docx`,
   },
   {
     cuz: null,
@@ -5111,7 +5111,7 @@ export const kuran = [
     sound: "page-405.mp3",
     img: "page-405.png",
     sure: "Rûm Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${405}.docx`,
   },
   {
     cuz: null,
@@ -5123,7 +5123,7 @@ export const kuran = [
     sound: "page-406.mp3",
     img: "page-406.png",
     sure: "Rûm Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${406}.docx`,
   },
   {
     cuz: null,
@@ -5135,7 +5135,7 @@ export const kuran = [
     sound: "page-407.mp3",
     img: "page-407.png",
     sure: "Rûm Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${407}.docx`,
   },
   {
     cuz: null,
@@ -5147,7 +5147,7 @@ export const kuran = [
     sound: "page-408.mp3",
     img: "page-408.png",
     sure: "Rûm Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${408}.docx`,
   },
   {
     cuz: null,
@@ -5159,7 +5159,7 @@ export const kuran = [
     sound: "page-409.mp3",
     img: "page-409.png",
     sure: "Rûm Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${409}.docx`,
   },
   {
     cuz: null,
@@ -5171,7 +5171,7 @@ export const kuran = [
     sound: "page-410.mp3",
     img: "page-410.png",
     sure: "Lokman Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${410}.docx`,
   },
   {
     cuz: null,
@@ -5183,7 +5183,7 @@ export const kuran = [
     sound: "page-411.mp3",
     img: "page-411.png",
     sure: "Lokman Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${411}.docx`,
   },
   {
     cuz: null,
@@ -5195,7 +5195,7 @@ export const kuran = [
     sound: "page-412.mp3",
     img: "page-412.png",
     sure: "Lokman Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${412}.docx`,
   },
   {
     cuz: null,
@@ -5207,7 +5207,7 @@ export const kuran = [
     sound: "page-413.mp3",
     img: "page-413.png",
     sure: "Lokman Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${413}.docx`,
   },
   {
     cuz: null,
@@ -5219,7 +5219,7 @@ export const kuran = [
     sound: "page-414.mp3",
     img: "page-414.png",
     sure: "Secde Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${414}.docx`,
   },
   {
     cuz: null,
@@ -5231,7 +5231,7 @@ export const kuran = [
     sound: "page-415.mp3",
     img: "page-415.png",
     sure: "Secde Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${415}.docx`,
   },
   {
     cuz: null,
@@ -5243,7 +5243,7 @@ export const kuran = [
     sound: "page-416.mp3",
     img: "page-416.png",
     sure: "Secde Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${416}.docx`,
   },
   {
     cuz: null,
@@ -5255,7 +5255,7 @@ export const kuran = [
     sound: "page-417.mp3",
     img: "page-417.png",
     sure: "Ahzâb Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${417}.docx`,
   },
   {
     cuz: null,
@@ -5267,7 +5267,7 @@ export const kuran = [
     sound: "page-418.mp3",
     img: "page-418.png",
     sure: "Ahzâb Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${418}.docx`,
   },
   {
     cuz: null,
@@ -5279,7 +5279,7 @@ export const kuran = [
     sound: "page-419.mp3",
     img: "page-419.png",
     sure: "Ahzâb Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${419}.docx`,
   },
   {
     cuz: "22",
@@ -5291,7 +5291,7 @@ export const kuran = [
     sound: "page-420.mp3",
     img: "page-420.png",
     sure: "Ahzâb Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${420}.docx`,
   },
   {
     cuz: null,
@@ -5303,7 +5303,7 @@ export const kuran = [
     sound: "page-421.mp3",
     img: "page-421.png",
     sure: "Ahzâb Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${421}.docx`,
   },
   {
     cuz: null,
@@ -5315,7 +5315,7 @@ export const kuran = [
     sound: "page-422.mp3",
     img: "page-422.png",
     sure: "Ahzâb Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${422}.docx`,
   },
   {
     cuz: null,
@@ -5327,7 +5327,7 @@ export const kuran = [
     sound: "page-423.mp3",
     img: "page-423.png",
     sure: "Ahzâb Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${423}.docx`,
   },
   {
     cuz: null,
@@ -5339,7 +5339,7 @@ export const kuran = [
     sound: "page-424.mp3",
     img: "page-424.png",
     sure: "Ahzâb Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${424}.docx`,
   },
   {
     cuz: null,
@@ -5351,7 +5351,7 @@ export const kuran = [
     sound: "page-425.mp3",
     img: "page-425.png",
     sure: "Ahzâb Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${425}.docx`,
   },
   {
     cuz: null,
@@ -5363,7 +5363,7 @@ export const kuran = [
     sound: "page-426.mp3",
     img: "page-426.png",
     sure: "Ahzâb Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${426}.docx`,
   },
   {
     cuz: null,
@@ -5375,7 +5375,7 @@ export const kuran = [
     sound: "page-427.mp3",
     img: "page-427.png",
     sure: "Sebe' Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${427}.docx`,
   },
   {
     cuz: null,
@@ -5387,7 +5387,7 @@ export const kuran = [
     sound: "page-428.mp3",
     img: "page-428.png",
     sure: "Sebe' Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${428}.docx`,
   },
   {
     cuz: null,
@@ -5399,7 +5399,7 @@ export const kuran = [
     sound: "page-429.mp3",
     img: "page-429.png",
     sure: "Sebe' Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${429}.docx`,
   },
   {
     cuz: null,
@@ -5411,7 +5411,7 @@ export const kuran = [
     sound: "page-430.mp3",
     img: "page-430.png",
     sure: "Sebe' Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${430}.docx`,
   },
   {
     cuz: null,
@@ -5423,7 +5423,7 @@ export const kuran = [
     sound: "page-431.mp3",
     img: "page-431.png",
     sure: "Sebe' Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${431}.docx`,
   },
   {
     cuz: null,
@@ -5435,7 +5435,7 @@ export const kuran = [
     sound: "page-432.mp3",
     img: "page-432.png",
     sure: "Sebe' Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${432}.docx`,
   },
   {
     cuz: null,
@@ -5447,7 +5447,7 @@ export const kuran = [
     sound: "page-433.mp3",
     img: "page-433.png",
     sure: "Fâtır Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${433}.docx`,
   },
   {
     cuz: null,
@@ -5459,7 +5459,7 @@ export const kuran = [
     sound: "page-434.mp3",
     img: "page-434.png",
     sure: "Fâtır Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${434}.docx`,
   },
   {
     cuz: null,
@@ -5471,7 +5471,7 @@ export const kuran = [
     sound: "page-435.mp3",
     img: "page-435.png",
     sure: "Fâtır Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${435}.docx`,
   },
   {
     cuz: null,
@@ -5483,7 +5483,7 @@ export const kuran = [
     sound: "page-436.mp3",
     img: "page-436.png",
     sure: "Fâtır Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${436}.docx`,
   },
   {
     cuz: null,
@@ -5495,7 +5495,7 @@ export const kuran = [
     sound: "page-437.mp3",
     img: "page-437.png",
     sure: "Fâtır Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${437}.docx`,
   },
   {
     cuz: null,
@@ -5507,7 +5507,7 @@ export const kuran = [
     sound: "page-438.mp3",
     img: "page-438.png",
     sure: "Fâtır Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${438}.docx`,
   },
   {
     cuz: null,
@@ -5519,7 +5519,7 @@ export const kuran = [
     sound: "page-439.mp3",
     img: "page-439.png",
     sure: "Yâsin Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${439}.docx`,
   },
   {
     cuz: "23",
@@ -5531,7 +5531,7 @@ export const kuran = [
     sound: "page-440.mp3",
     img: "page-440.png",
     sure: "Yâsin Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${440}.docx`,
   },
   {
     cuz: null,
@@ -5543,7 +5543,7 @@ export const kuran = [
     sound: "page-441.mp3",
     img: "page-441.png",
     sure: "Yâsin Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${441}.docx`,
   },
   {
     cuz: null,
@@ -5555,7 +5555,7 @@ export const kuran = [
     sound: "page-442.mp3",
     img: "page-442.png",
     sure: "Yâsin Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${442}.docx`,
   },
   {
     cuz: null,
@@ -5567,7 +5567,7 @@ export const kuran = [
     sound: "page-443.mp3",
     img: "page-443.png",
     sure: "Yâsin Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${443}.docx`,
   },
   {
     cuz: null,
@@ -5579,7 +5579,7 @@ export const kuran = [
     sound: "page-444.mp3",
     img: "page-444.png",
     sure: "Yâsin Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${444}.docx`,
   },
   {
     cuz: null,
@@ -5591,7 +5591,7 @@ export const kuran = [
     sound: "page-445.mp3",
     img: "page-445.png",
     sure: "Sâffât Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${445}.docx`,
   },
   {
     cuz: null,
@@ -5603,7 +5603,7 @@ export const kuran = [
     sound: "page-446.mp3",
     img: "page-446.png",
     sure: "Sâffât Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${446}.docx`,
   },
   {
     cuz: null,
@@ -5615,7 +5615,7 @@ export const kuran = [
     sound: "page-447.mp3",
     img: "page-447.png",
     sure: "Sâffât Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${447}.docx`,
   },
   {
     cuz: null,
@@ -5627,7 +5627,7 @@ export const kuran = [
     sound: "page-448.mp3",
     img: "page-448.png",
     sure: "Sâffât Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${448}.docx`,
   },
   {
     cuz: null,
@@ -5639,7 +5639,7 @@ export const kuran = [
     sound: "page-449.mp3",
     img: "page-449.png",
     sure: "Sâffât Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${449}.docx`,
   },
   {
     cuz: null,
@@ -5651,7 +5651,7 @@ export const kuran = [
     sound: "page-450.mp3",
     img: "page-450.png",
     sure: "Sâffât Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${450}.docx`,
   },
   {
     cuz: null,
@@ -5663,7 +5663,7 @@ export const kuran = [
     sound: "page-451.mp3",
     img: "page-451.png",
     sure: "Sâffât Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${451}.docx`,
   },
   {
     cuz: null,
@@ -5675,7 +5675,7 @@ export const kuran = [
     sound: "page-452.mp3",
     img: "page-452.png",
     sure: "Sâd Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${452}.docx`,
   },
   {
     cuz: null,
@@ -5687,7 +5687,7 @@ export const kuran = [
     sound: "page-453.mp3",
     img: "page-453.png",
     sure: "Sâd Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${453}.docx`,
   },
   {
     cuz: null,
@@ -5699,7 +5699,7 @@ export const kuran = [
     sound: "page-454.mp3",
     img: "page-454.png",
     sure: "Sâd Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${454}.docx`,
   },
   {
     cuz: null,
@@ -5711,7 +5711,7 @@ export const kuran = [
     sound: "page-455.mp3",
     img: "page-455.png",
     sure: "Sâd Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${455}.docx`,
   },
   {
     cuz: null,
@@ -5723,7 +5723,7 @@ export const kuran = [
     sound: "page-456.mp3",
     img: "page-456.png",
     sure: "Sâd Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${456}.docx`,
   },
   {
     cuz: null,
@@ -5735,7 +5735,7 @@ export const kuran = [
     sound: "page-457.mp3",
     img: "page-457.png",
     sure: "Zümer Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${457}.docx`,
   },
   {
     cuz: null,
@@ -5747,7 +5747,7 @@ export const kuran = [
     sound: "page-458.mp3",
     img: "page-458.png",
     sure: "Zümer Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${458}.docx`,
   },
   {
     cuz: null,
@@ -5759,7 +5759,7 @@ export const kuran = [
     sound: "page-459.mp3",
     img: "page-459.png",
     sure: "Zümer Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${459}.docx`,
   },
   {
     cuz: "24",
@@ -5771,7 +5771,7 @@ export const kuran = [
     sound: "page-460.mp3",
     img: "page-460.png",
     sure: "Zümer Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${460}.docx`,
   },
   {
     cuz: null,
@@ -5783,7 +5783,7 @@ export const kuran = [
     sound: "page-461.mp3",
     img: "page-461.png",
     sure: "Zümer Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${461}.docx`,
   },
   {
     cuz: null,
@@ -5795,7 +5795,7 @@ export const kuran = [
     sound: "page-462.mp3",
     img: "page-462.png",
     sure: "Zümer Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${462}.docx`,
   },
   {
     cuz: null,
@@ -5807,7 +5807,7 @@ export const kuran = [
     sound: "page-463.mp3",
     img: "page-463.png",
     sure: "Zümer Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${463}.docx`,
   },
   {
     cuz: null,
@@ -5819,7 +5819,7 @@ export const kuran = [
     sound: "page-464.mp3",
     img: "page-464.png",
     sure: "Zümer Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${464}.docx`,
   },
   {
     cuz: null,
@@ -5831,7 +5831,7 @@ export const kuran = [
     sound: "page-465.mp3",
     img: "page-465.png",
     sure: "Zümer Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${465}.docx`,
   },
   {
     cuz: null,
@@ -5843,7 +5843,7 @@ export const kuran = [
     sound: "page-466.mp3",
     img: "page-466.png",
     sure: "Mü'min Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${466}.docx`,
   },
   {
     cuz: null,
@@ -5855,7 +5855,7 @@ export const kuran = [
     sound: "page-467.mp3",
     img: "page-467.png",
     sure: "Mü'min Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${467}.docx`,
   },
   {
     cuz: null,
@@ -5867,7 +5867,7 @@ export const kuran = [
     sound: "page-468.mp3",
     img: "page-468.png",
     sure: "Mü'min Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${468}.docx`,
   },
   {
     cuz: null,
@@ -5879,7 +5879,7 @@ export const kuran = [
     sound: "page-469.mp3",
     img: "page-469.png",
     sure: "Mü'min Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${469}.docx`,
   },
   {
     cuz: null,
@@ -5891,7 +5891,7 @@ export const kuran = [
     sound: "page-470.mp3",
     img: "page-470.png",
     sure: "Mü'min Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${470}.docx`,
   },
   {
     cuz: null,
@@ -5903,7 +5903,7 @@ export const kuran = [
     sound: "page-471.mp3",
     img: "page-471.png",
     sure: "Mü'min Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${471}.docx`,
   },
   {
     cuz: null,
@@ -5915,7 +5915,7 @@ export const kuran = [
     sound: "page-472.mp3",
     img: "page-472.png",
     sure: "Mü'min Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${472}.docx`,
   },
   {
     cuz: null,
@@ -5927,7 +5927,7 @@ export const kuran = [
     sound: "page-473.mp3",
     img: "page-473.png",
     sure: "Mü'min Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${473}.docx`,
   },
   {
     cuz: null,
@@ -5939,7 +5939,7 @@ export const kuran = [
     sound: "page-474.mp3",
     img: "page-474.png",
     sure: "Mü'min Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${474}.docx`,
   },
   {
     cuz: null,
@@ -5951,7 +5951,7 @@ export const kuran = [
     sound: "page-475.mp3",
     img: "page-475.png",
     sure: "Mü'min Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${475}.docx`,
   },
   {
     cuz: null,
@@ -5963,7 +5963,7 @@ export const kuran = [
     sound: "page-476.mp3",
     img: "page-476.png",
     sure: "Fussilet Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${476}.docx`,
   },
   {
     cuz: null,
@@ -5975,7 +5975,7 @@ export const kuran = [
     sound: "page-477.mp3",
     img: "page-477.png",
     sure: "Fussilet Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${477}.docx`,
   },
   {
     cuz: null,
@@ -5987,7 +5987,7 @@ export const kuran = [
     sound: "page-478.mp3",
     img: "page-478.png",
     sure: "Fussilet Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${478}.docx`,
   },
   {
     cuz: null,
@@ -5999,7 +5999,7 @@ export const kuran = [
     sound: "page-479.mp3",
     img: "page-479.png",
     sure: "Fussilet Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${479}.docx`,
   },
   {
     cuz: "25",
@@ -6011,7 +6011,7 @@ export const kuran = [
     sound: "page-480.mp3",
     img: "page-480.png",
     sure: "Fussilet Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${480}.docx`,
   },
   {
     cuz: null,
@@ -6023,7 +6023,7 @@ export const kuran = [
     sound: "page-481.mp3",
     img: "page-481.png",
     sure: "Fussilet Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${481}.docx`,
   },
   {
     cuz: null,
@@ -6035,7 +6035,7 @@ export const kuran = [
     sound: "page-482.mp3",
     img: "page-482.png",
     sure: "Şûrâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${482}.docx`,
   },
   {
     cuz: null,
@@ -6047,7 +6047,7 @@ export const kuran = [
     sound: "page-483.mp3",
     img: "page-483.png",
     sure: "Şûrâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${483}.docx`,
   },
   {
     cuz: null,
@@ -6059,7 +6059,7 @@ export const kuran = [
     sound: "page-484.mp3",
     img: "page-484.png",
     sure: "Şûrâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${484}.docx`,
   },
   {
     cuz: null,
@@ -6071,7 +6071,7 @@ export const kuran = [
     sound: "page-485.mp3",
     img: "page-485.png",
     sure: "Şûrâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${485}.docx`,
   },
   {
     cuz: null,
@@ -6083,7 +6083,7 @@ export const kuran = [
     sound: "page-486.mp3",
     img: "page-486.png",
     sure: "Şûrâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${486}.docx`,
   },
   {
     cuz: null,
@@ -6095,7 +6095,7 @@ export const kuran = [
     sound: "page-487.mp3",
     img: "page-487.png",
     sure: "Şûrâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${487}.docx`,
   },
   {
     cuz: null,
@@ -6107,7 +6107,7 @@ export const kuran = [
     sound: "page-488.mp3",
     img: "page-488.png",
     sure: "Zuhruf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${488}.docx`,
   },
   {
     cuz: null,
@@ -6119,7 +6119,7 @@ export const kuran = [
     sound: "page-489.mp3",
     img: "page-489.png",
     sure: "Zuhruf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${489}.docx`,
   },
   {
     cuz: null,
@@ -6131,7 +6131,7 @@ export const kuran = [
     sound: "page-490.mp3",
     img: "page-490.png",
     sure: "Zuhruf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${490}.docx`,
   },
   {
     cuz: null,
@@ -6143,7 +6143,7 @@ export const kuran = [
     sound: "page-491.mp3",
     img: "page-491.png",
     sure: "Zuhruf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${491}.docx`,
   },
   {
     cuz: null,
@@ -6155,7 +6155,7 @@ export const kuran = [
     sound: "page-492.mp3",
     img: "page-492.png",
     sure: "Zuhruf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${492}.docx`,
   },
   {
     cuz: null,
@@ -6167,7 +6167,7 @@ export const kuran = [
     sound: "page-493.mp3",
     img: "page-493.png",
     sure: "Zuhruf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${493}.docx`,
   },
   {
     cuz: null,
@@ -6179,7 +6179,7 @@ export const kuran = [
     sound: "page-494.mp3",
     img: "page-494.png",
     sure: "Zuhruf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${494}.docx`,
   },
   {
     cuz: null,
@@ -6191,7 +6191,7 @@ export const kuran = [
     sound: "page-495.mp3",
     img: "page-495.png",
     sure: "Duhân Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${495}.docx`,
   },
   {
     cuz: null,
@@ -6203,7 +6203,7 @@ export const kuran = [
     sound: "page-496.mp3",
     img: "page-496.png",
     sure: "Duhân Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${496}.docx`,
   },
   {
     cuz: null,
@@ -6215,7 +6215,7 @@ export const kuran = [
     sound: "page-497.mp3",
     img: "page-497.png",
     sure: "Duhân Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${497}.docx`,
   },
   {
     cuz: null,
@@ -6227,7 +6227,7 @@ export const kuran = [
     sound: "page-498.mp3",
     img: "page-498.png",
     sure: "Câsiye Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${498}.docx`,
   },
   {
     cuz: null,
@@ -6239,7 +6239,7 @@ export const kuran = [
     sound: "page-499.mp3",
     img: "page-499.png",
     sure: "Câsiye Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${499}.docx`,
   },
   {
     cuz: "26",
@@ -6251,7 +6251,7 @@ export const kuran = [
     sound: "page-500.mp3",
     img: "page-500.png",
     sure: "Câsiye Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${500}.docx`,
   },
   {
     cuz: null,
@@ -6263,7 +6263,7 @@ export const kuran = [
     sound: "page-501.mp3",
     img: "page-501.png",
     sure: "Ahkaf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${501}.docx`,
   },
   {
     cuz: null,
@@ -6275,7 +6275,7 @@ export const kuran = [
     sound: "page-502.mp3",
     img: "page-502.png",
     sure: "Ahkaf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${502}.docx`,
   },
   {
     cuz: null,
@@ -6287,7 +6287,7 @@ export const kuran = [
     sound: "page-503.mp3",
     img: "page-503.png",
     sure: "Ahkaf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${503}.docx`,
   },
   {
     cuz: null,
@@ -6299,7 +6299,7 @@ export const kuran = [
     sound: "page-504.mp3",
     img: "page-504.png",
     sure: "Ahkaf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${504}.docx`,
   },
   {
     cuz: null,
@@ -6311,7 +6311,7 @@ export const kuran = [
     sound: "page-505.mp3",
     img: "page-505.png",
     sure: "Ahkaf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${505}.docx`,
   },
   {
     cuz: null,
@@ -6323,7 +6323,7 @@ export const kuran = [
     sound: "page-506.mp3",
     img: "page-506.png",
     sure: "Muhammed Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${506}.docx`,
   },
   {
     cuz: null,
@@ -6335,7 +6335,7 @@ export const kuran = [
     sound: "page-507.mp3",
     img: "page-507.png",
     sure: "Muhammed Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${507}.docx`,
   },
   {
     cuz: null,
@@ -6347,7 +6347,7 @@ export const kuran = [
     sound: "page-508.mp3",
     img: "page-508.png",
     sure: "Muhammed Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${508}.docx`,
   },
   {
     cuz: null,
@@ -6359,7 +6359,7 @@ export const kuran = [
     sound: "page-509.mp3",
     img: "page-509.png",
     sure: "Muhammed Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${509}.docx`,
   },
   {
     cuz: null,
@@ -6371,7 +6371,7 @@ export const kuran = [
     sound: "page-510.mp3",
     img: "page-510.png",
     sure: "Fetih Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${510}.docx`,
   },
   {
     cuz: null,
@@ -6383,7 +6383,7 @@ export const kuran = [
     sound: "page-511.mp3",
     img: "page-511.png",
     sure: "Fetih Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${511}.docx`,
   },
   {
     cuz: null,
@@ -6395,7 +6395,7 @@ export const kuran = [
     sound: "page-512.mp3",
     img: "page-512.png",
     sure: "Fetih Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${512}.docx`,
   },
   {
     cuz: null,
@@ -6407,7 +6407,7 @@ export const kuran = [
     sound: "page-513.mp3",
     img: "page-513.png",
     sure: "Fetih Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${513}.docx`,
   },
   {
     cuz: null,
@@ -6419,7 +6419,7 @@ export const kuran = [
     sound: "page-514.mp3",
     img: "page-514.png",
     sure: "Hucurât Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${514}.docx`,
   },
   {
     cuz: null,
@@ -6431,7 +6431,7 @@ export const kuran = [
     sound: "page-515.mp3",
     img: "page-515.png",
     sure: "Hucurât Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${515}.docx`,
   },
   {
     cuz: null,
@@ -6443,7 +6443,7 @@ export const kuran = [
     sound: "page-516.mp3",
     img: "page-516.png",
     sure: "Hucurât Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${516}.docx`,
   },
   {
     cuz: null,
@@ -6455,7 +6455,7 @@ export const kuran = [
     sound: "page-517.mp3",
     img: "page-517.png",
     sure: "Kaf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${517}.docx`,
   },
   {
     cuz: null,
@@ -6467,7 +6467,7 @@ export const kuran = [
     sound: "page-518.mp3",
     img: "page-518.png",
     sure: "Kaf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${518}.docx`,
   },
   {
     cuz: null,
@@ -6479,7 +6479,7 @@ export const kuran = [
     sound: "page-519.mp3",
     img: "page-519.png",
     sure: "Zâriyât Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${519}.docx`,
   },
   {
     cuz: "27",
@@ -6491,7 +6491,7 @@ export const kuran = [
     sound: "page-520.mp3",
     img: "page-520.png",
     sure: "Zâriyât Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${520}.docx`,
   },
   {
     cuz: null,
@@ -6503,7 +6503,7 @@ export const kuran = [
     sound: "page-521.mp3",
     img: "page-521.png",
     sure: "Zâriyât Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${521}.docx`,
   },
   {
     cuz: null,
@@ -6515,7 +6515,7 @@ export const kuran = [
     sound: "page-522.mp3",
     img: "page-522.png",
     sure: "Tûr Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${522}.docx`,
   },
   {
     cuz: null,
@@ -6527,7 +6527,7 @@ export const kuran = [
     sound: "page-523.mp3",
     img: "page-523.png",
     sure: "Tûr Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${523}.docx`,
   },
   {
     cuz: null,
@@ -6539,7 +6539,7 @@ export const kuran = [
     sound: "page-524.mp3",
     img: "page-524.png",
     sure: "Tûr Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${524}.docx`,
   },
   {
     cuz: null,
@@ -6551,7 +6551,7 @@ export const kuran = [
     sound: "page-525.mp3",
     img: "page-525.png",
     sure: "Necm Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${525}.docx`,
   },
   {
     cuz: null,
@@ -6563,7 +6563,7 @@ export const kuran = [
     sound: "page-526.mp3",
     img: "page-526.png",
     sure: "Necm Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${526}.docx`,
   },
   {
     cuz: null,
@@ -6575,7 +6575,7 @@ export const kuran = [
     sound: "page-527.mp3",
     img: "page-527.png",
     sure: "Kamer Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${527}.docx`,
   },
   {
     cuz: null,
@@ -6587,7 +6587,7 @@ export const kuran = [
     sound: "page-528.mp3",
     img: "page-528.png",
     sure: "Kamer Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${528}.docx`,
   },
   {
     cuz: null,
@@ -6599,7 +6599,7 @@ export const kuran = [
     sound: "page-529.mp3",
     img: "page-529.png",
     sure: "Kamer Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${529}.docx`,
   },
   {
     cuz: null,
@@ -6611,7 +6611,7 @@ export const kuran = [
     sound: "page-530.mp3",
     img: "page-530.png",
     sure: "Rahmân Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${530}.docx`,
   },
   {
     cuz: null,
@@ -6623,7 +6623,7 @@ export const kuran = [
     sound: "page-531.mp3",
     img: "page-531.png",
     sure: "Rahmân Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${531}.docx`,
   },
   {
     cuz: null,
@@ -6635,7 +6635,7 @@ export const kuran = [
     sound: "page-532.mp3",
     img: "page-532.png",
     sure: "Rahmân Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${532}.docx`,
   },
   {
     cuz: null,
@@ -6647,7 +6647,7 @@ export const kuran = [
     sound: "page-533.mp3",
     img: "page-533.png",
     sure: "Vâkıa Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${533}.docx`,
   },
   {
     cuz: null,
@@ -6659,7 +6659,7 @@ export const kuran = [
     sound: "page-534.mp3",
     img: "page-534.png",
     sure: "Vâkıa Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${534}.docx`,
   },
   {
     cuz: null,
@@ -6671,7 +6671,7 @@ export const kuran = [
     sound: "page-535.mp3",
     img: "page-535.png",
     sure: "Vâkıa Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${535}.docx`,
   },
   {
     cuz: null,
@@ -6683,7 +6683,7 @@ export const kuran = [
     sound: "page-536.mp3",
     img: "page-536.png",
     sure: "Hadid Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${536}.docx`,
   },
   {
     cuz: null,
@@ -6695,7 +6695,7 @@ export const kuran = [
     sound: "page-537.mp3",
     img: "page-537.png",
     sure: "Hadid Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${537}.docx`,
   },
   {
     cuz: null,
@@ -6707,7 +6707,7 @@ export const kuran = [
     sound: "page-538.mp3",
     img: "page-538.png",
     sure: "Hadid Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${538}.docx`,
   },
   {
     cuz: null,
@@ -6719,7 +6719,7 @@ export const kuran = [
     sound: "page-539.mp3",
     img: "page-539.png",
     sure: "Hadid Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${539}.docx`,
   },
   {
     cuz: "28",
@@ -6731,7 +6731,7 @@ export const kuran = [
     sound: "page-540.mp3",
     img: "page-540.png",
     sure: "Hadid Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${540}.docx`,
   },
   {
     cuz: null,
@@ -6743,7 +6743,7 @@ export const kuran = [
     sound: "page-541.mp3",
     img: "page-541.png",
     sure: "Mücâdele Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${541}.docx`,
   },
   {
     cuz: null,
@@ -6755,7 +6755,7 @@ export const kuran = [
     sound: "page-542.mp3",
     img: "page-542.png",
     sure: "Mücâdele Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${542}.docx`,
   },
   {
     cuz: null,
@@ -6767,7 +6767,7 @@ export const kuran = [
     sound: "page-543.mp3",
     img: "page-543.png",
     sure: "Mücâdele Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${543}.docx`,
   },
   {
     cuz: null,
@@ -6779,7 +6779,7 @@ export const kuran = [
     sound: "page-544.mp3",
     img: "page-544.png",
     sure: "Haşr Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${544}.docx`,
   },
   {
     cuz: null,
@@ -6791,7 +6791,7 @@ export const kuran = [
     sound: "page-545.mp3",
     img: "page-545.png",
     sure: "Haşr Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${545}.docx`,
   },
   {
     cuz: null,
@@ -6803,7 +6803,7 @@ export const kuran = [
     sound: "page-546.mp3",
     img: "page-546.png",
     sure: "Haşr Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${546}.docx`,
   },
   {
     cuz: null,
@@ -6815,7 +6815,7 @@ export const kuran = [
     sound: "page-547.mp3",
     img: "page-547.png",
     sure: "Haşr Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${547}.docx`,
   },
   {
     cuz: null,
@@ -6827,7 +6827,7 @@ export const kuran = [
     sound: "page-548.mp3",
     img: "page-548.png",
     sure: "Mümtehine Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${548}.docx`,
   },
   {
     cuz: null,
@@ -6839,7 +6839,7 @@ export const kuran = [
     sound: "page-549.mp3",
     img: "page-549.png",
     sure: "Mümtehine Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${549}.docx`,
   },
   {
     cuz: null,
@@ -6851,7 +6851,7 @@ export const kuran = [
     sound: "page-550.mp3",
     img: "page-550.png",
     sure: "Saf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${550}.docx`,
   },
   {
     cuz: null,
@@ -6863,7 +6863,7 @@ export const kuran = [
     sound: "page-551.mp3",
     img: "page-551.png",
     sure: "Saf Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${551}.docx`,
   },
   {
     cuz: null,
@@ -6875,7 +6875,7 @@ export const kuran = [
     sound: "page-552.mp3",
     img: "page-552.png",
     sure: "Cum'a Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${552}.docx`,
   },
   {
     cuz: null,
@@ -6887,7 +6887,7 @@ export const kuran = [
     sound: "page-553.mp3",
     img: "page-553.png",
     sure: "Münâfikûn Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${553}.docx`,
   },
   {
     cuz: null,
@@ -6899,7 +6899,7 @@ export const kuran = [
     sound: "page-554.mp3",
     img: "page-554.png",
     sure: "Münâfikûn Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${554}.docx`,
   },
   {
     cuz: null,
@@ -6911,7 +6911,7 @@ export const kuran = [
     sound: "page-555.mp3",
     img: "page-555.png",
     sure: "Teğabün Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${555}.docx`,
   },
   {
     cuz: null,
@@ -6923,7 +6923,7 @@ export const kuran = [
     sound: "page-556.mp3",
     img: "page-556.png",
     sure: "Teğabün Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${556}.docx`,
   },
   {
     cuz: null,
@@ -6935,7 +6935,7 @@ export const kuran = [
     sound: "page-557.mp3",
     img: "page-557.png",
     sure: "Talâk Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${557}.docx`,
   },
   {
     cuz: null,
@@ -6947,7 +6947,7 @@ export const kuran = [
     sound: "page-558.mp3",
     img: "page-558.png",
     sure: "Talâk Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${558}.docx`,
   },
   {
     cuz: null,
@@ -6959,7 +6959,7 @@ export const kuran = [
     sound: "page-559.mp3",
     img: "page-559.png",
     sure: "Tahrim Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${559}.docx`,
   },
   {
     cuz: "29",
@@ -6971,7 +6971,7 @@ export const kuran = [
     sound: "page-560.mp3",
     img: "page-560.png",
     sure: "Tahrim Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${560}.docx`,
   },
   {
     cuz: null,
@@ -6983,7 +6983,7 @@ export const kuran = [
     sound: "page-561.mp3",
     img: "page-561.png",
     sure: "Mülk Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${561}.docx`,
   },
   {
     cuz: null,
@@ -6995,7 +6995,7 @@ export const kuran = [
     sound: "page-562.mp3",
     img: "page-562.png",
     sure: "Mülk Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${562}.docx`,
   },
   {
     cuz: null,
@@ -7007,7 +7007,7 @@ export const kuran = [
     sound: "page-563.mp3",
     img: "page-563.png",
     sure: "Kalem Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${563}.docx`,
   },
   {
     cuz: null,
@@ -7019,7 +7019,7 @@ export const kuran = [
     sound: "page-564.mp3",
     img: "page-564.png",
     sure: "Kalem Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${564}.docx`,
   },
   {
     cuz: null,
@@ -7031,7 +7031,7 @@ export const kuran = [
     sound: "page-565.mp3",
     img: "page-565.png",
     sure: "Hâkka Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${565}.docx`,
   },
   {
     cuz: null,
@@ -7043,7 +7043,7 @@ export const kuran = [
     sound: "page-566.mp3",
     img: "page-566.png",
     sure: "Hâkka Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${566}.docx`,
   },
   {
     cuz: null,
@@ -7055,7 +7055,7 @@ export const kuran = [
     sound: "page-567.mp3",
     img: "page-567.png",
     sure: "Meâric Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${567}.docx`,
   },
   {
     cuz: null,
@@ -7067,7 +7067,7 @@ export const kuran = [
     sound: "page-568.mp3",
     img: "page-568.png",
     sure: "Meâric Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${568}.docx`,
   },
   {
     cuz: null,
@@ -7079,7 +7079,7 @@ export const kuran = [
     sound: "page-569.mp3",
     img: "page-569.png",
     sure: "Nuh Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${569}.docx`,
   },
   {
     cuz: null,
@@ -7091,7 +7091,7 @@ export const kuran = [
     sound: "page-570.mp3",
     img: "page-570.png",
     sure: "Nuh Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${570}.docx`,
   },
   {
     cuz: null,
@@ -7103,7 +7103,7 @@ export const kuran = [
     sound: "page-571.mp3",
     img: "page-571.png",
     sure: "Cin Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${571}.docx`,
   },
   {
     cuz: null,
@@ -7115,7 +7115,7 @@ export const kuran = [
     sound: "page-572.mp3",
     img: "page-572.png",
     sure: "Cin Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${572}.docx`,
   },
   {
     cuz: null,
@@ -7127,7 +7127,7 @@ export const kuran = [
     sound: "page-573.mp3",
     img: "page-573.png",
     sure: "Müzzemmil Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${573}.docx`,
   },
   {
     cuz: null,
@@ -7139,7 +7139,7 @@ export const kuran = [
     sound: "page-574.mp3",
     img: "page-574.png",
     sure: "Müddessir Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${574}.docx`,
   },
   {
     cuz: null,
@@ -7151,7 +7151,7 @@ export const kuran = [
     sound: "page-575.mp3",
     img: "page-575.png",
     sure: "Müddessir Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${575}.docx`,
   },
   {
     cuz: null,
@@ -7163,7 +7163,7 @@ export const kuran = [
     sound: "page-576.mp3",
     img: "page-576.png",
     sure: "Kıyamet Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${576}.docx`,
   },
   {
     cuz: null,
@@ -7175,7 +7175,7 @@ export const kuran = [
     sound: "page-577.mp3",
     img: "page-577.png",
     sure: "İnsan Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${577}.docx`,
   },
   {
     cuz: null,
@@ -7187,7 +7187,7 @@ export const kuran = [
     sound: "page-578.mp3",
     img: "page-578.png",
     sure: "İnsan Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${578}.docx`,
   },
   {
     cuz: null,
@@ -7199,7 +7199,7 @@ export const kuran = [
     sound: "page-579.mp3",
     img: "page-579.png",
     sure: "Mürselât Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${579}.docx`,
   },
   {
     cuz: "30",
@@ -7211,7 +7211,7 @@ export const kuran = [
     sound: "page-580.mp3",
     img: "page-580.png",
     sure: "Mürselât Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${580}.docx`,
   },
   {
     cuz: null,
@@ -7223,7 +7223,7 @@ export const kuran = [
     sound: "page-581.mp3",
     img: "page-581.png",
     sure: "Nebe' Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${581}.docx`,
   },
   {
     cuz: null,
@@ -7235,7 +7235,7 @@ export const kuran = [
     sound: "page-582.mp3",
     img: "page-582.png",
     sure: "Nâziât Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${582}.docx`,
   },
   {
     cuz: null,
@@ -7247,7 +7247,7 @@ export const kuran = [
     sound: "page-583.mp3",
     img: "page-583.png",
     sure: "Nâziât Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${583}.docx`,
   },
   {
     cuz: null,
@@ -7259,7 +7259,7 @@ export const kuran = [
     sound: "page-584.mp3",
     img: "page-584.png",
     sure: "Abese Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${584}.docx`,
   },
   {
     cuz: null,
@@ -7271,7 +7271,7 @@ export const kuran = [
     sound: "page-585.mp3",
     img: "page-585.png",
     sure: "Tekvir Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${585}.docx`,
   },
   {
     cuz: null,
@@ -7283,7 +7283,7 @@ export const kuran = [
     sound: "page-586.mp3",
     img: "page-586.png",
     sure: "İnfitâr Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${586}.docx`,
   },
   {
     cuz: null,
@@ -7295,7 +7295,7 @@ export const kuran = [
     sound: "page-587.mp3",
     img: "page-587.png",
     sure: "Mutaffifin Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${587}.docx`,
   },
   {
     cuz: null,
@@ -7307,7 +7307,7 @@ export const kuran = [
     sound: "page-588.mp3",
     img: "page-588.png",
     sure: "İnşikak Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${588}.docx`,
   },
   {
     cuz: null,
@@ -7319,7 +7319,7 @@ export const kuran = [
     sound: "page-589.mp3",
     img: "page-589.png",
     sure: "Bürûc Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${589}.docx`,
   },
   {
     cuz: null,
@@ -7331,7 +7331,7 @@ export const kuran = [
     sound: "page-590.mp3",
     img: "page-590.png",
     sure: "Târık Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${590}.docx`,
   },
   {
     cuz: null,
@@ -7343,7 +7343,7 @@ export const kuran = [
     sound: "page-591.mp3",
     img: "page-591.png",
     sure: "A'lâ Sûresi, Gâşiye Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${591}.docx`,
   },
   {
     cuz: null,
@@ -7355,7 +7355,7 @@ export const kuran = [
     sound: "page-592.mp3",
     img: "page-592.png",
     sure: "Fecr Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${592}.docx`,
   },
   {
     cuz: null,
@@ -7367,7 +7367,7 @@ export const kuran = [
     sound: "page-593.mp3",
     img: "page-593.png",
     sure: "Beled Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${593}.docx`,
   },
   {
     cuz: null,
@@ -7379,7 +7379,7 @@ export const kuran = [
     sound: "page-594.mp3",
     img: "page-594.png",
     sure: "Şems Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${594}.docx`,
   },
   {
     cuz: null,
@@ -7391,7 +7391,7 @@ export const kuran = [
     sound: "page-595.mp3",
     img: "page-595.png",
     sure: "Leyl Sûresi, Duhâ Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${595}.docx`,
   },
   {
     cuz: null,
@@ -7403,7 +7403,7 @@ export const kuran = [
     sound: "page-596.mp3",
     img: "page-596.png",
     sure: "İnşirâh Sûresi, Tin Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${596}.docx`,
   },
   {
     cuz: null,
@@ -7415,7 +7415,7 @@ export const kuran = [
     sound: "page-597.mp3",
     img: "page-597.png",
     sure: "Alak Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${597}.docx`,
   },
   {
     cuz: null,
@@ -7427,7 +7427,7 @@ export const kuran = [
     sound: "page-598.mp3",
     img: "page-598.png",
     sure: "Kadir Sûresi, Beyyine Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${598}.docx`,
   },
   {
     cuz: null,
@@ -7439,7 +7439,7 @@ export const kuran = [
     sound: "page-599.mp3",
     img: "page-599.png",
     sure: "Zilzâl Sûresi, Âdiyât Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${599}.docx`,
   },
   {
     cuz: null,
@@ -7451,7 +7451,7 @@ export const kuran = [
     sound: "page-600.mp3",
     img: "page-600.png",
     sure: "Kâria Sûresi, Tekâsür Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${600}.docx`,
   },
   {
     cuz: null,
@@ -7463,7 +7463,7 @@ export const kuran = [
     sound: "page-601.mp3",
     img: "page-601.png",
     sure: "Asr Sûresi, Hümeze Sûresi, Fil Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${601}.docx`,
   },
   {
     cuz: null,
@@ -7475,7 +7475,7 @@ export const kuran = [
     sound: "page-602.mp3",
     img: "page-602.png",
     sure: "Kureyş Sûresi, Mâûn Sûresi, Kevser Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${602}.docx`,
   },
   {
     cuz: null,
@@ -7487,7 +7487,7 @@ export const kuran = [
     sound: "page-603.mp3",
     img: "page-603.png",
     sure: "Kâfirûn Sûresi, Nasr Sûresi, Tebbet Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${603}.docx`,
   },
   {
     cuz: null,
@@ -7499,13 +7499,9 @@ export const kuran = [
     sound: "page-604.mp3",
     img: "page-604.png",
     sure: "İhlâs Sûresi, Felâk Sûresi, Nâs Sûresi",
-    meal: null
+    meal: `/assets/kuran-meal/${604}.docx`,
   },
 ];
-
-kuran.forEach(kuran => {
-  kuran.meal = `/assets/kuran-meal/${kuran.startPage}.docx`;
-});
 
 export const sureler = [
   {

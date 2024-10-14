@@ -91,10 +91,8 @@ export default function Kuran({
                       )}
                     >
                       <IonItem className="mt-[3px] k-ion-item w-full">
-                        <IonLabel className="text-left">
-                          <span className="font-medium text-[1rem] text-white whitespace-pre-wrap">
-                            {sayfa.title} - {sayfa.sure}
-                          </span>
+                        <IonLabel className="text-left font-medium text-[1rem] text-white whitespace-pre-wrap">
+                          {sayfa.title} - {sayfa.sure}
                         </IonLabel>
                       </IonItem>
                     </IonNavLink>
@@ -115,10 +113,8 @@ export default function Kuran({
                       )}
                     >
                       <IonItem className="mt-[3px] k-ion-item w-full">
-                        <IonLabel className="text-left">
-                          <span className="font-medium text-[1rem] text-white whitespace-pre-wrap">
-                            {sayfa.title} - {sayfa.sure}
-                          </span>
+                        <IonLabel className="text-left font-medium text-[1rem] text-white whitespace-pre-wrap">
+                          {sayfa.title} - {sayfa.sure}
                         </IonLabel>
                       </IonItem>
                     </IonNavLink>
