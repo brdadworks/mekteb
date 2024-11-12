@@ -31,7 +31,7 @@ export const all_books = [
   },
   {
     id: 6,
-    title: "Hadisler",
+    title: "Hadis-i Şerifler ve Âyet-i Kerîmeler",
     slug: "hadisler",
     read: false,
   },
@@ -9346,13 +9346,13 @@ export const zilhicce_son_gecesi = {
 export const hadisler = [
   {
     id: 1,
-    title: "Amel",
+    title: "Amel - İbadet",
     slug: "amel",
     read: true,
   },
   {
     id: 2,
-    title: "Anne Baba",
+    title: "Anne Baba Hakkı",
     slug: "annebaba",
     read: true,
   },
@@ -9376,7 +9376,7 @@ export const hadisler = [
   },
   {
     id: 6,
-    title: "Kibir",
+    title: "Kibir Ucub",
     slug: "kibir",
     read: true,
   },
@@ -9400,7 +9400,7 @@ export const hadisler = [
   },
   {
     id: 10,
-    title: "Takva",
+    title: "Takva - Vera",
     slug: "takva",
     read: true,
   },
@@ -9430,7 +9430,7 @@ export const annebaba = {
   title: "Anne Baba",
   slug: "annebaba",
   content: "/books/hadis/annebaba/",
-  page: 6,
+  page: 5,
   direction: "ltr",
 };
 

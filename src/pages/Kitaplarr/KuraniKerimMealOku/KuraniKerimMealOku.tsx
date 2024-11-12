@@ -39,7 +39,13 @@ import {
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
-function KuraniKerimMealOku({ startPage, pageTitle }: { startPage: number, pageTitle: string }) {
+function KuraniKerimMealOku({
+  startPage,
+  pageTitle,
+}: {
+  startPage: number;
+  pageTitle: string;
+}) {
   const [swipe, setSwipe] = useState<any>();
   const [title, setTitle] = useState<string>(pageTitle);
   const topRef = useRef<any>(null);
@@ -59,14 +65,13 @@ function KuraniKerimMealOku({ startPage, pageTitle }: { startPage: number, pageT
     console.log("scrollTop");
     topRef.current?.scrollToTop();
     console.log(swipe?.activeIndex);
-    
+
     setTitle(titleHandler(swipe?.activeIndex));
   };
 
   const images: JSX.Element[] = imagesHandler();
 
   console.log("images", images);
-  
 
   return (
     <>
@@ -75,7 +80,9 @@ function KuraniKerimMealOku({ startPage, pageTitle }: { startPage: number, pageT
           <IonButtons slot="start">
             <IonBackButton text={"Geri"}></IonBackButton>
           </IonButtons>
-          <IonTitle className={"text-xl"}>{title != "pageTitle" ? title : pageTitle}</IonTitle>
+          <IonTitle className={"text-xl"}>
+            {title != "pageTitle" ? title : pageTitle}
+          </IonTitle>
         </IonToolbar>
       </IonHeader>
 
