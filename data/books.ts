@@ -177,14 +177,14 @@ export const kurani_kerim = [
   },
   {
     id: 15,
-    title: "Vakia Suresi",
+    title: "Vakıa Suresi",
     slug: "vakia",
     read: true,
     startPage: 23,
   },
   {
     id: 7,
-    title: "Haşr Suresi",
+    title: "Haşir Suresi",
     slug: "hasr",
     read: true,
     startPage: 27,
@@ -205,7 +205,7 @@ export const kurani_kerim = [
   },
   {
     id: 11,
-    title: "Mulk Suresi",
+    title: "Mülk Suresi",
     slug: "mulk",
     read: true,
     startPage: 32,
@@ -8616,14 +8616,14 @@ export const kurani_kerim_meal = [
   },
   {
     id: 15,
-    title: "Vakia Suresi",
+    title: "Vakıa Suresi",
     slug: "vakia_meal",
     read: true,
     startPage: 46,
   },
   {
     id: 7,
-    title: "Haşr Suresi",
+    title: "Haşir Suresi",
     slug: "hasr_meal",
     read: true,
     startPage: 54,
@@ -8644,7 +8644,7 @@ export const kurani_kerim_meal = [
   },
   {
     id: 11,
-    title: "Mulk Suresi",
+    title: "Mülk Suresi",
     slug: "mulk_meal",
     read: true,
     startPage: 64,
