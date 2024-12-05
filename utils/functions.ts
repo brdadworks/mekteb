@@ -5,7 +5,6 @@ import {
   LocalNotificationSchema,
 } from "@capacitor/local-notifications";
 import { Geolocation } from "@capacitor/geolocation";
-import { get } from "cheerio/lib/api/traversing";
 
 export const addStorageData = async (key: string, value: any) => {
   const store = new Storage();

@@ -5,11 +5,18 @@ const config: CapacitorConfig = {
   appName: "mekteb-i irfan",
   webDir: "dist",
   server: {
-    androidScheme: "https",
+    cleartext: true,
+    iosScheme: "capacitor",
+    androidScheme: "capacitor",
   },
   android: {
     minSdkVersion: 21,
     targetSdkVersion: 34,
+  },
+  cordova: {
+    preferences: {
+      AutoUpdate: "none",
+    },
   },
 };
 
