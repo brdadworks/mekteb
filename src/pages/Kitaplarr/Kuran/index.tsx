@@ -86,9 +86,8 @@ export default function Kuran({
                     <IonNavLink
                       key={i}
                       routerDirection="forward"
-                      component={() => (
-                        <KuraniKerimOku startPage={sayfa.startPage as number} />
-                      )}
+                      component={KuraniKerimOku}
+                      componentProps={{ startPage: sayfa.startPage as number }}
                     >
                       <IonItem className="mt-[3px] k-ion-item w-full">
                         <IonLabel className="text-left font-medium text-[1rem] text-white whitespace-pre-wrap">

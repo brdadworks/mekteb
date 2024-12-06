@@ -37,6 +37,8 @@ import {
 } from "../../../../data/books";
 
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Virtual } from "swiper/modules"; // Virtual modülü ekleyin
+
 import "swiper/css";
 
 function KuraniKerimMealOku({
@@ -92,6 +94,8 @@ function KuraniKerimMealOku({
         class="ion-padding bg-white bg-color-white"
       >
         <Swiper
+          modules={[Virtual]}
+          virtual
           initialSlide={startPage}
           onSlideChangeTransitionEnd={scrollTop}
           onBeforeInit={(swipper) => setSwipe(swipper)}
@@ -160,7 +164,7 @@ const pushImages = (data: any) => {
   const images: any = [];
   for (let i = 0; i < data.page; i++) {
     images.push(
-      <SwiperSlide key={data.title + "-" + i}>
+      <SwiperSlide key={data.title + "-" + i} virtualIndex={i}>
         <img
           src={`${data.content}${i + 1}-fs8.png`}
           alt={""}
