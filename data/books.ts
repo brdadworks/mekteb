@@ -6778,7 +6778,7 @@ export const kuran = [
     startPage: 544,
     sound: "page-544.mp3",
     img: "page-544.png",
-    sure: "Haşr Sûresi",
+    sure: "Haşir Sûresi",
     meal: `/assets/kuran-meal/${544}.docx`,
   },
   {
@@ -6790,7 +6790,7 @@ export const kuran = [
     startPage: 545,
     sound: "page-545.mp3",
     img: "page-545.png",
-    sure: "Haşr Sûresi",
+    sure: "Haşir Sûresi",
     meal: `/assets/kuran-meal/${545}.docx`,
   },
   {
@@ -6802,7 +6802,7 @@ export const kuran = [
     startPage: 546,
     sound: "page-546.mp3",
     img: "page-546.png",
-    sure: "Haşr Sûresi",
+    sure: "Haşir Sûresi",
     meal: `/assets/kuran-meal/${546}.docx`,
   },
   {
@@ -6814,7 +6814,7 @@ export const kuran = [
     startPage: 547,
     sound: "page-547.mp3",
     img: "page-547.png",
-    sure: "Haşr Sûresi",
+    sure: "Haşir Sûresi",
     meal: `/assets/kuran-meal/${547}.docx`,
   },
   {
@@ -7854,7 +7854,7 @@ export const sureler = [
   },
   {
     id: 59,
-    title: "Haşr Sûresi",
+    title: "Haşir Sûresi",
     ayet: 24,
     startPage: 544,
   },
@@ -10631,7 +10631,7 @@ At çıkar ağyarı dilden ta tecelli ede hak
 O sultan girmez saraya hanen mamur olmadan
 
 Küntü kenzin esrarına eripte mazhar olan
-Haşri neşri görür hiç şekki şüphesi olmadan
+Haşiri neşri görür hiç şekki şüphesi olmadan
 Sen müyesser eyle yarab tevhidini yoldaş et
 İlmim ile amil eyle vadem tekmil olmadan
 
