@@ -55,7 +55,7 @@ function KitapOku({ book, title }: { book: BookProps; title: string }) {
       images.push(
         <SwiperSlide key={`swiper-slide-${i}`}>
           <img
-            src={`${book.content}${i}-fs8.png`}
+            src={`https://brd.com.tr/mekteb_books/books${book.content}${i}-fs8.png`}
             alt={`${i}-fs8.png`}
             className={"w-full h-auto"}
           />

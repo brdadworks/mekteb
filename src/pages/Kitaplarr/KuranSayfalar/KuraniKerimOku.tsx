@@ -74,7 +74,7 @@ function KuraniKerimOku({ startPage }: { startPage: number }) {
   const player = useRef<any>();
 
   useEffect(() => {
-    setPlayerSrc(`/assets/sounds/${soundHandler(swipe?.activeIndex)}`);
+    setPlayerSrc(`https://brd.com.tr/mekteb/sounds/${soundHandler(swipe?.activeIndex)}`);
   }, [swipe?.activeIndex]);
 
   useEffect(() => {
@@ -183,7 +183,7 @@ function KuraniKerimOku({ startPage }: { startPage: number }) {
           {kuran.map(({ sure, id, title, img }, index) => (
             <SwiperSlide key={id} virtualIndex={index}>
               <img
-                src={`/assets/pages/${img}`}
+                src={`https://brd.com.tr/mekteb/pages/${img}`}
                 alt={`${title} - ${sure}`}
                 className="w-full h-auto"
                 style={{
