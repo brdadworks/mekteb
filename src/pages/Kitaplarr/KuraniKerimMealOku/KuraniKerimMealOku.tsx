@@ -166,7 +166,7 @@ const pushImages = (data: any) => {
     images.push(
       <SwiperSlide key={data.title + "-" + i} virtualIndex={i}>
         <img
-          src={`${data.content}${i + 1}-fs8.png`}
+          src={`https://brd.com.tr/mekteb/${data.content}${i + 1}-fs8.png`}
           alt={""}
           className={"w-full h-auto"}
         />

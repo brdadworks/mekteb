@@ -8193,140 +8193,140 @@ export const sureler = [
 export const ala = {
   title: "Ala",
   slug: "ala",
-  content: "/mecmua/kurani_kerim/ala/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua/kurani_kerim/ala/",
   page: 1,
 };
 
 export const duayi_ismi_azam = {
   title: "Dua-ı İsmi Azam",
   slug: "duayi_ismi_azam",
-  content: "/mecmua/duayi_ismi_azam/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua/duayi_ismi_azam/",
   page: 4,
 };
 
 export const duayi_ismi_azam_meal = {
   title: "Dua-ı İsmi Azam",
   slug: "duayi_ismi_azam_meal",
-  content: "/mecmua_meal/duayi_ismi_azam/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/duayi_ismi_azam/",
   page: 6,
 };
 
 export const bakara = {
   title: "Bakara",
   slug: "bakara",
-  content: "/mecmua/kurani_kerim/bakara/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua/kurani_kerim/bakara/",
   page: 1,
 };
 
 export const cuma = {
   title: "Cuma",
   slug: "cuma",
-  content: "/mecmua/kurani_kerim/cuma/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua/kurani_kerim/cuma/",
   page: 2,
 };
 
 export const duhan = {
   title: "Duhan",
   slug: "duhan",
-  content: "/mecmua/kurani_kerim/duhan/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua/kurani_kerim/duhan/",
   page: 3,
 };
 
 export const fatiha = {
   title: "Fatiha",
   slug: "fatiha",
-  content: "/mecmua/kurani_kerim/fatiha/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua/kurani_kerim/fatiha/",
   page: 1,
 };
 
 export const fetih = {
   title: "Fetih",
   slug: "fetih",
-  content: "/mecmua/kurani_kerim/fetih/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua/kurani_kerim/fetih/",
   page: 5,
 };
 
 export const hasr = {
   title: "Hasr",
   slug: "hasr",
-  content: "/mecmua/kurani_kerim/hasr/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua/kurani_kerim/hasr/",
   page: 2,
 };
 
 export const hatim = {
   title: "Hatim",
   slug: "hatim",
-  content: "/mecmua/kurani_kerim/hatim/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua/kurani_kerim/hatim/",
   page: 1,
 };
 
 export const insan = {
   title: "İnsan",
   slug: "insan",
-  content: "/mecmua/kurani_kerim/insan/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua/kurani_kerim/insan/",
   page: 3,
 };
 
 export const kehf = {
   title: "Kehf",
   slug: "kehf",
-  content: "/mecmua/kurani_kerim/kehf/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua/kurani_kerim/kehf/",
   page: 2,
 };
 
 export const mulk = {
   title: "Mulk",
   slug: "mulk",
-  content: "/mecmua/kurani_kerim/mulk/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua/kurani_kerim/mulk/",
   page: 3,
 };
 
 export const nebe = {
   title: "Nebe",
   slug: "nebe",
-  content: "/mecmua/kurani_kerim/nebe/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua/kurani_kerim/nebe/",
   page: 3,
 };
 
 export const rahman = {
   title: "Rahman",
   slug: "rahman",
-  content: "/mecmua/kurani_kerim/rahman/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua/kurani_kerim/rahman/",
   page: 4,
 };
 
 export const tahrim = {
   title: "Tahrim",
   slug: "tahrim",
-  content: "/mecmua/kurani_kerim/tahrim/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua/kurani_kerim/tahrim/",
   page: 1,
 };
 
 export const vakia = {
   title: "Vakia",
   slug: "vakia",
-  content: "/mecmua/kurani_kerim/vakia/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua/kurani_kerim/vakia/",
   page: 4,
 };
 
 export const yasin = {
   title: "Yasin",
   slug: "yasin",
-  content: "/mecmua/kurani_kerim/yasin/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua/kurani_kerim/yasin/",
   page: 6,
 };
 
 export const yusuf = {
   title: "Yusuf",
   slug: "yusuf",
-  content: "/mecmua/kurani_kerim/yusuf/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua/kurani_kerim/yusuf/",
   page: 1,
 };
 
 export const duayi_mustecab = {
   title: "Dua-ı Müstecab",
   slug: "duayi_mustecab",
-  content: "/mecmua/duayi_mustecab/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua/duayi_mustecab/",
   page: 4,
 };
 
@@ -8378,105 +8378,105 @@ export const cevseni_kebir = [
 export const pazartesi = {
   title: "Pazartesi",
   slug: "pazartesi",
-  content: "/mecmua/cevseni_kebir/pazartesi/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua/cevseni_kebir/pazartesi/",
   page: 8,
 };
 
 export const sali = {
   title: "Salı",
   slug: "sali",
-  content: "/mecmua/cevseni_kebir/sali/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua/cevseni_kebir/sali/",
   page: 4,
 };
 
 export const carsamba = {
   title: "Çarşamba",
   slug: "carsamba",
-  content: "/mecmua/cevseni_kebir/carsamba/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua/cevseni_kebir/carsamba/",
   page: 5,
 };
 
 export const persembe = {
   title: "Perşembe",
   slug: "persembe",
-  content: "/mecmua/cevseni_kebir/persembe/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua/cevseni_kebir/persembe/",
   page: 8,
 };
 
 export const kebir_cuma = {
   title: "Cuma",
   slug: "kebir_cuma",
-  content: "/mecmua/cevseni_kebir/cuma/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua/cevseni_kebir/cuma/",
   page: 6,
 };
 
 export const cumartesi = {
   title: "Cumartesi",
   slug: "cumartesi",
-  content: "/mecmua/cevseni_kebir/cumartesi/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua/cevseni_kebir/cumartesi/",
   page: 4,
 };
 
 export const pazar = {
   title: "Pazar",
   slug: "pazar",
-  content: "/mecmua/cevseni_kebir/pazar/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua/cevseni_kebir/pazar/",
   page: 10,
 };
 
 export const evradi_ummul_kuraniyye = {
   title: "Evrad-ı Ümmül Kur'aniyye",
   slug: "evradi_ummul_kuraniyye",
-  content: "/mecmua/evradi_ummul_kuraniyye/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua/evradi_ummul_kuraniyye/",
   page: 6,
 };
 
 export const munacati_veysel_karani = {
   title: "Munacat-ı Veysel Karani",
   slug: "munacati_veysel_karani",
-  content: "/mecmua/munacati_veysel_karani/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua/munacati_veysel_karani/",
   page: 6,
 };
 
 export const evradi_fethiyye = {
   title: "Evrad-ı Fethiyye",
   slug: "evradi_fethiyye",
-  content: "/mecmua/evradi_fethiyye/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua/evradi_fethiyye/",
   page: 6,
 };
 
 export const evradi_rufaiyye = {
   title: "Evrad-ı Rufaiyye",
   slug: "evradi_rufaiyye",
-  content: "/mecmua/evradi_rufaiyye/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua/evradi_rufaiyye/",
   page: 14,
 };
 
 export const evradi_kadiriyye = {
   title: "Evrad-ı Kadiriyye",
   slug: "evradi_kadiriyye",
-  content: "/mecmua/evradi_kadiriyye/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua/evradi_kadiriyye/",
   page: 8,
 };
 
 export const evradi_nasibendiyye = {
   title: "Evrad-ı Nakşibendiyye",
   slug: "evradi_nasibendiyye",
-  content: "/mecmua/evradi_nasibendiyye/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua/evradi_nasibendiyye/",
   page: 8,
 };
 
 export const delilul_irfaniyye = {
   title: "Delail-ül İrfaniyye",
   slug: "delilul_irfaniyye",
-  content: "/mecmua/delilul_irfaniyye/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua/delilul_irfaniyye/",
   page: 28,
 };
 
 export const kurani_kerimden_dualar = {
   title: "Kur'an-ı Kerim'den Dualar",
   slug: "kurani_kerimden_dualar",
-  content: "/mecmua/kurani_kerimden_dualar/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua/kurani_kerimden_dualar/",
   page: 7,
 };
 
@@ -8682,126 +8682,126 @@ export const kurani_kerim_meal = [
 export const ala_meal = {
   title: "Ala",
   slug: "ala_meal",
-  content: "/mecmua_meal/kurani_kerim/ala/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/kurani_kerim/ala/",
   page: 2,
 };
 
 export const bakara_meal = {
   title: "Bakara",
   slug: "bakara_meal",
-  content: "/mecmua_meal/kurani_kerim/bakara/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/kurani_kerim/bakara/",
   page: 2,
 };
 
 export const cuma_meal = {
   title: "Cuma",
   slug: "cuma_meal",
-  content: "/mecmua_meal/kurani_kerim/cuma/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/kurani_kerim/cuma/",
   page: 4,
 };
 
 export const duhan_meal = {
   title: "Duhan",
   slug: "duhan_meal",
-  content: "/mecmua_meal/kurani_kerim/duhan/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/kurani_kerim/duhan/",
   page: 6,
 };
 
 export const fatiha_meal = {
   title: "Fatiha",
   slug: "fatiha_meal",
-  content: "/mecmua_meal/kurani_kerim/fatiha/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/kurani_kerim/fatiha/",
   page: 2,
 };
 
 export const fetih_meal = {
   title: "Fetih",
   slug: "fetih_meal",
-  content: "/mecmua_meal/kurani_kerim/fetih/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/kurani_kerim/fetih/",
   page: 10,
 };
 
 export const hasr_meal = {
   title: "Hasr",
   slug: "hasr_meal",
-  content: "/mecmua_meal/kurani_kerim/hasr/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/kurani_kerim/hasr/",
   page: 4,
 };
 
 export const hatim_meal = {
   title: "Hatim",
   slug: "hatim_meal",
-  content: "/mecmua_meal/kurani_kerim/hatim/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/kurani_kerim/hatim/",
   page: 2,
 };
 
 export const insan_meal = {
   title: "İnsan",
   slug: "insan_meal",
-  content: "/mecmua_meal/kurani_kerim/insan/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/kurani_kerim/insan/",
   page: 6,
 };
 
 export const kehf_meal = {
   title: "Kehf",
   slug: "kehf_meal",
-  content: "/mecmua_meal/kurani_kerim/kehf/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/kurani_kerim/kehf/",
   page: 4,
 };
 
 export const mulk_meal = {
   title: "Mulk",
   slug: "mulk_meal",
-  content: "/mecmua_meal/kurani_kerim/mulk/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/kurani_kerim/mulk/",
   page: 6,
 };
 
 export const nebe_meal = {
   title: "Nebe",
   slug: "nebe_meal",
-  content: "/mecmua_meal/kurani_kerim/nebe/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/kurani_kerim/nebe/",
   page: 6,
 };
 
 export const rahman_meal = {
   title: "Rahman",
   slug: "rahman_meal",
-  content: "/mecmua_meal/kurani_kerim/rahman/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/kurani_kerim/rahman/",
   page: 8,
 };
 
 export const tahrim_meal = {
   title: "Tahrim",
   slug: "tahrim_meal",
-  content: "/mecmua_meal/kurani_kerim/tahrim/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/kurani_kerim/tahrim/",
   page: 2,
 };
 
 export const vakia_meal = {
   title: "Vakia",
   slug: "vakia_meal",
-  content: "/mecmua_meal/kurani_kerim/vakia/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/kurani_kerim/vakia/",
   page: 8,
 };
 
 export const yasin_meal = {
   title: "Yasin",
   slug: "yasin_meal",
-  content: "/mecmua_meal/kurani_kerim/yasin/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/kurani_kerim/yasin/",
   page: 12,
 };
 
 export const yusuf_meal = {
   title: "Yusuf",
   slug: "yusuf_meal",
-  content: "/mecmua_meal/kurani_kerim/yusuf/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/kurani_kerim/yusuf/",
   page: 2,
 };
 
 export const duayi_mustecab_meal = {
   title: "Dua-ı Müstecab",
   slug: "duayi_mustecab_meal",
-  content: "/mecmua_meal/duayi_mustecab/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/duayi_mustecab/",
   page: 6,
 };
 
@@ -8853,105 +8853,105 @@ export const cevseni_kebir_meal = [
 export const pazartesi_meal = {
   title: "Pazartesi",
   slug: "pazartesi_meal",
-  content: "/mecmua_meal/cevseni_kebir/pazartesi/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/cevseni_kebir/pazartesi/",
   page: 14,
 };
 
 export const sali_meal = {
   title: "Salı",
   slug: "sali_meal",
-  content: "/mecmua_meal/cevseni_kebir/sali/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/cevseni_kebir/sali/",
   page: 8,
 };
 
 export const carsamba_meal = {
   title: "Çarşamba",
   slug: "carsamba_meal",
-  content: "/mecmua_meal/cevseni_kebir/carsamba/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/cevseni_kebir/carsamba/",
   page: 10,
 };
 
 export const persembe_meal = {
   title: "Perşembe",
   slug: "persembe_meal",
-  content: "/mecmua_meal/cevseni_kebir/persembe/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/cevseni_kebir/persembe/",
   page: 16,
 };
 
 export const kebir_cuma_meal = {
   title: "Cuma",
   slug: "kebir_cuma_meal",
-  content: "/mecmua_meal/cevseni_kebir/cuma/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/cevseni_kebir/cuma/",
   page: 12,
 };
 
 export const cumartesi_meal = {
   title: "Cumartesi",
   slug: "cumartesi_meal",
-  content: "/mecmua_meal/cevseni_kebir/cumartesi/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/cevseni_kebir/cumartesi/",
   page: 8,
 };
 
 export const pazar_meal = {
   title: "Pazar",
   slug: "pazar_meal",
-  content: "/mecmua_meal/cevseni_kebir/pazar/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/cevseni_kebir/pazar/",
   page: 20,
 };
 
 export const evradi_ummul_kuraniyye_meal = {
   title: "Evrad-ı Ümmül Kur'aniyye",
   slug: "evradi_ummul_kuraniyye_meal",
-  content: "/mecmua_meal/evradi_ummul_kuraniyye/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/evradi_ummul_kuraniyye/",
   page: 10,
 };
 
 export const munacati_veysel_karani_meal = {
   title: "Munacat-ı Veysel Karani",
   slug: "munacati_veysel_karani_meal",
-  content: "/mecmua_meal/munacati_veysel_karani/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/munacati_veysel_karani/",
   page: 10,
 };
 
 export const evradi_fethiyye_meal = {
   title: "Evrad-ı Fethiyye",
   slug: "evradi_fethiyye_meal",
-  content: "/mecmua_meal/evradi_fethiyye/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/evradi_fethiyye/",
   page: 10,
 };
 
 export const evradi_rufaiyye_meal = {
   title: "Evrad-ı Rufaiyye",
   slug: "evradi_rufaiyye_meal",
-  content: "/mecmua_meal/evradi_rufaiyye/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/evradi_rufaiyye/",
   page: 25,
 };
 
 export const evradi_kadiriyye_meal = {
   title: "Evrad-ı Kadiriyye",
   slug: "evradi_kadiriyye_meal",
-  content: "/mecmua_meal/evradi_kadiriyye/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/evradi_kadiriyye/",
   page: 14,
 };
 
 export const evradi_nasibendiyye_meal = {
   title: "Evrad-ı Nakşibendiyye",
   slug: "evradi_nasibendiyye_meal",
-  content: "/mecmua_meal/evradi_nasibendiyye/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/evradi_nasibendiyye/",
   page: 14,
 };
 
 export const delilul_irfaniyye_meal = {
   title: "Delail-ül İrfaniyye",
   slug: "delilul_irfaniyye_meal",
-  content: "/mecmua_meal/delilul_irfaniyye/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/delilul_irfaniyye/",
   page: 51,
 };
 
 export const kurani_kerimden_dualar_meal = {
   title: "Kur'an-ı Kerim'den Dualar",
   slug: "kurani_kerimden_dualar_meal",
-  content: "/mecmua_meal/kurani_kerimden_dualar/",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/kurani_kerimden_dualar/",
   page: 11,
 };
 

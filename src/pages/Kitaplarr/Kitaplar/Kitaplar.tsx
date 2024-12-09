@@ -17,6 +17,7 @@ import KuraniKerimMeal from "../KuraniKerimMeal/KuraniKerimMeal";
 import Kuran from "../Kuran";
 
 function Kitaplar({ books, title }: { books: BooksProps[]; title: string }) {
+  console.log("Kitaplar -> books", books);
   return (
     <>
       <Header pageTitle={title} />
