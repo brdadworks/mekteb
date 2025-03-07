@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import {
   IonBackButton,
   IonButton,
@@ -27,11 +27,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import mammoth from "mammoth";
 import { Virtual } from "swiper/modules"; // Virtual modülü ekleyin
-
+import storageService from "../../../../utils/storageService";
+import { LastPageContext } from "../../../context/LastPageContext";
 
 const fetchMeal = async (mealPath: string): Promise<string> => {
   try {
-    const response = await fetch(mealPath);
+    const response = await fetch(`https://brd.com.tr/mekteb/${mealPath}`);
     const arrayBuffer = await response.arrayBuffer();
     const result = await mammoth.convertToHtml({ arrayBuffer });
     return result.value;
@@ -64,7 +65,13 @@ const mealHandler = (activePage: number) => {
   }
 };
 
-function KuraniKerimOku({ startPage }: { startPage: number }) {
+function KuraniKerimOku({
+  startPage,
+  bookTitle,
+}: {
+  startPage: number;
+  bookTitle: string;
+}) {
   const [swipe, setSwipe] = useState<any>();
   const [title, setTitle] = useState<string>();
   const [meal, setMeal] = useState<string>("");
@@ -73,8 +80,12 @@ function KuraniKerimOku({ startPage }: { startPage: number }) {
   const topRef = useRef<any>(null);
   const player = useRef<any>();
 
+  const lastPageContext = useContext(LastPageContext);
+
   useEffect(() => {
-    setPlayerSrc(`https://brd.com.tr/mekteb/sounds/${soundHandler(swipe?.activeIndex)}`);
+    setPlayerSrc(
+      `https://brd.com.tr/mekteb/sounds/${soundHandler(swipe?.activeIndex)}`
+    );
   }, [swipe?.activeIndex]);
 
   useEffect(() => {
@@ -151,7 +162,14 @@ function KuraniKerimOku({ startPage }: { startPage: number }) {
   const scrollTop = () => {
     topRef.current?.scrollToTop();
     setTitle(titleHandler(swipe?.activeIndex));
-    setPlayerSrc(`/assets/sounds/${soundHandler(swipe?.activeIndex)}`);
+    setPlayerSrc(
+      `https://brd.com.tr/mekteb/sounds/${soundHandler(swipe?.activeIndex)}`
+    );
+  };
+
+  const onSlideChange = () => {
+    lastPageContext.setLastPage(swipe?.activeIndex);
+    scrollTop();
   };
 
   return (
@@ -173,8 +191,10 @@ function KuraniKerimOku({ startPage }: { startPage: number }) {
         <Swiper
           loop={false}
           initialSlide={startPage}
-          onSlideChangeTransitionEnd={scrollTop}
-          onBeforeInit={(swipper) => setSwipe(swipper)}
+          onSlideChangeTransitionEnd={onSlideChange}
+          onBeforeInit={(swipper) => {
+            setSwipe(swipper);
+          }}
           dir={"rtl"}
           className="mySwiper"
           modules={[Virtual]}
@@ -208,10 +228,12 @@ function KuraniKerimOku({ startPage }: { startPage: number }) {
               onClickPrevious={() => {
                 swipe?.slideNext();
                 player?.current.audio.current.pause();
+                lastPageContext.setLastPage(swipe?.activeIndex);
               }}
               onClickNext={() => {
                 swipe?.slidePrev();
                 player?.current.audio.current.pause();
+                lastPageContext.setLastPage(swipe?.activeIndex);
               }}
               customVolumeControls={[]}
               customAdditionalControls={[]}

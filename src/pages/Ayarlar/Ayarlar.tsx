@@ -77,7 +77,9 @@ function Ayarlar() {
                         setToastHandle(true)
                         setToastMessage("Şehir bilgisi alınırken hata oluştu. İnternet bağlantınızı kontrol ediniz.")
                     }
-                    const dist = await getDistrict(getSettings.city!.SehirID);
+                    console.log("geçti", getSettings.city?.SehirID);
+                    const dist = await getDistrict(getSettings.city?.SehirID);
+                    console.log("dist status", dist.status, dist.district)
                     if (dist.status === 200) setDistrict(dist.district);
                     else {
                         setToastHandle(true)
@@ -88,7 +90,7 @@ function Ayarlar() {
                     console.log("error")
                     setToastHandle(true)
                     setToastMessage("Bilgiler alınırken hata oluştu. İnternet bağlantınızı kontrol ediniz.")
-                    setLoading(true);
+                    setLoading(false);
                 }
             } else {
                 setLoading(false)

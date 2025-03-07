@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import {
   IonContent,
   IonItem,
@@ -8,6 +8,7 @@ import {
   IonSearchbar,
   IonButton,
   IonTitle,
+  IonIcon,
 } from "@ionic/react";
 import Header from "../../../components/Header";
 import "./Kitaplar.css";
@@ -15,6 +16,8 @@ import { BooksProps } from "../../../../utils/types";
 import KuraniKerimOku from "../KuranSayfalar/KuraniKerimOku";
 import { sureler } from "../../../../data/books";
 import slugify from "slugify";
+import { bookmark } from "ionicons/icons";
+import { LastPageContext } from "../../../context/LastPageContext";
 
 export default function Kuran({
   books,
@@ -23,10 +26,13 @@ export default function Kuran({
   books: BooksProps[];
   title: string;
 }) {
+  console.log("kurann");
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResultPage, setSearchResultPage] = useState([]);
   const [searchResultSure, setSearchResultSure] = useState([]);
   const [searchResultCuz, setSearchResultCuz] = useState([]);
+
+  const lastPageContext = useContext(LastPageContext);
 
   const handleSearch = (event: any) => {
     const value = event.detail.value;
@@ -63,6 +69,7 @@ export default function Kuran({
           value={searchTerm}
           onIonChange={handleSearch}
         />
+
         {searchResultPage?.length > 0 ||
         searchResultSure?.length > 0 ||
         searchResultCuz.length > 0 ? (
@@ -87,7 +94,13 @@ export default function Kuran({
                       key={i}
                       routerDirection="forward"
                       component={KuraniKerimOku}
-                      componentProps={{ startPage: sayfa.startPage as number }}
+                      componentProps={{
+                        startPage: sayfa.startPage as number,
+                        bookTitle: sayfa.title,
+                      }}
+                      onClick={() => {
+                        lastPageContext.setLastPage(sayfa.startPage);
+                      }}
                     >
                       <IonItem className="mt-[3px] k-ion-item w-full">
                         <IonLabel className="text-left font-medium text-[1rem] text-white whitespace-pre-wrap">
@@ -108,7 +121,10 @@ export default function Kuran({
                       key={i}
                       routerDirection="forward"
                       component={() => (
-                        <KuraniKerimOku startPage={sayfa.startPage as number} />
+                        <KuraniKerimOku
+                          startPage={sayfa.startPage as number}
+                          bookTitle={sayfa.title}
+                        />
                       )}
                     >
                       <IonItem className="mt-[3px] k-ion-item w-full">
@@ -130,7 +146,10 @@ export default function Kuran({
                       key={i}
                       routerDirection="forward"
                       component={() => (
-                        <KuraniKerimOku startPage={sayfa.startPage as number} />
+                        <KuraniKerimOku
+                          startPage={sayfa.startPage as number}
+                          bookTitle={sayfa.title}
+                        />
                       )}
                     >
                       <IonItem className="mt-[3px] k-ion-item w-full">
@@ -149,12 +168,31 @@ export default function Kuran({
           </>
         ) : (
           <IonList lines={"none"}>
+            <IonNavLink
+              routerDirection="forward"
+              component={() => (
+                <KuraniKerimOku
+                  startPage={lastPageContext.lastPage}
+                  bookTitle={"Son Okunan Sayfa"}
+                />
+              )}
+            >
+              <IonItem className="mt-[3px] k-ion-item w-full">
+                <IonLabel className="text-left font-medium text-[1rem] text-white whitespace-pre-wrap">
+                  Son Okunan Sayfa
+                  <IonIcon icon={bookmark} className="ml-2" />
+                </IonLabel>
+              </IonItem>
+            </IonNavLink>
             {sureler.map((sure, i) => (
               <IonNavLink
                 key={i}
                 routerDirection="forward"
                 component={() => (
-                  <KuraniKerimOku startPage={sure.startPage as number} />
+                  <KuraniKerimOku
+                    startPage={sure.startPage as number}
+                    bookTitle={sure.title}
+                  />
                 )}
               >
                 <IonItem className="mt-[3px] k-ion-item w-full">
@@ -168,27 +206,6 @@ export default function Kuran({
             ))}
           </IonList>
         )}
-
-        {/* Sayfa listesi */}
-        {/* <IonList lines={"none"}>
-          {books.map((book, i) => (
-            <IonNavLink
-              key={i}
-              routerDirection="forward"
-              component={() => (
-                <KuraniKerimOku startPage={book.startPage as number} />
-              )}
-            >
-              <IonItem className="mt-[3px] k-ion-item w-full">
-                <IonLabel className="text-left">
-                  <span className="font-medium text-[1rem] text-white whitespace-pre-wrap">
-                    {book.title} - {getPageData(book.title)?.sure}
-                  </span>
-                </IonLabel>
-              </IonItem>
-            </IonNavLink>
-          ))}
-        </IonList> */}
       </IonContent>
     </>
   );

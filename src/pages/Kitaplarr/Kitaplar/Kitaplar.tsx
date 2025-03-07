@@ -15,6 +15,7 @@ import Ilahiler from "../Ilahiler/Ilahiler";
 import KuraniKerim from "../KuraniKerim/KuraniKerim";
 import KuraniKerimMeal from "../KuraniKerimMeal/KuraniKerimMeal";
 import Kuran from "../Kuran";
+import { LastPageProvider } from "../../../context/LastPageContext";
 
 function Kitaplar({ books, title }: { books: BooksProps[]; title: string }) {
   console.log("Kitaplar -> books", books);

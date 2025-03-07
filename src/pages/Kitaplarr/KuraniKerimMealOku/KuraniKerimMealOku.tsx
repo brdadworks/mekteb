@@ -15,7 +15,6 @@ import {
   arrowForwardOutline,
   enterOutline,
 } from "ionicons/icons";
-import { BookProps } from "../../../../utils/types";
 import {
   fatiha_meal,
   bakara_meal,
@@ -36,7 +35,7 @@ import {
   hatim_meal,
 } from "../../../../data/books";
 
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperClass, SwiperSlide } from "swiper/react";
 import { Virtual } from "swiper/modules"; // Virtual modülü ekleyin
 
 import "swiper/css";
@@ -48,32 +47,25 @@ function KuraniKerimMealOku({
   startPage: number;
   pageTitle: string;
 }) {
-  const [swipe, setSwipe] = useState<any>();
+  const [swipe, setSwipe] = useState<SwiperClass>({} as SwiperClass);
   const [title, setTitle] = useState<string>(pageTitle);
   const topRef = useRef<any>(null);
-
-  console.log(pageTitle);
 
   const goFirstPage = () => {
     swipe?.slideTo(0);
   };
-  const nextPage = () => {
-    swipe?.slidePrev();
-  };
-  const prevPage = () => {
-    swipe?.slideNext();
-  };
+
   const scrollTop = () => {
-    console.log("scrollTop");
     topRef.current?.scrollToTop();
-    console.log(swipe?.activeIndex);
 
     setTitle(titleHandler(swipe?.activeIndex));
   };
 
-  const images: JSX.Element[] = imagesHandler();
+  const onSlideChange = () => {
+    scrollTop();
+  };
 
-  console.log("images", images);
+  const images: JSX.Element[] = imagesHandler();
 
   return (
     <>
@@ -97,8 +89,10 @@ function KuraniKerimMealOku({
           modules={[Virtual]}
           virtual
           initialSlide={startPage}
-          onSlideChangeTransitionEnd={scrollTop}
-          onBeforeInit={(swipper) => setSwipe(swipper)}
+          onSlideChangeTransitionEnd={onSlideChange}
+          onBeforeInit={(swipper) => {
+            setSwipe(swipper);
+          }}
           dir={"rtl"}
           className="mySwiper"
         >
@@ -109,14 +103,14 @@ function KuraniKerimMealOku({
       <IonFooter
         className={"w-full flex justify-evenly items-center p-3 bg-gray-200"}
       >
-        <button onClick={prevPage}>
+        <button onClick={() => swipe?.slideNext()}>
           <IonIcon
             className={"text-[#4ac3a4]"}
             icon={arrowBackOutline}
             size={"large"}
           ></IonIcon>
         </button>
-        <button onClick={nextPage}>
+        <button onClick={() => swipe.slidePrev()}>
           <IonIcon
             className={"text-[#4ac3a4]"}
             icon={arrowForwardOutline}

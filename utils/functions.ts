@@ -47,7 +47,7 @@ export const getNotificationPermissionStatus = async () => {
 };
 export const getCities = async (id: string) => {
   const cities = await axios.get(
-    "https://ezanvakti.herokuapp.com/sehirler/" + id
+    "https://ezanvakti.emushaf.net/sehirler/" + id
   );
   const res = await cities.data;
   console.log("citiesJson:", res);
@@ -55,8 +55,9 @@ export const getCities = async (id: string) => {
 };
 
 export const getDistrict = async (id: string) => {
+  console.log("getDistrict:", id);
   const district = await axios.get(
-    "https://ezanvakti.herokuapp.com/ilceler/" + id
+    "https://ezanvakti.emushaf.net/ilceler/" + id
   );
   const res = await district.data;
   console.log("getDistrict:", res);
@@ -65,7 +66,7 @@ export const getDistrict = async (id: string) => {
 
 export const getPrayerTimes = async (id: string) => {
   const prayerTimes = await axios.get(
-    "https://ezanvakti.herokuapp.com/vakitler/" + id
+    "https://ezanvakti.emushaf.net/vakitler/" + id
   );
   const res = await prayerTimes.data;
   console.log("prayerTimes:", res);

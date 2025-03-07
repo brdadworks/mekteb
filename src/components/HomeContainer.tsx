@@ -28,6 +28,7 @@ const HomeContainer: React.FC<ContainerProps> = () => {
         (async () => {
             await store.create();
             const getSettings = await store.get('settings');
+            console.log("getSettings", getSettings);
             setSettings(getSettings)
             if (getSettings) {
                 console.log(getSettings.district.IlceID);
@@ -206,7 +207,6 @@ function getFormattedClock() {
     const month = months[now.getMonth()];
     const year = now.getFullYear();
     const dayOfWeek = daysOfWeek[now.getDay()];
-
     return `${day} ${month} ${year} ${dayOfWeek}`;
 }
 
