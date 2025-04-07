@@ -47,7 +47,13 @@ export const getNotificationPermissionStatus = async () => {
 };
 export const getCities = async (id: string) => {
   const cities = await axios.get(
-    "https://ezanvakti.emushaf.net/sehirler/" + id
+    "https://ezanvakti-proxy-production.up.railway.app/proxy/sehirler/" + id,
+     {
+      headers: {
+
+      },
+      maxBodyLength: Infinity,
+     }
   );
   const res = await cities.data;
   console.log("citiesJson:", res);
@@ -57,7 +63,7 @@ export const getCities = async (id: string) => {
 export const getDistrict = async (id: string) => {
   console.log("getDistrict:", id);
   const district = await axios.get(
-    "https://ezanvakti.emushaf.net/ilceler/" + id
+    "https://ezanvakti-proxy-production.up.railway.app/proxy/ilceler/" + id
   );
   const res = await district.data;
   console.log("getDistrict:", res);
@@ -66,7 +72,7 @@ export const getDistrict = async (id: string) => {
 
 export const getPrayerTimes = async (id: string) => {
   const prayerTimes = await axios.get(
-    "https://ezanvakti.emushaf.net/vakitler/" + id
+    "https://ezanvakti-proxy-production.up.railway.app/proxy/vakitler/" + id
   );
   const res = await prayerTimes.data;
   console.log("prayerTimes:", res);
