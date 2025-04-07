@@ -155,7 +155,7 @@ export default function Kuran({
                         />
                       )}
                       onClick={() => {
-                        lastPageContext.setLastPage(sayfa.startPage);
+                        lastPageContext.setLastPage(sayfa.startPage + 1);
                       }}
                     >
                       <IonItem className="mt-[3px] k-ion-item w-full">
