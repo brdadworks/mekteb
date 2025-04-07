@@ -93,7 +93,7 @@ const HomeContainer: React.FC<ContainerProps> = () => {
                         ) : <span className={"opacity-95 text-xl"}><LiveClock/></span>}
 
                     </IonCol>
-                    <IonCol><img src={"/moon/" + prayerTimes?.AyinSekliURL.split("images/")[1]} alt="ayinsekli"
+                    <IonCol><img src={prayerTimes?.AyinSekliURL} alt="ayinsekli"
                                  className={"w-[80px] h-[80px] z-10 "}/></IonCol>
                 </IonRow>
                 <IonRow>
