@@ -26,7 +26,6 @@ export default function Kuran({
   books: BooksProps[];
   title: string;
 }) {
-  console.log("kurann");
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResultPage, setSearchResultPage] = useState([]);
   const [searchResultSure, setSearchResultSure] = useState([]);
@@ -56,6 +55,7 @@ export default function Kuran({
 
     const filteredBooksCuz =
       value !== "" ? books.filter((book) => book.cuz == Number(value)) : [];
+
     setSearchResultCuz(filteredBooksCuz);
   };
   return (
@@ -126,6 +126,9 @@ export default function Kuran({
                           bookTitle={sayfa.title}
                         />
                       )}
+                      onClick={() => {
+                        lastPageContext.setLastPage(sayfa.startPage);
+                      }}
                     >
                       <IonItem className="mt-[3px] k-ion-item w-full">
                         <IonLabel className="text-left font-medium text-[1rem] text-white whitespace-pre-wrap">
@@ -147,16 +150,18 @@ export default function Kuran({
                       routerDirection="forward"
                       component={() => (
                         <KuraniKerimOku
-                          startPage={sayfa.startPage as number}
+                          startPage={(Number(sayfa.startPage) + 1) as number}
                           bookTitle={sayfa.title}
                         />
                       )}
+                      onClick={() => {
+                        lastPageContext.setLastPage(sayfa.startPage);
+                      }}
                     >
                       <IonItem className="mt-[3px] k-ion-item w-full">
                         <IonLabel className="text-left">
                           <span className="font-medium text-[1rem] text-white whitespace-pre-wrap">
                             Cüz {sayfa.cuz} - {sayfa.sure}
-                            {console.log({ sayfa })}
                           </span>
                         </IonLabel>
                       </IonItem>
@@ -176,6 +181,9 @@ export default function Kuran({
                   bookTitle={"Son Okunan Sayfa"}
                 />
               )}
+              onClick={() => {
+                lastPageContext.setLastPage(lastPageContext.lastPage);
+              }}
             >
               <IonItem className="mt-[3px] k-ion-item w-full">
                 <IonLabel className="text-left font-medium text-[1rem] text-white whitespace-pre-wrap">
@@ -194,6 +202,9 @@ export default function Kuran({
                     bookTitle={sure.title}
                   />
                 )}
+                onClick={() => {
+                  lastPageContext.setLastPage(sure.startPage);
+                }}
               >
                 <IonItem className="mt-[3px] k-ion-item w-full">
                   <IonLabel className="text-left">
