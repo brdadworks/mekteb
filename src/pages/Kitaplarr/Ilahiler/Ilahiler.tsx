@@ -15,7 +15,7 @@ import IlahiOku from "../IlahiOku/IlahiOku";
 function Ilahiler({books, title}: { books: BooksProps[], title: string }) {
     return (
         <>
-            <Header pageTitle={title}/>
+            <Header pageTitle={"test"}/>
             <IonContent class="ion-padding bg-white bg-color-white">
                 <IonList lines={"none"}>
                     {books.map((book) => (

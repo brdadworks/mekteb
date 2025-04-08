@@ -3,6 +3,8 @@ import * as allBooks from "../data/books";
 
 export const bookHandler = (slug: string): BooksProps[] => {
     switch (slug) {
+      case "kuran":
+        return allBooks.kuran;
       case "mecmua":
         return allBooks.mecmua;
       case "mecmua_meal":

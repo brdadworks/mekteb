@@ -4,17 +4,15 @@ import {
     IonItem,
     IonList,
     IonLabel, IonToggle, IonButton,
-    useIonRouter,
     IonToast
 } from '@ionic/react';
 import Header from "../../components/Header";
 
 import {
-    addStorageData, getCurrentDate,
+    addStorageData,
     getNotificationPermissionStatus,
     getStorageData, notificationHandler,
     requestNotificationPermission,
-    testSendNotification,
 } from "../../../utils/functions";
 
 import { NativeSettings, AndroidSettings, IOSSettings } from 'capacitor-native-settings';

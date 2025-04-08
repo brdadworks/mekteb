@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   IonContent,
   IonItem,
@@ -14,14 +14,20 @@ import KuraniKerimOku from "../KuraniKerimOku/KuraniKerimOku";
 function KuraniKerim({ books, title }: { books: BooksProps[]; title: string }) {
   return (
     <>
-      <Header pageTitle={title} />
+      <Header pageTitle={"test"} />
       <IonContent class="ion-padding bg-white bg-color-white">
         <IonList lines={"none"}>
+
           {books.map((book) => (
             <IonNavLink
               key={`${book.id}`}
               routerDirection="forward"
-              component={() => <KuraniKerimOku pageTitle={book.title} startPage={book.startPage as number} />}
+              component={() => (
+                <KuraniKerimOku
+                  pageTitle={book.title}
+                  startPage={book.startPage as number}
+                />
+              )}
             >
               <IonItem className={"mt-[3px] k-ion-item w-full"}>
                 <IonLabel className={"text-center"}>

@@ -1,12 +1,23 @@
-import { CapacitorConfig } from '@capacitor/cli';
+import { CapacitorConfig } from "@capacitor/cli";
 
 const config: CapacitorConfig = {
-  appId: 'com.mektebiirfan.app',
-  appName: 'mekteb-i irfan',
-  webDir: 'dist',
+  appId: "com.mektebiirfan.app",
+  appName: "mekteb-i irfan",
+  webDir: "dist",
   server: {
-    androidScheme: 'https'
-  }
+    cleartext: true,
+    iosScheme: "capacitor",
+    androidScheme: "capacitor",
+  },
+  android: {
+    minSdkVersion: 21,
+    targetSdkVersion: 34,
+  },
+  cordova: {
+    preferences: {
+      AutoUpdate: "none",
+    },
+  },
 };
 
 export default config;

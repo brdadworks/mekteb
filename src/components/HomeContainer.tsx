@@ -19,6 +19,7 @@ const HomeContainer: React.FC<ContainerProps> = () => {
     const [prayerTimes, setPrayerTimes] = useState<PrayerTimesProps>();
     const [nearestPrayerTime, setNearestPrayerTime] = useState<any>();
     const [settings, setSettings] = useState<SettingsProps>();
+    const [countdown, setCountdown] = useState<string>('');
     const formattedClock = getFormattedClock();
     const settingsRef = useRef<any>(null);
 
@@ -27,6 +28,7 @@ const HomeContainer: React.FC<ContainerProps> = () => {
         (async () => {
             await store.create();
             const getSettings = await store.get('settings');
+            console.log("getSettings", getSettings);
             setSettings(getSettings)
             if (getSettings) {
                 console.log(getSettings.district.IlceID);
@@ -40,6 +42,28 @@ const HomeContainer: React.FC<ContainerProps> = () => {
         
     }, []);
 
+    useEffect(() => {
+        const interval = setInterval(() => {
+            if (nearestPrayerTime?.time) {
+                const now = new Date();
+                const nextPrayerTime = new Date();
+                const [hours, minutes] = nearestPrayerTime.time.split(':').map(Number);
+                nextPrayerTime.setHours(hours, minutes, 0, 0);
+                
+                const timeDiff = nextPrayerTime.getTime() - now.getTime();
+                if (timeDiff > 0) {
+                    const hoursLeft = Math.floor((timeDiff % (1000 * 3600 * 24)) / (1000 * 3600));
+                    const minutesLeft = Math.floor((timeDiff % (1000 * 3600)) / (1000 * 60));
+                    const secondsLeft = Math.floor((timeDiff % (1000 * 60)) / 1000);
+                    setCountdown(`${hoursLeft}s ${minutesLeft}d ${secondsLeft}s`);
+                } else {
+                    setCountdown('Namaz vakti geldi!');
+                }
+            }
+        }, 1000);
+
+        return () => clearInterval(interval);
+    }, [nearestPrayerTime]);
 
     return (
         <>
@@ -62,11 +86,14 @@ const HomeContainer: React.FC<ContainerProps> = () => {
                                 <span>{nearestPrayerTime.name}</span>
                                 <span className={"text-3xl font-medium "}>{nearestPrayerTime.time}</span>
                                 <span className={"opacity-95"}><LiveClock/></span>
+                                <span className={"font-medium text-[1rem] text-center mt-5"}>Vaktin Çıkmasına:</span>
+                                <span className={"font-medium"}>{countdown}</span>
+
                             </>
                         ) : <span className={"opacity-95 text-xl"}><LiveClock/></span>}
 
                     </IonCol>
-                    <IonCol><img src={"/moon/" + prayerTimes?.AyinSekliURL.split("images/")[1]} alt="ayinsekli"
+                    <IonCol><img src={prayerTimes?.AyinSekliURL} alt="ayinsekli"
                                  className={"w-[80px] h-[80px] z-10 "}/></IonCol>
                 </IonRow>
                 <IonRow>
@@ -180,7 +207,6 @@ function getFormattedClock() {
     const month = months[now.getMonth()];
     const year = now.getFullYear();
     const dayOfWeek = daysOfWeek[now.getDay()];
-
     return `${day} ${month} ${year} ${dayOfWeek}`;
 }
 

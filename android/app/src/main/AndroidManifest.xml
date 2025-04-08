@@ -25,6 +25,12 @@
             </intent-filter>
         </activity>
 
+        <activity 
+            android:name=".NewActivity"
+            android:label="@string/new_activity_label"
+            android:theme="@style/Theme.AppCompat.Light">
+        </activity>
+
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.fileprovider"

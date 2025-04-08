@@ -27,13 +27,6 @@ const UpdatePopUp: React.FC = () => {
     }, [])
     //check for update
     useEffect(() => {
-        //mektebi-irfan-version.json
-        // {
-        //     "version": {
-        //         "android": "3.0",
-        //         "ios": "3.0"
-        //     }
-        // }
 
         if (appVersion) {
             fetch(`https://brd.com.tr/mektebi-irfan-version.json`, {

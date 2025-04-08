@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import {
   IonBackButton,
   IonButtons,
@@ -15,7 +15,6 @@ import {
   arrowForwardOutline,
   enterOutline,
 } from "ionicons/icons";
-import { BookProps } from "../../../../utils/types";
 import {
   fatiha,
   bakara,
@@ -35,36 +34,49 @@ import {
   ala,
   hatim,
 } from "../../../../data/books";
+import { Navigation, Pagination } from "swiper/modules";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import { LastPageContext } from "../../../context/LastPageContext";
 
-function KuraniKerimOku({ startPage, pageTitle }: { startPage: number, pageTitle: string }) {
-  const [swipe, setSwipe] = useState<any>();
+function KuraniKerimOku({
+  startPage,
+  pageTitle,
+}: {
+  startPage: number;
+  pageTitle: string;
+}) {
+  console.log("KuraniKerimOku -> startPage", startPage);
+  const swipeRef = useRef<any>(null);
   const [title, setTitle] = useState<string>(pageTitle);
   const topRef = useRef<any>(null);
 
-  console.log(pageTitle);
-  
+  const lastPageContext = useContext(LastPageContext);
 
   const goFirstPage = () => {
-    swipe?.slideTo(0);
-  };
-  const nextPage = () => {
-    swipe?.slidePrev();
-  };
-  const prevPage = () => {
-    swipe?.slideNext();
-  };
-  const scrollTop = () => {
-    console.log("scrollTop");
-    topRef.current?.scrollToTop();
-    console.log(swipe?.activeIndex);
-    
-    setTitle(titleHandler(swipe?.activeIndex));
+    swipeRef.current?.slideTo(0);
   };
 
-  const images: JSX.Element[] = imagesHandler();
+  const nextPage = () => {
+    console.log("nextPage");
+    if (swipeRef.current) {
+      swipeRef.current.slidePrev();
+      lastPageContext.setLastPage(swipeRef.current.activeIndex);
+    }
+  };
+
+  const prevPage = () => {
+    if (swipeRef.current) {
+      swipeRef.current.slideNext();
+      lastPageContext.setLastPage(swipeRef.current.activeIndex);
+    }
+  };
+
+  const scrollTop = () => {
+    topRef.current?.scrollToTop();
+    setTitle(titleHandler(swipeRef.current?.activeIndex || 0));
+  };
 
   return (
     <>
@@ -73,25 +85,29 @@ function KuraniKerimOku({ startPage, pageTitle }: { startPage: number, pageTitle
           <IonButtons slot="start">
             <IonBackButton text={"Geri"}></IonBackButton>
           </IonButtons>
-          <IonTitle className={"text-xl"}>{title != "pageTitle" ? title : pageTitle}</IonTitle>
+          <IonTitle className={"text-xl"}>
+            {title !== "pageTitle" ? title : pageTitle}
+          </IonTitle>
         </IonToolbar>
       </IonHeader>
 
-      <IonContent
-        ref={topRef}
-        scrollEvents={true}
-        class="ion-padding bg-white bg-color-white"
-      >
+      <IonContent ref={topRef} scrollEvents={true} class="ion-padding bg-white">
         <Swiper
           initialSlide={startPage}
-          onSlideChangeTransitionEnd={scrollTop}
-          onBeforeInit={(swipper) => setSwipe(swipper)}
-          dir={"rtl"}
+          onSwiper={(swiper) => (swipeRef.current = swiper)}
+          onSlideChangeTransitionEnd={(swiper) => {
+            scrollTop();
+            lastPageContext.setLastPage(swiper.activeIndex);
+          }}
+          dir={"ltr"}
           className="mySwiper"
+          modules={[Navigation, Pagination]}
+          navigation
+          pagination={{ clickable: true }}
+          
         >
-          {images}
+          {imagesHandler()}
         </Swiper>
-        {/*<img src={`${currentBook.content}${currentPage}-fs8.png`} alt={""} className={"w-full h-auto"}/>*/}
       </IonContent>
 
       <IonFooter
@@ -102,21 +118,21 @@ function KuraniKerimOku({ startPage, pageTitle }: { startPage: number, pageTitle
             className={"text-[#4ac3a4]"}
             icon={arrowBackOutline}
             size={"large"}
-          ></IonIcon>
+          />
         </button>
         <button onClick={nextPage}>
           <IonIcon
             className={"text-[#4ac3a4]"}
             icon={arrowForwardOutline}
             size={"large"}
-          ></IonIcon>
+          />
         </button>
         <button onClick={goFirstPage}>
           <IonIcon
             className={"text-[#4ac3a4]"}
             icon={enterOutline}
             size={"large"}
-          ></IonIcon>
+          />
         </button>
       </IonFooter>
     </>
@@ -126,60 +142,39 @@ function KuraniKerimOku({ startPage, pageTitle }: { startPage: number, pageTitle
 export default KuraniKerimOku;
 
 const imagesHandler = () => {
-  /*fatiha,
-  bakara,
-  yusuf,
-  kehf,
-  yasin,
-  duhan,
-  fetih,
-  rahman,
-  vakia,
-  hasr,
-  cuma,
-  tahrim,
-  mulk,
-  insan,
-  nebe,
-  ala,
-  hatim,*/
-  //for above books do this code
-  const images: JSX.Element[] = [];
-  images.push(pushImages(fatiha));
-  images.push(pushImages(bakara));
-  images.push(pushImages(yusuf));
-  images.push(pushImages(kehf));
-  images.push(pushImages(yasin));
-  images.push(pushImages(duhan));
-  images.push(pushImages(fetih));
-  images.push(pushImages(rahman));
-  images.push(pushImages(vakia));
-  images.push(pushImages(hasr));
-  images.push(pushImages(cuma));
-  images.push(pushImages(tahrim));
-  images.push(pushImages(mulk));
-  images.push(pushImages(insan));
-  images.push(pushImages(nebe));
-  images.push(pushImages(ala));
-  images.push(pushImages(hatim));
+  const books = [
+    fatiha,
+    bakara,
+    yusuf,
+    kehf,
+    yasin,
+    duhan,
+    fetih,
+    rahman,
+    vakia,
+    hasr,
+    cuma,
+    tahrim,
+    mulk,
+    insan,
+    nebe,
+    ala,
+    hatim,
+  ];
 
-  return images;
+  return books.flatMap(pushImages);
 };
 
 const pushImages = (data: any) => {
-  const images: any = [];
-  for (let i = 0; i < data.page; i++) {
-    images.push(
-      <SwiperSlide key={data.title + "-" + i}>
-        <img
-          src={`${data.content}${i + 1}-fs8.png`}
-          alt={""}
-          className={"w-full h-auto"}
-        />
-      </SwiperSlide>
-    );
-  }
-  return images;
+  return Array.from({ length: data.page }, (_, i) => (
+    <SwiperSlide key={`${data.title}-${i}`}>
+      <img
+        src={`${data.content}${i + 1}-fs8.png`}
+        alt={""}
+        className={"w-full h-auto"}
+      />
+    </SwiperSlide>
+  ));
 };
 
 const titleHandler = (activePage: number) => {
@@ -203,13 +198,8 @@ const titleHandler = (activePage: number) => {
     { page: 60, title: "Hatim Suresi" },
   ];
 
-  const mappedTitle = titlesMapping.find(
-    (mapping) => activePage < mapping.page
+  return (
+    titlesMapping.find((mapping) => activePage < mapping.page)?.title ||
+    "pageTitle"
   );
-
-  if (mappedTitle) {
-    return mappedTitle.title;
-  } else {
-    return "pageTitle";
-  }
 };
