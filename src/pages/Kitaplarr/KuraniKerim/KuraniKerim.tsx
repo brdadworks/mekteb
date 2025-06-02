@@ -14,7 +14,7 @@ import KuraniKerimOku from "../KuraniKerimOku/KuraniKerimOku";
 function KuraniKerim({ books, title }: { books: BooksProps[]; title: string }) {
   return (
     <>
-      <Header pageTitle={"test"} />
+      <Header pageTitle={"Kuran-ı Kerim"} />
       <IonContent class="ion-padding bg-white bg-color-white">
         <IonList lines={"none"}>
 

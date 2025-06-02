@@ -1,4 +1,4 @@
-import { useContext, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   IonBackButton,
   IonButtons,
@@ -34,11 +34,11 @@ import {
   ala,
   hatim,
 } from "../../../../data/books";
-import { Navigation, Pagination } from "swiper/modules";
 
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperClass, SwiperSlide } from "swiper/react";
+import { Virtual } from "swiper/modules"; // Virtual modülü ekleyin
+
 import "swiper/css";
-import { LastPageContext } from "../../../context/LastPageContext";
 
 function KuraniKerimOku({
   startPage,
@@ -47,36 +47,25 @@ function KuraniKerimOku({
   startPage: number;
   pageTitle: string;
 }) {
-  console.log("KuraniKerimOku -> startPage", startPage);
-  const swipeRef = useRef<any>(null);
+  const [swipe, setSwipe] = useState<SwiperClass>({} as SwiperClass);
   const [title, setTitle] = useState<string>(pageTitle);
   const topRef = useRef<any>(null);
 
-  const lastPageContext = useContext(LastPageContext);
-
   const goFirstPage = () => {
-    swipeRef.current?.slideTo(0);
-  };
-
-  const nextPage = () => {
-    console.log("nextPage");
-    if (swipeRef.current) {
-      swipeRef.current.slidePrev();
-      lastPageContext.setLastPage(swipeRef.current.activeIndex);
-    }
-  };
-
-  const prevPage = () => {
-    if (swipeRef.current) {
-      swipeRef.current.slideNext();
-      lastPageContext.setLastPage(swipeRef.current.activeIndex);
-    }
+    swipe?.slideTo(0);
   };
 
   const scrollTop = () => {
     topRef.current?.scrollToTop();
-    setTitle(titleHandler(swipeRef.current?.activeIndex || 0));
+
+    setTitle(titleHandler(swipe?.activeIndex));
   };
+
+  const onSlideChange = () => {
+    scrollTop();
+  };
+
+  const images: JSX.Element[] = imagesHandler();
 
   return (
     <>
@@ -86,53 +75,54 @@ function KuraniKerimOku({
             <IonBackButton text={"Geri"}></IonBackButton>
           </IonButtons>
           <IonTitle className={"text-xl"}>
-            {title !== "pageTitle" ? title : pageTitle}
+            {title != "pageTitle" ? title : pageTitle}
           </IonTitle>
         </IonToolbar>
       </IonHeader>
 
-      <IonContent ref={topRef} scrollEvents={true} class="ion-padding bg-white">
+      <IonContent
+        ref={topRef}
+        scrollEvents={true}
+        class="ion-padding bg-white bg-color-white"
+      >
         <Swiper
+          modules={[Virtual]}
+          virtual
           initialSlide={startPage}
-          onSwiper={(swiper) => (swipeRef.current = swiper)}
-          onSlideChangeTransitionEnd={(swiper) => {
-            scrollTop();
-            lastPageContext.setLastPage(swiper.activeIndex);
+          onSlideChangeTransitionEnd={onSlideChange}
+          onBeforeInit={(swipper) => {
+            setSwipe(swipper);
           }}
-          dir={"ltr"}
+          dir={"rtl"}
           className="mySwiper"
-          modules={[Navigation, Pagination]}
-          navigation
-          pagination={{ clickable: true }}
-          
         >
-          {imagesHandler()}
+          {images}
         </Swiper>
       </IonContent>
 
       <IonFooter
         className={"w-full flex justify-evenly items-center p-3 bg-gray-200"}
       >
-        <button onClick={prevPage}>
+        <button onClick={() => swipe?.slideNext()}>
           <IonIcon
             className={"text-[#4ac3a4]"}
             icon={arrowBackOutline}
             size={"large"}
-          />
+          ></IonIcon>
         </button>
-        <button onClick={nextPage}>
+        <button onClick={() => swipe.slidePrev()}>
           <IonIcon
             className={"text-[#4ac3a4]"}
             icon={arrowForwardOutline}
             size={"large"}
-          />
+          ></IonIcon>
         </button>
         <button onClick={goFirstPage}>
           <IonIcon
             className={"text-[#4ac3a4]"}
             icon={enterOutline}
             size={"large"}
-          />
+          ></IonIcon>
         </button>
       </IonFooter>
     </>
@@ -142,39 +132,42 @@ function KuraniKerimOku({
 export default KuraniKerimOku;
 
 const imagesHandler = () => {
-  const books = [
-    fatiha,
-    bakara,
-    yusuf,
-    kehf,
-    yasin,
-    duhan,
-    fetih,
-    rahman,
-    vakia,
-    hasr,
-    cuma,
-    tahrim,
-    mulk,
-    insan,
-    nebe,
-    ala,
-    hatim,
-  ];
+  const images: JSX.Element[] = [];
+  images.push(pushImages(fatiha));
+  images.push(pushImages(bakara));
+  images.push(pushImages(yusuf));
+  images.push(pushImages(kehf));
+  images.push(pushImages(yasin));
+  images.push(pushImages(duhan));
+  images.push(pushImages(fetih));
+  images.push(pushImages(rahman));
+  images.push(pushImages(vakia));
+  images.push(pushImages(hasr));
+  images.push(pushImages(cuma));
+  images.push(pushImages(tahrim));
+  images.push(pushImages(mulk));
+  images.push(pushImages(insan));
+  images.push(pushImages(nebe));
+  images.push(pushImages(ala));
+  images.push(pushImages(hatim));
 
-  return books.flatMap(pushImages);
+  return images;
 };
 
 const pushImages = (data: any) => {
-  return Array.from({ length: data.page }, (_, i) => (
-    <SwiperSlide key={`${data.title}-${i}`}>
-      <img
-        src={`${data.content}${i + 1}-fs8.png`}
-        alt={""}
-        className={"w-full h-auto"}
-      />
-    </SwiperSlide>
-  ));
+  const images: any = [];
+  for (let i = 0; i < data.page; i++) {
+    images.push(
+      <SwiperSlide key={data.title + "-" + i} virtualIndex={i}>
+        <img
+          src={`${data.content}${i + 1}-fs8.png`}
+          alt={""}
+          className={"w-full h-auto"}
+        />
+      </SwiperSlide>
+    );
+  }
+  return images;
 };
 
 const titleHandler = (activePage: number) => {
@@ -198,8 +191,13 @@ const titleHandler = (activePage: number) => {
     { page: 60, title: "Hatim Suresi" },
   ];
 
-  return (
-    titlesMapping.find((mapping) => activePage < mapping.page)?.title ||
-    "pageTitle"
+  const mappedTitle = titlesMapping.find(
+    (mapping) => activePage < mapping.page
   );
+
+  if (mappedTitle) {
+    return mappedTitle.title;
+  } else {
+    return "pageTitle";
+  }
 };

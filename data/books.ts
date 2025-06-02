@@ -100,7 +100,7 @@ export const mecmua = [
   },
   {
     id: 10,
-    title: "Evrad-ı Naşibendiyye",
+    title: "Evrad-ı Nakşibendiyye",
     slug: "evradi_nasibendiyye",
     read: true,
   },
