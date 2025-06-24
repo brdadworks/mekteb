@@ -93,11 +93,12 @@ export default function Kuran({
                     <IonNavLink
                       key={i}
                       routerDirection="forward"
-                      component={KuraniKerimOku}
-                      componentProps={{
-                        startPage: sayfa.startPage as number,
-                        bookTitle: sayfa.title,
-                      }}
+                      component={() => (
+                        <KuraniKerimOku
+                          startPage={(Number(sayfa.startPage)) as number}
+                          bookTitle={sayfa.title}
+                        />
+                      )}
                       onClick={() => {
                         lastPageContext.setLastPage(sayfa.startPage);
                       }}
@@ -150,12 +151,12 @@ export default function Kuran({
                       routerDirection="forward"
                       component={() => (
                         <KuraniKerimOku
-                          startPage={(Number(sayfa.startPage) + 1) as number}
+                          startPage={(Number(sayfa.startPage)) as number}
                           bookTitle={sayfa.title}
                         />
                       )}
                       onClick={() => {
-                        lastPageContext.setLastPage(sayfa.startPage + 1);
+                        lastPageContext.setLastPage(sayfa.startPage);
                       }}
                     >
                       <IonItem className="mt-[3px] k-ion-item w-full">
