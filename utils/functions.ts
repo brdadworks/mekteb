@@ -45,38 +45,52 @@ export const getNotificationPermissionStatus = async () => {
   const status = await LocalNotifications.checkPermissions();
   return status.display;
 };
-export const getCities = async (id: string) => {
-  const cities = await axios.get(
-    "https://ezanvakti-proxy-production.up.railway.app/proxy/sehirler/" + id,
-     {
-      headers: {
 
-      },
-      maxBodyLength: Infinity,
-     }
-  );
-  const res = await cities.data;
-  console.log("citiesJson:", res);
-  return { status: cities.status, cities: res };
+const apiBase = "/api/";
+
+export const getCountries = async () => {
+  const { status, data } = await axios.get(`${apiBase}ulkeler`, {
+    headers: {},
+    maxBodyLength: Infinity,
+  });
+  console.log({ status, data });
+  return { status, data };
+};
+
+export const getCountry = async (id: string) => {
+  const { status, data } = await axios.get(`${apiBase}ulkeler/${id}`, {
+    headers: {},
+    maxBodyLength: Infinity,
+  });
+  console.log({ status, data });
+  return { status, data };
+};
+
+export const getCities = async (id: string) => {
+  const { status, data } = await axios.get(`${apiBase}sehirler/${id}`, {
+    headers: {},
+    maxBodyLength: Infinity,
+  });
+  console.log({ status, data });
+  return { status, data };
 };
 
 export const getDistrict = async (id: string) => {
-  console.log("getDistrict:", id);
-  const district = await axios.get(
-    "https://ezanvakti-proxy-production.up.railway.app/proxy/ilceler/" + id
-  );
-  const res = await district.data;
-  console.log("getDistrict:", res);
-  return { status: district.status, district: res };
+  const { status, data } = await axios.get(`${apiBase}ilceler/${id}`, {
+    headers: {},
+    maxBodyLength: Infinity,
+  });
+  console.log({ status, data });
+  return { status, data };
 };
 
 export const getPrayerTimes = async (id: string) => {
-  const prayerTimes = await axios.get(
-    "https://ezanvakti-proxy-production.up.railway.app/proxy/vakitler/" + id
-  );
-  const res = await prayerTimes.data;
-  console.log("prayerTimes:", res);
-  return { status: prayerTimes.status, prayerTimes: res };
+  const { status, data } = await axios.get(`${apiBase}vakitler/${id}`, {
+    headers: {},
+    maxBodyLength: Infinity,
+  });
+  console.log({ status, data });
+  return { status, data };
 };
 
 export const prayerTimesHandler = async (id: string) => {

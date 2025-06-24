@@ -1,36 +1,43 @@
 import React, { useEffect, useState } from "react";
-import { IonContent, IonInfiniteScroll } from "@ionic/react";
+import { IonContent } from "@ionic/react";
 
 import "./Imsak.css";
 import Header from "../../components/Header";
 import { PrayerTimesProps } from "../../../utils/types";
-import { Storage } from "@ionic/storage";
-import { key } from "ionicons/icons";
 import { getPrayerTimes, getStorageData } from "../../../utils/functions";
 
 function Imsakiye() {
-  const [prayerTimes, setPrayerTimes] = useState<PrayerTimesProps[]>();
+  const [prayerTimes, setPrayerTimes] = useState<PrayerTimesProps[] | null>(null);
+
   useEffect(() => {
-    const PrayerTimes = async () => {
-      const data = await getStorageData("prayerTimes");
-      console.log("data imsakiye", data);
+    const loadPrayerTimes = async () => {
+      const stored = (await getStorageData("prayerTimes")) as { prayerTimes: PrayerTimesProps[] } | null;
 
       if (
-        data.prayerTimes[data.prayerTimes.length - 1].MiladiTarihUzunIso8601 <
-        new Date().toISOString()
+        !stored ||
+        !stored.prayerTimes ||
+        stored.prayerTimes.length === 0 ||
+        new Date(stored.prayerTimes[stored.prayerTimes.length - 1].MiladiTarihUzunIso8601) < new Date()
       ) {
-        const store = new Storage();
-        await store.create();
-        const getSettings = await store.get("settings");
-
-        const newData = await getPrayerTimes(getSettings.district.IlceID);
-        setPrayerTimes(newData.prayerTimes);
+        // Yeni veri çağır
+        const settings = await getStorageData("settings");
+        if (settings?.district?.IlceID) {
+          const response = await getPrayerTimes(settings.district.IlceID);
+          if (response?.data && Array.isArray(response.data)) {
+            setPrayerTimes(response.data);
+          } else {
+            console.warn("Vakitler alınamadı");
+            setPrayerTimes([]);
+          }
+        }
       } else {
-        setPrayerTimes(data.prayerTimes);
+        setPrayerTimes(stored.prayerTimes);
       }
     };
-    PrayerTimes();
+
+    loadPrayerTimes();
   }, []);
+
   return (
     <>
       <Header pageTitle={"İmsakiye"} />
@@ -51,23 +58,21 @@ function Imsakiye() {
               </tr>
             </thead>
             <tbody>
-              {prayerTimes?.map((prayerTime, index) => {
-                return (
-                  <tr key={index}>
-                    <td>
-                      {prayerTime.MiladiTarihUzun.split(" ")[0]}
-                      <br />
-                      {prayerTime.MiladiTarihUzun.split(" ")[1].substring(0, 3)}
-                    </td>
-                    <td>{prayerTime.Imsak}</td>
-                    <td>{prayerTime.Gunes}</td>
-                    <td>{prayerTime.Ogle}</td>
-                    <td>{prayerTime.Ikindi}</td>
-                    <td>{prayerTime.Aksam}</td>
-                    <td>{prayerTime.Yatsi}</td>
-                  </tr>
-                );
-              })}
+              {prayerTimes.map((prayerTime, index) => (
+                <tr key={index}>
+                  <td>
+                    {prayerTime.MiladiTarihUzun.split(" ")[0]}
+                    <br />
+                    {prayerTime.MiladiTarihUzun.split(" ")[1].substring(0, 3)}
+                  </td>
+                  <td>{prayerTime.Imsak}</td>
+                  <td>{prayerTime.Gunes}</td>
+                  <td>{prayerTime.Ogle}</td>
+                  <td>{prayerTime.Ikindi}</td>
+                  <td>{prayerTime.Aksam}</td>
+                  <td>{prayerTime.Yatsi}</td>
+                </tr>
+              ))}
             </tbody>
           </table>
         )}
