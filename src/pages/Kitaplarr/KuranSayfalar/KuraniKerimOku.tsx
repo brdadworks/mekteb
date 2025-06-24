@@ -172,6 +172,13 @@ function KuraniKerimOku({
     scrollTop();
   };
 
+  const [currentPage, setCurrentPage] = useState(startPage);
+
+  // Her sayfa değişiminde localStorage'a yaz
+  useEffect(() => {
+    lastPageContext.setLastPage(currentPage);
+  }, [currentPage]);
+
   return (
     <>
       <IonHeader className="px-2 py-0 mt-n1">

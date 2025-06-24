@@ -173,25 +173,27 @@ export default function Kuran({
           </>
         ) : (
           <IonList lines={"none"}>
-            <IonNavLink
-              routerDirection="forward"
-              component={() => (
-                <KuraniKerimOku
-                  startPage={lastPageContext.lastPage}
-                  bookTitle={"Son Okunan Sayfa"}
-                />
-              )}
-              onClick={() => {
-                lastPageContext.setLastPage(lastPageContext.lastPage);
-              }}
-            >
-              <IonItem className="mt-[3px] k-ion-item w-full">
-                <IonLabel className="text-left font-medium text-[1rem] text-white whitespace-pre-wrap">
-                  Son Okunan Sayfa
-                  <IonIcon icon={bookmark} className="ml-2" />
-                </IonLabel>
-              </IonItem>
-            </IonNavLink>
+            {lastPageContext.lastPage > 0 && (
+              <IonNavLink
+                routerDirection="forward"
+                component={() => (
+                  <KuraniKerimOku
+                    startPage={lastPageContext.lastPage}
+                    bookTitle={"Son Okunan Sayfa"}
+                  />
+                )}
+                onClick={() => {
+                  lastPageContext.setLastPage(lastPageContext.lastPage);
+                }}
+              >
+                <IonItem className="mt-[3px] k-ion-item w-full">
+                  <IonLabel className="text-left font-medium text-[1rem] text-white whitespace-pre-wrap">
+                    Son Okunan Sayfa
+                    <IonIcon icon={bookmark} className="ml-2" />
+                  </IonLabel>
+                </IonItem>
+              </IonNavLink>
+            )}
             {sureler.map((sure, i) => (
               <IonNavLink
                 key={i}
