@@ -49,7 +49,7 @@ export const getNotificationPermissionStatus = async () => {
 // Dev apiBase = /api/
 // Production apiBase = https://ezanvakti.emushaf.net/
 // For testing purposes, we will use the dev api base
-const apiBase = "https://ezanvakti.emushaf.net/";
+const apiBase = "/api/";
 
 export const getCountries = async () => {
   const { status, data } = await axios.get(`${apiBase}ulkeler`, {
@@ -107,7 +107,7 @@ export const prayerTimesHandler = async (id: string) => {
       storedPrayerTimes.prayerTimes[storedPrayerTimes.prayerTimes.length - 1]
         .MiladiTarihUzunIso8601 < new Date().toISOString()
     ) {
-      const data = await getPrayerTimes(getSettings.district.IlceID);
+      const { data } = await getPrayerTimes(getSettings.district.IlceID);
       console.log("data:", data);
 
       return data.prayerTimes.find((item: any) => {
@@ -125,7 +125,7 @@ export const prayerTimesHandler = async (id: string) => {
       });
     }
   }
-  const { status, prayerTimes } = await getPrayerTimes(id);
+  const { status, data: prayerTimes } = await getPrayerTimes(id);
   if (status !== 200) {
     return false;
   }
