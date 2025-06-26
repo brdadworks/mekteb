@@ -275,10 +275,23 @@ export const notificationHandler = async (
     notifications: pendingNotifications.notifications,
   });
 
+  const storageData = await getStorageData("prayerTimes");
+  console.log("storageData", storageData);
+
+  // prayerTimesData'yı güvenli şekilde al
+  let prayerTimesData: any[] = [];
+  if (Array.isArray(storageData)) {
+    prayerTimesData = storageData;
+  } else if (storageData && Array.isArray(storageData.prayerTimes)) {
+    prayerTimesData = storageData.prayerTimes;
+  } else if (storageData && Array.isArray(storageData.data)) {
+    prayerTimesData = storageData.data;
+  } else {
+    console.error("prayerTimesData bulunamadı veya dizi değil:", storageData);
+    return;
+  }
+
   try {
-    const { prayerTimes: prayerTimesData } = await getStorageData(
-      "prayerTimes"
-    );
     const currentDate = getCurrentDate();
     const clock = getCurrentClock();
 

@@ -4,41 +4,95 @@ import * as allBooks from "../data/books";
 export const bookHandler = (slug: string): BooksProps[] => {
     switch (slug) {
       case "kuran":
-        return allBooks.kuran;
+        return allBooks.kuran.map((item: any) => ({
+          ...item,
+          cuz: item.cuz !== null ? Number(item.cuz) : null
+        }));
       case "mecmua":
-        return allBooks.mecmua;
+        return allBooks.mecmua.map((item: any) => ({
+          ...item,
+          sure: item.sure ?? ""
+        }));
       case "mecmua_meal":
-        return allBooks.mecmua_meal;
+        return allBooks.mecmua_meal.map((item: any) => ({
+          ...item,
+          sure: item.sure ?? ""
+        }));
       case "kurani_kerim":
-        return allBooks.kurani_kerim;
+        return allBooks.kurani_kerim.map((item: any) => ({
+          ...item,
+          sure: item.sure ?? ""
+        }));
       case "cevseni_kebir":
-        return allBooks.cevseni_kebir;
+        return allBooks.cevseni_kebir.map((item: any) => ({
+          ...item,
+          sure: item.sure ?? ""
+        }));
       case "cevseni_kebir_meal":
-        return allBooks.cevseni_kebir_meal;
+        return allBooks.cevseni_kebir_meal.map((item: any) => ({
+          ...item,
+          sure: item.sure ?? ""
+        }));
       case "kurani_kerim_meal":
-        return allBooks.kurani_kerim_meal;
+        return allBooks.kurani_kerim_meal.map((item: any) => ({
+          ...item,
+          sure: item.sure ?? ""
+        }));
       case "hayati_hakika":
-        return allBooks.hayati_hakika;
+        return allBooks.hayati_hakika.map((item: any) => ({
+          ...item,
+          sure: item.sure ?? ""
+        }));
       case "hadisler":
-        return allBooks.hadisler;
+        return allBooks.hadisler.map((item: any) => ({
+          ...item,
+          sure: item.sure ?? ""
+        }));
       case "ilahiler":
-        return allBooks.ilahiler;
+        return allBooks.ilahiler.map((item: any) => ({
+          ...item,
+          sure: item.sure ?? ""
+        }));
       case "yunus":
-        return allBooks.yunus;
+        return allBooks.yunus.map((item: any) => ({
+          ...item,
+          sure: item.sure ?? ""
+        }));
       case "kuddusi":
-        return allBooks.kuddusi;
+        return allBooks.kuddusi.map((item: any) => ({
+          ...item,
+          sure: item.sure ?? ""
+        }));
       case "niyazi":
-        return allBooks.niyazi;
+        return allBooks.niyazi.map((item: any) => ({
+          ...item,
+          sure: item.sure ?? ""
+        }));
       case "ibrahim_hakki":
-        return allBooks.ibrahim_hakki;
+        return allBooks.ibrahim_hakki.map((item: any) => ({
+          ...item,
+          sure: item.sure ?? ""
+        }));
       case "abdulgani_efendi":
-        return allBooks.abdulgani_efendi;
+        return allBooks.abdulgani_efendi.map((item: any) => ({
+          ...item,
+          sure: item.sure ?? ""
+        }));
       case "alvarlı_efe":
-        return allBooks.alvarlı_efe;
+        return allBooks.alvarlı_efe.map((item: any) => ({
+          ...item,
+          sure: item.sure ?? ""
+        }));
       case "irfani":
-        return allBooks.irfani;
+        return allBooks.irfani.map((item: any) => ({
+          ...item,
+          sure: item.sure ?? ""
+        }));
       case "la_edri":
-        return allBooks.la_edri;
+        return allBooks.la_edri.map((item: any) => ({
+          ...item,
+          sure: item.sure ?? ""
+        }));
       default:
         return [];
     }
