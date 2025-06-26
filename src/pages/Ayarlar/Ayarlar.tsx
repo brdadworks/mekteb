@@ -25,6 +25,7 @@ import {
   removeStorageData,
 } from "../../../utils/functions";
 import { App } from "@capacitor/app";
+import { Capacitor } from '@capacitor/core';
 //types
 import {
   CountryProps,
@@ -36,7 +37,7 @@ import { get } from "cheerio/dist/commonjs/api/traversing";
 
 function Ayarlar() {
   const [ulkeler, setUlkeler] = useState<CountryProps[]>([]);
-  const [appVersion, setAppVersion] = useState<string>("");
+  const [appVersion, setAppVersion] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
   const [cities, setCities] = useState<CityProps[]>([]);
   const [district, setDistrict] = useState<DistrictProps[]>([]);
@@ -79,9 +80,19 @@ function Ayarlar() {
   // Uygulama versiyonu
   useEffect(() => {
     const getAppVersion = async () => {
-      const info = await App.getInfo();
-      setAppVersion(info.version);
+      if (Capacitor.isNativePlatform()) {
+        try {
+          const info = await App.getInfo();
+          setAppVersion(info.version);
+        } catch (error) {
+          console.error("App.getInfo() error:", error);
+        }
+      } else {
+        console.warn("App.getInfo() is not supported on web.");
+        setAppVersion("Web"); // Web için varsayılan gösterim
+      }
     };
+
     getAppVersion();
   }, []);
 

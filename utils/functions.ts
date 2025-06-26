@@ -46,7 +46,10 @@ export const getNotificationPermissionStatus = async () => {
   return status.display;
 };
 
-const apiBase = "/api/";
+// Dev apiBase = /api/
+// Production apiBase = https://ezanvakti.emushaf.net/
+// For testing purposes, we will use the dev api base
+const apiBase = "https://ezanvakti.emushaf.net/";
 
 export const getCountries = async () => {
   const { status, data } = await axios.get(`${apiBase}ulkeler`, {
