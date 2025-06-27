@@ -61,19 +61,26 @@ function Ayarlar() {
   const cityRef = useRef<HTMLIonSelectElement | null>(null);
   const districtRef = useRef<HTMLIonSelectElement | null>(null);
 
-  // Ülkeleri getir
-  useEffect(() => {
-    const getUlkeler = async () => {
+  const getUlkeler = async () => {
+    try {
       const { status, data } = await getCountries();
-      if (status === 200) {
+
+      if (status === 200 && Array.isArray(data)) {
         setUlkeler(data);
       } else {
         setToastHandle(true);
-        setToastMessage(
-          "Ülke bilgisi alınırken hata oluştu. İnternet bağlantınızı kontrol ediniz"
-        );
+        setToastMessage("Ülke bilgisi alınırken hata oluştu. Lütfen tekrar deneyin.");
+        console.error("Geçersiz response:", { status, data });
       }
-    };
+    } catch (error) {
+      setToastHandle(true);
+      setToastMessage("Sunucuya ulaşılamıyor. İnternet bağlantınızı kontrol ediniz.");
+      console.error("API Hatası:", JSON.stringify(error, null, 2));
+    }
+  };
+
+  // Ülkeleri getir
+  useEffect(() => {
     getUlkeler();
   }, []);
 
@@ -292,7 +299,7 @@ function Ayarlar() {
                   value={settings.country?.UlkeID || ""}
                   onIonChange={(choice) =>
                     countryHandler(
-                      ulkeler.find(
+                      ulkeler?.find(
                         (ulke) => ulke.UlkeID === choice.detail.value
                       )!
                     )
@@ -300,7 +307,7 @@ function Ayarlar() {
                   label="Bir ülke seçiniz"
                   labelPlacement="floating"
                 >
-                  {ulkeler.map((ulke) => (
+                  {ulkeler?.map((ulke) => (
                     <IonSelectOption key={ulke.UlkeID} value={ulke.UlkeID}>
                       {ulke.UlkeAdi}
                     </IonSelectOption>
