@@ -17,15 +17,11 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>$(MARKETING_VERSION)</string>
+	<string>3.9</string>
 	<key>CFBundleVersion</key>
-	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<string>37</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>The App may collect and use your device's location data to provide you with location-based services, such as finding qibla location. We only collect location data with your explicit.</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>The App may collect and use your device's location data to provide you with location-based services, such as finding qibla location. We only collect location data with your explicit.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -47,6 +43,8 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Kampanya ve mağaza bilgilerini size en yakın konumda gösterebilmek için konum bilgilerinize ihtiyaç duyuyoruz.</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
 </dict>

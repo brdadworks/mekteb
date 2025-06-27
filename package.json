@@ -34,6 +34,7 @@
     "axios": "^1.4.0",
     "capacitor-native-settings": "^5.0.1",
     "cheerio": "^1.0.0-rc.12",
+    "install": "^0.13.0",
     "ionicons": "^7.0.0",
     "leaflet": "^1.9.4",
     "mammoth": "^1.8.0",
