@@ -25,7 +25,7 @@ import {
   removeStorageData,
 } from "../../../utils/functions";
 import { App } from "@capacitor/app";
-import { Capacitor } from '@capacitor/core';
+import { Capacitor } from "@capacitor/core";
 //types
 import {
   CountryProps,
@@ -146,7 +146,16 @@ function Ayarlar() {
       }
     };
 
-    loadSettings();
+    // Zaman aşımı ile yükleme durumunu sonlandır
+    const timeout = setTimeout(() => {
+      setLoading(false);
+      setToastHandle(true);
+      setToastMessage(
+        "Bağlantı zaman aşımına uğradı. Lütfen internetinizi kontrol edin."
+      );
+    }, 10000); // 10 saniye
+
+    loadSettings().finally(() => clearTimeout(timeout));
   }, []);
 
   const formHandler = (e: React.FormEvent) => {
