@@ -27,9 +27,9 @@ export default function Kuran({
   title: string;
 }) {
   const [searchTerm, setSearchTerm] = useState("");
-  const [searchResultPage, setSearchResultPage] = useState([]);
-  const [searchResultSure, setSearchResultSure] = useState([]);
-  const [searchResultCuz, setSearchResultCuz] = useState([]);
+  const [searchResultPage, setSearchResultPage] = useState<BooksProps[]>([]);
+  const [searchResultSure, setSearchResultSure] = useState<BooksProps[]>([]);
+  const [searchResultCuz, setSearchResultCuz] = useState<BooksProps[]>([]);
 
   const lastPageContext = useContext(LastPageContext);
 

@@ -5,6 +5,7 @@ import {
   LocalNotificationSchema,
 } from "@capacitor/local-notifications";
 import { Geolocation } from "@capacitor/geolocation";
+import { Http } from "@capacitor-community/http";
 
 export const addStorageData = async (key: string, value: any) => {
   const store = new Storage();
@@ -52,48 +53,34 @@ export const getNotificationPermissionStatus = async () => {
 const apiBase = "https://ezanvakti.emushaf.net/";
 
 export const getCountries = async () => {
-  const { status, data } = await axios.get(`${apiBase}ulkeler`, {
+  const res = await Http.get({
+    url: `${apiBase}ulkeler`,
+    params: {},
     headers: {},
-    maxBodyLength: Infinity,
   });
-  console.log({ status, data });
-  return { status, data };
+
+  console.log("getCountries:", res.status, res.data);
+  return { status: res.status, data: res.data };
 };
 
 export const getCountry = async (id: string) => {
-  const { status, data } = await axios.get(`${apiBase}ulkeler/${id}`, {
-    headers: {},
-    maxBodyLength: Infinity,
-  });
-  console.log({ status, data });
-  return { status, data };
+  const res = await Http.get({ url: `${apiBase}ulkeler/${id}`, params: {}, headers: {} });
+  return { status: res.status, data: res.data };
 };
 
 export const getCities = async (id: string) => {
-  const { status, data } = await axios.get(`${apiBase}sehirler/${id}`, {
-    headers: {},
-    maxBodyLength: Infinity,
-  });
-  console.log({ status, data });
-  return { status, data };
+  const res = await Http.get({ url: `${apiBase}sehirler/${id}`, params: {}, headers: {} });
+  return { status: res.status, data: res.data };
 };
 
 export const getDistrict = async (id: string) => {
-  const { status, data } = await axios.get(`${apiBase}ilceler/${id}`, {
-    headers: {},
-    maxBodyLength: Infinity,
-  });
-  console.log({ status, data });
-  return { status, data };
+  const res = await Http.get({ url: `${apiBase}ilceler/${id}`, params: {}, headers: {} });
+  return { status: res.status, data: res.data };
 };
 
 export const getPrayerTimes = async (id: string) => {
-  const { status, data } = await axios.get(`${apiBase}vakitler/${id}`, {
-    headers: {},
-    maxBodyLength: Infinity,
-  });
-  console.log({ status, data });
-  return { status, data };
+  const res = await Http.get({ url: `${apiBase}vakitler/${id}`, params: {}, headers: {} });
+  return { status: res.status, data: res.data };
 };
 
 export const prayerTimesHandler = async (id: string) => {

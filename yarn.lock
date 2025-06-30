@@ -958,10 +958,25 @@
     "@babel/helper-validator-identifier" "^7.25.7"
     to-fast-properties "^2.0.0"
 
+"@capacitor-community/http@^1.4.1":
+  version "1.4.1"
+  resolved "https://registry.npmjs.org/@capacitor-community/http/-/http-1.4.1.tgz"
+  integrity sha512-+pCkBXrwfm97UfjOgjV950H/qZ8SE36Mrcb46BlL1ps3VIsGuIO+AulL8GqTC6LewheRVtGJpRspNtneXQotNA==
+  dependencies:
+    "@capacitor/android" "^3.0.0"
+    "@capacitor/core" "^3.0.0"
+    "@capacitor/filesystem" "^1.0.0"
+    "@capacitor/ios" "^3.0.0"
+
 "@capacitor-community/native-market@^5.0.0":
   version "5.0.0"
   resolved "https://registry.npmjs.org/@capacitor-community/native-market/-/native-market-5.0.0.tgz"
   integrity sha512-IWhOD/fao9V7jE9MO8wCjjmeGuzQ7EhUcW+QPT+tZTDWCn428ge+K3II18bSiLMaExNJ6oe5MTA0skhzanc0ZA==
+
+"@capacitor/android@^3.0.0":
+  version "3.9.0"
+  resolved "https://registry.npmjs.org/@capacitor/android/-/android-3.9.0.tgz"
+  integrity sha512-YTPyrh1NozEuYXWGtfqN27TLXUrLbZX9fggyd4JQ1yMaUZTmLPm5dCuznONhQ49aPkJnUJB02JfpHy/qGwa2Lw==
 
 "@capacitor/android@5.3.0":
   version "5.3.0"
@@ -1014,6 +1029,13 @@
     tslib "^2.4.0"
     xml2js "^0.5.0"
 
+"@capacitor/core@^3.0.0", "@capacitor/core@^3.9.0":
+  version "3.9.0"
+  resolved "https://registry.npmjs.org/@capacitor/core/-/core-3.9.0.tgz"
+  integrity sha512-j1lL0+/7stY8YhIq1Lm6xixvUqIn89vtyH5ZpJNNmcZ0kwz6K9eLkcG6fvq1UWMDgSVZg9JrRGSFhb4LLoYOsw==
+  dependencies:
+    tslib "^2.1.0"
+
 "@capacitor/core@^5.0.0", "@capacitor/core@^5.3.0", "@capacitor/core@5.3.0":
   version "5.3.0"
   resolved "https://registry.npmjs.org/@capacitor/core/-/core-5.3.0.tgz"
@@ -1021,12 +1043,17 @@
   dependencies:
     tslib "^2.1.0"
 
-"@capacitor/geolocation@^5.0.6":
-  version "5.0.8"
-  resolved "https://registry.npmjs.org/@capacitor/geolocation/-/geolocation-5.0.8.tgz"
-  integrity sha512-ikyAKtgTfBeyZVAhDQ0Cbor6yJ18QM+xstlwRIiTRKMZDHty7rhCB0nTLpZvCGe1RQh7JLInUuKX2mPWaNELUQ==
+"@capacitor/filesystem@^1.0.0":
+  version "1.1.0"
+  resolved "https://registry.npmjs.org/@capacitor/filesystem/-/filesystem-1.1.0.tgz"
+  integrity sha512-8O3UuvL8HNUEJvZnmn8yUmvgB1evtXfcF0oxIo3YbSlylqywJwS3JTiuhKmsvSxCdpbTy8IaTsutVh3gZgWbKg==
 
-"@capacitor/google-maps@^5.2.0":
+"@capacitor/geolocation@5.0.6":
+  version "5.0.6"
+  resolved "https://registry.npmjs.org/@capacitor/geolocation/-/geolocation-5.0.6.tgz"
+  integrity sha512-3pB3CBa38aDMk7zouGbjOMBytcaqRMBosMcqNrOQjE5LMBAPUI1cEGrUzmkj+scP0SIyYGA95Tkj0BAnzvNWag==
+
+"@capacitor/google-maps@5.2.0":
   version "5.2.0"
   resolved "https://registry.npmjs.org/@capacitor/google-maps/-/google-maps-5.2.0.tgz"
   integrity sha512-bWc2LHXN3bu+ErKk2vJ77wttnxr0qhzComRmgEwNr/82mOf9ceqjH0EUmwxzw6BILErM/mBL+L52ljOaQe3jLg==
@@ -1039,6 +1066,11 @@
   version "5.0.6"
   resolved "https://registry.npmjs.org/@capacitor/haptics/-/haptics-5.0.6.tgz"
   integrity sha512-UrMcR7p2X10ql4VLlowUuH/VckTeu0lj+RQpekxox14uxDmu5AGIFDK/iDTi8W6QZkxTJRZK6sbCjgwYgNJ7Pw==
+
+"@capacitor/ios@^3.0.0":
+  version "3.9.0"
+  resolved "https://registry.npmjs.org/@capacitor/ios/-/ios-3.9.0.tgz"
+  integrity sha512-GezPCJIujRHnF4wbrKJx6Q/mgFz0f9rmh/steTTXQZI+nEl6mHk6NWh8235p7YbhonYi5WD0rFNirrjGg1EaGw==
 
 "@capacitor/ios@5.3.0":
   version "5.3.0"
@@ -1109,10 +1141,10 @@
     debug "^3.1.0"
     lodash.once "^4.1.1"
 
-"@esbuild/darwin-x64@0.18.20":
+"@esbuild/win32-x64@0.18.20":
   version "0.18.20"
-  resolved "https://registry.npmjs.org/@esbuild/darwin-x64/-/darwin-x64-0.18.20.tgz"
-  integrity sha512-pc5gxlMDxzm513qPGbCbDukOdsGtKhfxD1zJKXjCCcU7ju50O7MeAZ8c4krSJcOIJGFR+qx21yMMVYwiQvyTyQ==
+  resolved "https://registry.npmjs.org/@esbuild/win32-x64/-/win32-x64-0.18.20.tgz"
+  integrity sha512-kTdfRcSiDfQca/y9QIkng02avJ+NCaQvrMejlsB3RRv5sE9rRoeBPISaZpKxHELzRxZyLvNts1P27W3wV+8geQ==
 
 "@eslint-community/eslint-utils@^4.2.0", "@eslint-community/eslint-utils@^4.4.0":
   version "4.4.0"
@@ -4077,11 +4109,6 @@ fs.realpath@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/fs.realpath/-/fs.realpath-1.0.0.tgz"
   integrity sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==
-
-fsevents@~2.3.2:
-  version "2.3.3"
-  resolved "https://registry.npmjs.org/fsevents/-/fsevents-2.3.3.tgz"
-  integrity sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==
 
 function-bind@^1.1.2:
   version "1.1.2"
