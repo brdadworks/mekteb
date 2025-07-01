@@ -17,7 +17,7 @@ import KuraniKerimOku from "../KuranSayfalar/KuraniKerimOku";
 import { sureler } from "../../../../data/books";
 import slugify from "slugify";
 import { bookmark } from "ionicons/icons";
-import { LastPageContext } from "../../../context/LastPageContext";
+import { useLastPage } from "../../../context/LastPageContext";
 
 export default function Kuran({
   books,
@@ -27,11 +27,11 @@ export default function Kuran({
   title: string;
 }) {
   const [searchTerm, setSearchTerm] = useState("");
-  const [searchResultPage, setSearchResultPage] = useState([]);
-  const [searchResultSure, setSearchResultSure] = useState([]);
-  const [searchResultCuz, setSearchResultCuz] = useState([]);
+  const [searchResultPage, setSearchResultPage] = useState<BooksProps[]>([]);
+  const [searchResultSure, setSearchResultSure] = useState<BooksProps[]>([]);
+  const [searchResultCuz, setSearchResultCuz] = useState<BooksProps[]>([]);
 
-  const lastPageContext = useContext(LastPageContext);
+  const { lastPage, setLastPage, isLoaded } = useLastPage();
 
   const handleSearch = (event: any) => {
     const value = event.detail.value;
@@ -58,6 +58,42 @@ export default function Kuran({
 
     setSearchResultCuz(filteredBooksCuz);
   };
+
+  // Get current page info for display
+  const getCurrentPageInfo = () => {
+    if (!isLoaded) {
+      return { title: "Yükleniyor...", sure: "" };
+    }
+    
+    console.log("getCurrentPageInfo - lastPage:", lastPage);
+    
+    if (lastPage === 0) {
+      return { title: "Fatiha", sure: "Fâtiha Sûresi" };
+    }
+
+    // Try to find by id first (exact match)
+    let currentPageData = books.find(book => book.id === lastPage);
+    
+    // If not found by id, try by startPage
+    if (!currentPageData) {
+      currentPageData = books.find(book => book.startPage === lastPage);
+    }
+    
+    console.log("getCurrentPageInfo - found page:", currentPageData);
+    
+    if (currentPageData) {
+      return { 
+        title: currentPageData.title, 
+        sure: currentPageData.sure 
+      };
+    }
+    
+    // Fallback to page number
+    return { title: `Sayfa ${lastPage + 1}`, sure: "" };
+  };
+
+  const currentPageInfo = getCurrentPageInfo();
+
   return (
     <>
       <Header pageTitle={title} />
@@ -80,6 +116,7 @@ export default function Kuran({
               onClick={() => {
                 setSearchTerm("");
                 setSearchResultPage([]);
+                setSearchResultSure([]);
                 setSearchResultCuz([]);
               }}
             >
@@ -99,7 +136,7 @@ export default function Kuran({
                         bookTitle: sayfa.title,
                       }}
                       onClick={() => {
-                        lastPageContext.setLastPage(sayfa.startPage);
+                        setLastPage(sayfa.startPage || 0);
                       }}
                     >
                       <IonItem className="mt-[3px] k-ion-item w-full">
@@ -127,7 +164,7 @@ export default function Kuran({
                         />
                       )}
                       onClick={() => {
-                        lastPageContext.setLastPage(sayfa.startPage);
+                        setLastPage(sayfa.startPage || 0);
                       }}
                     >
                       <IonItem className="mt-[3px] k-ion-item w-full">
@@ -155,7 +192,7 @@ export default function Kuran({
                         />
                       )}
                       onClick={() => {
-                        lastPageContext.setLastPage(sayfa.startPage + 1);
+                        setLastPage((sayfa.startPage || 0) + 1);
                       }}
                     >
                       <IonItem className="mt-[3px] k-ion-item w-full">
@@ -177,18 +214,28 @@ export default function Kuran({
               routerDirection="forward"
               component={() => (
                 <KuraniKerimOku
-                  startPage={lastPageContext.lastPage}
+                  startPage={lastPage}
                   bookTitle={"Son Okunan Sayfa"}
                 />
               )}
               onClick={() => {
-                lastPageContext.setLastPage(lastPageContext.lastPage);
+                setLastPage(lastPage);
               }}
             >
               <IonItem className="mt-[3px] k-ion-item w-full">
                 <IonLabel className="text-left font-medium text-[1rem] text-white whitespace-pre-wrap">
-                  Son Okunan Sayfa
-                  <IonIcon icon={bookmark} className="ml-2" />
+                  <div>
+                    <div className="flex items-center gap-2">
+                      Son Okunan Sayfa
+                      <IonIcon icon={bookmark} className="ml-2" />
+                    </div>
+                    {isLoaded && (
+                      <div className="text-sm opacity-80 mt-1">
+                        {currentPageInfo.title}
+                        {currentPageInfo.sure && ` - ${currentPageInfo.sure}`}
+                      </div>
+                    )}
+                  </div>
                 </IonLabel>
               </IonItem>
             </IonNavLink>
@@ -203,7 +250,7 @@ export default function Kuran({
                   />
                 )}
                 onClick={() => {
-                  lastPageContext.setLastPage(sure.startPage);
+                  setLastPage(sure.startPage);
                 }}
               >
                 <IonItem className="mt-[3px] k-ion-item w-full">

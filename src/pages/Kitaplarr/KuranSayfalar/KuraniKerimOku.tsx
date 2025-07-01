@@ -28,7 +28,7 @@ import "swiper/css";
 import mammoth from "mammoth";
 import { Virtual } from "swiper/modules"; // Virtual modülü ekleyin
 import storageService from "../../../../utils/storageService";
-import { LastPageContext } from "../../../context/LastPageContext";
+import { useLastPage } from "../../../context/LastPageContext";
 
 const fetchMeal = async (mealPath: string): Promise<string> => {
   try {
@@ -43,8 +43,8 @@ const fetchMeal = async (mealPath: string): Promise<string> => {
 };
 
 const soundHandler = (activePage: number) => {
-  const mappedPage = kuran.find((mapping) => activePage === mapping.id);
-  return mappedPage?.sound;
+  const currentPage = kuran.find((mapping) => activePage === mapping.id);
+  return currentPage?.sound || "page-000.mp3";
 };
 
 const titleHandler = (activePage: number) => {
@@ -57,12 +57,8 @@ const titleHandler = (activePage: number) => {
 };
 
 const mealHandler = (activePage: number) => {
-  const mappedMeal = kuran.find((mapping) => activePage <= mapping.startPage);
-  if (mappedMeal) {
-    return `${mappedMeal.meal} - ${mappedMeal.sure}`;
-  } else {
-    return "Sayfa bulunamadı";
-  }
+  const currentPage = kuran.find((mapping) => activePage === mapping.id);
+  return currentPage?.meal || "";
 };
 
 function KuraniKerimOku({
@@ -80,7 +76,7 @@ function KuraniKerimOku({
   const topRef = useRef<any>(null);
   const player = useRef<any>();
 
-  const lastPageContext = useContext(LastPageContext);
+  const { setLastPage } = useLastPage();
 
   useEffect(() => {
     setPlayerSrc(
@@ -99,8 +95,8 @@ function KuraniKerimOku({
   }, [swipe?.activeIndex]);
 
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (!event.target.closest("ion-footer")) {
+    const handleClickOutside = (event: Event) => {
+      if (!(event.target as Element)?.closest("ion-footer")) {
         setIsFooterVisible((prev) => !prev);
       }
     };
@@ -168,7 +164,19 @@ function KuraniKerimOku({
   };
 
   const onSlideChange = () => {
-    lastPageContext.setLastPage(swipe?.activeIndex);
+    const currentActiveIndex = swipe?.activeIndex;
+    console.log("onSlideChange - activeIndex:", currentActiveIndex);
+    
+    // Find the current page data to get the correct ID
+    const currentPageData = kuran[currentActiveIndex];
+    if (currentPageData) {
+      console.log("onSlideChange - saving page ID:", currentPageData.id);
+      setLastPage(currentPageData.id);
+    } else {
+      console.log("onSlideChange - fallback to activeIndex:", currentActiveIndex);
+      setLastPage(currentActiveIndex || 0);
+    }
+    
     scrollTop();
   };
 
@@ -228,12 +236,20 @@ function KuraniKerimOku({
               onClickPrevious={() => {
                 swipe?.slideNext();
                 player?.current.audio.current.pause();
-                lastPageContext.setLastPage(swipe?.activeIndex);
+                const newActiveIndex = swipe?.activeIndex;
+                const currentPageData = kuran[newActiveIndex];
+                if (currentPageData) {
+                  setLastPage(currentPageData.id);
+                }
               }}
               onClickNext={() => {
                 swipe?.slidePrev();
                 player?.current.audio.current.pause();
-                lastPageContext.setLastPage(swipe?.activeIndex);
+                const newActiveIndex = swipe?.activeIndex;
+                const currentPageData = kuran[newActiveIndex];
+                if (currentPageData) {
+                  setLastPage(currentPageData.id);
+                }
               }}
               customVolumeControls={[]}
               customAdditionalControls={[]}
