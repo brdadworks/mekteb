@@ -1,4 +1,4 @@
-package com.mektebiirfan.app;
+package com.mektebiirfan.app.v2;
 
 import com.getcapacitor.BridgeActivity;
 

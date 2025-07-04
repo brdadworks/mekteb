@@ -27,29 +27,35 @@ const UpdatePopUp: React.FC = () => {
     }, [])
     //check for update
     useEffect(() => {
+    const checkVersion = async () => {
+        if (!appVersion) return;
 
-        if (appVersion) {
-            fetch(`https://brd.com.tr/mektebi-irfan-version.json`, {
-                headers: {
-                    'Cache-Control': 'no-cache'
-                }
-            }).then((response) => response.json().then((data) => {
-                console.log("Cloud version android: --", data.version.android);
-                console.log("Cloud version ios: --", data.version.android);
-                if (platform === "ios") {
-                    if (data.version.ios !== appVersion) {
-                        setIsOpen(true);
-                    }
-                } else if (platform === "android") {
-                    if (data.version.android !== appVersion) {
-                        setIsOpen(true);
-                    }
-                }
-            }).catch((error) => {
-                console.log("Error: --", error);
-            }));
+        try {
+            const response = await fetch(`https://brd.com.tr/mektebi-irfan-version.json`,);
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+
+            const data = await response.json();
+
+            console.log("Cloud version android: --", data.version.android);
+            console.log("Cloud version ios: --", data.version.ios);
+
+            if (platform === "ios" && data.version.ios !== appVersion) {
+                setIsOpen(true);
+            } else if (platform === "android" && data.version.android !== appVersion) {
+                setIsOpen(true);
+            }
+        } catch (error) {
+            console.warn("Sürüm kontrolü başarısız:", error);
         }
-    }, [appVersion])
+    };
+
+    checkVersion();
+}, [appVersion]);
+
+
 
 
 

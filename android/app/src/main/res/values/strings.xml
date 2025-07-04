@@ -1,8 +1,7 @@
-<?xml version='1.0' encoding='utf-8' ?>
+<?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">mekteb-i irfan</string>
     <string name="title_activity_main">mekteb-i irfan</string>
-    <string name="package_name">com.mektebiirfan.app</string>
-    <string name="custom_url_scheme">com.mektebiirfan.app</string>
-    <string name="new_activity_label">Yeni Aktivite</string>
+    <string name="package_name">com.mektebiirfan.app.v2</string>
+    <string name="custom_url_scheme">com.mektebiirfan.app.v2</string>
 </resources>
