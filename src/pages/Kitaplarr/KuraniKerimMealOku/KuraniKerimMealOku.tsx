@@ -133,39 +133,39 @@ export default KuraniKerimMealOku;
 
 const imagesHandler = () => {
   const images: JSX.Element[] = [];
-  images.push(pushImages(fatiha_meal));
-  images.push(pushImages(bakara_meal));
-  images.push(pushImages(yusuf_meal));
-  images.push(pushImages(kehf_meal));
-  images.push(pushImages(yasin_meal));
-  images.push(pushImages(duhan_meal));
-  images.push(pushImages(fetih_meal));
-  images.push(pushImages(rahman_meal));
-  images.push(pushImages(vakia_meal));
-  images.push(pushImages(hasr_meal));
-  images.push(pushImages(cuma_meal));
-  images.push(pushImages(tahrim_meal));
-  images.push(pushImages(mulk_meal));
-  images.push(pushImages(insan_meal));
-  images.push(pushImages(nebe_meal));
-  images.push(pushImages(ala_meal));
-  images.push(pushImages(hatim_meal));
-
-  return images;
-};
-
-const pushImages = (data: any) => {
-  const images: any = [];
-  for (let i = 0; i < data.page; i++) {
-    images.push(
-      <SwiperSlide key={data.title + "-" + i} virtualIndex={i}>
-        <img
-          src={`${data.content}${i + 1}-fs8.png`}
-          alt={""}
-          className={"w-full h-auto"}
-        />
-      </SwiperSlide>
-    );
+  let globalIndex = 0;
+  const sureler = [
+    fatiha_meal,
+    bakara_meal,
+    yusuf_meal,
+    kehf_meal,
+    yasin_meal,
+    duhan_meal,
+    fetih_meal,
+    rahman_meal,
+    vakia_meal,
+    hasr_meal,
+    cuma_meal,
+    tahrim_meal,
+    mulk_meal,
+    insan_meal,
+    nebe_meal,
+    ala_meal,
+    hatim_meal,
+  ];
+  for (const sure of sureler) {
+    for (let i = 0; i < sure.page; i++) {
+      images.push(
+        <SwiperSlide key={sure.title + "-" + i} virtualIndex={globalIndex}>
+          <img
+            src={`${sure.content}${i + 1}-fs8.png`}
+            alt={""}
+            className={"w-full h-auto"}
+          />
+        </SwiperSlide>
+      );
+      globalIndex++;
+    }
   }
   return images;
 };

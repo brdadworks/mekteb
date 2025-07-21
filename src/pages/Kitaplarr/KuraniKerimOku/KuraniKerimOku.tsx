@@ -133,39 +133,39 @@ export default KuraniKerimOku;
 
 const imagesHandler = () => {
   const images: JSX.Element[] = [];
-  images.push(pushImages(fatiha));
-  images.push(pushImages(bakara));
-  images.push(pushImages(yusuf));
-  images.push(pushImages(kehf));
-  images.push(pushImages(yasin));
-  images.push(pushImages(duhan));
-  images.push(pushImages(fetih));
-  images.push(pushImages(rahman));
-  images.push(pushImages(vakia));
-  images.push(pushImages(hasr));
-  images.push(pushImages(cuma));
-  images.push(pushImages(tahrim));
-  images.push(pushImages(mulk));
-  images.push(pushImages(insan));
-  images.push(pushImages(nebe));
-  images.push(pushImages(ala));
-  images.push(pushImages(hatim));
-
-  return images;
-};
-
-const pushImages = (data: any) => {
-  const images: any = [];
-  for (let i = 0; i < data.page; i++) {
-    images.push(
-      <SwiperSlide key={data.title + "-" + i} virtualIndex={i}>
-        <img
-          src={`${data.content}${i + 1}-fs8.png`}
-          alt={""}
-          className={"w-full h-auto"}
-        />
-      </SwiperSlide>
-    );
+  let globalIndex = 0;
+  const surerler = [
+    fatiha,
+    bakara,
+    yusuf,
+    kehf,
+    yasin,
+    duhan,
+    fetih,
+    rahman,
+    vakia,
+    hasr,
+    cuma,
+    tahrim,
+    mulk,
+    insan,
+    nebe,
+    ala,
+    hatim,
+  ];
+  for (const sure of surerler) {
+    for (let i = 0; i < sure.page; i++) {
+      images.push(
+        <SwiperSlide key={sure.title + "-" + i} virtualIndex={globalIndex}>
+          <img
+            src={`${sure.content}${i + 1}-fs8.png`}
+            alt={""}
+            className={"w-full h-auto"}
+          />
+        </SwiperSlide>
+      );
+      globalIndex++;
+    }
   }
   return images;
 };
