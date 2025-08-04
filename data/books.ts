@@ -101,7 +101,7 @@ export const mecmua = [
   {
     id: 10,
     title: "Evrad-ı Nakşibendiyye",
-    slug: "evradi_nasibendiyye",
+    slug: "evradi_naksibendiyye",
     read: true,
   },
   {
@@ -8459,10 +8459,10 @@ export const evradi_kadiriyye = {
   page: 8,
 };
 
-export const evradi_nasibendiyye = {
+export const evradi_naksibendiyye = {
   title: "Evrad-ı Nakşibendiyye",
-  slug: "evradi_nasibendiyye",
-  content: "https://brd.com.tr/mekteb_books/books/mecmua/evradi_nasibendiyye/",
+  slug: "evradi_naksibendiyye",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua/evradi_naksibendiyye/",
   page: 8,
 };
 
@@ -8540,7 +8540,7 @@ export const mecmua_meal = [
   {
     id: 10,
     title: "Evrad-ı Nakşibendiyye",
-    slug: "evradi_nasibendiyye_meal",
+    slug: "evradi_naksibendiyye_meal",
     read: true,
   },
   {
@@ -8934,10 +8934,10 @@ export const evradi_kadiriyye_meal = {
   page: 14,
 };
 
-export const evradi_nasibendiyye_meal = {
+export const evradi_naksibendiyye_meal = {
   title: "Evrad-ı Nakşibendiyye",
-  slug: "evradi_nasibendiyye_meal",
-  content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/evradi_nasibendiyye/",
+  slug: "evradi_naksibendiyye_meal",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua/evradi_naksibendiyye/",
   page: 14,
 };
 

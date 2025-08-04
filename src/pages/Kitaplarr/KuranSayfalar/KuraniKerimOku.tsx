@@ -65,6 +65,7 @@ const mealHandler = (activePage: number) => {
   }
 };
 
+/* kitaplar > Kuranı kerim */
 function KuraniKerimOku({
   startPage,
   bookTitle,
@@ -99,8 +100,9 @@ function KuraniKerimOku({
   }, [swipe?.activeIndex]);
 
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (!event.target.closest("ion-footer")) {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      if (!target.closest("ion-footer")) {
         setIsFooterVisible((prev) => !prev);
       }
     };

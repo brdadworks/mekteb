@@ -169,7 +169,7 @@ const imagesHandler = () => {
   }
   return images;
 };
-
+/*memuatül irfaniye(meal) altındaki kuran*/
 const titleHandler = (activePage: number) => {
   const titlesMapping = [
     { page: 2, title: "Fatiha Suresi" },
