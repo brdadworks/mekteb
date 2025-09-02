@@ -11,6 +11,7 @@ import {
 } from '@ionic/react';
 import "./Kitaplar.css"
 import {IlahiProps} from "../../../../utils/types";
+import Header from "../../../components/Header";
 
 function IlahiOku({book, title}: { book: IlahiProps, title: string }) {
     const lines = book.content.split('\n');
@@ -33,7 +34,7 @@ function IlahiOku({book, title}: { book: IlahiProps, title: string }) {
                     <IonButtons slot="start">
                         <IonBackButton text={"Geri"}></IonBackButton>
                     </IonButtons>
-                    <IonTitle className={"text-lg whitespace-pre-wrap"}></IonTitle>
+                    <IonTitle className={"text-lg whitespace-pre-wrap"}>{title}</IonTitle>
                 </IonToolbar>
             </IonHeader>
             <IonContent class="ion-padding bg-white bg-color-white">

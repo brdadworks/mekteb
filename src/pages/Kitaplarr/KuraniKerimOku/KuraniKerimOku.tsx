@@ -44,6 +44,102 @@ import "react-h5-audio-player/lib/styles.css";
 import AudioPlayer from "react-h5-audio-player";
 import "./Kitaplar.css";
 
+// ⬇️ Yerel dosya kontrolü için Capacitor FS
+import { Filesystem, Directory } from "@capacitor/filesystem";
+import { Capacitor } from "@capacitor/core";
+
+/* ---------------- LocalOrRemoteImage: önce local, yoksa content (remote) ---------------- */
+const trimEndSlash = (s: string) => (s ? s.replace(/\/+$/, "") : s);
+const join = (a: string, b: string) => `${trimEndSlash(a)}/${b}`;
+
+/** contentBase + file → URL (remote) */
+const toRemoteUrl = (contentBase: string, file: string) =>
+  `${trimEndSlash(contentBase)}/${file}`;
+
+/** contentBase'ten yerel aday path üret: URL path'ini al, baştaki '/' kalksın */
+const deriveLocalFromContent = (contentBase: string, file: string) => {
+  try {
+    const u = new URL(toRemoteUrl(contentBase, file));
+    return u.pathname.replace(/^\/+/, ""); // "mekteb_books/..."
+  } catch {
+    return null;
+  }
+};
+
+async function tryLocalPath(path: string): Promise<string | null> {
+  try {
+    await Filesystem.stat({ path, directory: Directory.Data });
+    const { uri } = await Filesystem.getUri({
+      path,
+      directory: Directory.Data,
+    });
+    return Capacitor.convertFileSrc(uri);
+  } catch {
+    return null;
+  }
+}
+
+const LocalOrRemoteImage: React.FC<{
+  contentBase: string; // uzak kök
+  fileName: string; // "1-fs8.png" / "page-000.png"
+  localBase?: string; // Directory.Data içindeki klasör (opsiyonel)
+  alt?: string;
+  className?: string;
+  style?: React.CSSProperties;
+}> = ({ contentBase, fileName, localBase, alt = "", className, style }) => {
+  const [src, setSrc] = useState<string>("");
+
+  useEffect(() => {
+    let cancelled = false;
+
+    const run = async () => {
+      const candidates = new Set<string>();
+
+      // 1) books.ts’ten gelen localBase
+      if (localBase) {
+        candidates.add(join(localBase, fileName));
+        // bazı paketlerde /books/ olmadan yazılmış olabilir:
+        candidates.add(join(localBase.replace("/books/", "/"), fileName));
+      }
+
+      // 2) contentBase’ten türeyen yol
+      const derived = deriveLocalFromContent(contentBase, fileName);
+      if (derived) {
+        candidates.add(derived);
+        candidates.add(derived.replace("/books/", "/"));
+      }
+
+      // 3) sırayla dene
+      for (const p of candidates) {
+        const local = await tryLocalPath(p);
+        if (local) {
+          if (!cancelled) setSrc(local);
+          return;
+        }
+      }
+
+      // 4) olmadı → remote
+      if (!cancelled) setSrc(toRemoteUrl(contentBase, fileName));
+    };
+
+    run();
+    return () => {
+      cancelled = true;
+    };
+  }, [contentBase, fileName, localBase]);
+
+  return (
+    <img
+      src={src}
+      alt={alt}
+      className={className}
+      style={style}
+      loading="lazy"
+    />
+  );
+};
+/* --------------------------------------------------------------------------------------- */
+
 /* Kitaplar > mecmua > kuran */
 function KuraniKerimOku({
   startPage,
@@ -98,7 +194,7 @@ function KuraniKerimOku({
       <IonContent
         ref={topRef}
         scrollEvents={true}
-        class="ion-padding bg-white bg-color-white"
+        className="ion-padding bg-white bg-color-white"
         onClick={() => {
           setShowPlayer((prev) => !prev);
         }}
@@ -197,6 +293,7 @@ function KuraniKerimOku({
 
 export default KuraniKerimOku;
 
+/** Bu sayfada kullanılacak sure seti */
 const surerler = [
   fatiha,
   bakara,
@@ -217,18 +314,26 @@ const surerler = [
   hatim,
 ];
 
-// ✔ Sayfa sayısına göre img slide üret
+/** ✔ Sayfa sayısına göre slide üret (local varsa local, yoksa remote) */
 const imagesHandler = () => {
   const images: JSX.Element[] = [];
   let globalIndex = 0;
+
   for (const sure of surerler) {
+    const remoteBase = trimEndSlash(sure.content || "");
+    const localBase = sure.local ? trimEndSlash(sure.local) : undefined;
+
     for (let i = 0; i < sure.page; i++) {
+      const file = `${i + 1}-fs8.png`;
       images.push(
-        <SwiperSlide key={sure.title + "-" + i} virtualIndex={globalIndex}>
-          <img
-            src={`${sure.content}${i + 1}-fs8.png`}
+        <SwiperSlide key={`${sure.slug}-${i}`} virtualIndex={globalIndex}>
+          <LocalOrRemoteImage
+            contentBase={remoteBase}
+            localBase={localBase}
+            fileName={file}
             alt={sure.title}
-            className={"w-full h-auto"}
+            className="w-full h-auto"
+            style={{ objectFit: "contain" }}
           />
         </SwiperSlide>
       );
@@ -238,7 +343,7 @@ const imagesHandler = () => {
   return images;
 };
 
-// ✔ Sayfa indexine göre başlık
+/** ✔ Sayfa indexine göre başlık */
 const titleHandler = (activePage: number) => {
   let index = 0;
   for (const sure of surerler) {
@@ -249,6 +354,7 @@ const titleHandler = (activePage: number) => {
   return "pageTitle";
 };
 
+/** ✔ Ses kaynağı (şimdilik hep remote). */
 const getSoundByPage = (activePage: number): string => {
   const paddedIndex = activePage.toString().padStart(3, "0");
   return `https://brd.com.tr/mekteb_books/sounds/page-${paddedIndex}.mp3`;

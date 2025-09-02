@@ -30,9 +30,150 @@ import { Virtual } from "swiper/modules"; // Virtual modülü ekleyin
 import storageService from "../../../../utils/storageService";
 import { LastPageContext } from "../../../context/LastPageContext";
 
+import { Filesystem, Directory } from "@capacitor/filesystem";
+import { Capacitor } from "@capacitor/core";
+import { getStorageData } from "../../../../utils/functions";
+
+const findLocalPagePath = async (fileName: string): Promise<string | null> => {
+  const remoteUrl = `https://brd.com.tr/mekteb/pages/${fileName}`;
+
+  const assets =
+    ((await getStorageData("downloadedAssets")) as {
+      url: string;
+      path: string;
+    }[]) || [];
+  const images =
+    ((await getStorageData("downloadedImages")) as {
+      url: string;
+      path: string;
+    }[]) || [];
+
+  const hit = [...assets, ...images].find((r) => r.url === remoteUrl);
+  if (hit?.path) return hit.path;
+
+  // indeks yoksa: indiricinin yazdığı varsayılan konumu dene
+  const guess = `mekteb/pages/${fileName}`;
+  try {
+    await Filesystem.stat({ path: guess, directory: Directory.Data });
+    return guess;
+  } catch {
+    return null;
+  }
+};
+
+// Görseli yerelden çöz; yoksa uzak URL'yi kullan
+const LocalOrRemoteImage: React.FC<{
+  fileName: string;
+  alt: string;
+  className?: string;
+  style?: React.CSSProperties;
+}> = ({ fileName, alt, className, style }) => {
+  const [src, setSrc] = React.useState<string>("");
+
+  React.useEffect(() => {
+    let cancelled = false;
+
+    (async () => {
+      try {
+        const localPath = await findLocalPagePath(fileName);
+        if (localPath) {
+          const { uri } = await Filesystem.getUri({
+            path: localPath,
+            directory: Directory.Data,
+          });
+          const webSrc = Capacitor.convertFileSrc(uri);
+          if (!cancelled) {
+            setSrc(webSrc);
+            return;
+          }
+        }
+      } catch {
+        // yerel okunamazsa uzak'a düşeceğiz
+      }
+      if (!cancelled) {
+        setSrc(`https://brd.com.tr/mekteb/pages/${fileName}`);
+      }
+    })();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [fileName]);
+
+  return (
+    <img
+      src={src}
+      alt={alt}
+      className={className}
+      style={style}
+      loading="lazy"
+    />
+  );
+};
+
+// DOCX'i yerelden bulmak için (indeks + tahmini yol)
+const findLocalDocxPath = async (mealPath: string): Promise<string | null> => {
+  // mealPath ör: "kuran-meal/5.docx"
+  const remoteUrl = `https://brd.com.tr/mekteb/${mealPath.replace(/^\/+/, "")}`;
+
+  const assets =
+    ((await getStorageData("downloadedAssets")) as {
+      url: string;
+      path: string;
+    }[]) || [];
+  const images =
+    ((await getStorageData("downloadedImages")) as {
+      url: string;
+      path: string;
+    }[]) || [];
+
+  const hit = [...assets, ...images].find((r) => r.url === remoteUrl);
+  if (hit?.path) return hit.path;
+
+  // indiricinin yazdığı varsayılan konum: "mekteb/kuran-meal/5.docx"
+  const guess = `mekteb/${mealPath.replace(/^mekteb\//, "")}`;
+  try {
+    await Filesystem.stat({ path: guess, directory: Directory.Data });
+    return guess;
+  } catch {
+    return null;
+  }
+};
+
+// base64 -> ArrayBuffer (mammoth için)
+const base64ToArrayBuffer = (base64: string): ArrayBuffer => {
+  const bin = atob(base64);
+  const len = bin.length;
+  const bytes = new Uint8Array(len);
+  for (let i = 0; i < len; i++) bytes[i] = bin.charCodeAt(i);
+  return bytes.buffer;
+};
+
 const fetchMeal = async (mealPath: string): Promise<string> => {
   try {
+    // 1) Önce yerelde var mı?
+    const localPath = await findLocalDocxPath(mealPath);
+    if (localPath) {
+      const read = await Filesystem.readFile({
+        path: localPath,
+        directory: Directory.Data,
+      });
+      let base64String: string;
+      if (typeof read.data === "string") {
+        base64String = read.data;
+      } else if (read.data instanceof Blob) {
+        base64String = await read.data.text();
+      } else {
+        throw new Error("Dosya verisi tanınmıyor.");
+      }
+      const arrayBuffer = base64ToArrayBuffer(base64String);
+      const result = await mammoth.convertToHtml({ arrayBuffer });
+      return result.value;
+    }
+
+    // 2) Yoksa uzaktan çek
     const response = await fetch(`https://brd.com.tr/mekteb/${mealPath}`);
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const arrayBuffer = await response.arrayBuffer();
     const result = await mammoth.convertToHtml({ arrayBuffer });
     return result.value;
@@ -211,13 +352,12 @@ function KuraniKerimOku({
         >
           {kuran.map(({ sure, id, title, img }, index) => (
             <SwiperSlide key={id} virtualIndex={index}>
-              <img
-                src={`https://brd.com.tr/mekteb/pages/${img}`}
+              {/* ESKİ <img .../> YERİNE: */}
+              <LocalOrRemoteImage
+                fileName={img} // ör: "page-000.png"
                 alt={`${title} - ${sure}`}
                 className="w-full h-auto"
-                style={{
-                  objectFit: "contain",
-                }}
+                style={{ objectFit: "contain" }}
               />
             </SwiperSlide>
           ))}

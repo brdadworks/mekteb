@@ -60,8 +60,9 @@ export interface BookProps {
   title: string;
   slug: string;
   content: string;
+  local?: string;
   page: number;
-  direction?: string;
+  direction?: "ltr" | "rtl";
 }
 
 export interface IlahiProps {

@@ -1,5 +1,21 @@
 .dg-ion-item {
-    --background: #dedede;
-    --color: darkgreen;
-    color: darkgreen;
+  --background: #dedede;
+  --color: darkgreen;
+  color: darkgreen;
 }
+.dg-ion-item {
+  --inner-padding-end: 8px; /* ikona biraz yer aç */
+}
+.dg-bell {
+  font-size: 22px;
+  margin-left: 8px;
+  cursor: pointer;
+  color: #166534;
+}
+.dg-bell--active {
+  filter: drop-shadow(0 1px 1px rgba(0,0,0,.15));
+}
+.dg-bell:active {
+  transform: scale(0.96);
+}
+

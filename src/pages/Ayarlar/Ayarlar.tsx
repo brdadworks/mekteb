@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useMemo } from "react";
 import {
   IonContent,
   IonList,
@@ -12,6 +12,7 @@ import {
   IonBackButton,
   IonTitle,
   IonHeader,
+  IonProgressBar,
 } from "@ionic/react";
 
 // import ulkeler from '../../../data/ulkeler';
@@ -26,6 +27,11 @@ import {
 } from "../../../utils/functions";
 import { App } from "@capacitor/app";
 import { Capacitor } from "@capacitor/core";
+import {
+  createMektebDownloader,
+  DEFAULT_JOBS,
+} from "../../../utils/downloader";
+
 //types
 import {
   CountryProps,
@@ -56,6 +62,42 @@ function Ayarlar() {
   const [toastHandle, setToastHandle] = useState(false);
   const [toastMessage, setToastMessage] = useState("");
 
+  //! İNDİRME //
+  const [downloading, setDownloading] = useState(false);
+  const [downloadDone, setDownloadDone] = useState(0);
+  const [downloadTotal, setDownloadTotal] = useState(0);
+  const dl = useMemo(() => createMektebDownloader(), []);
+
+  const handleStart = async () => {
+    setDownloading(true);
+    setDownloadDone(0);
+    setDownloadTotal(0);
+
+    const res = await dl.start({
+      jobs: DEFAULT_JOBS, // burada istersen kendi dinamik listeni verebilirsin
+      concurrency: 3,
+      onProgress: ({ done, total }) => {
+        setDownloadDone(done);
+        setDownloadTotal(total);
+      },
+    });
+
+    setDownloading(false);
+    setToastHandle(true);
+    setToastMessage(
+      `Tamamlandı: ${res.successCount} ✔ | Hata: ${res.failCount} ✖`
+    );
+  };
+
+  const handleCancel = () => {
+    dl.cancel();
+    setDownloading(false);
+    setToastHandle(true);
+    setToastMessage("İndirme iptal edildi.");
+  };
+
+  //! İNDİRME //
+
   //refs
   const countryRef = useRef<HTMLIonSelectElement | null>(null);
   const cityRef = useRef<HTMLIonSelectElement | null>(null);
@@ -69,12 +111,16 @@ function Ayarlar() {
         setUlkeler(data);
       } else {
         setToastHandle(true);
-        setToastMessage("Ülke bilgisi alınırken hata oluştu. Lütfen tekrar deneyin.");
+        setToastMessage(
+          "Ülke bilgisi alınırken hata oluştu. Lütfen tekrar deneyin."
+        );
         console.error("Geçersiz response:", { status, data });
       }
     } catch (error) {
       setToastHandle(true);
-      setToastMessage("Sunucuya ulaşılamıyor. İnternet bağlantınızı kontrol ediniz.");
+      setToastMessage(
+        "Sunucuya ulaşılamıyor. İnternet bağlantınızı kontrol ediniz."
+      );
       console.error("API Hatası:", JSON.stringify(error, null, 2));
     }
   };
@@ -364,6 +410,38 @@ function Ayarlar() {
               >
                 Kaydet
               </IonButton>
+
+              <IonItem lines="none" className="ion-margin-vertical">
+                <IonButton
+                  onClick={handleStart}
+                  disabled={downloading}
+                  className="w-full"
+                  color="medium"
+                >
+                  {downloading ? "İndiriliyor..." : "Tüm İçerikleri İndir"}
+                </IonButton>
+                {downloading && (
+                  <IonButton
+                    onClick={handleCancel}
+                    fill="clear"
+                    color="danger"
+                    className="ml-2"
+                  >
+                    İptal
+                  </IonButton>
+                )}
+              </IonItem>
+
+              {downloading && (
+                <>
+                  <div className="text-sm ion-text-center">
+                    {downloadDone} / {downloadTotal}
+                  </div>
+                  <IonProgressBar
+                    value={downloadTotal ? downloadDone / downloadTotal : 0}
+                  />
+                </>
+              )}
             </IonList>
           </form>
         )}

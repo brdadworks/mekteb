@@ -15,7 +15,7 @@ import IlahiOku from "../IlahiOku/IlahiOku";
 function Ilahiler({books, title}: { books: BooksProps[], title: string }) {
     return (
         <>
-            <Header pageTitle={"test"}/>
+            <Header pageTitle={title}/>
             <IonContent class="ion-padding bg-white bg-color-white">
                 <IonList lines={"none"}>
                     {books.map((book) => (
@@ -23,7 +23,6 @@ function Ilahiler({books, title}: { books: BooksProps[], title: string }) {
                             book.read ?
                                 <IlahiOku title={book.title} book={IlahiHandler(book.slug)}/> :
                                 <Ilahiler title={book.title} books={bookHandler(book.slug)}/>}>
-
                             <IonItem className={"mt-[3px] k-ion-item w-full"}>
                                 <IonLabel className={"text-center"}>
                             <span className={"font-medium text-[1rem] text-white whitespace-pre-wrap"}>

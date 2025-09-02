@@ -8194,6 +8194,7 @@ export const ala = {
   title: "Ala",
   slug: "ala",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/kurani_kerim/ala/",
+  local: "mekteb_books/books/mecmua/kurani_kerim/ala/",
   page: 1,
 };
 
@@ -8201,6 +8202,7 @@ export const duayi_ismi_azam = {
   title: "Dua-ı İsmi Azam",
   slug: "duayi_ismi_azam",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/duayi_ismi_azam/",
+  local: "mekteb_books/books/mecmua/duayi_ismi_azam/",
   page: 4,
 };
 
@@ -8208,6 +8210,7 @@ export const duayi_ismi_azam_meal = {
   title: "Dua-ı İsmi Azam",
   slug: "duayi_ismi_azam_meal",
   content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/duayi_ismi_azam/",
+  local: "mekteb_books/books/mecmua_meal/duayi_ismi_azam/",
   page: 6,
 };
 
@@ -8215,6 +8218,7 @@ export const bakara = {
   title: "Bakara",
   slug: "bakara",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/kurani_kerim/bakara/",
+  local: "mekteb_books/books/mecmua/kurani_kerim/bakara/",
   page: 1,
 };
 
@@ -8222,6 +8226,7 @@ export const cuma = {
   title: "Cuma",
   slug: "cuma",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/kurani_kerim/cuma/",
+  local: "mekteb_books/books/mecmua/kurani_kerim/cuma/",
   page: 2,
 };
 
@@ -8229,6 +8234,7 @@ export const duhan = {
   title: "Duhan",
   slug: "duhan",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/kurani_kerim/duhan/",
+  local: "mekteb_books/books/mecmua/kurani_kerim/duhan/",
   page: 3,
 };
 
@@ -8236,6 +8242,7 @@ export const fatiha = {
   title: "Fatiha",
   slug: "fatiha",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/kurani_kerim/fatiha/",
+  local: "mekteb_books/books/mecmua/kurani_kerim/fatiha/",
   page: 1,
 };
 
@@ -8243,6 +8250,7 @@ export const fetih = {
   title: "Fetih",
   slug: "fetih",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/kurani_kerim/fetih/",
+  local: "mekteb_books/books/mecmua/kurani_kerim/fetih/",
   page: 5,
 };
 
@@ -8250,6 +8258,7 @@ export const hasr = {
   title: "Hasr",
   slug: "hasr",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/kurani_kerim/hasr/",
+  local: "mekteb_books/books/mecmua/kurani_kerim/hasr/",
   page: 2,
 };
 
@@ -8257,6 +8266,7 @@ export const hatim = {
   title: "Hatim",
   slug: "hatim",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/kurani_kerim/hatim/",
+  local: "mekteb_books/books/mecmua/kurani_kerim/hatim/",
   page: 1,
 };
 
@@ -8264,6 +8274,7 @@ export const insan = {
   title: "İnsan",
   slug: "insan",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/kurani_kerim/insan/",
+  local: "mekteb_books/books/mecmua/kurani_kerim/insan/",
   page: 3,
 };
 
@@ -8271,6 +8282,7 @@ export const kehf = {
   title: "Kehf",
   slug: "kehf",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/kurani_kerim/kehf/",
+  local: "mekteb_books/books/mecmua/kurani_kerim/kehf/",
   page: 2,
 };
 
@@ -8278,6 +8290,7 @@ export const mulk = {
   title: "Mulk",
   slug: "mulk",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/kurani_kerim/mulk/",
+  local: "mekteb_books/books/mecmua/kurani_kerim/mulk/",
   page: 3,
 };
 
@@ -8285,6 +8298,7 @@ export const nebe = {
   title: "Nebe",
   slug: "nebe",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/kurani_kerim/nebe/",
+  local: "mekteb_books/books/mecmua/kurani_kerim/nebe/",
   page: 3,
 };
 
@@ -8292,6 +8306,7 @@ export const rahman = {
   title: "Rahman",
   slug: "rahman",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/kurani_kerim/rahman/",
+  local: "mekteb_books/books/mecmua/kurani_kerim/rahman/",
   page: 4,
 };
 
@@ -8299,6 +8314,7 @@ export const tahrim = {
   title: "Tahrim",
   slug: "tahrim",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/kurani_kerim/tahrim/",
+  local: "mekteb_books/books/mecmua/kurani_kerim/tahrim/",
   page: 1,
 };
 
@@ -8306,6 +8322,7 @@ export const vakia = {
   title: "Vakia",
   slug: "vakia",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/kurani_kerim/vakia/",
+  local: "mekteb_books/books/mecmua/kurani_kerim/vakia/",
   page: 4,
 };
 
@@ -8313,6 +8330,7 @@ export const yasin = {
   title: "Yasin",
   slug: "yasin",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/kurani_kerim/yasin/",
+  local: "mekteb_books/books/mecmua/kurani_kerim/yasin/",
   page: 6,
 };
 
@@ -8320,6 +8338,7 @@ export const yusuf = {
   title: "Yusuf",
   slug: "yusuf",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/kurani_kerim/yusuf/",
+  local: "mekteb_books/books/mecmua/kurani_kerim/yusuf/",
   page: 1,
 };
 
@@ -8327,6 +8346,7 @@ export const duayi_mustecab = {
   title: "Dua-ı Müstecab",
   slug: "duayi_mustecab",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/duayi_mustecab/",
+  local: "mekteb_books/books/mecmua/duayi_mustecab/",
   page: 4,
 };
 
@@ -8379,6 +8399,7 @@ export const pazartesi = {
   title: "Pazartesi",
   slug: "pazartesi",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/cevseni_kebir/pazartesi/",
+  local: "mekteb_books/books/mecmua/cevseni_kebir/pazartesi/",
   page: 8,
 };
 
@@ -8386,6 +8407,7 @@ export const sali = {
   title: "Salı",
   slug: "sali",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/cevseni_kebir/sali/",
+  local: "mekteb_books/books/mecmua/cevseni_kebir/sali/",
   page: 4,
 };
 
@@ -8393,6 +8415,7 @@ export const carsamba = {
   title: "Çarşamba",
   slug: "carsamba",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/cevseni_kebir/carsamba/",
+  local: "mekteb_books/books/mecmua/cevseni_kebir/carsamba/",
   page: 5,
 };
 
@@ -8400,6 +8423,7 @@ export const persembe = {
   title: "Perşembe",
   slug: "persembe",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/cevseni_kebir/persembe/",
+  local: "mekteb_books/books/mecmua/cevseni_kebir/persembe/",
   page: 8,
 };
 
@@ -8407,6 +8431,7 @@ export const kebir_cuma = {
   title: "Cuma",
   slug: "kebir_cuma",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/cevseni_kebir/cuma/",
+  local: "mekteb_books/books/mecmua/cevseni_kebir/cuma/",
   page: 6,
 };
 
@@ -8414,6 +8439,7 @@ export const cumartesi = {
   title: "Cumartesi",
   slug: "cumartesi",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/cevseni_kebir/cumartesi/",
+  local: "mekteb_books/books/mecmua/cevseni_kebir/cumartesi/",
   page: 4,
 };
 
@@ -8421,6 +8447,7 @@ export const pazar = {
   title: "Pazar",
   slug: "pazar",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/cevseni_kebir/pazar/",
+  local: "mekteb_books/books/mecmua/cevseni_kebir/pazar/",
   page: 10,
 };
 
@@ -8428,6 +8455,7 @@ export const evradi_ummul_kuraniyye = {
   title: "Evrad-ı Ümmül Kur'aniyye",
   slug: "evradi_ummul_kuraniyye",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/evradi_ummul_kuraniyye/",
+  local: "mekteb_books/books/mecmua/evradi_ummul_kuraniyye/",
   page: 6,
 };
 
@@ -8435,6 +8463,7 @@ export const munacati_veysel_karani = {
   title: "Munacat-ı Veysel Karani",
   slug: "munacati_veysel_karani",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/munacati_veysel_karani/",
+  local: "mekteb_books/books/mecmua/munacati_veysel_karani/",
   page: 6,
 };
 
@@ -8442,6 +8471,7 @@ export const evradi_fethiyye = {
   title: "Evrad-ı Fethiyye",
   slug: "evradi_fethiyye",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/evradi_fethiyye/",
+  local: "mekteb_books/books/mecmua/evradi_fethiyye/",
   page: 6,
 };
 
@@ -8449,6 +8479,7 @@ export const evradi_rufaiyye = {
   title: "Evrad-ı Rufaiyye",
   slug: "evradi_rufaiyye",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/evradi_rufaiyye/",
+  local: "mekteb_books/books/mecmua/evradi_rufaiyye/",
   page: 14,
 };
 
@@ -8456,6 +8487,7 @@ export const evradi_kadiriyye = {
   title: "Evrad-ı Kadiriyye",
   slug: "evradi_kadiriyye",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/evradi_kadiriyye/",
+  local: "mekteb_books/books/mecmua/evradi_kadiriyye/",
   page: 8,
 };
 
@@ -8463,6 +8495,7 @@ export const evradi_naksibendiyye = {
   title: "Evrad-ı Nakşibendiyye",
   slug: "evradi_naksibendiyye",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/evradi_naksibendiyye/",
+  local: "mekteb_books/books/mecmua/evradi_naksibendiyye/",
   page: 8,
 };
 
@@ -8470,6 +8503,7 @@ export const delilul_irfaniyye = {
   title: "Delail-ül İrfaniyye",
   slug: "delilul_irfaniyye",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/delilul_irfaniyye/",
+  local: "mekteb_books/books/mecmua/delilul_irfaniyye/",
   page: 28,
 };
 
@@ -8477,6 +8511,7 @@ export const kurani_kerimden_dualar = {
   title: "Kur'an-ı Kerim'den Dualar",
   slug: "kurani_kerimden_dualar",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/kurani_kerimden_dualar/",
+  local: "mekteb_books/books/mecmua/kurani_kerimden_dualar/",
   page: 7,
 };
 
@@ -8683,6 +8718,7 @@ export const ala_meal = {
   title: "Ala",
   slug: "ala_meal",
   content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/kurani_kerim/ala/",
+  local: "mekteb_books/books/mecmua_meal/kurani_kerim/ala/",
   page: 2,
 };
 
@@ -8690,6 +8726,7 @@ export const bakara_meal = {
   title: "Bakara",
   slug: "bakara_meal",
   content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/kurani_kerim/bakara/",
+  local: "mekteb_books/books/mecmua_meal/kurani_kerim/bakara/",
   page: 2,
 };
 
@@ -8697,6 +8734,7 @@ export const cuma_meal = {
   title: "Cuma",
   slug: "cuma_meal",
   content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/kurani_kerim/cuma/",
+  local: "mekteb_books/books/mecmua_meal/kurani_kerim/cuma/",
   page: 4,
 };
 
@@ -8704,6 +8742,7 @@ export const duhan_meal = {
   title: "Duhan",
   slug: "duhan_meal",
   content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/kurani_kerim/duhan/",
+  local: "mekteb_books/books/mecmua_meal/kurani_kerim/duhan/",
   page: 6,
 };
 
@@ -8711,6 +8750,7 @@ export const fatiha_meal = {
   title: "Fatiha",
   slug: "fatiha_meal",
   content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/kurani_kerim/fatiha/",
+  local: "mekteb_books/books/mecmua_meal/kurani_kerim/fatiha/",
   page: 2,
 };
 
@@ -8718,6 +8758,7 @@ export const fetih_meal = {
   title: "Fetih",
   slug: "fetih_meal",
   content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/kurani_kerim/fetih/",
+  local: "mekteb_books/books/mecmua_meal/kurani_kerim/fetih/",
   page: 10,
 };
 
@@ -8725,6 +8766,7 @@ export const hasr_meal = {
   title: "Hasr",
   slug: "hasr_meal",
   content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/kurani_kerim/hasr/",
+  local: "mekteb_books/books/mecmua_meal/kurani_kerim/hasr/",
   page: 4,
 };
 
@@ -8732,6 +8774,7 @@ export const hatim_meal = {
   title: "Hatim",
   slug: "hatim_meal",
   content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/kurani_kerim/hatim/",
+  local: "mekteb_books/books/mecmua_meal/kurani_kerim/hatim/",
   page: 2,
 };
 
@@ -8739,6 +8782,7 @@ export const insan_meal = {
   title: "İnsan",
   slug: "insan_meal",
   content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/kurani_kerim/insan/",
+  local: "mekteb_books/books/mecmua_meal/kurani_kerim/insan/",
   page: 6,
 };
 
@@ -8746,6 +8790,7 @@ export const kehf_meal = {
   title: "Kehf",
   slug: "kehf_meal",
   content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/kurani_kerim/kehf/",
+  local: "mekteb_books/books/mecmua_meal/kurani_kerim/kehf/",
   page: 4,
 };
 
@@ -8753,6 +8798,7 @@ export const mulk_meal = {
   title: "Mulk",
   slug: "mulk_meal",
   content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/kurani_kerim/mulk/",
+  local: "mekteb_books/books/mecmua_meal/kurani_kerim/mulk/",
   page: 6,
 };
 
@@ -8760,6 +8806,7 @@ export const nebe_meal = {
   title: "Nebe",
   slug: "nebe_meal",
   content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/kurani_kerim/nebe/",
+  local: "mekteb_books/books/mecmua_meal/kurani_kerim/nebe/",
   page: 6,
 };
 
@@ -8767,6 +8814,7 @@ export const rahman_meal = {
   title: "Rahman",
   slug: "rahman_meal",
   content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/kurani_kerim/rahman/",
+  local: "mekteb_books/books/mecmua_meal/kurani_kerim/rahman/",
   page: 8,
 };
 
@@ -8774,6 +8822,7 @@ export const tahrim_meal = {
   title: "Tahrim",
   slug: "tahrim_meal",
   content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/kurani_kerim/tahrim/",
+  local: "mekteb_books/books/mecmua_meal/kurani_kerim/tahrim/",
   page: 2,
 };
 
@@ -8781,6 +8830,7 @@ export const vakia_meal = {
   title: "Vakia",
   slug: "vakia_meal",
   content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/kurani_kerim/vakia/",
+  local: "mekteb_books/books/mecmua_meal/kurani_kerim/vakia/",
   page: 8,
 };
 
@@ -8788,6 +8838,7 @@ export const yasin_meal = {
   title: "Yasin",
   slug: "yasin_meal",
   content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/kurani_kerim/yasin/",
+  local: "mekteb_books/books/mecmua_meal/kurani_kerim/yasin/",
   page: 12,
 };
 
@@ -8795,6 +8846,7 @@ export const yusuf_meal = {
   title: "Yusuf",
   slug: "yusuf_meal",
   content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/kurani_kerim/yusuf/",
+  local: "mekteb_books/books/mecmua_meal/kurani_kerim/yusuf/",
   page: 2,
 };
 
@@ -8802,6 +8854,7 @@ export const duayi_mustecab_meal = {
   title: "Dua-ı Müstecab",
   slug: "duayi_mustecab_meal",
   content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/duayi_mustecab/",
+  local: "mekteb_books/books/mecmua_meal/duayi_mustecab/",
   page: 6,
 };
 
@@ -8854,6 +8907,7 @@ export const pazartesi_meal = {
   title: "Pazartesi",
   slug: "pazartesi_meal",
   content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/cevseni_kebir/pazartesi/",
+  local: "mekteb_books/books/mecmua_meal/cevseni_kebir/pazartesi/",
   page: 14,
 };
 
@@ -8861,6 +8915,7 @@ export const sali_meal = {
   title: "Salı",
   slug: "sali_meal",
   content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/cevseni_kebir/sali/",
+  local: "mekteb_books/books/mecmua_meal/cevseni_kebir/sali/",
   page: 8,
 };
 
@@ -8868,6 +8923,7 @@ export const carsamba_meal = {
   title: "Çarşamba",
   slug: "carsamba_meal",
   content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/cevseni_kebir/carsamba/",
+  local: "mekteb_books/books/mecmua_meal/cevseni_kebir/carsamba/",
   page: 10,
 };
 
@@ -8875,6 +8931,7 @@ export const persembe_meal = {
   title: "Perşembe",
   slug: "persembe_meal",
   content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/cevseni_kebir/persembe/",
+  local: "mekteb_books/books/mecmua_meal/cevseni_kebir/persembe/",
   page: 16,
 };
 
@@ -8882,6 +8939,7 @@ export const kebir_cuma_meal = {
   title: "Cuma",
   slug: "kebir_cuma_meal",
   content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/cevseni_kebir/cuma/",
+  local: "mekteb_books/books/mecmua_meal/cevseni_kebir/cuma/",
   page: 12,
 };
 
@@ -8889,6 +8947,7 @@ export const cumartesi_meal = {
   title: "Cumartesi",
   slug: "cumartesi_meal",
   content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/cevseni_kebir/cumartesi/",
+  local: "mekteb_books/books/mecmua_meal/cevseni_kebir/cumartesi/",
   page: 8,
 };
 
@@ -8896,6 +8955,7 @@ export const pazar_meal = {
   title: "Pazar",
   slug: "pazar_meal",
   content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/cevseni_kebir/pazar/",
+  local: "mekteb_books/books/mecmua_meal/cevseni_kebir/pazar/",
   page: 20,
 };
 
@@ -8903,6 +8963,7 @@ export const evradi_ummul_kuraniyye_meal = {
   title: "Evrad-ı Ümmül Kur'aniyye",
   slug: "evradi_ummul_kuraniyye_meal",
   content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/evradi_ummul_kuraniyye/",
+  local: "mekteb_books/books/mecmua_meal/evradi_ummul_kuraniyye/",
   page: 10,
 };
 
@@ -8910,6 +8971,7 @@ export const munacati_veysel_karani_meal = {
   title: "Munacat-ı Veysel Karani",
   slug: "munacati_veysel_karani_meal",
   content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/munacati_veysel_karani/",
+  local: "mekteb_books/books/mecmua_meal/munacati_veysel_karani/",
   page: 10,
 };
 
@@ -8917,6 +8979,7 @@ export const evradi_fethiyye_meal = {
   title: "Evrad-ı Fethiyye",
   slug: "evradi_fethiyye_meal",
   content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/evradi_fethiyye/",
+  local: "mekteb_books/books/mecmua_meal/evradi_fethiyye/",
   page: 10,
 };
 
@@ -8924,6 +8987,7 @@ export const evradi_rufaiyye_meal = {
   title: "Evrad-ı Rufaiyye",
   slug: "evradi_rufaiyye_meal",
   content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/evradi_rufaiyye/",
+  local: "mekteb_books/books/mecmua_meal/evradi_rufaiyye/",
   page: 25,
 };
 
@@ -8931,6 +8995,7 @@ export const evradi_kadiriyye_meal = {
   title: "Evrad-ı Kadiriyye",
   slug: "evradi_kadiriyye_meal",
   content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/evradi_kadiriyye/",
+  local: "mekteb_books/books/mecmua_meal/evradi_kadiriyye/",
   page: 14,
 };
 
@@ -8938,6 +9003,7 @@ export const evradi_naksibendiyye_meal = {
   title: "Evrad-ı Nakşibendiyye",
   slug: "evradi_naksibendiyye_meal",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/evradi_naksibendiyye/",
+  local: "mekteb_books/books/mecmua/evradi_naksibendiyye/",
   page: 14,
 };
 
@@ -8945,6 +9011,7 @@ export const delilul_irfaniyye_meal = {
   title: "Delail-ül İrfaniyye",
   slug: "delilul_irfaniyye_meal",
   content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/delilul_irfaniyye/",
+  local: "mekteb_books/books/mecmua_meal/delilul_irfaniyye/",
   page: 51,
 };
 
@@ -8952,6 +9019,7 @@ export const kurani_kerimden_dualar_meal = {
   title: "Kur'an-ı Kerim'den Dualar",
   slug: "kurani_kerimden_dualar_meal",
   content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/kurani_kerimden_dualar/",
+  local: "mekteb_books/books/mecmua_meal/kurani_kerimden_dualar/",
   page: 11,
 };
 
@@ -8959,6 +9027,7 @@ export const semsi_nuriye = {
   title: "Şems-i Nuriye",
   slug: "semsi_nuriye",
   content: "https://brd.com.tr/mekteb_books/books/semsi_nuriye/",
+  local: "mekteb_books/books/semsi_nuriye/",
   page: 22,
 };
 
@@ -9131,6 +9200,7 @@ export const beraat_gecesi = {
   title: "Beraat Gecesi",
   slug: "beraat_gecesi",
   content: "https://brd.com.tr/mekteb_books/books/hayati_hakika/beraat_gecesi/",
+  local: "mekteb_books/books/hayati_hakika/beraat_gecesi/",
   page: 5,
   direction: "ltr",
 };
@@ -9139,6 +9209,7 @@ export const cuma_gun_ve_gecesi = {
   title: "Cuma Gün ve Gecesi",
   slug: "cuma_gun_ve_gecesi",
   content: "https://brd.com.tr/mekteb_books/books/hayati_hakika/cuma_gun_ve_gecesi/",
+  local: "mekteb_books/books/hayati_hakika/cuma_gun_ve_gecesi/",
   page: 5,
   direction: "ltr",
 };
@@ -9147,6 +9218,7 @@ export const dua = {
   title: "Dua",
   slug: "dua",
   content: "https://brd.com.tr/mekteb_books/books/hayati_hakika/dua/",
+  local: "mekteb_books/books/hayati_hakika/dua/",
   page: 2,
   direction: "ltr",
 };
@@ -9155,6 +9227,7 @@ export const fatiha_hatmesi = {
   title: "Fatiha Hatmesi",
   slug: "fatiha_hatmesi",
   content: "https://brd.com.tr/mekteb_books/books/hayati_hakika/fatiha_hatmesi/",
+  local: "mekteb_books/books/hayati_hakika/fatiha_hatmesi/",
   page: 7,
   direction: "ltr",
 };
@@ -9163,6 +9236,7 @@ export const hac_ve_umre_programi = {
   title: "Hac ve Umre Programı",
   slug: "hac_ve_umre_programi",
   content: "https://brd.com.tr/mekteb_books/books/hayati_hakika/hac_ve_umre_programi/",
+  local: "mekteb_books/books/hayati_hakika/hac_ve_umre_programi/",
   page: 9,
   direction: "ltr",
 };
@@ -9171,6 +9245,7 @@ export const hatme_adabi = {
   title: "Hatme Adabı",
   slug: "hatme_adabi",
   content: "https://brd.com.tr/mekteb_books/books/hayati_hakika/hatme_adabi/",
+  local: "mekteb_books/books/hayati_hakika/hatme_adabi/",
   page: 1,
   direction: "ltr",
 };
@@ -9179,6 +9254,7 @@ export const hatmi_enbiya = {
   title: "Hatmi Enbiya",
   slug: "hatmi_enbiya",
   content: "https://brd.com.tr/mekteb_books/books/hayati_hakika/hatmi_enbiya/",
+  local: "mekteb_books/books/hayati_hakika/hatmi_enbiya/",
   page: 5,
   direction: "ltr",
 };
@@ -9187,6 +9263,7 @@ export const ihyasi_mustehab_olan_geceler = {
   title: "İhyası Mustehab Olan Geceler",
   slug: "ihyasi_mustehab_olan_geceler",
   content: "https://brd.com.tr/mekteb_books/books/hayati_hakika/ihyasi_mustehab_olan_geceler/",
+  local: "mekteb_books/books/hayati_hakika/ihyasi_mustehab_olan_geceler/",
   page: 4,
   direction: "ltr",
 };
@@ -9195,6 +9272,7 @@ export const itikaf = {
   title: "İtikaf",
   slug: "itikaf",
   content: "https://brd.com.tr/mekteb_books/books/hayati_hakika/itikaf/",
+  local: "mekteb_books/books/hayati_hakika/itikaf/",
   page: 4,
   direction: "ltr",
 };
@@ -9203,6 +9281,7 @@ export const kadir_gecesi = {
   title: "Kadir Gecesi",
   slug: "kadir_gecesi",
   content: "https://brd.com.tr/mekteb_books/books/hayati_hakika/kadir_gecesi/",
+  local: "mekteb_books/books/hayati_hakika/kadir_gecesi/",
   page: 3,
   direction: "ltr",
 };
@@ -9211,6 +9290,7 @@ export const mirac_gecesi = {
   title: "Mirac Gecesi",
   slug: "mirac_gecesi",
   content: "https://brd.com.tr/mekteb_books/books/hayati_hakika/mirac_gecesi/",
+  local: "mekteb_books/books/hayati_hakika/mirac_gecesi/",
   page: 2,
   direction: "ltr",
 };
@@ -9219,6 +9299,7 @@ export const muharrem_ayi = {
   title: "Muharrem Ayı",
   slug: "muharrem_ayi",
   content: "https://brd.com.tr/mekteb_books/books/hayati_hakika/muharrem_ayi/",
+  local: "mekteb_books/books/hayati_hakika/muharrem_ayi/",
   page: 8,
   direction: "ltr",
 };
@@ -9227,6 +9308,7 @@ export const mukaddime = {
   title: "Mukaddime",
   slug: "mukaddime",
   content: "https://brd.com.tr/mekteb_books/books/hayati_hakika/mukaddime/",
+  local: "mekteb_books/books/hayati_hakika/mukaddime/",
   page: 2,
   direction: "ltr",
 };
@@ -9235,6 +9317,7 @@ export const pazartesi_gun_ve_gecesi = {
   title: "Pazartesi Gün ve Gecesi",
   slug: "pazartesi_gun_ve_gecesi",
   content: "https://brd.com.tr/mekteb_books/books/hayati_hakika/pazartesi_gun_ve_gecesi/",
+  local: "mekteb_books/books/hayati_hakika/pazartesi_gun_ve_gecesi/",
   page: 2,
   direction: "ltr",
 };
@@ -9243,6 +9326,7 @@ export const ramazan_ayi = {
   title: "Ramazan Ayı",
   slug: "ramazan_ayi",
   content: "https://brd.com.tr/mekteb_books/books/hayati_hakika/ramazan_ayi/",
+  local: "mekteb_books/books/hayati_hakika/ramazan_ayi/",
   page: 6,
   direction: "ltr",
 };
@@ -9251,6 +9335,7 @@ export const rebiulahir_cemaziyelevvel_cemaziyelahir = {
   title: "Rebiulahir, Cemaziyelevvel, Cemaziyelahir",
   slug: "rebiulahir_cemaziyelevvel_cemaziyelahir",
   content: "https://brd.com.tr/mekteb_books/books/hayati_hakika/rebiulahir_cemaziyelevvel_cemaziyelahir/",
+  local: "mekteb_books/books/hayati_hakika/rebiulahir_cemaziyelevvel_cemaziyelahir/",
   page: 1,
   direction: "ltr",
 };
@@ -9259,6 +9344,7 @@ export const rebiulevvel_ayi = {
   title: "Rebiulevvel Ayı",
   slug: "rebiulevvel_ayi",
   content: "https://brd.com.tr/mekteb_books/books/hayati_hakika/rebiulevvel_ayi/",
+  local: "mekteb_books/books/hayati_hakika/rebiulevvel_ayi/",
   page: 4,
   direction: "ltr",
 };
@@ -9267,6 +9353,7 @@ export const recep_ayi = {
   title: "Recep Ayı",
   slug: "recep_ayi",
   content: "https://brd.com.tr/mekteb_books/books/hayati_hakika/recep_ayi/",
+  local: "mekteb_books/books/hayati_hakika/recep_ayi/",
   page: 7,
   direction: "ltr",
 };
@@ -9275,6 +9362,7 @@ export const regaib_gecesi = {
   title: "Regaib Gecesi",
   slug: "regaib_gecesi",
   content: "https://brd.com.tr/mekteb_books/books/hayati_hakika/regaib_gecesi/",
+  local: "mekteb_books/books/hayati_hakika/regaib_gecesi/",
   page: 3,
   direction: "ltr",
 };
@@ -9283,6 +9371,7 @@ export const saban_ayi = {
   title: "Şaban Ayı",
   slug: "saban_ayi",
   content: "https://brd.com.tr/mekteb_books/books/hayati_hakika/saban_ayi/",
+  local: "mekteb_books/books/hayati_hakika/saban_ayi/",
   page: 5,
   direction: "ltr",
 };
@@ -9291,6 +9380,7 @@ export const saban_ayinin_son_Gecesi = {
   title: "Şaban Ayının Son Gecesi",
   slug: "saban_ayinin_son_Gecesi",
   content: "https://brd.com.tr/mekteb_books/books/hayati_hakika/saban_ayinin_son_Gecesi/",
+  local: "mekteb_books/books/hayati_hakika/saban_ayinin_son_Gecesi/",
   page: 1,
   direction: "ltr",
 };
@@ -9299,6 +9389,7 @@ export const safer_ayi = {
   title: "Safer Ayı",
   slug: "safer_ayi",
   content: "https://brd.com.tr/mekteb_books/books/hayati_hakika/safer_ayi/",
+  local: "mekteb_books/books/hayati_hakika/safer_ayi/",
   page: 2,
   direction: "ltr",
 };
@@ -9307,6 +9398,7 @@ export const salavat_hatmesi = {
   title: "Salavat Hatmesi",
   slug: "salavat_hatmesi",
   content: "https://brd.com.tr/mekteb_books/books/hayati_hakika/salavat_hatmesi/",
+  local: "mekteb_books/books/hayati_hakika/salavat_hatmesi/",
   page: 5,
   direction: "ltr",
 };
@@ -9315,6 +9407,7 @@ export const sevval_ayi = {
   title: "Şevval Ayı",
   slug: "sevval_ayi",
   content: "https://brd.com.tr/mekteb_books/books/hayati_hakika/sevval_ayi/",
+  local: "mekteb_books/books/hayati_hakika/sevval_ayi/",
   page: 1,
   direction: "ltr",
 };
@@ -9323,6 +9416,7 @@ export const tevbei_istigfar = {
   title: "Tevbe-i İstiğfar",
   slug: "tevbei_istigfar",
   content: "https://brd.com.tr/mekteb_books/books/hayati_hakika/tevbei_istigfar/",
+  local: "mekteb_books/books/hayati_hakika/tevbei_istigfar/",
   page: 4,
   direction: "ltr",
 };
@@ -9331,6 +9425,7 @@ export const zilhicce_ayi = {
   title: "Zilhicce Ayı",
   slug: "zilhicce_ayi",
   content: "https://brd.com.tr/mekteb_books/books/hayati_hakika/zilhicce_ayi/",
+  local: "mekteb_books/books/hayati_hakika/zilhicce_ayi/",
   page: 6,
   direction: "ltr",
 };
@@ -9339,6 +9434,7 @@ export const zilhicce_son_gecesi = {
   title: "Zilhicce Ayının Son Gecesi",
   slug: "zilhicce_son_gecesi",
   content: "https://brd.com.tr/mekteb_books/books/hayati_hakika/zilhicce_son_gecesi/",
+  local: "mekteb_books/books/hayati_hakika/zilhicce_son_gecesi/",
   page: 1,
   direction: "ltr",
 };
@@ -9422,6 +9518,7 @@ export const amel = {
   title: "Amel",
   slug: "amel",
   content: "https://brd.com.tr/mekteb_books/books/hadis/amel/",
+  local: "mekteb_books/books/hadis/amel/",
   page: 9,
   direction: "ltr",
 };
@@ -9430,6 +9527,7 @@ export const annebaba = {
   title: "Anne Baba",
   slug: "annebaba",
   content: "https://brd.com.tr/mekteb_books/books/hadis/annebaba/",
+  local: "mekteb_books/books/hadis/annebaba/",
   page: 5,
   direction: "ltr",
 };
@@ -9438,6 +9536,7 @@ export const guzelahlak = {
   title: "Güzel Ahlak",
   slug: "guzelahlak",
   content: "https://brd.com.tr/mekteb_books/books/hadis/guzelahlak/",
+  local: "mekteb_books/books/hadis/guzelahlak/",
   page: 9,
   direction: "ltr",
 };
@@ -9446,6 +9545,7 @@ export const haset = {
   title: "Haset",
   slug: "haset",
   content: "https://brd.com.tr/mekteb_books/books/hadis/haset/",
+  local: "mekteb_books/books/hadis/haset/",
   page: 5,
   direction: "ltr",
 };
@@ -9454,6 +9554,7 @@ export const iman = {
   title: "İman",
   slug: "iman",
   content: "https://brd.com.tr/mekteb_books/books/hadis/iman/",
+  local: "mekteb_books/books/hadis/iman/",
   page: 8,
   direction: "ltr",
 };
@@ -9462,6 +9563,7 @@ export const kibir = {
   title: "Kibir",
   slug: "kibir",
   content: "https://brd.com.tr/mekteb_books/books/hadis/kibir/",
+  local: "mekteb_books/books/hadis/kibir/",
   page: 6,
   direction: "ltr",
 };
@@ -9470,6 +9572,7 @@ export const muhabbet = {
   title: "Muhabbet",
   slug: "muhabbet",
   content: "https://brd.com.tr/mekteb_books/books/hadis/muhabbet/",
+  local: "mekteb_books/books/hadis/muhabbet/",
   page: 9,
   direction: "ltr",
 };
@@ -9478,6 +9581,7 @@ export const riba = {
   title: "Riba",
   slug: "riba",
   content: "https://brd.com.tr/mekteb_books/books/hadis/riba/",
+  local: "mekteb_books/books/hadis/riba/",
   page: 4,
   direction: "ltr",
 };
@@ -9486,6 +9590,7 @@ export const salatu = {
   title: "Salat-ü Selam",
   slug: "salatu",
   content: "https://brd.com.tr/mekteb_books/books/hadis/salatu/",
+  local: "mekteb_books/books/hadis/salatu/",
   page: 8,
   direction: "ltr",
 };
@@ -9494,6 +9599,7 @@ export const takva = {
   title: "Takva",
   slug: "takva",
   content: "https://brd.com.tr/mekteb_books/books/hadis/takva/",
+  local: "mekteb_books/books/hadis/takva/",
   page: 12,
   direction: "ltr",
 };
@@ -9502,6 +9608,7 @@ export const teheccud = {
   title: "Teheccud",
   slug: "teheccud",
   content: "https://brd.com.tr/mekteb_books/books/hadis/teheccud/",
+  local: "mekteb_books/books/hadis/teheccud/",
   page: 5,
   direction: "ltr",
 };
@@ -9510,6 +9617,7 @@ export const zikir = {
   title: "Zikir",
   slug: "zikir",
   content: "https://brd.com.tr/mekteb_books/books/hadis/zikir/",
+  local: "mekteb_books/books/hadis/zikir/",
   page: 6,
   direction: "ltr",
 };
