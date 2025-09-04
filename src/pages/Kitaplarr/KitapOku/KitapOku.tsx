@@ -14,8 +14,13 @@ import {
   arrowBackOutline,
   arrowForwardOutline,
   enterOutline,
+  playCircle,
+  pauseCircle,
+  playSkipBackCircle,
+  playSkipForwardCircle,
 } from "ionicons/icons";
 import { BookProps } from "../../../../utils/types";
+import AudioPlayer from "react-h5-audio-player";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -45,7 +50,10 @@ const deriveLocalFromContent = (contentBase: string, file: string) => {
 async function tryLocalPath(path: string): Promise<string | null> {
   try {
     await Filesystem.stat({ path, directory: Directory.Data });
-    const { uri } = await Filesystem.getUri({ path, directory: Directory.Data });
+    const { uri } = await Filesystem.getUri({
+      path,
+      directory: Directory.Data,
+    });
     return Capacitor.convertFileSrc(uri);
   } catch {
     return null;
@@ -53,9 +61,9 @@ async function tryLocalPath(path: string): Promise<string | null> {
 }
 
 const LocalOrRemoteImage: React.FC<{
-  contentBase: string;   // uzak kök
-  fileName: string;      // "1-fs8.png" / "page-000.png"
-  localBase?: string;    // Directory.Data içindeki klasör (opsiyonel)
+  contentBase: string; // uzak kök
+  fileName: string; // "1-fs8.png" / "page-000.png"
+  localBase?: string; // Directory.Data içindeki klasör (opsiyonel)
   alt?: string;
   className?: string;
   style?: React.CSSProperties;
@@ -100,14 +108,36 @@ const LocalOrRemoteImage: React.FC<{
     };
   }, [contentBase, fileName, localBase]);
 
-  return <img src={src} alt={alt} className={className} style={style} loading="lazy" />;
+  return (
+    <img
+      src={src}
+      alt={alt}
+      className={className}
+      style={style}
+      loading="lazy"
+    />
+  );
 };
 /* ------------------------------------------------------------------------------ */
 
-function KitapOku({ book, title }: { book: BookProps; title: string }) {
+function KitapOku({
+  book,
+  title,
+  pageTitle,
+}: {
+  book: BookProps;
+  title: string;
+  pageTitle: string;
+}) {
   const [swipe, setSwipe] = useState<any>();
   const [content, setContent] = useState<JSX.Element[]>([]);
   const topRef = useRef<any>(null);
+
+  //ses
+  const [currentTitle, setCurrentTitle] = useState<string>(pageTitle);
+  const [showPlayer, setShowPlayer] = useState(false);
+  const [playerSrc, setPlayerSrc] = useState<string>("");
+  const playerRef = useRef<any>(null);
 
   const goFirstPage = () => {
     swipe?.slideTo(0);
@@ -131,6 +161,9 @@ function KitapOku({ book, title }: { book: BookProps; title: string }) {
 
   const scrollTop = () => {
     topRef.current?.scrollToTop();
+    const index = swipe?.activeIndex || 0;
+    setCurrentTitle(titleHandler(index));
+    setPlayerSrc(getSoundByPage(book, index)); // <— burası değişti
   };
 
   useEffect(() => {
@@ -146,7 +179,7 @@ function KitapOku({ book, title }: { book: BookProps; title: string }) {
             contentBase={remoteBase}
             localBase={localBase}
             fileName={file}
-            alt={`${title} - ${file}`}
+            alt={`Sayfa ${i}`}
             className="w-full h-auto"
             style={{ objectFit: "contain" }}
           />
@@ -154,7 +187,12 @@ function KitapOku({ book, title }: { book: BookProps; title: string }) {
       );
     }
     setContent(slides);
-  }, [book, title]);
+  }, [book]);
+
+  useEffect(() => {
+    setCurrentTitle(titleHandler(0));
+    setPlayerSrc(getSoundByPage(book, 0));
+  }, [book]);
 
   return (
     <>
@@ -172,6 +210,9 @@ function KitapOku({ book, title }: { book: BookProps; title: string }) {
         ref={topRef}
         scrollEvents={true}
         className="ion-padding bg-white bg-color-white"
+        onClick={() => {
+          setShowPlayer((prev) => !prev);
+        }}
       >
         <Swiper
           onSlideChangeTransitionEnd={scrollTop}
@@ -183,31 +224,96 @@ function KitapOku({ book, title }: { book: BookProps; title: string }) {
         </Swiper>
       </IonContent>
 
-      <IonFooter className={"w-full flex justify-evenly items-center p-3 bg-gray-200"}>
-        <button onClick={prevPage}>
-          <IonIcon
-            className={"text-[#4ac3a4]"}
-            icon={arrowBackOutline}
-            size={"large"}
-          />
-        </button>
-        <button onClick={nextPage}>
-          <IonIcon
-            className={"text-[#4ac3a4]"}
-            icon={arrowForwardOutline}
-            size={"large"}
-          />
-        </button>
-        <button onClick={goFirstPage}>
-          <IonIcon
-            className={"text-[#4ac3a4]"}
-            icon={enterOutline}
-            size={"large"}
-          />
-        </button>
+      <IonFooter
+        className={"w-full flex justify-evenly items-center p-3 bg-gray-200"}
+      >
+        <div className="flex flex-col gap-2 items-center justify-center w-full">
+          {showPlayer && (
+            <AudioPlayer
+              ref={playerRef}
+              src={playerSrc}
+              layout="stacked"
+              showJumpControls={false}
+              showSkipControls={true}
+              autoPlayAfterSrcChange={false}
+              onClickPrevious={() => {
+                swipe?.slideNext();
+                playerRef?.current.audio.current.pause();
+              }}
+              onClickNext={() => {
+                swipe?.slidePrev();
+                playerRef?.current.audio.current.pause();
+              }}
+              customVolumeControls={[]}
+              customAdditionalControls={[]}
+              header={
+                <div className="flex justify-center items-center w-full px-2 text-black">
+                  {currentTitle}
+                </div>
+              }
+              customIcons={{
+                play: <IonIcon className="text-[#4ac3a4]" icon={playCircle} />,
+                pause: (
+                  <IonIcon className="text-[#4ac3a4]" icon={pauseCircle} />
+                ),
+                previous: (
+                  <IonIcon
+                    className="text-[#4ac3a4]"
+                    icon={playSkipBackCircle}
+                    size="large"
+                  />
+                ),
+                next: (
+                  <IonIcon
+                    className="text-[#4ac3a4]"
+                    icon={playSkipForwardCircle}
+                    size="large"
+                  />
+                ),
+              }}
+            />
+          )}
+
+          <div className="flex justify-evenly w-full pt-2">
+            <button onClick={prevPage}>
+              <IonIcon
+                className={"text-[#4ac3a4]"}
+                icon={arrowBackOutline}
+                size={"large"}
+              />
+            </button>
+            <button onClick={nextPage}>
+              <IonIcon
+                className={"text-[#4ac3a4]"}
+                icon={arrowForwardOutline}
+                size={"large"}
+              />
+            </button>
+            <button onClick={goFirstPage}>
+              <IonIcon
+                className={"text-[#4ac3a4]"}
+                icon={enterOutline}
+                size={"large"}
+              />
+            </button>
+          </div>
+        </div>
       </IonFooter>
     </>
   );
 }
+
+/** ✔ Sayfa indexine göre başlık */
+const titleHandler = (activePage: number) => {
+  const index = activePage + 1; // Sayfa numarası 1'den başlar
+  return `Sayfa ${index}`;
+};
+
+/** ✔ Ses kaynağı: book.ses tabanı + "<index>.mp3" */
+const getSoundByPage = (book: BookProps, activePage: number): string => {
+  const base = (book.ses ?? "").replace(/\/+$/, ""); // sondaki / temizle
+  if (!base) return "";
+  return `${base}/${activePage}.mp3`;
+};
 
 export default KitapOku;

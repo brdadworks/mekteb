@@ -63,6 +63,7 @@ export interface BookProps {
   local?: string;
   page: number;
   direction?: "ltr" | "rtl";
+  ses: string;
 }
 
 export interface IlahiProps {

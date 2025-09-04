@@ -44,7 +44,7 @@ function Kitaplar({ books, title }: { books: BooksProps[]; title: string }) {
                     books={bookHandler(book.slug)}
                   />
                 ) : book.read ? (
-                  <KitapOku title={book.title} book={currentBook(book.slug)} />
+                  <KitapOku title={book.title} book={currentBook(book.slug)} pageTitle={book.title} />
                 ) : (
                   <Kitaplar title={book.title} books={bookHandler(book.slug)} />
                 )

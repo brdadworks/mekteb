@@ -8203,6 +8203,7 @@ export const duayi_ismi_azam = {
   slug: "duayi_ismi_azam",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/duayi_ismi_azam/",
   local: "mekteb_books/books/mecmua/duayi_ismi_azam/",
+  ses: "https://brd.com.tr/mekteb_books/sesler/mecmua/duayi_ismi_azam/",
   page: 4,
 };
 
@@ -8400,6 +8401,7 @@ export const pazartesi = {
   slug: "pazartesi",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/cevseni_kebir/pazartesi/",
   local: "mekteb_books/books/mecmua/cevseni_kebir/pazartesi/",
+  ses: "https://brd.com.tr/mekteb_books/sesler/mecmua/cevseni_kebir/pazartesi/",
   page: 8,
 };
 
@@ -8408,6 +8410,7 @@ export const sali = {
   slug: "sali",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/cevseni_kebir/sali/",
   local: "mekteb_books/books/mecmua/cevseni_kebir/sali/",
+  ses: "https://brd.com.tr/mekteb_books/sesler/mecmua/cevseni_kebir/sali/",
   page: 4,
 };
 
@@ -8416,6 +8419,7 @@ export const carsamba = {
   slug: "carsamba",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/cevseni_kebir/carsamba/",
   local: "mekteb_books/books/mecmua/cevseni_kebir/carsamba/",
+  ses: "https://brd.com.tr/mekteb_books/sesler/mecmua/cevseni_kebir/carsamba/",
   page: 5,
 };
 
@@ -8424,6 +8428,7 @@ export const persembe = {
   slug: "persembe",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/cevseni_kebir/persembe/",
   local: "mekteb_books/books/mecmua/cevseni_kebir/persembe/",
+  ses: "https://brd.com.tr/mekteb_books/sesler/mecmua/cevseni_kebir/persembe/",
   page: 8,
 };
 
@@ -8432,6 +8437,7 @@ export const kebir_cuma = {
   slug: "kebir_cuma",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/cevseni_kebir/cuma/",
   local: "mekteb_books/books/mecmua/cevseni_kebir/cuma/",
+  ses: "https://brd.com.tr/mekteb_books/sesler/mecmua/cevseni_kebir/cuma/",
   page: 6,
 };
 
@@ -8440,6 +8446,7 @@ export const cumartesi = {
   slug: "cumartesi",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/cevseni_kebir/cumartesi/",
   local: "mekteb_books/books/mecmua/cevseni_kebir/cumartesi/",
+  ses: "https://brd.com.tr/mekteb_books/sesler/mecmua/cevseni_kebir/cumartesi/",
   page: 4,
 };
 
@@ -8448,6 +8455,7 @@ export const pazar = {
   slug: "pazar",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/cevseni_kebir/pazar/",
   local: "mekteb_books/books/mecmua/cevseni_kebir/pazar/",
+  ses: "https://brd.com.tr/mekteb_books/sesler/mecmua/cevseni_kebir/pazar/",
   page: 10,
 };
 
@@ -8456,6 +8464,7 @@ export const evradi_ummul_kuraniyye = {
   slug: "evradi_ummul_kuraniyye",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/evradi_ummul_kuraniyye/",
   local: "mekteb_books/books/mecmua/evradi_ummul_kuraniyye/",
+  ses: "https://brd.com.tr/mekteb_books/sesler/mecmua/evradi_ummul_kuraniyye/",
   page: 6,
 };
 
@@ -8464,6 +8473,7 @@ export const munacati_veysel_karani = {
   slug: "munacati_veysel_karani",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/munacati_veysel_karani/",
   local: "mekteb_books/books/mecmua/munacati_veysel_karani/",
+  ses: "https://brd.com.tr/mekteb_books/sesler/mecmua/munacati_veysel_karani/",
   page: 6,
 };
 
@@ -8472,6 +8482,7 @@ export const evradi_fethiyye = {
   slug: "evradi_fethiyye",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/evradi_fethiyye/",
   local: "mekteb_books/books/mecmua/evradi_fethiyye/",
+  ses: "https://brd.com.tr/mekteb_books/sesler/mecmua/evradi_fethiyye/",
   page: 6,
 };
 
@@ -8480,6 +8491,7 @@ export const evradi_rufaiyye = {
   slug: "evradi_rufaiyye",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/evradi_rufaiyye/",
   local: "mekteb_books/books/mecmua/evradi_rufaiyye/",
+  ses: "https://brd.com.tr/mekteb_books/sesler/mecmua/evradi_rufaiyye/",
   page: 14,
 };
 
@@ -8488,6 +8500,7 @@ export const evradi_kadiriyye = {
   slug: "evradi_kadiriyye",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/evradi_kadiriyye/",
   local: "mekteb_books/books/mecmua/evradi_kadiriyye/",
+  ses: "https://brd.com.tr/mekteb_books/sesler/mecmua/evradi_kadiriyye/",
   page: 8,
 };
 
@@ -8496,6 +8509,7 @@ export const evradi_naksibendiyye = {
   slug: "evradi_naksibendiyye",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/evradi_naksibendiyye/",
   local: "mekteb_books/books/mecmua/evradi_naksibendiyye/",
+  ses: "https://brd.com.tr/mekteb_books/sesler/mecmua/evradi_naksibendiyye/",
   page: 8,
 };
 
@@ -8504,6 +8518,7 @@ export const delilul_irfaniyye = {
   slug: "delilul_irfaniyye",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/delilul_irfaniyye/",
   local: "mekteb_books/books/mecmua/delilul_irfaniyye/",
+  ses: "https://brd.com.tr/mekteb_books/sesler/mecmua/delilul_irfaniyye/",
   page: 28,
 };
 
@@ -8512,6 +8527,7 @@ export const kurani_kerimden_dualar = {
   slug: "kurani_kerimden_dualar",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/kurani_kerimden_dualar/",
   local: "mekteb_books/books/mecmua/kurani_kerimden_dualar/",
+  ses: "https://brd.com.tr/mekteb_books/sesler/mecmua/kurani_kerimden_dualar/",
   page: 7,
 };
 
@@ -9208,7 +9224,7 @@ export const beraat_gecesi = {
 export const cuma_gun_ve_gecesi = {
   title: "Cuma Gün ve Gecesi",
   slug: "cuma_gun_ve_gecesi",
-  content: "https://brd.com.tr/mekteb_books/books/hayati_hakika/cuma_gun_ve_gecesi/",
+  content: "https://brd.com.tr/mekteb_books/books/cuma_gun_ve_gecesi/",
   local: "mekteb_books/books/hayati_hakika/cuma_gun_ve_gecesi/",
   page: 5,
   direction: "ltr",
@@ -10655,22 +10671,19 @@ sonra mısır şahlığına aldırır`,
 };
 
 export const alvarlı_efe_6 = {
-  title: "Ya Rab kerem derdimi dermana yetiştir",
+  title: "Ol peri-veş dilber-i dildarı gördüm ben bugün",
   slug: "alvarlı_efe_6",
-  content: `Ya Rab kerem derdimi dermana yetiştir
-Bu yolda benim ıtkımı fermana yetiştir
+  content: `Ol peri-veş dilber-i dildarı gördüm ben bugün
+Taht-ı dilde zül-kerem hünkârı gördüm ben bugün
 
-Ya Rab derunum derdini bin dürlüfüzun et
-Ey şan-ı kerem katrem-i ummana yetiştir
+Ol kemân-ebrûleri mihrâb-ı kudret mâh-ı nev
+Dürr-ü mercân lebleri gül-nârı gördüm ben bugün
 
-Ya Rab dil-i viranemi kıl ah-ı eningah
-Lutfunla gözüm suret-i Rahman’a yetiştir
+Kays-veş sahrâlara saldı sanem-rûler beni
+Cân verüp cânân yolunda kârı gördüm ben bugün
 
-Ya Rab bu kadar zat-ı kerim’in kereminden
-Ver nur-i aref didemi seyrane yetiştir
-
-Ya Rab ne diyem ben sana ey alim ü dana
-Bu lutfi kulun lütf ile ihsana yetiştir`,
+Lutfiyâ bâr-ı belâdır düşme dâr-ı dilbere
+Cânıma kasd eyleyen bir yâri gördüm ben bugün`,
   split: 2,
 };
 
