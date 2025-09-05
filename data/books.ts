@@ -173,70 +173,70 @@ export const kurani_kerim = [
     title: "Rahman Suresi",
     slug: "rahman",
     read: true,
-    startPage: 19,
+    startPage: 18,
   },
   {
     id: 15,
     title: "Vakıa Suresi",
     slug: "vakia",
     read: true,
-    startPage: 23,
+    startPage: 21,
   },
   {
     id: 7,
     title: "Haşir Suresi",
     slug: "hasr",
     read: true,
-    startPage: 27,
+    startPage: 24,
   },
   {
     id: 3,
     title: "Cuma Suresi",
     slug: "cuma",
     read: true,
-    startPage: 29,
+    startPage: 25,
   },
   {
     id: 14,
     title: "Tahrim Suresi",
     slug: "tahrim",
     read: true,
-    startPage: 31,
+    startPage: 26,
   },
   {
     id: 11,
     title: "Mülk Suresi",
     slug: "mulk",
     read: true,
-    startPage: 32,
+    startPage: 27,
   },
   {
     id: 9,
     title: "İnsan Suresi",
     slug: "insan",
     read: true,
-    startPage: 35,
+    startPage: 29,
   },
   {
     id: 12,
     title: "Nebe Suresi",
     slug: "nebe",
     read: true,
-    startPage: 38,
+    startPage: 31,
   },
   {
     id: 1,
     title: "A'la Suresi",
     slug: "ala",
     read: true,
-    startPage: 41,
+    startPage: 33,
   },
   {
     id: 8,
     title: "Hatim Duası",
     slug: "hatim",
     read: true,
-    startPage: 42,
+    startPage: 34,
   },
 ];
 
@@ -8195,24 +8195,8 @@ export const ala = {
   slug: "ala",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/kurani_kerim/ala/",
   local: "mekteb_books/books/mecmua/kurani_kerim/ala/",
+  ses: "https://brd.com.tr/mekteb_books/sesler/mecmua/kurani_kerim/ala/",
   page: 1,
-};
-
-export const duayi_ismi_azam = {
-  title: "Dua-ı İsmi Azam",
-  slug: "duayi_ismi_azam",
-  content: "https://brd.com.tr/mekteb_books/books/mecmua/duayi_ismi_azam/",
-  local: "mekteb_books/books/mecmua/duayi_ismi_azam/",
-  ses: "https://brd.com.tr/mekteb_books/sesler/mecmua/duayi_ismi_azam/",
-  page: 4,
-};
-
-export const duayi_ismi_azam_meal = {
-  title: "Dua-ı İsmi Azam",
-  slug: "duayi_ismi_azam_meal",
-  content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/duayi_ismi_azam/",
-  local: "mekteb_books/books/mecmua_meal/duayi_ismi_azam/",
-  page: 6,
 };
 
 export const bakara = {
@@ -8220,6 +8204,7 @@ export const bakara = {
   slug: "bakara",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/kurani_kerim/bakara/",
   local: "mekteb_books/books/mecmua/kurani_kerim/bakara/",
+  ses: "https://brd.com.tr/mekteb_books/sesler/mecmua/kurani_kerim/bakara/",
   page: 1,
 };
 
@@ -8228,7 +8213,8 @@ export const cuma = {
   slug: "cuma",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/kurani_kerim/cuma/",
   local: "mekteb_books/books/mecmua/kurani_kerim/cuma/",
-  page: 2,
+  ses: "https://brd.com.tr/mekteb_books/sesler/mecmua/kurani_kerim/cuma/",
+  page: 1,
 };
 
 export const duhan = {
@@ -8236,6 +8222,7 @@ export const duhan = {
   slug: "duhan",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/kurani_kerim/duhan/",
   local: "mekteb_books/books/mecmua/kurani_kerim/duhan/",
+  ses: "https://brd.com.tr/mekteb_books/sesler/mecmua/kurani_kerim/duhan/",
   page: 3,
 };
 
@@ -8244,6 +8231,7 @@ export const fatiha = {
   slug: "fatiha",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/kurani_kerim/fatiha/",
   local: "mekteb_books/books/mecmua/kurani_kerim/fatiha/",
+  ses: "https://brd.com.tr/mekteb_books/sesler/mecmua/kurani_kerim/fatiha/",
   page: 1,
 };
 
@@ -8252,7 +8240,8 @@ export const fetih = {
   slug: "fetih",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/kurani_kerim/fetih/",
   local: "mekteb_books/books/mecmua/kurani_kerim/fetih/",
-  page: 5,
+  ses: "https://brd.com.tr/mekteb_books/sesler/mecmua/kurani_kerim/fetih/",
+  page: 4,
 };
 
 export const hasr = {
@@ -8260,7 +8249,8 @@ export const hasr = {
   slug: "hasr",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/kurani_kerim/hasr/",
   local: "mekteb_books/books/mecmua/kurani_kerim/hasr/",
-  page: 2,
+  ses: "https://brd.com.tr/mekteb_books/sesler/mecmua/kurani_kerim/hasr/",
+  page: 1,
 };
 
 export const hatim = {
@@ -8276,7 +8266,8 @@ export const insan = {
   slug: "insan",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/kurani_kerim/insan/",
   local: "mekteb_books/books/mecmua/kurani_kerim/insan/",
-  page: 3,
+  ses: "https://brd.com.tr/mekteb_books/sesler/mecmua/kurani_kerim/insan/",
+  page: 2,
 };
 
 export const kehf = {
@@ -8284,6 +8275,7 @@ export const kehf = {
   slug: "kehf",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/kurani_kerim/kehf/",
   local: "mekteb_books/books/mecmua/kurani_kerim/kehf/",
+  ses: "https://brd.com.tr/mekteb_books/sesler/mecmua/kurani_kerim/kehf/",
   page: 2,
 };
 
@@ -8292,7 +8284,8 @@ export const mulk = {
   slug: "mulk",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/kurani_kerim/mulk/",
   local: "mekteb_books/books/mecmua/kurani_kerim/mulk/",
-  page: 3,
+  ses: "https://brd.com.tr/mekteb_books/sesler/mecmua/kurani_kerim/mulk/",
+  page: 2,
 };
 
 export const nebe = {
@@ -8300,7 +8293,8 @@ export const nebe = {
   slug: "nebe",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/kurani_kerim/nebe/",
   local: "mekteb_books/books/mecmua/kurani_kerim/nebe/",
-  page: 3,
+  ses: "https://brd.com.tr/mekteb_books/sesler/mecmua/kurani_kerim/nebe/",
+  page: 2,
 };
 
 export const rahman = {
@@ -8308,7 +8302,8 @@ export const rahman = {
   slug: "rahman",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/kurani_kerim/rahman/",
   local: "mekteb_books/books/mecmua/kurani_kerim/rahman/",
-  page: 4,
+  ses: "https://brd.com.tr/mekteb_books/sesler/mecmua/kurani_kerim/rahman/",
+  page: 3,
 };
 
 export const tahrim = {
@@ -8316,6 +8311,7 @@ export const tahrim = {
   slug: "tahrim",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/kurani_kerim/tahrim/",
   local: "mekteb_books/books/mecmua/kurani_kerim/tahrim/",
+  ses: "https://brd.com.tr/mekteb_books/sesler/mecmua/kurani_kerim/tahrim/",
   page: 1,
 };
 
@@ -8324,7 +8320,8 @@ export const vakia = {
   slug: "vakia",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/kurani_kerim/vakia/",
   local: "mekteb_books/books/mecmua/kurani_kerim/vakia/",
-  page: 4,
+  ses: "https://brd.com.tr/mekteb_books/sesler/mecmua/kurani_kerim/vakia/",
+  page: 3,
 };
 
 export const yasin = {
@@ -8332,6 +8329,7 @@ export const yasin = {
   slug: "yasin",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/kurani_kerim/yasin/",
   local: "mekteb_books/books/mecmua/kurani_kerim/yasin/",
+  ses: "https://brd.com.tr/mekteb_books/sesler/mecmua/kurani_kerim/yasin/",
   page: 6,
 };
 
@@ -8340,6 +8338,7 @@ export const yusuf = {
   slug: "yusuf",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/kurani_kerim/yusuf/",
   local: "mekteb_books/books/mecmua/kurani_kerim/yusuf/",
+  ses: "https://brd.com.tr/mekteb_books/sesler/mecmua/kurani_kerim/yusuf/",
   page: 1,
 };
 
@@ -8457,6 +8456,16 @@ export const pazar = {
   local: "mekteb_books/books/mecmua/cevseni_kebir/pazar/",
   ses: "https://brd.com.tr/mekteb_books/sesler/mecmua/cevseni_kebir/pazar/",
   page: 10,
+};
+
+
+export const duayi_ismi_azam = {
+  title: "Dua-ı İsmi Azam",
+  slug: "duayi_ismi_azam",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua/duayi_ismi_azam/",
+  local: "mekteb_books/books/mecmua/duayi_ismi_azam/",
+  ses: "https://brd.com.tr/mekteb_books/sesler/mecmua/duayi_ismi_azam/",
+  page: 4,
 };
 
 export const evradi_ummul_kuraniyye = {
@@ -8751,7 +8760,7 @@ export const cuma_meal = {
   slug: "cuma_meal",
   content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/kurani_kerim/cuma/",
   local: "mekteb_books/books/mecmua_meal/kurani_kerim/cuma/",
-  page: 4,
+  page: 2,
 };
 
 export const duhan_meal = {
@@ -8973,6 +8982,14 @@ export const pazar_meal = {
   content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/cevseni_kebir/pazar/",
   local: "mekteb_books/books/mecmua_meal/cevseni_kebir/pazar/",
   page: 20,
+};
+
+export const duayi_ismi_azam_meal = {
+  title: "Dua-ı İsmi Azam",
+  slug: "duayi_ismi_azam_meal",
+  content: "https://brd.com.tr/mekteb_books/books/mecmua_meal/duayi_ismi_azam/",
+  local: "mekteb_books/books/mecmua_meal/duayi_ismi_azam/",
+  page: 6,
 };
 
 export const evradi_ummul_kuraniyye_meal = {

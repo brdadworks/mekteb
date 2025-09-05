@@ -204,10 +204,17 @@ function KuraniKerimOku({
           virtual
           initialSlide={startPage}
           onSlideChangeTransitionEnd={onSlideChange}
-          onBeforeInit={(swipper) => {
-            setSwipe(swipper);
+          onBeforeInit={(sw) => {
+            setSwipe(sw);
+            requestAnimationFrame(() => {
+              sw.slideTo(startPage, 0);
+              const i = sw.activeIndex ?? startPage ?? 0;
+              topRef.current?.scrollToTop();
+              setTitle(titleHandler(i));
+              setPlayerSrc(getSoundByPage(i));
+            });
           }}
-          dir={"rtl"}
+          dir="rtl"
           className="mySwiper"
         >
           {images}
@@ -293,8 +300,18 @@ function KuraniKerimOku({
 
 export default KuraniKerimOku;
 
+/** Sure tipini tanımla veya uygun yerden import et */
+type Sure = {
+  slug: string;
+  title: string;
+  page: number;
+  content?: string;
+  local?: string;
+  ses?: string;
+};
+
 /** Bu sayfada kullanılacak sure seti */
-const surerler = [
+const sureler: Sure[] = [
   fatiha,
   bakara,
   yusuf,
@@ -319,7 +336,7 @@ const imagesHandler = () => {
   const images: JSX.Element[] = [];
   let globalIndex = 0;
 
-  for (const sure of surerler) {
+  for (const sure of sureler) {
     const remoteBase = trimEndSlash(sure.content || "");
     const localBase = sure.local ? trimEndSlash(sure.local) : undefined;
 
@@ -346,7 +363,7 @@ const imagesHandler = () => {
 /** ✔ Sayfa indexine göre başlık */
 const titleHandler = (activePage: number) => {
   let index = 0;
-  for (const sure of surerler) {
+  for (const sure of sureler) {
     const end = index + sure.page;
     if (activePage < end) return `${sure.title} Suresi`;
     index = end;
@@ -354,8 +371,20 @@ const titleHandler = (activePage: number) => {
   return "pageTitle";
 };
 
-/** ✔ Ses kaynağı (şimdilik hep remote). */
+/** ✔ Global slide indexine göre ilgili sûrenin SES yolu
+ *  - Dosyalar 0.mp3, 1.mp3... diye gidiyorsa: localIndex 0-based
+ *  - Yol: "<sure.ses>/<localIndex>.mp3"
+ */
 const getSoundByPage = (activePage: number): string => {
-  const paddedIndex = activePage.toString().padStart(3, "0");
-  return `https://brd.com.tr/mekteb_books/sounds/page-${paddedIndex}.mp3`;
+  let index = 0;
+  for (const sure of sureler) {
+    const end = index + (sure.page ?? 0);
+    if (activePage < end) {
+      const localIndex = activePage - index; // 0-based
+      const base = (sure.ses ?? "").replace(/\/+$/, "");
+      return base ? `${base}/${localIndex}.mp3` : "";
+    }
+    index = end;
+  }
+  return "";
 };

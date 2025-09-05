@@ -132,6 +132,7 @@ function KitapOku({
   const [swipe, setSwipe] = useState<any>();
   const [content, setContent] = useState<JSX.Element[]>([]);
   const topRef = useRef<any>(null);
+  const [headerTitle, setHeaderTitle] = useState<string>(title);
 
   //ses
   const [currentTitle, setCurrentTitle] = useState<string>(pageTitle);
@@ -163,7 +164,8 @@ function KitapOku({
     topRef.current?.scrollToTop();
     const index = swipe?.activeIndex || 0;
     setCurrentTitle(titleHandler(index));
-    setPlayerSrc(getSoundByPage(book, index)); // <— burası değişti
+    setPlayerSrc(getSoundByPage(book, index));
+    setHeaderTitle(`${title} • ${titleHandler(index)}`);
   };
 
   useEffect(() => {
@@ -194,6 +196,12 @@ function KitapOku({
     setPlayerSrc(getSoundByPage(book, 0));
   }, [book]);
 
+  useEffect(() => {
+    setCurrentTitle(titleHandler(0));
+    setPlayerSrc(getSoundByPage(book, 0));
+    setHeaderTitle(`${title} • ${titleHandler(0)}`);
+  }, [book, title]);
+
   return (
     <>
       <IonHeader className={"p-2"}>
@@ -201,7 +209,7 @@ function KitapOku({
           <IonButtons slot="start">
             <IonBackButton text={"Geri"} />
           </IonButtons>
-          <IonTitle className={"text-xl"}>{title}</IonTitle>
+          <IonTitle className="text-xl">{headerTitle}</IonTitle>
         </IonToolbar>
       </IonHeader>
 
