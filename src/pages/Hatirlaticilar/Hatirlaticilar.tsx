@@ -315,9 +315,9 @@ function Hatirlaticilar() {
               <IonButton onClick={sendNotification} disabled={!isAnyChecked}>
                 Kaydet
               </IonButton>
-              <IonButton onClick={sendTestNotification} color="tertiary">
+              {/* <IonButton onClick={sendTestNotification} color="tertiary">
                 Test Bildirimi
-              </IonButton>
+              </IonButton> */}
             </div>
           </>
         )}
