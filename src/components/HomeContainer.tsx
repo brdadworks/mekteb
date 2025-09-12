@@ -182,7 +182,7 @@ const HomeContainer: React.FC<ContainerProps> = () => {
                 "my-[1px] font-medium text-[1rem] text-center  font-semibold text-sm"
               }
             >
-              Güneş
+              Sabah
             </span>
           </IonCol>
           <IonCol className={"border-b-[1px] border-[#fdfdfd4f]"}>
@@ -212,7 +212,7 @@ const HomeContainer: React.FC<ContainerProps> = () => {
                 "my-[1px] font-medium text-[1rem] text-center  font-semibold text-sm"
               }
             >
-              {prayerTimes?.Gunes}
+              {prayerTimes?.Sabah}
             </span>
           </IonCol>
           <IonCol>

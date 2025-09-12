@@ -50,7 +50,7 @@ function Imsakiye() {
               <tr>
                 <th>Tarih</th>
                 <th>İmsak</th>
-                <th>Güneş</th>
+                <th>Sabah</th>
                 <th>Öğle</th>
                 <th>İkindi</th>
                 <th>Akşam</th>
@@ -66,7 +66,7 @@ function Imsakiye() {
                     {prayerTime.MiladiTarihUzun.split(" ")[1].substring(0, 3)}
                   </td>
                   <td>{prayerTime.Imsak}</td>
-                  <td>{prayerTime.Gunes}</td>
+                  <td>{prayerTime.Sabah}</td>
                   <td>{prayerTime.Ogle}</td>
                   <td>{prayerTime.Ikindi}</td>
                   <td>{prayerTime.Aksam}</td>

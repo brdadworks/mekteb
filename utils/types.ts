@@ -4,9 +4,9 @@ export interface PrayerTimesProps {
   Aksam: string;
   AyinSekliURL: string;
   GreenwichOrtalamaZamani: number;
-  Gunes: string;
-  GunesBatis: string;
-  GunesDogus: string;
+  Sabah: string;
+  SabahBatis: string;
+  SabahDogus: string;
   HicriTarihKisa: string;
   HicriTarihKisaIso8601: null | string;
   HicriTarihUzun: string;
