@@ -42,31 +42,35 @@ const notifications: NotificationState[] = [
 
 // Başlık -> index eşlemesi
 const TITLE_TO_INDEX: Record<string, number> = {
-  "İmsak": 0,
-  "Sabah": 1,
-  "Öğle": 2,
-  "İkindi": 3,
-  "Akşam": 4,
-  "Yatsı": 5,
+  İmsak: 0,
+  Sabah: 1,
+  Öğle: 2,
+  İkindi: 3,
+  Akşam: 4,
+  Yatsı: 5,
 };
 
 // === ANDROID KANAL SABİTLERİ ===
-const ANDROID_CHANNEL_ID = "prayer-times-azan";   // Android: özel sesli kanal
+const ANDROID_CHANNEL_ID = "prayer-times-azan"; // Android: özel sesli kanal
 const ANDROID_CHANNEL_NAME = "Namaz Vakitleri";
-const ANDROID_SOUND_FILE = "azan.wav";            // res/raw/azan.wav
+const ANDROID_SOUND_FILE = "azan.wav"; // res/raw/azan.wav
 
 // === iOS SES SABİTİ ===
-const IOS_SOUND_FILE = "azan.wav";                // Xcode bundle içine eklendi
+const IOS_SOUND_FILE = "azan.wav"; // Xcode bundle içine eklendi
 
 const EXTRA_MARKER = { type: "prayer-time", version: 3 };
 
 function Hatirlaticilar() {
-  const [notificationStates, setNotificationStates] = useState<NotificationState[]>(notifications);
-  const [permissionStatus, setPermissionStatus] =
-    useState<"none" | "denied" | "granted" | "prompt">("none");
+  const [notificationStates, setNotificationStates] =
+    useState<NotificationState[]>(notifications);
+  const [permissionStatus, setPermissionStatus] = useState<
+    "none" | "denied" | "granted" | "prompt"
+  >("none");
   const [loading, setLoading] = useState(true);
   const [showToast, setShowToast] = useState(false);
-  const [toastMessage, setToastMessage] = useState("Bildirimler başarıyla planlandı.");
+  const [toastMessage, setToastMessage] = useState(
+    "Bildirimler başarıyla planlandı."
+  );
 
   useEffect(() => {
     (async () => {
@@ -82,7 +86,11 @@ function Hatirlaticilar() {
         if (status === "denied") setPermissionStatus("denied");
         else if (status === "prompt") {
           const req = await requestNotificationPermission();
-          setPermissionStatus(req === "granted" || req === "denied" || req === "prompt" ? req : "prompt");
+          setPermissionStatus(
+            req === "granted" || req === "denied" || req === "prompt"
+              ? req
+              : "prompt"
+          );
         } else setPermissionStatus("granted");
       } catch {
         setPermissionStatus("denied");
@@ -94,12 +102,18 @@ function Hatirlaticilar() {
   }, []);
 
   const persistNotifications = async (states: NotificationState[]) => {
-    try { await addStorageData("notifications", states); }
-    catch (e) { console.warn("notifications persist error:", e); }
+    try {
+      await addStorageData("notifications", states);
+    } catch (e) {
+      console.warn("notifications persist error:", e);
+    }
   };
 
   const handleToggleAll = (checked: boolean) => {
-    const updatedStates = notificationStates.map((state) => ({ ...state, checked }));
+    const updatedStates = notificationStates.map((state) => ({
+      ...state,
+      checked,
+    }));
     setNotificationStates(updatedStates);
     persistNotifications(updatedStates);
   };
@@ -116,11 +130,17 @@ function Hatirlaticilar() {
   const openNotificationSettings = () => {
     const platform = Capacitor.getPlatform();
     if (platform === "ios") {
-      try { (NativeSettings as any).openIOS?.({ option: IOSSettings.App }); }
-      catch (e) { console.warn("iOS settings open failed:", e); }
+      try {
+        (NativeSettings as any).openIOS?.({ option: IOSSettings.App });
+      } catch (e) {
+        console.warn("iOS settings open failed:", e);
+      }
     } else if (platform === "android") {
-      try { NativeSettings.openAndroid({ option: AndroidSettings.AppNotification }); }
-      catch (e) { console.warn("Android settings open failed:", e); }
+      try {
+        NativeSettings.openAndroid({ option: AndroidSettings.AppNotification });
+      } catch (e) {
+        console.warn("Android settings open failed:", e);
+      }
     } else {
       setToastMessage("Bu cihazda bildirim ayarları açılamıyor (web).");
       setShowToast(true);
@@ -130,14 +150,24 @@ function Hatirlaticilar() {
   const checkPermission = async () => {
     try {
       const status = await requestNotificationPermission();
-      setPermissionStatus(status === "granted" || status === "denied" || status === "prompt" ? status : "prompt");
-    } catch { setPermissionStatus("denied"); }
+      setPermissionStatus(
+        status === "granted" || status === "denied" || status === "prompt"
+          ? status
+          : "prompt"
+      );
+    } catch {
+      setPermissionStatus("denied");
+    }
   };
 
   const sendNotification = async () => {
     try {
       const anySelected = notificationStates.some((s) => s.checked);
-      if (!anySelected) { setToastMessage("En az bir vakit seçmelisiniz."); setShowToast(true); return; }
+      if (!anySelected) {
+        setToastMessage("En az bir vakit seçmelisiniz.");
+        setShowToast(true);
+        return;
+      }
 
       // İlçe ayarı
       const settings = await getStorageData("settings");
@@ -150,7 +180,11 @@ function Hatirlaticilar() {
       // API: vakitler
       const prayerTimesData = await getPrayerTimes(settings.district.IlceID);
       const raw = prayerTimesData?.data;
-      if (!raw) { setToastMessage("Namaz vakitleri alınamadı."); setShowToast(true); return; }
+      if (!raw) {
+        setToastMessage("Namaz vakitleri alınamadı.");
+        setShowToast(true);
+        return;
+      }
 
       await addStorageData("prayerTimes", raw);
       await schedulePrayerNotificationsFromRaw(notificationStates, raw);
@@ -207,7 +241,9 @@ function Hatirlaticilar() {
     }
   };
 
-  const isAllChecked = notificationStates.length > 0 && notificationStates.every((state) => state.checked);
+  const isAllChecked =
+    notificationStates.length > 0 &&
+    notificationStates.every((state) => state.checked);
   const isAnyChecked = notificationStates.some((s) => s.checked);
 
   return (
@@ -230,15 +266,25 @@ function Hatirlaticilar() {
               Bildirim almak için bildirimlere izin vermeniz gerekmekte.
               Ayarlardan manuel olarak bildirimlere izin veriniz.
             </p>
-            <p><IonButton onClick={openNotificationSettings}>İzin Ver</IonButton></p>
-            <p><IonButton onClick={checkPermission}>Kontrol et</IonButton></p>
-            <p><IonButton onClick={sendTestNotification} color="medium">Test Bildirimi</IonButton></p>
+            <p>
+              <IonButton onClick={openNotificationSettings}>İzin Ver</IonButton>
+            </p>
+            <p>
+              <IonButton onClick={checkPermission}>Kontrol et</IonButton>
+            </p>
+            <p>
+              <IonButton onClick={sendTestNotification} color="medium">
+                Test Bildirimi
+              </IonButton>
+            </p>
           </>
         ) : (
           <>
             <IonList lines="none">
               <IonItem>
-                <IonLabel><span className="font-medium text-lg text-black">Tümü</span></IonLabel>
+                <IonLabel>
+                  <span className="font-medium text-lg text-black">Tümü</span>
+                </IonLabel>
                 <IonToggle
                   aria-label="Tümü"
                   slot="end"
@@ -249,7 +295,11 @@ function Hatirlaticilar() {
 
               {notificationStates.map((notification, index) => (
                 <IonItem key={notification.title}>
-                  <IonLabel><span className="font-medium text-lg text-black">{notification.title}</span></IonLabel>
+                  <IonLabel>
+                    <span className="font-medium text-lg text-black">
+                      {notification.title}
+                    </span>
+                  </IonLabel>
                   <IonToggle
                     aria-label={notification.title}
                     slot="end"
@@ -260,9 +310,14 @@ function Hatirlaticilar() {
               ))}
             </IonList>
 
-            <div className="ion-margin-top" style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-              <IonButton onClick={sendNotification} disabled={!isAnyChecked}>Kaydet</IonButton>
-              <IonButton onClick={sendTestNotification} color="tertiary">Test Bildirimi</IonButton>
+            <div
+              className="ion-margin-top"
+              style={{ display: "flex", gap: 8, flexWrap: "wrap" }}
+            >
+              <IonButton onClick={sendNotification} disabled={!isAnyChecked}>
+                Kaydet
+              </IonButton>
+              {/* <IonButton onClick={sendTestNotification} color="tertiary">Test Bildirimi</IonButton> */}
             </div>
           </>
         )}
@@ -296,7 +351,10 @@ async function ensureAndroidPrayerChannel() {
 
 /** === API verisinden planlama yardımcıları === **/
 
-async function schedulePrayerNotificationsFromRaw(states: NotificationState[], rawTimes: any) {
+async function schedulePrayerNotificationsFromRaw(
+  states: NotificationState[],
+  rawTimes: any
+) {
   if (Capacitor.getPlatform() === "web") return;
 
   // İzin
@@ -346,7 +404,7 @@ async function schedulePrayerNotificationsFromRaw(states: NotificationState[], r
         schedule: { at, allowWhileIdle: true },
         extra: { ...EXTRA_MARKER, title: s.title, hhmm },
         ...(isIOS
-          ? { sound: IOS_SOUND_FILE }     // iOS: ses dosyası bundle'dan
+          ? { sound: IOS_SOUND_FILE } // iOS: ses dosyası bundle'dan
           : { channelId: ANDROID_CHANNEL_ID }), // Android: kanal üzerinden ses
         // smallIcon: "ic_stat_notification",
       };
@@ -372,16 +430,21 @@ async function schedulePrayerNotificationsFromRaw(states: NotificationState[], r
 async function cancelPrayerNotifications() {
   if (Capacitor.getPlatform() === "web") return;
   const pending = await LocalNotifications.getPending();
-  const ours = pending.notifications.filter((n: any) => n?.extra?.type === EXTRA_MARKER.type);
+  const ours = pending.notifications.filter(
+    (n: any) => n?.extra?.type === EXTRA_MARKER.type
+  );
   if (!ours || ours.length === 0) return;
-  await LocalNotifications.cancel({ notifications: ours.map((n: any) => ({ id: n.id })) });
+  await LocalNotifications.cancel({
+    notifications: ours.map((n: any) => ({ id: n.id })),
+  });
 }
 
 function normalizeTimes(raw: any): string[] | null {
   if (Array.isArray(raw) && raw.length > 0 && typeof raw[0] === "string") {
     return toHHMMArray(raw as string[]);
   }
-  if (raw && Array.isArray(raw.prayerTimes)) return normalizeTimes(raw.prayerTimes);
+  if (raw && Array.isArray(raw.prayerTimes))
+    return normalizeTimes(raw.prayerTimes);
   if (raw && Array.isArray(raw.data)) return normalizeTimes(raw.data);
   if (Array.isArray(raw) && raw.length > 0 && typeof raw[0] === "object") {
     const today = pickTodayEntry(raw as any[]);
@@ -392,7 +455,10 @@ function normalizeTimes(raw: any): string[] | null {
 }
 
 function toHHMMArray(arr: string[]): string[] {
-  const six = arr.slice(0, 6).map((s) => toHHMM(s)).filter(Boolean) as string[];
+  const six = arr
+    .slice(0, 6)
+    .map((s) => toHHMM(s))
+    .filter(Boolean) as string[];
   return six.length === 6 ? six : six;
 }
 function toHHMM(s: string): string | null {
@@ -422,18 +488,20 @@ function extractSixTimes(entry: any): string[] | null {
   const keys = {
     imsak: ["Imsak", "İmsak", "imsak", "Fajr", "fajr"],
     sabah: ["Sabah", "Sabah", "sabah", "Sunrise", "sunrise"],
-    ogle:  ["Ogle", "Öğle", "ogle", "Dhuhr", "Zuhr", "dhuhr", "zuhr"],
-    ikindi:["Ikindi", "İkindi", "ikindi", "Asr", "asr"],
+    ogle: ["Ogle", "Öğle", "ogle", "Dhuhr", "Zuhr", "dhuhr", "zuhr"],
+    ikindi: ["Ikindi", "İkindi", "ikindi", "Asr", "asr"],
     aksam: ["Aksam", "Akşam", "aksam", "Maghrib", "maghrib"],
     yatsi: ["Yatsi", "Yatsı", "yatsi", "Isha", "isha"],
   };
   const imsak = toHHMM(getFlex(entry, keys.imsak) ?? "");
   const sabah = toHHMM(getFlex(entry, keys.sabah) ?? "");
-  const ogle  = toHHMM(getFlex(entry, keys.ogle) ?? "");
-  const ikindi= toHHMM(getFlex(entry, keys.ikindi) ?? "");
+  const ogle = toHHMM(getFlex(entry, keys.ogle) ?? "");
+  const ikindi = toHHMM(getFlex(entry, keys.ikindi) ?? "");
   const aksam = toHHMM(getFlex(entry, keys.aksam) ?? "");
   const yatsi = toHHMM(getFlex(entry, keys.yatsi) ?? "");
-  const arr = [imsak, sabah, ogle, ikindi, aksam, yatsi].filter(Boolean) as string[];
+  const arr = [imsak, sabah, ogle, ikindi, aksam, yatsi].filter(
+    Boolean
+  ) as string[];
   return arr.length === 6 ? arr : null;
 }
 
@@ -478,15 +546,26 @@ function nextOccurrence(hhmm: string): Date | null {
   if (Number.isNaN(hh) || Number.isNaN(mm)) return null;
 
   const now = new Date();
-  const at = new Date(now.getFullYear(), now.getMonth(), now.getDate(), hh, mm, 0, 0);
+  const at = new Date(
+    now.getFullYear(),
+    now.getMonth(),
+    now.getDate(),
+    hh,
+    mm,
+    0,
+    0
+  );
   if (at.getTime() < now.getTime()) at.setDate(at.getDate() + 1);
   return at;
 }
 
 function makeId(title: string, at: Date): number {
-  const key = `${title}|${at.getFullYear()}-${at.getMonth() + 1}-${at.getDate()} ${at.getHours()}:${at.getMinutes()}`;
+  const key = `${title}|${at.getFullYear()}-${
+    at.getMonth() + 1
+  }-${at.getDate()} ${at.getHours()}:${at.getMinutes()}`;
   let hash = 0;
-  for (let i = 0; i < key.length; i++) hash = (hash * 31 + key.charCodeAt(i)) | 0;
+  for (let i = 0; i < key.length; i++)
+    hash = (hash * 31 + key.charCodeAt(i)) | 0;
   return Math.abs(hash);
 }
 
