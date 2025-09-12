@@ -79,10 +79,6 @@ export const getDistrict = async (id: string) => {
 };
 
 export const getPrayerTimes = async (id: string) => {
-  if (!id || id === 'undefined') {
-    console.error('getPrayerTimes: invalid id', id);
-    throw new Error('Geçersiz konum kimliği (id). Seçimleri tamamlayın.');
-  }
   const res = await Http.get({ url: `${apiBase}vakitler/${id}`, params: {}, headers: {} });
   return { status: res.status, data: res.data };
 };

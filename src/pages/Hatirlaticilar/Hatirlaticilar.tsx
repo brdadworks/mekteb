@@ -50,8 +50,14 @@ const TITLE_TO_INDEX: Record<string, number> = {
   "Yatsı": 5,
 };
 
-const ANDROID_CHANNEL_ID = "prayer-times";
+// === ANDROID KANAL SABİTLERİ ===
+const ANDROID_CHANNEL_ID = "prayer-times-azan";   // Android: özel sesli kanal
 const ANDROID_CHANNEL_NAME = "Namaz Vakitleri";
+const ANDROID_SOUND_FILE = "azan.wav";            // res/raw/azan.wav
+
+// === iOS SES SABİTİ ===
+const IOS_SOUND_FILE = "azan.wav";                // Xcode bundle içine eklendi
+
 const EXTRA_MARKER = { type: "prayer-time", version: 3 };
 
 function Hatirlaticilar() {
@@ -66,46 +72,34 @@ function Hatirlaticilar() {
     (async () => {
       try {
         const data = await getStorageData("notifications");
-        if (data && Array.isArray(data)) {
-          setNotificationStates(data);
-        }
+        if (data && Array.isArray(data)) setNotificationStates(data);
       } finally {
         setLoading(false);
       }
 
       try {
         const status = await getNotificationPermissionStatus();
-        if (status === "denied") {
-          setPermissionStatus("denied");
-        } else if (status === "prompt") {
+        if (status === "denied") setPermissionStatus("denied");
+        else if (status === "prompt") {
           const req = await requestNotificationPermission();
-          if (req === "granted" || req === "denied" || req === "prompt") {
-            setPermissionStatus(req);
-          } else {
-            setPermissionStatus("prompt");
-          }
-        } else {
-          setPermissionStatus("granted");
-        }
+          setPermissionStatus(req === "granted" || req === "denied" || req === "prompt" ? req : "prompt");
+        } else setPermissionStatus("granted");
       } catch {
         setPermissionStatus("denied");
       }
+
+      // ANDROID: kanal kur (idempotent)
+      await ensureAndroidPrayerChannel();
     })();
   }, []);
 
   const persistNotifications = async (states: NotificationState[]) => {
-    try {
-      await addStorageData("notifications", states);
-    } catch (e) {
-      console.warn("notifications persist error:", e);
-    }
+    try { await addStorageData("notifications", states); }
+    catch (e) { console.warn("notifications persist error:", e); }
   };
 
   const handleToggleAll = (checked: boolean) => {
-    const updatedStates = notificationStates.map((state) => ({
-      ...state,
-      checked,
-    }));
+    const updatedStates = notificationStates.map((state) => ({ ...state, checked }));
     setNotificationStates(updatedStates);
     persistNotifications(updatedStates);
   };
@@ -122,17 +116,11 @@ function Hatirlaticilar() {
   const openNotificationSettings = () => {
     const platform = Capacitor.getPlatform();
     if (platform === "ios") {
-      try {
-        (NativeSettings as any).openIOS?.({ option: IOSSettings.App });
-      } catch (e) {
-        console.warn("iOS settings open failed:", e);
-      }
+      try { (NativeSettings as any).openIOS?.({ option: IOSSettings.App }); }
+      catch (e) { console.warn("iOS settings open failed:", e); }
     } else if (platform === "android") {
-      try {
-        NativeSettings.openAndroid({ option: AndroidSettings.AppNotification });
-      } catch (e) {
-        console.warn("Android settings open failed:", e);
-      }
+      try { NativeSettings.openAndroid({ option: AndroidSettings.AppNotification }); }
+      catch (e) { console.warn("Android settings open failed:", e); }
     } else {
       setToastMessage("Bu cihazda bildirim ayarları açılamıyor (web).");
       setShowToast(true);
@@ -142,24 +130,14 @@ function Hatirlaticilar() {
   const checkPermission = async () => {
     try {
       const status = await requestNotificationPermission();
-      if (status === "granted" || status === "denied" || status === "prompt") {
-        setPermissionStatus(status);
-      } else {
-        setPermissionStatus("prompt");
-      }
-    } catch {
-      setPermissionStatus("denied");
-    }
+      setPermissionStatus(status === "granted" || status === "denied" || status === "prompt" ? status : "prompt");
+    } catch { setPermissionStatus("denied"); }
   };
 
   const sendNotification = async () => {
     try {
       const anySelected = notificationStates.some((s) => s.checked);
-      if (!anySelected) {
-        setToastMessage("En az bir vakit seçmelisiniz.");
-        setShowToast(true);
-        return;
-      }
+      if (!anySelected) { setToastMessage("En az bir vakit seçmelisiniz."); setShowToast(true); return; }
 
       // İlçe ayarı
       const settings = await getStorageData("settings");
@@ -172,19 +150,10 @@ function Hatirlaticilar() {
       // API: vakitler
       const prayerTimesData = await getPrayerTimes(settings.district.IlceID);
       const raw = prayerTimesData?.data;
-      if (!raw) {
-        setToastMessage("Namaz vakitleri alınamadı.");
-        setShowToast(true);
-        return;
-      }
+      if (!raw) { setToastMessage("Namaz vakitleri alınamadı."); setShowToast(true); return; }
 
-      // Storage'a yaz (opsiyonel ama kalsın)
       await addStorageData("prayerTimes", raw);
-
-      // Planla (normalize + schedule)
       await schedulePrayerNotificationsFromRaw(notificationStates, raw);
-
-      // Seçimleri sakla
       await addStorageData("notifications", notificationStates);
 
       setToastMessage("Bildirimler başarıyla planlandı.");
@@ -208,19 +177,12 @@ function Hatirlaticilar() {
         }
       }
 
-      if (Capacitor.getPlatform() === "android") {
-        try {
-          await LocalNotifications.createChannel({
-            id: ANDROID_CHANNEL_ID,
-            name: ANDROID_CHANNEL_NAME,
-            description: "Test ve namaz vakitleri bildirim kanalı",
-            importance: 5,
-            visibility: 1,
-          });
-        } catch {}
-      }
+      // Android: kanalı garanti et
+      await ensureAndroidPrayerChannel();
 
       const id = Math.floor(Date.now() % 2147483647);
+      const isIOS = Capacitor.getPlatform() === "ios";
+
       await LocalNotifications.schedule({
         notifications: [
           {
@@ -228,7 +190,9 @@ function Hatirlaticilar() {
             title: "Test bildirimi",
             body: "Bu bir test bildirimidir.",
             schedule: { at: new Date(Date.now() + 1000), allowWhileIdle: true },
-            channelId: ANDROID_CHANNEL_ID,
+            ...(isIOS
+              ? { sound: IOS_SOUND_FILE }
+              : { channelId: ANDROID_CHANNEL_ID }),
             extra: { type: "test" },
           },
         ],
@@ -266,26 +230,15 @@ function Hatirlaticilar() {
               Bildirim almak için bildirimlere izin vermeniz gerekmekte.
               Ayarlardan manuel olarak bildirimlere izin veriniz.
             </p>
-            <p>
-              <IonButton onClick={openNotificationSettings}>İzin Ver</IonButton>
-            </p>
-            <p>
-              <IonButton onClick={checkPermission}>Kontrol et</IonButton>
-            </p>
-
-            <p>
-              <IonButton onClick={sendTestNotification} color="medium">
-                Test Bildirimi
-              </IonButton>
-            </p>
+            <p><IonButton onClick={openNotificationSettings}>İzin Ver</IonButton></p>
+            <p><IonButton onClick={checkPermission}>Kontrol et</IonButton></p>
+            <p><IonButton onClick={sendTestNotification} color="medium">Test Bildirimi</IonButton></p>
           </>
         ) : (
           <>
             <IonList lines="none">
               <IonItem>
-                <IonLabel>
-                  <span className="font-medium text-lg text-black">Tümü</span>
-                </IonLabel>
+                <IonLabel><span className="font-medium text-lg text-black">Tümü</span></IonLabel>
                 <IonToggle
                   aria-label="Tümü"
                   slot="end"
@@ -296,11 +249,7 @@ function Hatirlaticilar() {
 
               {notificationStates.map((notification, index) => (
                 <IonItem key={notification.title}>
-                  <IonLabel>
-                    <span className="font-medium text-lg text-black">
-                      {notification.title}
-                    </span>
-                  </IonLabel>
+                  <IonLabel><span className="font-medium text-lg text-black">{notification.title}</span></IonLabel>
                   <IonToggle
                     aria-label={notification.title}
                     slot="end"
@@ -312,12 +261,8 @@ function Hatirlaticilar() {
             </IonList>
 
             <div className="ion-margin-top" style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-              <IonButton onClick={sendNotification} disabled={!isAnyChecked}>
-                Kaydet
-              </IonButton>
-              {/* <IonButton onClick={sendTestNotification} color="tertiary">
-                Test Bildirimi
-              </IonButton> */}
+              <IonButton onClick={sendNotification} disabled={!isAnyChecked}>Kaydet</IonButton>
+              <IonButton onClick={sendTestNotification} color="tertiary">Test Bildirimi</IonButton>
             </div>
           </>
         )}
@@ -327,6 +272,27 @@ function Hatirlaticilar() {
 }
 
 export default Hatirlaticilar;
+
+/** === Yardımcılar === **/
+
+// ANDROID: kanalı tek noktadan ve sesle oluştur (idempotent)
+async function ensureAndroidPrayerChannel() {
+  if (Capacitor.getPlatform() !== "android") return;
+  try {
+    await LocalNotifications.createChannel({
+      id: ANDROID_CHANNEL_ID,
+      name: ANDROID_CHANNEL_NAME,
+      description: "Namaz vakitleri bildirim kanalı (özel ses)",
+      importance: 5,
+      visibility: 1,
+      sound: ANDROID_SOUND_FILE, // res/raw/azan.wav
+      lights: true,
+      vibration: true,
+    });
+  } catch (e) {
+    console.warn("Android createChannel failed:", e);
+  }
+}
 
 /** === API verisinden planlama yardımcıları === **/
 
@@ -340,20 +306,8 @@ async function schedulePrayerNotificationsFromRaw(states: NotificationState[], r
     if (req.display !== "granted") throw new Error("Bildirim izni verilmedi.");
   }
 
-  // Android kanal
-  if (Capacitor.getPlatform() === "android") {
-    try {
-      await LocalNotifications.createChannel({
-        id: ANDROID_CHANNEL_ID,
-        name: ANDROID_CHANNEL_NAME,
-        description: "Namaz vakitleri bildirim kanalı",
-        importance: 5,
-        visibility: 1,
-        lights: true,
-        vibration: true,
-      });
-    } catch {}
-  }
+  // ANDROID: kanal hazır mı? (idempotent)
+  await ensureAndroidPrayerChannel();
 
   // Normalize -> ['HH:mm', ...] x6 (bugünün kaydı)
   const times = normalizeTimes(rawTimes);
@@ -381,7 +335,9 @@ async function schedulePrayerNotificationsFromRaw(states: NotificationState[], r
       if (!hhmm) return null;
 
       const at = nextOccurrence(hhmm);
-      if (!at || at.getTime() < now) return null; // eşitse planla, küçükse atla
+      if (!at || at.getTime() < now) return null;
+
+      const isIOS = Capacitor.getPlatform() === "ios";
 
       return {
         id: makeId(s.title, at),
@@ -389,8 +345,10 @@ async function schedulePrayerNotificationsFromRaw(states: NotificationState[], r
         body: `${s.title} vakti geldi (${formatHHMM(at)})`,
         schedule: { at, allowWhileIdle: true },
         extra: { ...EXTRA_MARKER, title: s.title, hhmm },
-        channelId: ANDROID_CHANNEL_ID,
-        // smallIcon: "ic_stat_notification", // ikon ekli ise aç
+        ...(isIOS
+          ? { sound: IOS_SOUND_FILE }     // iOS: ses dosyası bundle'dan
+          : { channelId: ANDROID_CHANNEL_ID }), // Android: kanal üzerinden ses
+        // smallIcon: "ic_stat_notification",
       };
     })
     .filter(Boolean) as any[];
@@ -413,37 +371,26 @@ async function schedulePrayerNotificationsFromRaw(states: NotificationState[], r
 
 async function cancelPrayerNotifications() {
   if (Capacitor.getPlatform() === "web") return;
-
   const pending = await LocalNotifications.getPending();
   const ours = pending.notifications.filter((n: any) => n?.extra?.type === EXTRA_MARKER.type);
-
-  if (!ours || ours.length === 0) return; // boş dizi ile cancel çağırmayalım
-
-  await LocalNotifications.cancel({
-    notifications: ours.map((n: any) => ({ id: n.id })),
-  });
+  if (!ours || ours.length === 0) return;
+  await LocalNotifications.cancel({ notifications: ours.map((n: any) => ({ id: n.id })) });
 }
 
 function normalizeTimes(raw: any): string[] | null {
-  // 1) Doğrudan dizi -> ['HH:mm', ...]
   if (Array.isArray(raw) && raw.length > 0 && typeof raw[0] === "string") {
     return toHHMMArray(raw as string[]);
   }
-  // 2) Nesne içinde dizi
   if (raw && Array.isArray(raw.prayerTimes)) return normalizeTimes(raw.prayerTimes);
   if (raw && Array.isArray(raw.data)) return normalizeTimes(raw.data);
-
-  // 3) Gün objeleri listesi (aylık/günlük)
   if (Array.isArray(raw) && raw.length > 0 && typeof raw[0] === "object") {
     const today = pickTodayEntry(raw as any[]);
     if (!today) return null;
     return extractSixTimes(today);
   }
-
   return null;
 }
 
-// ["05:01","06:30",...] -> ilk 6 öğe + "HH:mm"
 function toHHMMArray(arr: string[]): string[] {
   const six = arr.slice(0, 6).map((s) => toHHMM(s)).filter(Boolean) as string[];
   return six.length === 6 ? six : six;
@@ -461,7 +408,6 @@ function pickTodayEntry(list: any[]): any | null {
   const key = getTodayKey();
   let found = list.find((it) => it?.MiladiTarihKisa === key);
   if (found) return found;
-
   const nowTs = Date.now();
   found = list.find((it) => {
     const iso = it?.MiladiTarihUzunIso8601;
@@ -533,7 +479,6 @@ function nextOccurrence(hhmm: string): Date | null {
 
   const now = new Date();
   const at = new Date(now.getFullYear(), now.getMonth(), now.getDate(), hh, mm, 0, 0);
-  // Tam eşitlik kaçmasın: yalnızca küçükse ertesi gün
   if (at.getTime() < now.getTime()) at.setDate(at.getDate() + 1);
   return at;
 }
