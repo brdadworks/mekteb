@@ -262,7 +262,7 @@ function Hatirlaticilar() {
 
             <div className="ion-margin-top" style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
               <IonButton onClick={sendNotification} disabled={!isAnyChecked}>Kaydet</IonButton>
-              <IonButton onClick={sendTestNotification} color="tertiary">Test Bildirimi</IonButton>
+              {/* <IonButton onClick={sendTestNotification} color="tertiary">Test Bildirimi</IonButton> */}
             </div>
           </>
         )}
