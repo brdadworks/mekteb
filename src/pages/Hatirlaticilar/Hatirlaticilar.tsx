@@ -33,7 +33,7 @@ type NotificationState = {
 
 const notifications: NotificationState[] = [
   { title: "İmsak", checked: false },
-  { title: "Güneş", checked: false },
+  { title: "Sabah", checked: false },
   { title: "Öğle", checked: false },
   { title: "İkindi", checked: false },
   { title: "Akşam", checked: false },
@@ -43,7 +43,7 @@ const notifications: NotificationState[] = [
 // Başlık -> index eşlemesi
 const TITLE_TO_INDEX: Record<string, number> = {
   "İmsak": 0,
-  "Güneş": 1,
+  "Sabah": 1,
   "Öğle": 2,
   "İkindi": 3,
   "Akşam": 4,
@@ -421,19 +421,19 @@ function pickTodayEntry(list: any[]): any | null {
 function extractSixTimes(entry: any): string[] | null {
   const keys = {
     imsak: ["Imsak", "İmsak", "imsak", "Fajr", "fajr"],
-    gunes: ["Gunes", "Güneş", "gunes", "Sunrise", "sunrise"],
+    sabah: ["Sabah", "Sabah", "sabah", "Sunrise", "sunrise"],
     ogle:  ["Ogle", "Öğle", "ogle", "Dhuhr", "Zuhr", "dhuhr", "zuhr"],
     ikindi:["Ikindi", "İkindi", "ikindi", "Asr", "asr"],
     aksam: ["Aksam", "Akşam", "aksam", "Maghrib", "maghrib"],
     yatsi: ["Yatsi", "Yatsı", "yatsi", "Isha", "isha"],
   };
   const imsak = toHHMM(getFlex(entry, keys.imsak) ?? "");
-  const gunes = toHHMM(getFlex(entry, keys.gunes) ?? "");
+  const sabah = toHHMM(getFlex(entry, keys.sabah) ?? "");
   const ogle  = toHHMM(getFlex(entry, keys.ogle) ?? "");
   const ikindi= toHHMM(getFlex(entry, keys.ikindi) ?? "");
   const aksam = toHHMM(getFlex(entry, keys.aksam) ?? "");
   const yatsi = toHHMM(getFlex(entry, keys.yatsi) ?? "");
-  const arr = [imsak, gunes, ogle, ikindi, aksam, yatsi].filter(Boolean) as string[];
+  const arr = [imsak, sabah, ogle, ikindi, aksam, yatsi].filter(Boolean) as string[];
   return arr.length === 6 ? arr : null;
 }
 
