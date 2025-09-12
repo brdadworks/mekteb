@@ -3,10 +3,14 @@ PODS:
     - CapacitorCordova
   - CapacitorApp (5.0.6):
     - Capacitor
+  - CapacitorCommunityHttp (1.4.1):
+    - Capacitor
   - CapacitorCommunityNativeMarket (5.0.0):
     - Capacitor
   - CapacitorCordova (5.3.0)
-  - CapacitorGeolocation (5.0.8):
+  - CapacitorFilesystem (5.2.2):
+    - Capacitor
+  - CapacitorGeolocation (5.0.6):
     - Capacitor
   - CapacitorGoogleMaps (5.2.0):
     - Capacitor
@@ -50,8 +54,10 @@ PODS:
 DEPENDENCIES:
   - "Capacitor (from `../../node_modules/@capacitor/ios`)"
   - "CapacitorApp (from `../../node_modules/@capacitor/app`)"
+  - "CapacitorCommunityHttp (from `../../node_modules/@capacitor-community/http`)"
   - "CapacitorCommunityNativeMarket (from `../../node_modules/@capacitor-community/native-market`)"
   - "CapacitorCordova (from `../../node_modules/@capacitor/ios`)"
+  - "CapacitorFilesystem (from `../../node_modules/@capacitor/filesystem`)"
   - "CapacitorGeolocation (from `../../node_modules/@capacitor/geolocation`)"
   - "CapacitorGoogleMaps (from `../../node_modules/@capacitor/google-maps`)"
   - "CapacitorHaptics (from `../../node_modules/@capacitor/haptics`)"
@@ -70,10 +76,14 @@ EXTERNAL SOURCES:
     :path: "../../node_modules/@capacitor/ios"
   CapacitorApp:
     :path: "../../node_modules/@capacitor/app"
+  CapacitorCommunityHttp:
+    :path: "../../node_modules/@capacitor-community/http"
   CapacitorCommunityNativeMarket:
     :path: "../../node_modules/@capacitor-community/native-market"
   CapacitorCordova:
     :path: "../../node_modules/@capacitor/ios"
+  CapacitorFilesystem:
+    :path: "../../node_modules/@capacitor/filesystem"
   CapacitorGeolocation:
     :path: "../../node_modules/@capacitor/geolocation"
   CapacitorGoogleMaps:
@@ -92,9 +102,11 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Capacitor: d73f9d12816bfc8c1315a7c676a307d25c893a23
   CapacitorApp: 3bef09d0bbb9698fd1766398499f306647156bbf
+  CapacitorCommunityHttp: 7eba71da94e070e37a26a60483350285a33e3903
   CapacitorCommunityNativeMarket: b041cb8726c100c685a292f3167498494ba20f83
   CapacitorCordova: b9374d68e63ce29e96ab5db994cf14fbefd722c9
-  CapacitorGeolocation: 6beed87d5d2b80745f03a84db4ab2269bc872c9c
+  CapacitorFilesystem: afe2c055f1e379385c80eafdece32751926b2910
+  CapacitorGeolocation: 42c2ed469e5c904f516ab8064346ea8cb28f779a
   CapacitorGoogleMaps: 711b1bd7ae6dfc9a8787e2d0f156b40f4997bf37
   CapacitorHaptics: c56885bd07919be808b38db507507919ce4d1b09
   CapacitorKeyboard: 673a4a303383a61f4d360c871f121f8bbaa745b6
@@ -104,6 +116,6 @@ SPEC CHECKSUMS:
   Google-Maps-iOS-Utils: f77eab4c4326d7e6a277f8e23a0232402731913a
   GoogleMaps: 032f676450ba0779bd8ce16840690915f84e57ac
 
-PODFILE CHECKSUM: 834de696b9e436af43feb127289b449b9bdd7e2f
+PODFILE CHECKSUM: a991bd7085f9929bb4285eba84f9182eb872ea64
 
 COCOAPODS: 1.16.2
