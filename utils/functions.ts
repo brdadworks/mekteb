@@ -64,22 +64,38 @@ export const getCountries = async () => {
 };
 
 export const getCountry = async (id: string) => {
-  const res = await Http.get({ url: `${apiBase}ulkeler/${id}`, params: {}, headers: {} });
+  const res = await Http.get({
+    url: `${apiBase}ulkeler/${id}`,
+    params: {},
+    headers: {},
+  });
   return { status: res.status, data: res.data };
 };
 
 export const getCities = async (id: string) => {
-  const res = await Http.get({ url: `${apiBase}sehirler/${id}`, params: {}, headers: {} });
+  const res = await Http.get({
+    url: `${apiBase}sehirler/${id}`,
+    params: {},
+    headers: {},
+  });
   return { status: res.status, data: res.data };
 };
 
 export const getDistrict = async (id: string) => {
-  const res = await Http.get({ url: `${apiBase}ilceler/${id}`, params: {}, headers: {} });
+  const res = await Http.get({
+    url: `${apiBase}ilceler/${id}`,
+    params: {},
+    headers: {},
+  });
   return { status: res.status, data: res.data };
 };
 
 export const getPrayerTimes = async (id: string) => {
-  const res = await Http.get({ url: `${apiBase}vakitler/${id}`, params: {}, headers: {} });
+  const res = await Http.get({
+    url: `${apiBase}vakitler/${id}`,
+    params: {},
+    headers: {},
+  });
   return { status: res.status, data: res.data };
 };
 
@@ -132,7 +148,7 @@ export function getNearestPrayerTime(data: any) {
 
   let prayerTimes = [
     data.Imsak,
-    data.Gunes,
+    data.Sabah,
     data.Ogle,
     data.Ikindi,
     data.Aksam,
@@ -289,7 +305,7 @@ export const notificationHandler = async (
         Ogle,
         Yatsi,
         Imsak,
-        Gunes,
+        Sabah,
         Ikindi,
         Aksam,
         MiladiTarihKisaIso8601,
@@ -308,8 +324,8 @@ export const notificationHandler = async (
       const notificationTimeImsak = new Date(
         `${MiladiTarihUzunIso8601.split("T")[0]}T${Imsak}`
       );
-      const notificationTimeGunes = new Date(
-        `${MiladiTarihUzunIso8601.split("T")[0]}T${Gunes}`
+      const notificationTimeSabah = new Date(
+        `${MiladiTarihUzunIso8601.split("T")[0]}T${Sabah}`
       );
       const notificationTimeIkindi = new Date(
         `${MiladiTarihUzunIso8601.split("T")[0]}T${Ikindi}`
@@ -330,8 +346,8 @@ export const notificationHandler = async (
                 await LocalNotifications.schedule({
                   notifications: [
                     {
-                      body: `${n.title} namazı vakti`,
-                      title: "Namaz Vakti Hatırlatma",
+                      body: "Namaz Vakti Hatırlatma",
+                      title: `${n.title} vakti geldi`,
                       id: Math.floor(Math.random() * 10000),
                       schedule: {
                         at: notificationTimeImsak,
@@ -342,15 +358,15 @@ export const notificationHandler = async (
                   ],
                 });
                 break;
-              case "Güneş":
+              case "Sabah":
                 await LocalNotifications.schedule({
                   notifications: [
                     {
                       title: "Namaz Vakti Hatırlatma",
-                      body: `${n.title} namazı vakti`,
+                      body: `${n.title} ezanı vakti geldi`,
                       id: Math.floor(Math.random() * 10000),
                       schedule: {
-                        at: new Date(notificationTimeGunes),
+                        at: new Date(notificationTimeSabah),
                       },
                       actionTypeId: "",
                       extra: null,
