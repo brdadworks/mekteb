@@ -148,7 +148,7 @@ export function getNearestPrayerTime(data: any) {
 
   let prayerTimes = [
     data.Imsak,
-    data.Sabah,
+    data.Gunes,
     data.Ogle,
     data.Ikindi,
     data.Aksam,
@@ -305,7 +305,7 @@ export const notificationHandler = async (
         Ogle,
         Yatsi,
         Imsak,
-        Sabah,
+        Gunes,
         Ikindi,
         Aksam,
         MiladiTarihKisaIso8601,
@@ -324,8 +324,8 @@ export const notificationHandler = async (
       const notificationTimeImsak = new Date(
         `${MiladiTarihUzunIso8601.split("T")[0]}T${Imsak}`
       );
-      const notificationTimeSabah = new Date(
-        `${MiladiTarihUzunIso8601.split("T")[0]}T${Sabah}`
+      const notificationTimeGunes = new Date(
+        `${MiladiTarihUzunIso8601.split("T")[0]}T${Gunes}`
       );
       const notificationTimeIkindi = new Date(
         `${MiladiTarihUzunIso8601.split("T")[0]}T${Ikindi}`
@@ -358,15 +358,15 @@ export const notificationHandler = async (
                   ],
                 });
                 break;
-              case "Sabah":
+              case "Güneş":
                 await LocalNotifications.schedule({
                   notifications: [
                     {
                       title: "Namaz Vakti Hatırlatma",
-                      body: `${n.title} ezanı vakti geldi`,
+                      body: "Sabah ezanı vakti geldi",
                       id: Math.floor(Math.random() * 10000),
                       schedule: {
-                        at: new Date(notificationTimeSabah),
+                        at: new Date(notificationTimeGunes),
                       },
                       actionTypeId: "",
                       extra: null,
