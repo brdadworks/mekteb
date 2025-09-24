@@ -8354,6 +8354,7 @@ export const duayi_mustecab = {
   slug: "duayi_mustecab",
   content: "https://brd.com.tr/mekteb_books/books/mecmua/duayi_mustecab/",
   local: "mekteb_books/books/mecmua/duayi_mustecab/",
+  ses: "https://brd.com.tr/mekteb_books/sesler/mecmua/duayi_mustecab/",
   page: 4,
 };
 
