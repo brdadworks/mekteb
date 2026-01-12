@@ -1,5 +1,5 @@
 // src/services/mektebDownloader.ts
-import { Capacitor } from "@capacitor/core";
+import { Capacitor, CapacitorHttp } from "@capacitor/core";
 import { Filesystem, Directory } from "@capacitor/filesystem";
 import { addStorageData, getStorageData } from "../utils/functions";
 
@@ -922,8 +922,7 @@ export const DEFAULT_JOBS: RangeJob[] = [
     end: 10,
   },
   {
-    baseUrl:
-      "https://brd.com.tr/mekteb_books/books/semsi_nuriye",
+    baseUrl: "https://brd.com.tr/mekteb_books/books/semsi_nuriye",
     subdir: "mekteb_books/semsi_nuriye",
     nameTemplate: "{num}-fs8.png",
     start: 1,
@@ -931,17 +930,63 @@ export const DEFAULT_JOBS: RangeJob[] = [
   },
 ];
 
+function arrayBufferToBase64(buffer: ArrayBuffer) {
+  const bytes = new Uint8Array(buffer);
+  let binary = "";
+  for (let i = 0; i < bytes.byteLength; i++)
+    binary += String.fromCharCode(bytes[i]);
+  return btoa(binary);
+}
+
+async function downloadToBase64(url: string): Promise<string> {
+  // ✅ Native (Android/iOS): CORS yok
+  if (Capacitor.isNativePlatform()) {
+    const res = await CapacitorHttp.get({
+      url,
+      responseType: "arraybuffer",
+    });
+    return arrayBufferToBase64(res.data as ArrayBuffer);
+  }
+
+  // ✅ Web: normal fetch (CORS gerekir)
+  const r = await fetch(url);
+  if (!r.ok) throw new Error(`HTTP ${r.status} - ${url}`);
+  return arrayBufferToBase64(await r.arrayBuffer());
+}
+
+type Job = { url: string; path: string; directory?: Directory };
+
+async function ensureCached(job: Job) {
+  const directory = job.directory ?? Directory.Data;
+
+  // 1) varsa geç
+  try {
+    await Filesystem.stat({ path: job.path, directory });
+    return;
+  } catch {}
+
+  // 2) indir
+  const base64 = await downloadToBase64(job.url);
+
+  // 3) kaydet
+  await Filesystem.writeFile({
+    path: job.path,
+    data: base64,
+    directory,
+    recursive: true,
+  });
+}
+
 /**
  * Dışarıdan start/cancel arayüzü sunan downloader
  */
 export function createMektebDownloader() {
-  let controllers: AbortController[] = [];
+  let cancelled = false;
   let done = 0;
   let total = 0;
 
   const cancel = () => {
-    controllers.forEach((c) => c.abort());
-    controllers = [];
+    cancelled = true;
   };
 
   const start = async ({
@@ -949,6 +994,8 @@ export function createMektebDownloader() {
     concurrency = 3,
     onProgress,
   }: StartOptions = {}) => {
+    cancelled = false;
+
     if (!Capacitor.isNativePlatform()) {
       console.warn(
         "[mektebDownloader] Web ortamında çok dosyayı kalıcı depolamak önerilmez. Native tercih edin."
@@ -962,6 +1009,7 @@ export function createMektebDownloader() {
     for (const job of jobs) {
       const { baseUrl, subdir, nameTemplate, start, end } = job;
       if (end < start) continue;
+
       for (let n = start; n <= end; n++) {
         const name = makeName(nameTemplate, n);
         const url = `${baseUrl}/${name}`;
@@ -990,6 +1038,13 @@ export function createMektebDownloader() {
     const worker = async (item: Item) => {
       const { url, name, path } = item;
 
+      // İptal kontrolü
+      if (cancelled) {
+        done++;
+        onProgress?.({ done, total });
+        return { url, path, name, skipped: true };
+      }
+
       // varsa atla
       if (existingByUrl.has(url) || (await fileExists(path))) {
         done++;
@@ -997,16 +1052,18 @@ export function createMektebDownloader() {
         return { url, path, name, skipped: true };
       }
 
-      const controller = new AbortController();
-      controllers.push(controller);
-
-      const res = await fetch(url, { signal: controller.signal });
-      if (!res.ok) throw new Error(`İndirilemedi: ${url} (HTTP ${res.status})`);
-
-      const blob = await res.blob();
-
+      // ✅ İNDİR + KAYDET
       if (Capacitor.isNativePlatform()) {
-        const base64 = await blobToBase64(blob);
+        // Native HTTP: CORS yok
+        const httpRes = await CapacitorHttp.get({
+          url,
+          responseType: "arraybuffer",
+        });
+
+        // downloader.ts içine daha önce eklediğin helper:
+        // function arrayBufferToBase64(buffer: ArrayBuffer): string
+        const base64 = arrayBufferToBase64(httpRes.data as ArrayBuffer);
+
         await Filesystem.writeFile({
           path,
           data: base64,
@@ -1014,7 +1071,14 @@ export function createMektebDownloader() {
           recursive: true,
         });
       } else {
-        // Web fallback: büyük veri için uygun değil
+        // Web fallback (istersen tamamen kapatabilirsin)
+        const res = await fetch(url);
+        if (!res.ok) throw new Error(`İndirilemedi: ${url} (HTTP ${res.status})`);
+        const blob = await res.blob();
+        const base64 = await blobToBase64(blob);
+        // Web’de kalıcı depolama istemiyorsan burada bırak
+        // İstersen web için farklı storage stratejisi uygularız.
+        void base64;
       }
 
       done++;
@@ -1030,7 +1094,8 @@ export function createMektebDownloader() {
     settled.forEach((r) => {
       if (r.status === "fulfilled") {
         const v = r.value as any;
-        successes.push({ url: v.url, path: v.path, name: v.name });
+        // skipped olsa bile mevcut index’e eklemiyoruz; sadece indirilenleri ekliyoruz
+        if (!v.skipped) successes.push({ url: v.url, path: v.path, name: v.name });
       } else {
         fails.push((r as any).reason?.message || "Hata");
       }
@@ -1043,8 +1108,6 @@ export function createMektebDownloader() {
     // Geriye doğru uyumluluk: istersen eski anahtara da yaz
     await addStorageData("downloadedImages", merged);
 
-    controllers = []; // bitti
-
     return {
       successCount: successes.length,
       failCount: fails.length,
@@ -1056,3 +1119,4 @@ export function createMektebDownloader() {
 
   return { start, cancel };
 }
+
