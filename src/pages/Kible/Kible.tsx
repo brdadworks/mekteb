@@ -1,11 +1,10 @@
-import React, {useState} from 'react';
+import { FC } from 'react';
 import {IonContent, IonGrid, IonCol, IonRow, IonIcon} from '@ionic/react';
 import Header from "../../components/Header";
-import {compassOutline, mapOutline} from "ionicons/icons";
-import Pusula from "../../components/Kible/Pusula";
+import {mapOutline} from "ionicons/icons";
 import Harita from "../../components/Kible/Harita";
 
-function Kible() {
+const Kible: FC = () => {
     return (
         <>
             <Header pageTitle={"Kıble"}/>
@@ -26,6 +25,6 @@ function Kible() {
             </IonContent>
         </>
     );
-}
+};
 
 export default Kible;

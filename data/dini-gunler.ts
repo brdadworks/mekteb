@@ -100,9 +100,9 @@ export const ozelGunler_2026 = [
   },
   {
     title: "RAMAZAN BAŞLANGICI",
-    date: "18 Şubat 2026",
+    date: "19 Şubat 2026",
     hicri: "1 Ramazan 1447",
-    time: "2026-02-18T00:00:00"
+    time: "2026-02-19T00:00:00"
   },
   {
     title: "KADİR GECESİ",

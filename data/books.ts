@@ -20,29 +20,29 @@ export const all_books = [
     read: false,
     sure: ""
   },
-  {
+  /* {
     id: 4,
     title: "Şems-i Nuriye",
     slug: "semsi_nuriye",
     read: true,
     sure: ""
-  },
+  }, */
   {
-    id: 5,
+    id: 4,
     title: "Hayat-ı Hakika Risalesi",
     slug: "hayati_hakika",
     read: false,
     sure: ""
   },
   {
-    id: 6,
+    id: 5,
     title: "Hadis-i Şerifler ve Âyet-i Kerîmeler",
     slug: "hadisler",
     read: false,
     sure: ""
   },
   {
-    id: 7,
+    id: 6,
     title: "İlahiler",
     slug: "ilahiler",
     read: false,
@@ -9064,13 +9064,13 @@ export const kurani_kerimden_dualar_meal = {
   page: 11,
 };
 
-export const semsi_nuriye = {
+/* export const semsi_nuriye = {
   title: "Şems-i Nuriye",
   slug: "semsi_nuriye",
   content: "https://brd.com.tr/mekteb_books/books/semsi_nuriye/",
   local: "mekteb_books/books/semsi_nuriye/",
   page: 22,
-};
+}; */
 
 export const hayati_hakika = [
   {

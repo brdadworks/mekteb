@@ -921,13 +921,13 @@ export const DEFAULT_JOBS: RangeJob[] = [
     start: 1,
     end: 10,
   },
-  {
+  /* {
     baseUrl: "https://brd.com.tr/mekteb_books/books/semsi_nuriye",
     subdir: "mekteb_books/semsi_nuriye",
     nameTemplate: "{num}-fs8.png",
     start: 1,
     end: 22,
-  },
+  }, */
 ];
 
 function arrayBufferToBase64(buffer: ArrayBuffer) {
