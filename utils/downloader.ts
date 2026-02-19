@@ -42,9 +42,15 @@ const blobToBase64 = (blob: Blob): Promise<string> =>
     r.readAsDataURL(blob);
   });
 
+/**
+ * fileExists:
+ * - dosya yoksa false
+ * - dosya varsa ama 0 byte ise false (bozuk dosya tekrar indirilsin)
+ */
 const fileExists = async (path: string) => {
   try {
-    await Filesystem.stat({ path, directory: Directory.Data });
+    const st = await Filesystem.stat({ path, directory: Directory.Data });
+    if (!st?.size || st.size === 0) return false;
     return true;
   } catch {
     return false;
@@ -930,7 +936,7 @@ export const DEFAULT_JOBS: RangeJob[] = [
   }, */
 ];
 
-function arrayBufferToBase64(buffer: ArrayBuffer) {
+function arrayBufferToBase64(buffer: ArrayBufferLike) {
   const bytes = new Uint8Array(buffer);
   let binary = "";
   for (let i = 0; i < bytes.byteLength; i++)
@@ -938,20 +944,129 @@ function arrayBufferToBase64(buffer: ArrayBuffer) {
   return btoa(binary);
 }
 
-async function downloadToBase64(url: string): Promise<string> {
-  // ✅ Native (Android/iOS): CORS yok
-  if (Capacitor.isNativePlatform()) {
-    const res = await CapacitorHttp.get({
-      url,
-      responseType: "arraybuffer",
-    });
-    return arrayBufferToBase64(res.data as ArrayBuffer);
+function stripDataUrlIfNeeded(s: string) {
+  // "data:image/png;base64,AAA..." gelirse sadece base64 kısmını al
+  const idx = s.indexOf(",");
+  if (s.startsWith("data:") && idx >= 0) return s.slice(idx + 1);
+  return s;
+}
+
+function normalizeCapHttpDataToBase64(data: any): string {
+  // 1) Bazı cihazlarda "arraybuffer" istesen bile string(base64) gelir
+  if (typeof data === "string") {
+    const b64 = stripDataUrlIfNeeded(data);
+    if (!b64 || b64.length < 10)
+      throw new Error("CapacitorHttp string data boş/kısa geldi");
+    return b64;
   }
 
-  // ✅ Web: normal fetch (CORS gerekir)
+  // 2) Gerçek ArrayBuffer geldiyse
+  if (data instanceof ArrayBuffer) {
+    if (data.byteLength === 0)
+      throw new Error("CapacitorHttp ArrayBuffer 0 byte geldi");
+    return arrayBufferToBase64(data);
+  }
+
+  // 3) Bazı implementasyonlarda Uint8Array gelebilir
+  if (data instanceof Uint8Array) {
+    if (data.byteLength === 0)
+      throw new Error("CapacitorHttp Uint8Array 0 byte geldi");
+    return arrayBufferToBase64(data.buffer);
+  }
+
+  // 4) Blob geldiyse (nadiren)
+  if (typeof Blob !== "undefined" && data instanceof Blob) {
+    // Blob senkron değil; burada yakalamak istemezsen bu case'i kullanmayabilirsin.
+    // Bu fonksiyon sync, o yüzden blob'u burada desteklemiyoruz.
+    throw new Error("CapacitorHttp Blob geldi (sync normalize desteklemiyor)");
+  }
+
+  // 5) Son çare: byteLength alanı olan bir şey geldiyse
+  if (data && typeof data.byteLength === "number") {
+    if (data.byteLength === 0)
+      throw new Error("CapacitorHttp data.byteLength=0 geldi");
+    return arrayBufferToBase64(data as ArrayBuffer);
+  }
+
+  throw new Error(
+    `CapacitorHttp data tipi tanınmadı: ${Object.prototype.toString.call(data)}`
+  );
+}
+
+async function downloadToBase64(url: string): Promise<string> {
+  if (Capacitor.isNativePlatform()) {
+    const headers = {
+      Accept: "*/*",
+      // bazı sunucular CapacitorHttp UA'yı sevmeyebiliyor, bu yüzden sabit bir UA veriyoruz:
+      "User-Agent": "Mozilla/5.0",
+      Referer: "https://brd.com.tr/",
+    };
+
+    // 1) arraybuffer iste
+    const res: any = await CapacitorHttp.get({
+      url,
+      responseType: "arraybuffer",
+      headers,
+    });
+
+    console.log(
+      "[DL] status=",
+      res?.status,
+      "url=",
+      url,
+      "typeof data=",
+      typeof res?.data
+    );
+
+    // status yoksa bile devam; ama varsa 200 değilse hata ver
+    if (typeof res?.status === "number" && res.status >= 400) {
+      throw new Error(`Native HTTP ${res.status} - ${url}`);
+    }
+
+    try {
+      const b64 = normalizeCapHttpDataToBase64(res?.data);
+      console.log("[DL] native b64len=", b64.length, "url=", url);
+      return b64;
+    } catch (e) {
+      console.log(
+        "[DL] arraybuffer normalize failed, fallback blob. url=",
+        url,
+        e
+      );
+    }
+
+    // 2) fallback: blob iste (bazı cihazlarda farklı dönüyor)
+    const res2: any = await CapacitorHttp.get({
+      url,
+      responseType: "blob",
+      headers,
+    });
+
+    console.log(
+      "[DL] blob status=",
+      res2?.status,
+      "url=",
+      url,
+      "typeof data=",
+      typeof res2?.data
+    );
+
+    if (typeof res2?.status === "number" && res2.status >= 400) {
+      throw new Error(`Native(Blob) HTTP ${res2.status} - ${url}`);
+    }
+
+    // Blob responseType’da da çoğu zaman string(base64) geliyor.
+    const b64_2 = normalizeCapHttpDataToBase64(res2?.data);
+    console.log("[DL] native(blob) b64len=", b64_2.length, "url=", url);
+    return b64_2;
+  }
+
+  // Web
   const r = await fetch(url);
   if (!r.ok) throw new Error(`HTTP ${r.status} - ${url}`);
-  return arrayBufferToBase64(await r.arrayBuffer());
+  const ab = await r.arrayBuffer();
+  if (ab.byteLength === 0) throw new Error(`Web download boş geldi: ${url}`);
+  return arrayBufferToBase64(ab);
 }
 
 type Job = { url: string; path: string; directory?: Directory };
@@ -959,14 +1074,23 @@ type Job = { url: string; path: string; directory?: Directory };
 async function ensureCached(job: Job) {
   const directory = job.directory ?? Directory.Data;
 
-  // 1) varsa geç
+  // 1) varsa geç (0 byte ise silip yeniden indir)
   try {
-    await Filesystem.stat({ path: job.path, directory });
-    return;
-  } catch {}
+    const st = await Filesystem.stat({ path: job.path, directory });
+    if ((st.size ?? 0) > 0) return;
+
+    // 0 byte ise bozuk: sil
+    await Filesystem.deleteFile({ path: job.path, directory });
+  } catch {
+    // yoksa devam
+  }
 
   // 2) indir
   const base64 = await downloadToBase64(job.url);
+
+  if (!base64 || base64.length < 50) {
+    throw new Error(`Base64 boş/kısa geldi: ${job.url}`);
+  }
 
   // 3) kaydet
   await Filesystem.writeFile({
@@ -975,6 +1099,14 @@ async function ensureCached(job: Job) {
     directory,
     recursive: true,
   });
+
+  // 4) yazdıktan sonra kontrol
+  const st2 = await Filesystem.stat({ path: job.path, directory });
+  console.log("[DL] saved", job.path, "size=", st2.size, "url=", job.url);
+
+  if (!st2.size || st2.size === 0) {
+    throw new Error(`Dosya 0 byte yazıldı: ${job.path}`);
+  }
 }
 
 /**
@@ -995,6 +1127,12 @@ export function createMektebDownloader() {
     onProgress,
   }: StartOptions = {}) => {
     cancelled = false;
+
+    console.log("[DL] start() çağrıldı", {
+      native: Capacitor.isNativePlatform(),
+      concurrency,
+      jobsCount: jobs.length,
+    });
 
     if (!Capacitor.isNativePlatform()) {
       console.warn(
@@ -1033,6 +1171,9 @@ export function createMektebDownloader() {
     const oldAssets =
       ((await getStorageData("downloadedAssets")) as DownloadRecord[]) || [];
     const oldIndex = mergeIndex(oldImages, oldAssets);
+
+    // Not: eski index’te kayıt var ama dosya 0-byte olabilir.
+    // worker içinde stat ile kontrol edeceğiz.
     const existingByUrl = new Map(oldIndex.map((r) => [r.url, r]));
 
     const worker = async (item: Item) => {
@@ -1045,39 +1186,44 @@ export function createMektebDownloader() {
         return { url, path, name, skipped: true };
       }
 
-      // varsa atla
-      if (existingByUrl.has(url) || (await fileExists(path))) {
-        done++;
-        onProgress?.({ done, total });
-        return { url, path, name, skipped: true };
+      // varsa atla (ama 0-byte ise atlama!)
+      if (existingByUrl.has(url)) {
+        // index var ama gerçekten dosya sağlam mı?
+        const ok = await fileExists(path);
+        if (ok) {
+          done++;
+          onProgress?.({ done, total });
+          return { url, path, name, skipped: true };
+        }
+        // 0-byte ise devam edip yeniden indireceğiz
+      } else {
+        // index yoksa dosya var mı kontrol et (0-byte ise yok sayıyoruz)
+        const ok = await fileExists(path);
+        if (ok) {
+          done++;
+          onProgress?.({ done, total });
+          return { url, path, name, skipped: true };
+        }
       }
 
       // ✅ İNDİR + KAYDET
       if (Capacitor.isNativePlatform()) {
-        // Native HTTP: CORS yok
-        const httpRes = await CapacitorHttp.get({
+        console.log("[DL] ensureCached çağrılıyor", { url, path });
+
+        await ensureCached({
           url,
-          responseType: "arraybuffer",
-        });
-
-        // downloader.ts içine daha önce eklediğin helper:
-        // function arrayBufferToBase64(buffer: ArrayBuffer): string
-        const base64 = arrayBufferToBase64(httpRes.data as ArrayBuffer);
-
-        await Filesystem.writeFile({
           path,
-          data: base64,
-          directory: Directory.Data, // ÖZEL alan (görünmez)
-          recursive: true,
+          directory: Directory.Data,
         });
+
+        console.log("[DL] ensureCached bitti", { url, path });
       } else {
         // Web fallback (istersen tamamen kapatabilirsin)
         const res = await fetch(url);
-        if (!res.ok) throw new Error(`İndirilemedi: ${url} (HTTP ${res.status})`);
+        if (!res.ok)
+          throw new Error(`İndirilemedi: ${url} (HTTP ${res.status})`);
         const blob = await res.blob();
         const base64 = await blobToBase64(blob);
-        // Web’de kalıcı depolama istemiyorsan burada bırak
-        // İstersen web için farklı storage stratejisi uygularız.
         void base64;
       }
 
@@ -1095,7 +1241,8 @@ export function createMektebDownloader() {
       if (r.status === "fulfilled") {
         const v = r.value as any;
         // skipped olsa bile mevcut index’e eklemiyoruz; sadece indirilenleri ekliyoruz
-        if (!v.skipped) successes.push({ url: v.url, path: v.path, name: v.name });
+        if (!v.skipped)
+          successes.push({ url: v.url, path: v.path, name: v.name });
       } else {
         fails.push((r as any).reason?.message || "Hata");
       }
@@ -1119,4 +1266,3 @@ export function createMektebDownloader() {
 
   return { start, cancel };
 }
-

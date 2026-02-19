@@ -26,7 +26,7 @@ import "./Kitaplar.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import mammoth from "mammoth";
-import { Virtual } from "swiper/modules"; // Virtual modülü ekleyin
+import { Virtual } from "swiper/modules";
 import storageService from "../../../../utils/storageService";
 import { LastPageContext } from "../../../context/LastPageContext";
 
@@ -34,29 +34,94 @@ import { Filesystem, Directory } from "@capacitor/filesystem";
 import { Capacitor } from "@capacitor/core";
 import { getStorageData } from "../../../../utils/functions";
 
+/** =========================
+ *  DEBUG HELPERS (PATH CHECK)
+ *  ========================= */
+
+function normalizeReaddirFiles(files: any[]): string[] {
+  // Capacitor Filesystem.readdir bazen string[], bazen {name}[] döndürür
+  return (files ?? [])
+    .map((f: any) => (typeof f === "string" ? f : f?.name))
+    .filter(Boolean);
+}
+
+async function dbgListDir(dirPath: string) {
+  try {
+    const r = await Filesystem.readdir({
+      path: dirPath,
+      directory: Directory.Data,
+    });
+
+    const names = normalizeReaddirFiles((r as any).files ?? []);
+    console.log(
+      "[DBG] READDIR OK",
+      dirPath,
+      "count=",
+      names.length,
+      "names(sample)=",
+      names.slice(0, 30)
+    );
+    return names;
+  } catch (e) {
+    console.log("[DBG] READDIR FAIL", dirPath, e);
+    return [];
+  }
+}
+
+async function dbgFile(path: string) {
+  try {
+    const st = await Filesystem.stat({ path, directory: Directory.Data });
+    console.log("[DBG] STAT OK", path, "size=", st.size, "uri=", st.uri);
+
+    const { uri } = await Filesystem.getUri({ path, directory: Directory.Data });
+    const webSrc = Capacitor.convertFileSrc(uri);
+
+    console.log("[DBG] getUri uri=", uri);
+    console.log("[DBG] webSrc=", webSrc);
+
+    return { ok: true, size: st.size, uri, webSrc };
+  } catch (e) {
+    console.log("[DBG] STAT FAIL", path, e);
+    return { ok: false };
+  }
+}
+
 const findLocalPagePath = async (fileName: string): Promise<string | null> => {
   const remoteUrl = `https://brd.com.tr/mekteb/pages/${fileName}`;
 
   const assets =
-    ((await getStorageData("downloadedAssets")) as {
-      url: string;
-      path: string;
-    }[]) || [];
+    ((await getStorageData("downloadedAssets")) as { url: string; path: string }[]) || [];
   const images =
-    ((await getStorageData("downloadedImages")) as {
-      url: string;
-      path: string;
-    }[]) || [];
+    ((await getStorageData("downloadedImages")) as { url: string; path: string }[]) || [];
 
   const hit = [...assets, ...images].find((r) => r.url === remoteUrl);
-  if (hit?.path) return hit.path;
 
-  // indeks yoksa: indiricinin yazdığı varsayılan konumu dene
+  console.log("[DBG] findLocalPagePath", {
+    fileName,
+    remoteUrl,
+    assetsCount: assets.length,
+    imagesCount: images.length,
+    hit,
+  });
+
+  if (hit?.path) {
+    const p = hit.path.replace(/^\/+/, "");
+    try {
+      await Filesystem.stat({ path: p, directory: Directory.Data });
+      return p;
+    } catch (e) {
+      console.log("[DBG] index hit var ama stat fail", p, e);
+      // fallthrough
+    }
+  }
+
   const guess = `mekteb/pages/${fileName}`;
   try {
+    console.log("[DBG] guess stat try", guess);
     await Filesystem.stat({ path: guess, directory: Directory.Data });
     return guess;
-  } catch {
+  } catch (e) {
+    console.log("[DBG] guess stat fail", guess, e);
     return null;
   }
 };
@@ -68,31 +133,38 @@ const LocalOrRemoteImage: React.FC<{
   className?: string;
   style?: React.CSSProperties;
 }> = ({ fileName, alt, className, style }) => {
-  const [src, setSrc] = React.useState<string>("");
+  const remote = `https://brd.com.tr/mekteb/pages/${fileName}`;
+  const [src, setSrc] = React.useState<string>(remote);
 
   React.useEffect(() => {
     let cancelled = false;
+    setSrc(remote);
 
     (async () => {
       try {
         const localPath = await findLocalPagePath(fileName);
+        console.log("[UIIMG] fileName=", fileName, "localPath=", localPath);
+
         if (localPath) {
           const { uri } = await Filesystem.getUri({
             path: localPath,
             directory: Directory.Data,
           });
           const webSrc = Capacitor.convertFileSrc(uri);
+
+          console.log("[UIIMG] uri=", uri);
+          console.log("[UIIMG] webSrc=", webSrc);
+
           if (!cancelled) {
             setSrc(webSrc);
             return;
           }
         }
-      } catch {
-        // yerel okunamazsa uzak'a düşeceğiz
+      } catch (e) {
+        console.log("[UIIMG] local resolve error", fileName, e);
       }
-      if (!cancelled) {
-        setSrc(`https://brd.com.tr/mekteb/pages/${fileName}`);
-      }
+
+      if (!cancelled) setSrc(remote);
     })();
 
     return () => {
@@ -107,35 +179,50 @@ const LocalOrRemoteImage: React.FC<{
       className={className}
       style={style}
       loading="lazy"
+      onError={() => {
+        console.log("[UIIMG] ERROR fileName=", fileName, "src=", src);
+        if (src.includes("_capacitor_file_")) setSrc(remote);
+      }}
     />
   );
 };
 
 // DOCX'i yerelden bulmak için (indeks + tahmini yol)
 const findLocalDocxPath = async (mealPath: string): Promise<string | null> => {
-  // mealPath ör: "kuran-meal/5.docx"
   const remoteUrl = `https://brd.com.tr/mekteb/${mealPath.replace(/^\/+/, "")}`;
 
   const assets =
-    ((await getStorageData("downloadedAssets")) as {
-      url: string;
-      path: string;
-    }[]) || [];
+    ((await getStorageData("downloadedAssets")) as { url: string; path: string }[]) || [];
   const images =
-    ((await getStorageData("downloadedImages")) as {
-      url: string;
-      path: string;
-    }[]) || [];
+    ((await getStorageData("downloadedImages")) as { url: string; path: string }[]) || [];
 
   const hit = [...assets, ...images].find((r) => r.url === remoteUrl);
-  if (hit?.path) return hit.path;
 
-  // indiricinin yazdığı varsayılan konum: "mekteb/kuran-meal/5.docx"
+  console.log("[DBG] findLocalDocxPath", {
+    mealPath,
+    remoteUrl,
+    assetsCount: assets.length,
+    imagesCount: images.length,
+    hit,
+  });
+
+  if (hit?.path) {
+    const p = hit.path.replace(/^\/+/, "");
+    try {
+      await Filesystem.stat({ path: p, directory: Directory.Data });
+      return p;
+    } catch (e) {
+      console.log("[DBG] docx index hit var ama stat fail", p, e);
+    }
+  }
+
   const guess = `mekteb/${mealPath.replace(/^mekteb\//, "")}`;
   try {
+    console.log("[DBG] docx guess stat try", guess);
     await Filesystem.stat({ path: guess, directory: Directory.Data });
     return guess;
-  } catch {
+  } catch (e) {
+    console.log("[DBG] docx guess stat fail", guess, e);
     return null;
   }
 };
@@ -151,13 +238,15 @@ const base64ToArrayBuffer = (base64: string): ArrayBuffer => {
 
 const fetchMeal = async (mealPath: string): Promise<string> => {
   try {
-    // 1) Önce yerelde var mı?
     const localPath = await findLocalDocxPath(mealPath);
     if (localPath) {
+      console.log("[DBG] DOCX localPath", mealPath, "=>", localPath);
+
       const read = await Filesystem.readFile({
         path: localPath,
         directory: Directory.Data,
       });
+
       let base64String: string;
       if (typeof read.data === "string") {
         base64String = read.data;
@@ -166,12 +255,14 @@ const fetchMeal = async (mealPath: string): Promise<string> => {
       } else {
         throw new Error("Dosya verisi tanınmıyor.");
       }
+
+      console.log("[DBG] DOCX base64len", base64String.length);
+
       const arrayBuffer = base64ToArrayBuffer(base64String);
       const result = await mammoth.convertToHtml({ arrayBuffer });
       return result.value;
     }
 
-    // 2) Yoksa uzaktan çek
     const response = await fetch(`https://brd.com.tr/mekteb/${mealPath}`);
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const arrayBuffer = await response.arrayBuffer();
@@ -206,7 +297,6 @@ const mealHandler = (activePage: number) => {
   }
 };
 
-/* kitaplar > Kuranı kerim */
 function KuraniKerimOku({
   startPage,
   bookTitle,
@@ -223,6 +313,39 @@ function KuraniKerimOku({
   const player = useRef<any>();
 
   const lastPageContext = useContext(LastPageContext);
+
+  /** ===== PATH DEBUG: app açılınca 1 kez ===== */
+  useEffect(() => {
+    (async () => {
+      const assets =
+        ((await getStorageData("downloadedAssets")) as { url: string; path: string }[]) || [];
+      const images =
+        ((await getStorageData("downloadedImages")) as { url: string; path: string }[]) || [];
+
+      console.log("[DBG] index counts", {
+        downloadedAssets: assets.length,
+        downloadedImages: images.length,
+      });
+
+      const mektebItems = await dbgListDir("mekteb");
+      const pageItems = await dbgListDir("mekteb/pages");
+      await dbgListDir("mekteb/kuran-meal");
+
+      // Bilinen bir sayfayı dene
+      await dbgFile("mekteb/pages/page-075.png");
+
+      // Klasörde ilk PNG'yi bulup dene
+      const firstPng = pageItems.find((n) => String(n).toLowerCase().endsWith(".png"));
+      if (firstPng) {
+        await dbgFile(`mekteb/pages/${firstPng}`);
+      } else {
+        console.log("[DBG] mekteb/pages içinde png yok veya klasör boş");
+      }
+
+      console.log("[DBG] mekteb items(sample)", mektebItems.slice(0, 20));
+      console.log("[DBG] pages items(sample)", pageItems.slice(0, 20));
+    })();
+  }, []);
 
   useEffect(() => {
     setPlayerSrc(
@@ -317,7 +440,6 @@ function KuraniKerimOku({
 
   const [currentPage, setCurrentPage] = useState(startPage);
 
-  // Her sayfa değişiminde localStorage'a yaz
   useEffect(() => {
     lastPageContext.setLastPage(currentPage);
   }, [currentPage]);
@@ -352,9 +474,8 @@ function KuraniKerimOku({
         >
           {kuran.map(({ sure, id, title, img }, index) => (
             <SwiperSlide key={id} virtualIndex={index}>
-              {/* ESKİ <img .../> YERİNE: */}
               <LocalOrRemoteImage
-                fileName={img} // ör: "page-000.png"
+                fileName={img}
                 alt={`${title} - ${sure}`}
                 className="w-full h-auto"
                 style={{ objectFit: "contain" }}
