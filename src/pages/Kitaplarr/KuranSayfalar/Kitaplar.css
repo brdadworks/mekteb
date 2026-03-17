@@ -3,3 +3,43 @@
     --color: white;
     color: white;
 }
+
+.player-shell {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  transform: translateY(0);
+  opacity: 1;
+  max-height: 220px;
+  transition:
+    transform 0.35s ease,
+    opacity 0.35s ease,
+    max-height 0.35s ease;
+}
+
+.player-shell.collapsed {
+  transform: translateY(150px);
+  opacity: 0.15;
+  max-height: 40px;
+}
+
+.player-toggle-btn {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  top: -45px;
+  z-index: 20;
+  background: #e5e7eb;
+  border: none;
+  padding: 10px 30px;
+}
+
+.player-toggle-icon {
+  color: #438e6f;
+  width: 25px;
+  transition: transform 0.3s ease;
+}
+
+.player-toggle-icon.rotated {
+  transform: rotate(180deg);
+}

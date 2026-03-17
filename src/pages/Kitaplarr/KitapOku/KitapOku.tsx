@@ -18,6 +18,7 @@ import {
   pauseCircle,
   playSkipBackCircle,
   playSkipForwardCircle,
+  arrowDownOutline,
 } from "ionicons/icons";
 import { BookProps } from "../../../../utils/types";
 import AudioPlayer from "react-h5-audio-player";
@@ -137,6 +138,8 @@ function KitapOku({
   //ses
   const [currentTitle, setCurrentTitle] = useState<string>(pageTitle);
   const [showPlayer, setShowPlayer] = useState(false);
+  const [playerCollapsed, setPlayerCollapsed] = useState(false);
+  const isCollapsed = !showPlayer || playerCollapsed;
   const [playerSrc, setPlayerSrc] = useState<string>("");
   const playerRef = useRef<any>(null);
 
@@ -204,7 +207,7 @@ function KitapOku({
 
   return (
     <>
-      <IonHeader className={"p-2"}>
+      <IonHeader>
         <IonToolbar>
           <IonButtons slot="start">
             <IonBackButton text={"Geri"} />
@@ -219,7 +222,14 @@ function KitapOku({
         scrollEvents={true}
         className="ion-padding bg-white bg-color-white"
         onClick={() => {
-          setShowPlayer((prev) => !prev);
+          if (!showPlayer) {
+            setShowPlayer(true);
+            setPlayerCollapsed(false);
+          } else if (playerCollapsed) {
+            setPlayerCollapsed(false);
+          } else {
+            setShowPlayer(false);
+          }
         }}
       >
         <Swiper
@@ -233,64 +243,93 @@ function KitapOku({
       </IonContent>
 
       <IonFooter
-        className={"w-full flex justify-evenly items-center p-3 bg-gray-200"}
+        className={"bg-gray-200"}
+        style={
+          isCollapsed
+            ? { height: "0", padding: "20px" }
+            : { height: "auto", padding: "0.75rem" }
+        }
       >
-        <div className="flex flex-col gap-2 items-center justify-center w-full">
-          {showPlayer && (
-            <AudioPlayer
-              ref={playerRef}
-              src={playerSrc}
-              layout="stacked"
-              showJumpControls={false}
-              showSkipControls={true}
-              autoPlayAfterSrcChange={false}
-              onClickPrevious={() => {
-                swipe?.slideNext();
-                playerRef?.current.audio.current.pause();
+        {showPlayer && (
+          <>
+            <button
+              type="button"
+              className="player-toggle-btn"
+              onClick={(e) => {
+                e.stopPropagation();
+                setPlayerCollapsed((prev) => !prev);
               }}
-              onClickNext={() => {
-                swipe?.slidePrev();
-                playerRef?.current.audio.current.pause();
-              }}
-              customVolumeControls={[]}
-              customAdditionalControls={[]}
-              header={
-                <div className="flex justify-center items-center w-full px-2 text-black">
-                  {currentTitle}
-                </div>
-              }
-              customIcons={{
-                play: <IonIcon className="text-[#4ac3a4]" icon={playCircle} />,
-                pause: (
-                  <IonIcon className="text-[#4ac3a4]" icon={pauseCircle} />
-                ),
-                previous: (
-                  <IonIcon
-                    className="text-[#4ac3a4]"
-                    icon={playSkipBackCircle}
-                    size="large"
-                  />
-                ),
-                next: (
-                  <IonIcon
-                    className="text-[#4ac3a4]"
-                    icon={playSkipForwardCircle}
-                    size="large"
-                  />
-                ),
-              }}
-            />
-          )}
+            >
+              <IonIcon
+                icon={arrowDownOutline}
+                size="large"
+                className={`player-toggle-icon ${
+                  playerCollapsed ? "rotated" : ""
+                }`}
+              />
+            </button>
+            <div
+              onClick={(e) => e.stopPropagation()}
+              className={`player-shell ${playerCollapsed ? "collapsed" : ""}`}
+            >
+              <AudioPlayer
+                ref={playerRef}
+                src={playerSrc}
+                layout="stacked"
+                showJumpControls={false}
+                showSkipControls={true}
+                autoPlayAfterSrcChange={false}
+                onClickPrevious={() => {
+                  swipe?.slideNext();
+                  playerRef?.current.audio.current.pause();
+                }}
+                onClickNext={() => {
+                  swipe?.slidePrev();
+                  playerRef?.current.audio.current.pause();
+                }}
+                customVolumeControls={[]}
+                customAdditionalControls={[]}
+                header={
+                  <div className="flex justify-center items-center w-full px-2 text-black">
+                    {title}
+                  </div>
+                }
+                customIcons={{
+                  play: (
+                    <IonIcon className="text-[#4ac3a4]" icon={playCircle} />
+                  ),
+                  pause: (
+                    <IonIcon className="text-[#4ac3a4]" icon={pauseCircle} />
+                  ),
+                  previous: (
+                    <IonIcon
+                      className="text-[#4ac3a4]"
+                      icon={playSkipBackCircle}
+                      size="large"
+                    />
+                  ),
+                  next: (
+                    <IonIcon
+                      className="text-[#4ac3a4]"
+                      icon={playSkipForwardCircle}
+                      size="large"
+                    />
+                  ),
+                }}
+              />
+            </div>
+          </>
+        )}
 
-          <div className="flex justify-evenly w-full pt-2">
-            <button onClick={prevPage}>
+        {/* <div className="flex justify-evenly w-full pt-2">
+            <button onClick={() => swipe?.slideNext()}>
               <IonIcon
                 className={"text-[#4ac3a4]"}
                 icon={arrowBackOutline}
                 size={"large"}
               />
             </button>
-            <button onClick={nextPage}>
+            <button onClick={() => swipe?.slidePrev()}>
               <IonIcon
                 className={"text-[#4ac3a4]"}
                 icon={arrowForwardOutline}
@@ -304,8 +343,7 @@ function KitapOku({
                 size={"large"}
               />
             </button>
-          </div>
-        </div>
+          </div> */}
       </IonFooter>
     </>
   );

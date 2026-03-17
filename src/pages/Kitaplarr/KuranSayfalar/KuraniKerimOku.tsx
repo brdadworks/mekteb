@@ -19,16 +19,17 @@ import {
   pauseCircle,
   playSkipForwardCircle,
   playSkipBackCircle,
+  arrowDownOutline,
 } from "ionicons/icons";
 import AudioPlayer from "react-h5-audio-player";
 import { kuran } from "../../../../data/books";
-import "./Kitaplar.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import mammoth from "mammoth";
 import { Virtual } from "swiper/modules";
 import storageService from "../../../../utils/storageService";
 import { LastPageContext } from "../../../context/LastPageContext";
+import "./Kitaplar.css";
 
 import { Filesystem, Directory } from "@capacitor/filesystem";
 import { Capacitor } from "@capacitor/core";
@@ -73,7 +74,10 @@ async function dbgFile(path: string) {
     const st = await Filesystem.stat({ path, directory: Directory.Data });
     console.log("[DBG] STAT OK", path, "size=", st.size, "uri=", st.uri);
 
-    const { uri } = await Filesystem.getUri({ path, directory: Directory.Data });
+    const { uri } = await Filesystem.getUri({
+      path,
+      directory: Directory.Data,
+    });
     const webSrc = Capacitor.convertFileSrc(uri);
 
     console.log("[DBG] getUri uri=", uri);
@@ -90,9 +94,15 @@ const findLocalPagePath = async (fileName: string): Promise<string | null> => {
   const remoteUrl = `https://brd.com.tr/mekteb/pages/${fileName}`;
 
   const assets =
-    ((await getStorageData("downloadedAssets")) as { url: string; path: string }[]) || [];
+    ((await getStorageData("downloadedAssets")) as {
+      url: string;
+      path: string;
+    }[]) || [];
   const images =
-    ((await getStorageData("downloadedImages")) as { url: string; path: string }[]) || [];
+    ((await getStorageData("downloadedImages")) as {
+      url: string;
+      path: string;
+    }[]) || [];
 
   const hit = [...assets, ...images].find((r) => r.url === remoteUrl);
 
@@ -192,9 +202,15 @@ const findLocalDocxPath = async (mealPath: string): Promise<string | null> => {
   const remoteUrl = `https://brd.com.tr/mekteb/${mealPath.replace(/^\/+/, "")}`;
 
   const assets =
-    ((await getStorageData("downloadedAssets")) as { url: string; path: string }[]) || [];
+    ((await getStorageData("downloadedAssets")) as {
+      url: string;
+      path: string;
+    }[]) || [];
   const images =
-    ((await getStorageData("downloadedImages")) as { url: string; path: string }[]) || [];
+    ((await getStorageData("downloadedImages")) as {
+      url: string;
+      path: string;
+    }[]) || [];
 
   const hit = [...assets, ...images].find((r) => r.url === remoteUrl);
 
@@ -308,7 +324,11 @@ function KuraniKerimOku({
   const [title, setTitle] = useState<string>();
   const [meal, setMeal] = useState<string>("");
   const [playerSrc, setPlayerSrc] = useState<string>();
-  const [isFooterVisible, setIsFooterVisible] = useState(true);
+
+  const [showPlayer, setShowPlayer] = useState(true);
+  const [playerCollapsed, setPlayerCollapsed] = useState(false);
+  const isCollapsed = !showPlayer || playerCollapsed;
+
   const topRef = useRef<any>(null);
   const player = useRef<any>();
 
@@ -318,9 +338,15 @@ function KuraniKerimOku({
   useEffect(() => {
     (async () => {
       const assets =
-        ((await getStorageData("downloadedAssets")) as { url: string; path: string }[]) || [];
+        ((await getStorageData("downloadedAssets")) as {
+          url: string;
+          path: string;
+        }[]) || [];
       const images =
-        ((await getStorageData("downloadedImages")) as { url: string; path: string }[]) || [];
+        ((await getStorageData("downloadedImages")) as {
+          url: string;
+          path: string;
+        }[]) || [];
 
       console.log("[DBG] index counts", {
         downloadedAssets: assets.length,
@@ -335,7 +361,9 @@ function KuraniKerimOku({
       await dbgFile("mekteb/pages/page-075.png");
 
       // Klasörde ilk PNG'yi bulup dene
-      const firstPng = pageItems.find((n) => String(n).toLowerCase().endsWith(".png"));
+      const firstPng = pageItems.find((n) =>
+        String(n).toLowerCase().endsWith(".png")
+      );
       if (firstPng) {
         await dbgFile(`mekteb/pages/${firstPng}`);
       } else {
@@ -363,7 +391,7 @@ function KuraniKerimOku({
     }
   }, [swipe?.activeIndex]);
 
-  useEffect(() => {
+  /* useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as HTMLElement;
       if (!target.closest("ion-footer")) {
@@ -376,7 +404,7 @@ function KuraniKerimOku({
     return () => {
       window.removeEventListener("click", handleClickOutside);
     };
-  }, []);
+  }, []); */
 
   const ModalExample = ({
     dismiss,
@@ -458,7 +486,17 @@ function KuraniKerimOku({
       <IonContent
         ref={topRef}
         scrollEvents={true}
-        className="ion-padding bg-white bg-color-white p-0"
+        className="ion-padding bg-white bg-color-white"
+        onClick={() => {
+          if (!showPlayer) {
+            setShowPlayer(true);
+            setPlayerCollapsed(false);
+          } else if (playerCollapsed) {
+            setPlayerCollapsed(false);
+          } else {
+            setShowPlayer(false);
+          }
+        }}
       >
         <Swiper
           loop={false}
@@ -485,66 +523,96 @@ function KuraniKerimOku({
         </Swiper>
       </IonContent>
 
-      {isFooterVisible && (
-        <IonFooter className="w-full flex justify-evenly items-center p-3 bg-gray-200">
-          <div className="flex flex-column justify-center align-stretch gap-2 w-full">
-            <AudioPlayer
-              ref={player}
-              src={playerSrc}
-              layout="stacked"
-              showJumpControls={false}
-              showSkipControls={true}
-              autoPlayAfterSrcChange={false}
-              onClickPrevious={() => {
-                swipe?.slideNext();
-                player?.current.audio.current.pause();
-                lastPageContext.setLastPage(swipe?.activeIndex);
+      <IonFooter
+        className={"bg-gray-200"}
+        style={
+          isCollapsed
+            ? { height: "0", padding: "20px" }
+            : { height: "auto", padding: "0.75rem" }
+        }
+      >
+        {showPlayer && (
+          <>
+            <button
+              type="button"
+              className="player-toggle-btn"
+              onClick={(e) => {
+                e.stopPropagation();
+                setPlayerCollapsed((prev) => !prev);
               }}
-              onClickNext={() => {
-                swipe?.slidePrev();
-                player?.current.audio.current.pause();
-                lastPageContext.setLastPage(swipe?.activeIndex);
-              }}
-              customVolumeControls={[]}
-              customAdditionalControls={[]}
-              header={
-                <div className="flex justify-center items-center gap-4 w-full text-black">
-                  {title}
-                  <IonButton
-                    shape="round"
-                    fill="outline"
-                    size="small"
-                    color="success"
-                    onClick={() => openModal()}
-                  >
-                    Meal oku
-                  </IonButton>
-                </div>
-              }
-              customIcons={{
-                play: <IonIcon className="text-[#4ac3a4]" icon={playCircle} />,
-                pause: (
-                  <IonIcon className="text-[#4ac3a4]" icon={pauseCircle} />
-                ),
-                previous: (
-                  <IonIcon
-                    className="text-[#4ac3a4]"
-                    icon={playSkipBackCircle}
-                    size="large"
-                  />
-                ),
-                next: (
-                  <IonIcon
-                    className="text-[#4ac3a4]"
-                    icon={playSkipForwardCircle}
-                    size="large"
-                  />
-                ),
-              }}
-            />
-          </div>
-        </IonFooter>
-      )}
+            >
+              <IonIcon
+                icon={arrowDownOutline}
+                size="large"
+                className={`player-toggle-icon ${
+                  playerCollapsed ? "rotated" : ""
+                }`}
+              />
+            </button>
+            <div
+              onClick={(e) => e.stopPropagation()}
+              className={`player-shell ${playerCollapsed ? "collapsed" : ""}`}
+            >
+              <AudioPlayer
+                ref={player}
+                src={playerSrc}
+                layout="stacked"
+                showJumpControls={false}
+                showSkipControls={true}
+                autoPlayAfterSrcChange={false}
+                onClickPrevious={() => {
+                  swipe?.slideNext();
+                  player?.current.audio.current.pause();
+                  lastPageContext.setLastPage(swipe?.activeIndex);
+                }}
+                onClickNext={() => {
+                  swipe?.slidePrev();
+                  player?.current.audio.current.pause();
+                  lastPageContext.setLastPage(swipe?.activeIndex);
+                }}
+                customVolumeControls={[]}
+                customAdditionalControls={[]}
+                header={
+                  <div className="flex justify-center items-center gap-4 w-full text-black">
+                    {title}
+                    <IonButton
+                      shape="round"
+                      fill="outline"
+                      size="small"
+                      color="success"
+                      onClick={() => openModal()}
+                    >
+                      Meal oku
+                    </IonButton>
+                  </div>
+                }
+                customIcons={{
+                  play: (
+                    <IonIcon className="text-[#4ac3a4]" icon={playCircle} />
+                  ),
+                  pause: (
+                    <IonIcon className="text-[#4ac3a4]" icon={pauseCircle} />
+                  ),
+                  previous: (
+                    <IonIcon
+                      className="text-[#4ac3a4]"
+                      icon={playSkipBackCircle}
+                      size="large"
+                    />
+                  ),
+                  next: (
+                    <IonIcon
+                      className="text-[#4ac3a4]"
+                      icon={playSkipForwardCircle}
+                      size="large"
+                    />
+                  ),
+                }}
+              />
+            </div>
+          </>
+        )}
+      </IonFooter>
     </>
   );
 }

@@ -17,6 +17,7 @@ import {
   pauseCircle,
   playSkipBackCircle,
   playSkipForwardCircle,
+  arrowDownOutline,
 } from "ionicons/icons";
 import {
   fatiha,
@@ -154,6 +155,8 @@ function KuraniKerimOku({
   const playerRef = useRef<any>(null);
   const topRef = useRef<any>(null);
   const [showPlayer, setShowPlayer] = useState(false);
+  const [playerCollapsed, setPlayerCollapsed] = useState(false);
+  const isCollapsed = !showPlayer || playerCollapsed;
 
   const goFirstPage = () => {
     swipe?.slideTo(0);
@@ -180,7 +183,7 @@ function KuraniKerimOku({
 
   return (
     <>
-      <IonHeader className={"p-2"}>
+      <IonHeader>
         <IonToolbar>
           <IonButtons slot="start">
             <IonBackButton text={"Geri"} />
@@ -196,7 +199,14 @@ function KuraniKerimOku({
         scrollEvents={true}
         className="ion-padding bg-white bg-color-white"
         onClick={() => {
-          setShowPlayer((prev) => !prev);
+          if (!showPlayer) {
+            setShowPlayer(true);
+            setPlayerCollapsed(false);
+          } else if (playerCollapsed) {
+            setPlayerCollapsed(false);
+          } else {
+            setShowPlayer(false);
+          }
         }}
       >
         <Swiper
@@ -221,55 +231,86 @@ function KuraniKerimOku({
         </Swiper>
       </IonContent>
 
-      <IonFooter className={"bg-gray-200 p-3"}>
-        <div className="flex flex-col gap-2 items-center justify-center w-full">
-          {showPlayer && (
-            <AudioPlayer
-              ref={playerRef}
-              src={playerSrc}
-              layout="stacked"
-              showJumpControls={false}
-              showSkipControls={true}
-              autoPlayAfterSrcChange={false}
-              onClickPrevious={() => {
-                swipe?.slideNext();
-                playerRef?.current.audio.current.pause();
+      <IonFooter
+        className={"bg-gray-200"}
+        style={
+          isCollapsed
+            ? { height: "0", padding: "20px" }
+            : { height: "auto", padding: "0.75rem" }
+        }
+      >
+        {showPlayer && (
+          <>
+            <button
+              type="button"
+              className="player-toggle-btn"
+              onClick={(e) => {
+                e.stopPropagation();
+                setPlayerCollapsed((prev) => !prev);
               }}
-              onClickNext={() => {
-                swipe?.slidePrev();
-                playerRef?.current.audio.current.pause();
-              }}
-              customVolumeControls={[]}
-              customAdditionalControls={[]}
-              header={
-                <div className="flex justify-center items-center w-full px-2 text-black">
-                  {title}
-                </div>
-              }
-              customIcons={{
-                play: <IonIcon className="text-[#4ac3a4]" icon={playCircle} />,
-                pause: (
-                  <IonIcon className="text-[#4ac3a4]" icon={pauseCircle} />
-                ),
-                previous: (
-                  <IonIcon
-                    className="text-[#4ac3a4]"
-                    icon={playSkipBackCircle}
-                    size="large"
-                  />
-                ),
-                next: (
-                  <IonIcon
-                    className="text-[#4ac3a4]"
-                    icon={playSkipForwardCircle}
-                    size="large"
-                  />
-                ),
-              }}
-            />
-          )}
+            >
+              <IonIcon
+                icon={arrowDownOutline}
+                size="large"
+                className={`player-toggle-icon ${
+                  playerCollapsed ? "rotated" : ""
+                }`}
+              />
+            </button>
+            <div
+              onClick={(e) => e.stopPropagation()}
+              className={`player-shell ${playerCollapsed ? "collapsed" : ""}`}
+            >
+              <AudioPlayer
+                ref={playerRef}
+                src={playerSrc}
+                layout="stacked"
+                showJumpControls={false}
+                showSkipControls={true}
+                autoPlayAfterSrcChange={false}
+                onClickPrevious={() => {
+                  swipe?.slideNext();
+                  playerRef?.current.audio.current.pause();
+                }}
+                onClickNext={() => {
+                  swipe?.slidePrev();
+                  playerRef?.current.audio.current.pause();
+                }}
+                customVolumeControls={[]}
+                customAdditionalControls={[]}
+                header={
+                  <div className="flex justify-center items-center w-full px-2 text-black">
+                    {title}
+                  </div>
+                }
+                customIcons={{
+                  play: (
+                    <IonIcon className="text-[#4ac3a4]" icon={playCircle} />
+                  ),
+                  pause: (
+                    <IonIcon className="text-[#4ac3a4]" icon={pauseCircle} />
+                  ),
+                  previous: (
+                    <IonIcon
+                      className="text-[#4ac3a4]"
+                      icon={playSkipBackCircle}
+                      size="large"
+                    />
+                  ),
+                  next: (
+                    <IonIcon
+                      className="text-[#4ac3a4]"
+                      icon={playSkipForwardCircle}
+                      size="large"
+                    />
+                  ),
+                }}
+              />
+            </div>
+          </>
+        )}
 
-          <div className="flex justify-evenly w-full pt-2">
+        {/* <div className="flex justify-evenly w-full pt-2">
             <button onClick={() => swipe?.slideNext()}>
               <IonIcon
                 className={"text-[#4ac3a4]"}
@@ -291,8 +332,7 @@ function KuraniKerimOku({
                 size={"large"}
               />
             </button>
-          </div>
-        </div>
+          </div> */}
       </IonFooter>
     </>
   );

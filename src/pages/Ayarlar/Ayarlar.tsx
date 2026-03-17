@@ -319,7 +319,7 @@ function Ayarlar() {
         duration={2000}
       ></IonToast>
 
-      <IonHeader className={"p-2"}>
+      <IonHeader>
         <IonToolbar>
           {settings.district && (
             <IonButtons slot="start">

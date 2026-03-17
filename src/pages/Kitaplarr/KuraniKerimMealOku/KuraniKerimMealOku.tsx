@@ -69,7 +69,7 @@ function KuraniKerimMealOku({
 
   return (
     <>
-      <IonHeader className={"p-2"}>
+      <IonHeader>
         <IonToolbar>
           <IonButtons slot="start">
             <IonBackButton text={"Geri"}></IonBackButton>
