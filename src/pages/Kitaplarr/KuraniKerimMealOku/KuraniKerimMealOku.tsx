@@ -18,6 +18,7 @@ import {
 import {
   fatiha_meal,
   bakara_meal,
+  aliImran_meal,
   yusuf_meal,
   kehf_meal,
   yasin_meal,
@@ -137,6 +138,7 @@ const imagesHandler = () => {
   const sureler = [
     fatiha_meal,
     bakara_meal,
+    aliImran_meal,
     yusuf_meal,
     kehf_meal,
     yasin_meal,

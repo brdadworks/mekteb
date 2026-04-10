@@ -235,8 +235,6 @@ export const currentBook = (slug: string): BookProps => {
       return allBooks.evradi_rufaiyye_meal;
     case "evradi_kadiriyye_meal":
       return allBooks.evradi_kadiriyye_meal;
-    case "evradi_naksibendiyye_meal":
-      return allBooks.evradi_naksibendiyye_meal;
     case "delilul_irfaniyye_meal":
       return allBooks.delilul_irfaniyye_meal;
     /* case "semsi_nuriye":

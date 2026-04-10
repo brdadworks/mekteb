@@ -22,6 +22,7 @@ import {
 import {
   fatiha,
   bakara,
+  aliImran,
   yusuf,
   kehf,
   yasin,
@@ -354,6 +355,7 @@ type Sure = {
 const sureler: Sure[] = [
   fatiha,
   bakara,
+  aliImran,
   yusuf,
   kehf,
   yasin,
